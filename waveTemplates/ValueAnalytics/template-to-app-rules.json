@@ -1,0 +1,267 @@
+{
+	"constants": [
+	  {
+		  "name": "hasSales",
+		  "value": "${Variables.Sales == 'Yes'}"
+	  },
+	  {
+		  "name": "hasService",
+		  "value": "${Variables.Service == 'Yes'}"
+	  },
+	  {
+		  "name": "hasCustomer",
+		  "value": "${Variables.Customer == 'Yes'}"
+	  },
+	  {
+		  "name": "hasLead",
+		  "value": "${Variables.Lead == 'Yes'}"
+	  }
+	  ],
+	"macros" : [ ],
+	"rules" : [
+		{
+			"name" : "ExceptionDashRule1",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Apex_Exceptions_Analysis_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias",
+			"path" : "$.state.steps[*].datasets[*].name",
+			"value" : "${Variables.ExceptionsDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "ExceptionDashRule2",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Apex_Exceptions_Analysis_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in filters",
+			"path" : "$.state.filters[*].dataset[?(@.name=='${Variables.ExceptionsDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.ExceptionsDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "ExceptionDashRule3",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Apex_Exceptions_Analysis_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias in saql",
+			"path" : "$.state.steps[*].query",
+			"value" : "${string:replace(Rules.CurrentNode, '${Variables.ExceptionsDataset.datasetAlias}', '${Variables.ExceptionsDataset.datasetAlias}')}"
+			} ]
+		},
+		{
+			"name" : "ApexDashRule",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Apex_Performance_and_Analysis_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias",
+			"path" : "$.state.steps[*].datasets[*].name",
+			"value" : "${Variables.ApexDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "ApexDashRule2",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Apex_Performance_and_Analysis_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in filters",
+			"path" : "$.state.filters[*].dataset[?(@.name=='${Variables.ApexDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.ApexDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "ApexDashRule3",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Apex_Performance_and_Analysis_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias in saql",
+			"path" : "$.state.steps[*].query",
+			"value" : "${string:replace(Rules.CurrentNode, '${Variables.ApexDataset.datasetAlias}', '${Variables.ApexDataset.datasetAlias}')}"
+			} ]
+		},
+		{
+			"name" : "LightningDashRule1",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias",
+			"path" : "$.state.steps[*].datasets[*][?(@.name=='${Variables.LPVDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.LPVDataset.datasetAlias}"
+			} ]
+		},
+		{
+			"name" : "LightningDashRule2",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias",
+			"path" : "$.state.steps[*].datasets[*][?(@.name=='${Variables.LIDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.LIDataset.datasetAlias}"
+			} ]
+		},
+		{
+			"name" : "LightningDashRule3",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in filters",
+			"path" : "$.state.filters[*].dataset[?(@.name=='${Variables.LPVDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.LPVDataset.datasetAlias}"
+			} ]
+		},
+		{
+			"name" : "LightningDashRule4",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in filters",
+			"path" : "$.state.dataSourceLinks[*].fields[*][?(@.dataSourceName=='${Variables.LPVDataset.datasetAlias}')]",
+			"key":"dataSourceName",
+			"value" : "${Variables.LPVDataset.datasetAlias}"
+			} ]
+		},
+		{
+			"name" : "LightningDashRule5",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in filters",
+			"path" : "$.state.dataSourceLinks[*].fields[*][?(@.dataSourceName=='${Variables.LIDataset.datasetAlias}')]",
+			"key":"dataSourceName",
+			"value" : "${Variables.LIDataset.datasetAlias}"
+			} ]
+		},
+		{
+			"name" : "LightningDashRule6",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias in saql",
+			"path" : "$.state.steps[*].query",
+			"value" : "${string:replace(Rules.CurrentNode, '${Variables.LPVDataset.datasetAlias}', '${Variables.LPVDataset.datasetAlias}')}"
+			} ]
+		},
+                {
+			"name" : "LightningDashRule7",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias in filters",
+			"path" : "$.state.widgets[*].parameters.filters[*].dataset.name",
+			"value" : "${Variables.LPVDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "LightningDashRule8",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias in steps with blended datasets",
+			"path" : "$.state.steps[*].query.sources[*].name",
+			"value" : "${string:replace(Rules.CurrentNode, '${Variables.LPVDataset.datasetAlias}', '${Variables.LPVDataset.datasetAlias}')}"
+			} ]
+		},
+                {
+			"name" : "LightningDashRule9",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Lightning_Page_Performance_tp"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"description" : "Ensure the dataset name is always the dataset alias in steps with blended datasets",
+			"path" : "$.state.steps[*].query.sources[*].name",
+			"value" : "${string:replace(Rules.CurrentNode, '${Variables.LIDataset.datasetAlias}', '${Variables.LIDataset.datasetAlias}')}"
+			} ]
+		},
+		{
+			"name" : "TechDebtDashboard1",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Tech_Debt_Counter_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in steps",
+			"path" : "$.state.steps[*].datasets[?(@.name=='${Variables.LPVDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.LPVDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "TechDebtDashboard2",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Tech_Debt_Counter_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in steps",
+			"path" : "$.state.steps[*].datasets[?(@.name=='${Variables.VFDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.VFDataset.datasetAlias}"
+			} ]
+		},
+                {
+			"name" : "TechDebtDashboard3",
+			"appliesTo" : [ {
+			"type" : "dashboard",
+			"name" : "Tech_Debt_Counter_tp"
+			} ],
+			"actions" : [ {
+			"action" : "put",
+			"description" : "Ensure the dataset name is always the dataset alias in steps",
+			"path" : "$.state.steps[*].datasets[?(@.name=='${Variables.ApexDataset.datasetAlias}')]",
+			"key":"name",
+			"value" : "${Variables.ApexDataset.datasetAlias}"
+			} ]
+		}
+	]
+  }

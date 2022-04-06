@@ -1,0 +1,81 @@
+{
+  "isDeletable": true,
+  "longRunningAlertInMins": "",
+  "notificationLevel": "",
+  "workflowDefinition": {
+    "LoadInteractions": {
+      "action": "edgemart",
+      "parameters": {"alias": "${Variables.LIDataset.datasetAlias}"}
+    },
+    "RegisterPlaceholderDataset": {
+      "action": "sfdcRegister",
+      "parameters": {
+        "name": "BVA_PlaceholderDataset",
+        "alias": "${App.Datasets.BVA_PlaceholderDataset_tp.FullyQualifiedName}",
+        "source": "ComputePlaceholders"
+      }
+    },
+    "FilterNone": {
+      "action": "filter",
+      "parameters": {
+        "source": "LoadInteractions",
+        "saqlFilter": "'USER_ID' == \"005000000000000\""
+      }
+    },
+    "ComputePlaceholders": {
+      "action": "computeExpression",
+      "parameters": {
+        "source": "FilterNone",
+        "mergeWithSource": true,
+        "computedFields": [
+          {
+            "precision": 18,
+            "name": "ClickCount",
+            "saqlExpression": "0",
+            "scale": 0,
+            "label": "ClickCount",
+            "type": "Numeric"
+          },
+          {
+            "name": "PageName",
+            "saqlExpression": "\"\"",
+            "label": "Page Name",
+            "type": "Text"
+          },
+          {
+            "precision": 18,
+            "name": "StallTime",
+            "saqlExpression": "0",
+            "scale": 0,
+            "label": "Stall Time",
+            "type": "Numeric"
+          },
+          {
+            "precision": 18,
+            "saqlExpression": "0",
+            "name": "TimeToAction",
+            "scale": 0,
+            "label": "Time To Action",
+            "type": "Numeric"
+          },
+          {
+            "precision": 18,
+            "name": "SequenceNumber",
+            "saqlExpression": "0",
+            "scale": 0,
+            "label": "Sequence Number",
+            "type": "Numeric"
+          }
+        ]
+      }
+    }
+  },
+  "DataflowType": "USER",
+  "_type": "dataflow",
+  "name": "BVA_DoNotDeleteOrRun",
+  "MasterLabel": "BVA DoNotDeleteOrRun",
+  "_url": "/insights/internal_api/v1.0/esObject/workflow//json",
+  "_uid": "",
+  "nextRun": "",
+  "WorkflowStatus": "Inactive"
+}

@@ -1,0 +1,247 @@
+{
+  "name" : "BVA_UsersProfilesRoles",
+  "label" : "BVA Users Profiles Roles",
+  "scheduleExpression" : null,
+  "publishingTarget" : "DATASET",
+  "format" : "R3",
+  "scheduleType" : "EventDriven",
+  "recipeDefinition" : {
+    "version" : "54.0",
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "Id",
+            "FirstName",
+            "Name",
+            "Division",
+            "Department",
+            "Country",
+            "UserRoleId",
+            "ProfileId"
+          ],
+          "dataset" : {
+            "type" : "connectedDataset",
+            "label" : "User",
+            "connectionName" : "SFDC_LOCAL",
+            "sourceObjectName" : "User"
+          }
+        }
+      },
+      "LOAD_DATASET1" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "Id",
+            "Name",
+            "ParentRoleId",
+            "DeveloperName"
+          ],
+          "dataset" : {
+            "type" : "connectedDataset",
+            "label" : "UserRole",
+            "connectionName" : "SFDC_LOCAL",
+            "sourceObjectName" : "UserRole"
+          }
+        }
+      },
+      "LOAD_DATASET2" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "Id",
+            "Name",
+            "UserType"
+          ],
+          "dataset" : {
+            "type" : "connectedDataset",
+            "label" : "Profile",
+            "connectionName" : "SFDC_LOCAL",
+            "sourceObjectName" : "Profile"
+          }
+        }
+      },
+      "FLATTEN0" : {
+        "action" : "flatten",
+        "sources" : [
+          "LOAD_DATASET1"
+        ],
+        "parameters" : {
+          "selfField" : "Id",
+          "parentField" : "ParentRoleId",
+          "multiField" : {
+            "name" : "ParentRoleMultiField",
+            "label" : "ParentRoles",
+            "isSystemField" : false
+          },
+          "pathField" : {
+            "name" : "ParentRolesPath",
+            "label" : "ParentRolesPath",
+            "isSystemField" : false
+          },
+          "includeSelfId" : false
+        }
+      },
+      "JOIN0" : {
+        "action" : "join",
+        "sources" : [
+          "LOAD_DATASET0",
+          "FLATTEN0"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [ ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "UserRoleId"
+          ],
+          "rightQualifier" : "Roles",
+          "rightKeys" : [
+            "Id"
+          ]
+        }
+      },
+      "JOIN1" : {
+        "action" : "join",
+        "sources" : [
+          "JOIN0",
+          "LOAD_DATASET2"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [ ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "ProfileId"
+          ],
+          "rightQualifier" : "Profile",
+          "rightKeys" : [
+            "Id"
+          ]
+        }
+      },
+      "OUTPUT0" : {
+        "action" : "save",
+        "sources" : [
+          "JOIN1"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "BVA Users Profiles Roles",
+            "name" : "${App.Datasets.BVA_UsersProfilesRoles_tp.FullyQualifiedName}",
+            "folderName" : "${App.Folder.FullyQualifiedName}"
+          }
+        }
+      }
+    },
+    "ui" : {
+      "nodes" : {
+        "LOAD_DATASET0" : {
+          "label" : "User",
+          "type" : "LOAD_DATASET",
+          "top" : 112,
+          "left" : 112,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET1" : {
+          "label" : "UserRole",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 112,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET2" : {
+          "label" : "Profile",
+          "type" : "LOAD_DATASET",
+          "top" : 392,
+          "left" : 112,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "TRANSFORM0" : {
+          "label" : "FlattenRoles",
+          "description" : "Create multi-value Parent Roles fields",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 252,
+          "graph" : {
+            "FLATTEN0" : null
+          },
+          "connectors" : [ ]
+        },
+        "JOIN0" : {
+          "label" : "JoinUserRoles",
+          "description" : "",
+          "type" : "JOIN",
+          "top" : 252,
+          "left" : 392
+        },
+        "JOIN1" : {
+          "label" : "JoinUserProfiles",
+          "description" : "",
+          "type" : "JOIN",
+          "top" : 252,
+          "left" : 532
+        },
+        "OUTPUT0" : {
+          "label" : "RegisterUsersProfilesRoles",
+          "description" : "",
+          "type" : "OUTPUT",
+          "top" : 252,
+          "left" : 672
+        }
+      },
+      "connectors" : [
+        {
+          "source" : "LOAD_DATASET1",
+          "target" : "TRANSFORM0"
+        },
+        {
+          "source" : "LOAD_DATASET0",
+          "target" : "JOIN0"
+        },
+        {
+          "source" : "TRANSFORM0",
+          "target" : "JOIN0"
+        },
+        {
+          "source" : "JOIN0",
+          "target" : "JOIN1"
+        },
+        {
+          "source" : "LOAD_DATASET2",
+          "target" : "JOIN1"
+        },
+        {
+          "source" : "JOIN1",
+          "target" : "OUTPUT0"
+        }
+      ],
+      "hiddenColumns" : [ ]
+    }
+  },
+  "status" : "Success"
+}
