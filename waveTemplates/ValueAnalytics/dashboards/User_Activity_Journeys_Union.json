@@ -4263,7 +4263,7 @@
             ],
             "limit" : 20,
             "groups" : [
-              "PageName"
+              "PAGE_APP_NAME"
             ],
             "filters" : [
               [
@@ -4354,7 +4354,7 @@
             "columnMap" : {
               "trellis" : [ ],
               "dimension" : [
-                "PageName"
+                "PAGE_APP_NAME"
               ],
               "plots" : [
                 "count"
@@ -9407,7 +9407,7 @@
           "columnMap" : {
             "trellis" : [ ],
             "dimension" : [
-              "PageName"
+              "PAGE_APP_NAME"
             ],
             "plots" : [
               "count"

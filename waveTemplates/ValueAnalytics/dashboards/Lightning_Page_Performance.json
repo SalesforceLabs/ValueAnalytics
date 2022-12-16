@@ -68,13 +68,13 @@
       {
         "fields" : [
           {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningInteraction.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "CLIENT_GEO"
           },
           {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "CLIENT_GEO"
@@ -86,13 +86,13 @@
       {
         "fields" : [
           {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningInteraction.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "PAGE_ENTITY_TYPE"
           },
           {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "PAGE_ENTITY_TYPE"
@@ -104,13 +104,13 @@
       {
         "fields" : [
           {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningInteraction.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "PAGE_APP_NAME"
           },
           {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "PAGE_APP_NAME"
@@ -122,13 +122,13 @@
       {
         "fields" : [
           {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningInteraction.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "TIMESTAMP_DERIVED"
           },
           {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
+            "dataSourceName" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}",
             "dataSourceNamespace" : "${Org.Namespace}",
             "dataSourceType" : "dataset",
             "fieldName" : "TIMESTAMP_DERIVED"
@@ -141,7 +141,7 @@
     "filters" : [
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -154,7 +154,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -167,7 +167,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -179,7 +179,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -999,7 +999,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1208,7 +1208,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1376,7 +1376,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1534,7 +1534,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1664,7 +1664,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1832,7 +1832,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1987,7 +1987,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2155,7 +2155,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2310,7 +2310,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2456,7 +2456,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2648,7 +2648,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -3058,7 +3058,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -3228,7 +3228,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -3374,7 +3374,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -3701,7 +3701,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -3847,7 +3847,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -4009,7 +4009,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -4187,7 +4187,7 @@
         "groups" : [ ],
         "label" : "Dataset updated",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.LPVDataset.datasetAlias}\";\nq = foreach q generate 'TIMESTAMP_DERIVED' as 'TIMESTAMP_DERIVED', 'TIMESTAMP_DERIVED_Day' as 'TIMESTAMP_DERIVED_Day', 'TIMESTAMP_DERIVED_Month' as 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Year' as 'TIMESTAMP_DERIVED_Year';\nq = order q by 'TIMESTAMP_DERIVED' desc;\nq = foreach q generate  'TIMESTAMP_DERIVED_Year' + \"-\" +'TIMESTAMP_DERIVED_Month' + \"-\" + 'TIMESTAMP_DERIVED_Day' as 'Time';\nq = limit q 1;",
+        "query" : "q = load \"${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}\";\nq = foreach q generate 'TIMESTAMP_DERIVED' as 'TIMESTAMP_DERIVED', 'TIMESTAMP_DERIVED_Day' as 'TIMESTAMP_DERIVED_Day', 'TIMESTAMP_DERIVED_Month' as 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Year' as 'TIMESTAMP_DERIVED_Year';\nq = order q by 'TIMESTAMP_DERIVED' desc;\nq = foreach q generate  'TIMESTAMP_DERIVED_Year' + \"-\" +'TIMESTAMP_DERIVED_Month' + \"-\" + 'TIMESTAMP_DERIVED_Day' as 'Time';\nq = limit q 1;",
         "receiveFacetSource" : {
           "mode" : "all",
           "steps" : [ ]
@@ -4233,7 +4233,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -4299,7 +4299,7 @@
         "groups" : [ ],
         "label" : "Daily EPT distribution",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.LPVDataset.datasetAlias}\";\nq = group q by ('TIMESTAMP_DERIVED_Year', 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Day');\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  q_A.'TIMESTAMP_DERIVED_Year' + \"-\" + q_A.'TIMESTAMP_DERIVED_Month' + \"-\" + q_A.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  q_B.'TIMESTAMP_DERIVED_Year' + \"-\" + q_B.'TIMESTAMP_DERIVED_Month' + \"-\" + q_B.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate  q_C.'TIMESTAMP_DERIVED_Year' + \"-\" + q_C.'TIMESTAMP_DERIVED_Month' + \"-\" + q_C.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate  q_D.'TIMESTAMP_DERIVED_Year' + \"-\" + q_D.'TIMESTAMP_DERIVED_Month' + \"-\" + q_D.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 8-10s\" as 'Metric',count() as 'count';\nbuck5 = foreach q_E generate  q_E.'TIMESTAMP_DERIVED_Year' + \"-\" + q_E.'TIMESTAMP_DERIVED_Month' + \"-\" + q_E.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('Time', 'Metric');\nfinal = foreach final generate 'Time' as 'Time', 'Metric' as 'Metric', sum('count') as 'Total';\nfinal = order final by ('Metric');",
+        "query" : "q = load \"${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}\";\nq = group q by ('TIMESTAMP_DERIVED_Year', 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Day');\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  q_A.'TIMESTAMP_DERIVED_Year' + \"-\" + q_A.'TIMESTAMP_DERIVED_Month' + \"-\" + q_A.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  q_B.'TIMESTAMP_DERIVED_Year' + \"-\" + q_B.'TIMESTAMP_DERIVED_Month' + \"-\" + q_B.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate  q_C.'TIMESTAMP_DERIVED_Year' + \"-\" + q_C.'TIMESTAMP_DERIVED_Month' + \"-\" + q_C.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate  q_D.'TIMESTAMP_DERIVED_Year' + \"-\" + q_D.'TIMESTAMP_DERIVED_Month' + \"-\" + q_D.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 8-10s\" as 'Metric',count() as 'count';\nbuck5 = foreach q_E generate  q_E.'TIMESTAMP_DERIVED_Year' + \"-\" + q_E.'TIMESTAMP_DERIVED_Month' + \"-\" + q_E.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('Time', 'Metric');\nfinal = foreach final generate 'Time' as 'Time', 'Metric' as 'Metric', sum('count') as 'Total';\nfinal = order final by ('Metric');",
         "receiveFacetSource" : {
           "mode" : "exclude",
           "steps" : [
@@ -4415,7 +4415,7 @@
         "groups" : [ ],
         "label" : "EPT distribution by PageEntity",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.LPVDataset.datasetAlias}\";\nq = filter q by 'PAGE_ENTITY_TYPE' != \"\";\nq = group q by 'PAGE_ENTITY_TYPE';\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 8-10s\" as 'Metric', count() as 'count';\nbuck5 = foreach q_E generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('PAGE_ENTITY_TYPE', 'Metric');\nfinal = foreach final generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', 'Metric' as 'Metric', sum('count') as 'Total';",
+        "query" : "q = load \"${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}\";\nq = filter q by 'PAGE_ENTITY_TYPE' != \"\";\nq = group q by 'PAGE_ENTITY_TYPE';\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 8-10s\" as 'Metric', count() as 'count';\nbuck5 = foreach q_E generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('PAGE_ENTITY_TYPE', 'Metric');\nfinal = foreach final generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', 'Metric' as 'Metric', sum('count') as 'Total';",
         "receiveFacetSource" : {
           "mode" : "exclude",
           "steps" : [
@@ -5747,7 +5747,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
               },
               "field" : "PAGE_ENTITY_TYPE"
             }
@@ -5765,7 +5765,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
               },
               "field" : "PAGE_ENTITY_TYPE"
             }
@@ -6862,7 +6862,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
               },
               "field" : "TIMESTAMP_DERIVED"
             }
@@ -6880,7 +6880,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
               },
               "field" : "CLIENT_GEO"
             }
@@ -6898,7 +6898,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
               },
               "field" : "EFFECTIVE_PAGE_TIME"
             }

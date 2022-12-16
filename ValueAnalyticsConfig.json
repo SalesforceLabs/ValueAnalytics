@@ -1,0 +1,13 @@
+{
+    "label": "Value Analytics App",
+    "description": "Visualise adoption metrics on individual features, functions, user click-paths, that are correlated with operational metrics  and strategic outcomes.",
+    "assetIcon": "16.png",
+    "templateSourceId": "ValueAnalytics",
+    "templateValues": {
+        "Sales":"Yes",
+        "Service":"Yes",
+        "Customer":"Yes",
+        "Lead":"Yes"
+    },
+    "name": "Value Analytics App"
+  }

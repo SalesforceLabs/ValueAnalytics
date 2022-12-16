@@ -63,7 +63,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "LightningInteraction",
-            "name" : "${Variables.LIDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningInteraction.Alias}"
           }
         }
       },
@@ -1071,7 +1071,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "LightningPageView",
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         }
       },
@@ -1105,7 +1105,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexExecution",
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         }
       },
