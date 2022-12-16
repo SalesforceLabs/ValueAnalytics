@@ -1,0 +1,3 @@
+sfdx analytics:app:create -f EventMonitoringConfig.json 
+sfdx force:source:deploy -p ./ValueAnalytics
+sfdx analytics:app:create -f ValueAnalyticsConfig.json 

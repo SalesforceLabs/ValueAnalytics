@@ -613,7 +613,7 @@
     "filters" : [
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -625,7 +625,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -636,7 +636,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -648,7 +648,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -660,7 +660,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
         },
         "dependent" : true,
         "fields" : [
@@ -1544,7 +1544,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1787,7 +1787,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2024,7 +2024,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2170,7 +2170,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2237,7 +2237,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -2423,7 +2423,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -3059,7 +3059,7 @@
         "groups" : [ ],
         "label" : "LatestDate",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.ApexDataset.datasetAlias}\";\nq = foreach q generate 'TIMESTAMP_DERIVED_sec_epoch' as 'TIMESTAMP_DERIVED_sec_epoch';\nq = order q by 'TIMESTAMP_DERIVED_sec_epoch' desc;\nq = limit q 1;",
+        "query" : "q = load \"${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}\";\nq = foreach q generate 'TIMESTAMP_DERIVED_sec_epoch' as 'TIMESTAMP_DERIVED_sec_epoch';\nq = order q by 'TIMESTAMP_DERIVED_sec_epoch' desc;\nq = limit q 1;",
         "receiveFacetSource" : {
           "mode" : "all",
           "steps" : [ ]
@@ -3179,7 +3179,7 @@
         "groups" : [ ],
         "label" : "SlowLeaders",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.ApexDataset.datasetAlias}\";\nresult = group q by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate q.'QUIDDITY' as 'QUIDDITY', q.'ENTRY_POINT' as 'ENTRY_POINT', round(avg(q.'RUN_TIME'),0) as 'A';\nresult = group result by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', first(A) as 'A', rank() over([..] partition by 'QUIDDITY' order by sum(A) desc) as 'Rank';\nresult = order result by ('QUIDDITY' asc, 'ENTRY_POINT' asc);\nresult = filter result by 'Rank'==1;\nresult = foreach result generate 'QUIDDITY','ENTRY_POINT','A' as 'Avg Time (ms)';\nresult = order result by 'QUIDDITY' asc;\nresult = limit result 2000;",
+        "query" : "q = load \"${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}\";\nresult = group q by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate q.'QUIDDITY' as 'QUIDDITY', q.'ENTRY_POINT' as 'ENTRY_POINT', round(avg(q.'RUN_TIME'),0) as 'A';\nresult = group result by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', first(A) as 'A', rank() over([..] partition by 'QUIDDITY' order by sum(A) desc) as 'Rank';\nresult = order result by ('QUIDDITY' asc, 'ENTRY_POINT' asc);\nresult = filter result by 'Rank'==1;\nresult = foreach result generate 'QUIDDITY','ENTRY_POINT','A' as 'Avg Time (ms)';\nresult = order result by 'QUIDDITY' asc;\nresult = limit result 2000;",
         "receiveFacetSource" : {
           "mode" : "all",
           "steps" : [ ]
@@ -3224,7 +3224,7 @@
         "groups" : [ ],
         "label" : "YestWorstPerfType",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.ApexDataset.datasetAlias}\";\nq = filter q by 'TIMESTAMP_DERIVED_sec_epoch'=={{column(LatestDate_1.result, [\"TIMESTAMP_DERIVED_sec_epoch\"]).asObject()}};\nresult = group q by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate q.'QUIDDITY' as 'QUIDDITY', q.'ENTRY_POINT' as 'ENTRY_POINT', round(avg(q.'RUN_TIME'),0) as 'A';\nresult = group result by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', first(A) as 'A', rank() over([..] partition by 'QUIDDITY' order by sum(A) desc) as 'Rank';\nresult = filter result by 'Rank' == 1;\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', 'A' as 'Avg Time (ms)';\nresult = order result by 'QUIDDITY' asc;\nresult = limit result 2000;",
+        "query" : "q = load \"${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}\";\nq = filter q by 'TIMESTAMP_DERIVED_sec_epoch'=={{column(LatestDate_1.result, [\"TIMESTAMP_DERIVED_sec_epoch\"]).asObject()}};\nresult = group q by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate q.'QUIDDITY' as 'QUIDDITY', q.'ENTRY_POINT' as 'ENTRY_POINT', round(avg(q.'RUN_TIME'),0) as 'A';\nresult = group result by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', first(A) as 'A', rank() over([..] partition by 'QUIDDITY' order by sum(A) desc) as 'Rank';\nresult = filter result by 'Rank' == 1;\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', 'A' as 'Avg Time (ms)';\nresult = order result by 'QUIDDITY' asc;\nresult = limit result 2000;",
         "receiveFacetSource" : {
           "mode" : "all",
           "steps" : [ ]

@@ -869,7 +869,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1118,7 +1118,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1641,7 +1641,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.VFDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.VisualforceRequest.Alias}"
           }
         ],
         "isGlobal" : false,
@@ -1774,7 +1774,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
           }
         ],
         "isGlobal" : false,

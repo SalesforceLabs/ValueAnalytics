@@ -77,29 +77,20 @@
         "parameters" : {
           "fields" : [
             "Id",
-            "AccountId",
-            "RecordTypeId",
             "Name",
             "StageName",
             "Amount",
             "CloseDate",
             "Type",
-            "LeadSource",
-            "IsClosed",
-            "IsWon",
-            "ForecastCategory",
-            "ForecastCategoryName",
-            "HasOpportunityLineItem",
             "OwnerId",
             "CreatedDate",
             "CreatedById",
             "LastModifiedDate",
             "LastActivityDate",
-            "HasOpenActivity",
-            "HasOverdueTask",
-            "LastReferencedDate",
+            "LastStageChangeDate",
             "LastViewedDate",
-            "LastStageChangeDate"
+            "LastReferencedDate",
+            "IsClosed"
           ],
           "dataset" : {
             "type" : "connectedDataset",

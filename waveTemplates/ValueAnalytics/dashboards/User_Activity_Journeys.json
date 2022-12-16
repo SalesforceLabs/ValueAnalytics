@@ -1547,13 +1547,6 @@
                 "not in"
               ],
               [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
                 "EVENT_TYPE",
                 [
                   "LightningInteraction"
@@ -1735,13 +1728,6 @@
                 "SessionEndFlag",
                 [
                   "End"
-                ],
-                "in"
-              ],
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
                 ],
                 "in"
               ],
@@ -2047,15 +2033,7 @@
             "groups" : [
               "DataDictionary.Event_Label"
             ],
-            "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ]
-            ]
+            "filters" : [ ]
           },
           "version" : -1.0
         },
@@ -2337,15 +2315,7 @@
                 "TIMESTAMP_DERIVED_Day"
               ]
             ],
-            "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ]
-            ],
+            "filters" : [ ],
             "order" : [
               [
                 [
@@ -2676,13 +2646,6 @@
             ],
             "filters" : [
               [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
                 "PAGE_ENTITY_TYPE",
                 [ ],
                 "isnotnull"
@@ -2798,15 +2761,7 @@
                       "*"
                     ]
                   ],
-                  "filters" : [
-                    [
-                      "UI_EVENT_SOURCE",
-                      [
-                        "click"
-                      ],
-                      "in"
-                    ]
-                  ]
+                  "filters" : [ ]
                 },
                 "name" : "TotalUserClicks",
                 "header" : "TotalUserClicks"
@@ -4276,7 +4231,7 @@
             ],
             "limit" : 20,
             "groups" : [
-              "PageName"
+              "PAGE_APP_NAME"
             ],
             "filters" : [
               [
@@ -4367,7 +4322,7 @@
             "columnMap" : {
               "trellis" : [ ],
               "dimension" : [
-                "PageName"
+                "PAGE_APP_NAME"
               ],
               "plots" : [
                 "count"
@@ -5223,15 +5178,7 @@
                 "InteractionDateTime_Day"
               ]
             ],
-            "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ]
-            ]
+            "filters" : [ ]
           },
           "version" : -1.0
         },
@@ -5401,13 +5348,6 @@
                   ""
                 ],
                 "not in"
-              ],
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
               ]
             ],
             "order" : [
@@ -5579,13 +5519,6 @@
               "DataDictionary.Event_Label"
             ],
             "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
               [
                 "PageName",
                 [
@@ -5860,13 +5793,6 @@
               "DataDictionary.Event_Label"
             ],
             "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
               [
                 "PageName",
                 [
@@ -6258,13 +6184,6 @@
             ],
             "filters" : [
               [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
                 "PageName",
                 [
                   "",
@@ -6498,7 +6417,6 @@
                 "F"
               ]
             ],
-            "booleanFilterLogic" : "1 AND 2",
             "columns" : [
               {
                 "query" : {
@@ -6604,13 +6522,6 @@
               "DataDictionary.Event_Label"
             ],
             "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
               [
                 "PageName",
                 [
@@ -6778,13 +6689,6 @@
                 "UI_EVENT_TYPE",
                 [
                   "user"
-                ],
-                "in"
-              ],
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
                 ],
                 "in"
               ]
@@ -9416,7 +9320,7 @@
           "columnMap" : {
             "trellis" : [ ],
             "dimension" : [
-              "PageName"
+              "PAGE_APP_NAME"
             ],
             "plots" : [
               "count"

@@ -1,1324 +1,1132 @@
 {
-  "name" : "TechDebtCounter",
-  "label" : "TechDebtCounter",
-  "scheduleExpression" : null,
-  "publishingTarget" : "DATASET",
-  "format" : "R3",
-  "scheduleType" : null,
-  "recipeDefinition" : {
-    "version" : "54.0",
-    "nodes" : {
-      "LOAD_DATASET0" : {
-        "action" : "load",
-        "sources" : [ ],
-        "parameters" : {
-          "fields" : [
-            "NamespacePrefix",
-            "Name"
-          ],
-          "dataset" : {
-            "type" : "connectedDataset",
-            "label" : "ApexClass",
-            "connectionName" : "SFDC_LOCAL",
-            "sourceObjectName" : "ApexClass"
-          }
-        }
-      },
-      "LOAD_DATASET1" : {
-        "action" : "load",
-        "sources" : [ ],
-        "parameters" : {
-          "fields" : [
-            "ENTRY_POINT",
-            "TIMESTAMP_DERIVED",
-            "USER_ID_DERIVED",
-            "RUN_TIME"
-          ],
-          "dataset" : {
-            "type" : "analyticsDataset",
-            "label" : "ApexExecution",
-            "name" : "${Variables.ApexDataset.datasetAlias}"
-          }
-        }
-      },
-      "FORMULA0" : {
-        "action" : "formula",
-        "sources" : [
-          "LOAD_DATASET1"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "ENTRY_POINT_formula",
-              "label" : "ClassTriggerPage",
-              "formulaExpression" : "case when contains(\"ENTRY_POINT\",'batch') then \"ENTRY_POINT\" when contains(\"ENTRY_POINT\",' on ') then substr(\"ENTRY_POINT\",1,instr(\"ENTRY_POINT\",' ')) when contains(\"ENTRY_POINT\", 'VF- /apex/') then substr(\"ENTRY_POINT\",11,char_length(\"ENTRY_POINT\")-16) when contains(\"ENTRY_POINT\", 'VFRemote-') then substr(\"ENTRY_POINT\",11,instr(substr(\"ENTRY_POINT\",11),' ')) when instr(\"ENTRY_POINT\",'.')>0 then substr(\"ENTRY_POINT\",1,instr(\"ENTRY_POINT\",'.')-1) else \"ENTRY_POINT\" end",
-              "precision" : 255,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "JOIN0" : {
-        "action" : "join",
-        "sources" : [
-          "FORMULA18",
-          "AGGREGATE7"
-        ],
-        "schema" : {
-          "fields" : [ ],
-          "slice" : {
-            "mode" : "DROP",
-            "ignoreMissingFields" : true,
-            "fields" : [
-              "Aggregate.ENTRY_POINT_formula"
-            ]
-          }
-        },
-        "parameters" : {
-          "joinType" : "MULTI_VALUE_LOOKUP",
-          "leftKeys" : [
-            "Name_formula"
-          ],
-          "rightQualifier" : "Aggregate",
-          "rightKeys" : [
-            "ENTRY_POINT_formula"
-          ]
-        }
-      },
-      "LOAD_DATASET3" : {
-        "action" : "load",
-        "sources" : [ ],
-        "parameters" : {
-          "fields" : [
-            "NamespacePrefix",
-            "Name"
-          ],
-          "dataset" : {
-            "type" : "connectedDataset",
-            "label" : "ApexPage",
-            "connectionName" : "SFDC_LOCAL",
-            "sourceObjectName" : "ApexPage"
-          }
-        }
-      },
-      "LOAD_DATASET4" : {
-        "action" : "load",
-        "sources" : [ ],
-        "parameters" : {
-          "fields" : [
-            "USER_ID_DERIVED",
-            "TIMESTAMP_DERIVED",
-            "PAGE_NAME",
-            "RUN_TIME"
-          ],
-          "dataset" : {
-            "type" : "analyticsDataset",
-            "label" : "VisualforceRequest",
-            "name" : "${Variables.VFDataset.datasetAlias}"
-          }
-        }
-      },
-      "FORMULA4" : {
-        "action" : "formula",
-        "sources" : [
-          "LOAD_DATASET4"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "PAGE_NAME_formula",
-              "label" : "PageName",
-              "formulaExpression" : "substr(\"PAGE_NAME\",7)",
-              "precision" : 100,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-        "LOAD_DATASET5": {
-            "action": "load",
-            "parameters": {
-                "dataset": {
-                    "connectionName": "SFDC_LOCAL",
-                    "label": "AppMenuItem",
-                    "sourceObjectName": "AppMenuItem",
-                    "type": "connectedDataset"
-                },
-                "fields": [
-                    "Name",
-                    "NamespacePrefix",
-                    "Type"
-                ]
-            },
-            "sources": []
-        },
-      "LOAD_DATASET6" : {
-        "action" : "load",
-        "sources" : [ ],
-        "parameters" : {
-          "fields" : [
-            "PAGE_APP_NAME",
-            "PAGE_ENTITY_TYPE",
-            "USER_ID_DERIVED",
-            "TIMESTAMP_DERIVED",
-            "EFFECTIVE_PAGE_TIME"
-          ],
-          "dataset" : {
-            "type" : "analyticsDataset",
-            "label" : "LightningPageView",
-            "name" : "${Variables.LPVDataset.datasetAlias}"
-          }
-        }
-      },
-      "EXTRACT0" : {
-        "action" : "extractGrains",
-        "sources" : [
-          "LOAD_DATASET6"
-        ],
-        "parameters" : {
-          "grainExtractions" : [ ]
-        }
-      },
-      "AGGREGATE1" : {
-        "action" : "aggregate",
-        "sources" : [
-          "EXTRACT0"
-        ],
-        "parameters" : {
-          "aggregations" : [
-            {
-              "action" : "COUNT",
-              "name" : "COUNT_Rows",
-              "label" : "Rows"
-            },
-            {
-              "action" : "AVG",
-              "source" : "EFFECTIVE_PAGE_TIME",
-              "name" : "AVG_EFFECTIVE_PAGE_TIME",
-              "label" : "Average EFFECTIVE_PAGE_TIME"
-            }
-          ],
-          "groupings" : [
-            "PAGE_APP_NAME"
-          ],
-          "pivots" : [ ],
-          "nodeType" : "STANDARD"
-        }
-      },
-      "JOIN4" : {
-        "action" : "join",
-        "sources" : [
-          "LOAD_DATASET5",
-          "AGGREGATE1"
-        ],
-        "schema" : {
-          "fields" : [ ],
-          "slice" : {
-            "mode" : "DROP",
-            "ignoreMissingFields" : true,
-            "fields" : [
-              "Aggregate.PAGE_APP_NAME"
-            ]
-          }
-        },
-        "parameters" : {
-          "joinType" : "MULTI_VALUE_LOOKUP",
-          "leftKeys" : [
-            "Name"
-          ],
-          "rightQualifier" : "Aggregate",
-          "rightKeys" : [
-            "PAGE_APP_NAME"
-          ]
-        }
-      },
-      "LOAD_DATASET7" : {
-        "action" : "load",
-        "sources" : [ ],
-        "parameters" : {
-          "fields" : [
-            "SobjectType",
-            "CreatedDate"
-          ],
-          "dataset" : {
-            "type" : "connectedDataset",
-            "label" : "ObjectPermissions",
-            "connectionName" : "SFDC_LOCAL",
-            "sourceObjectName" : "ObjectPermissions"
-          }
-        }
-      },
-      "EXTRACT1" : {
-        "action" : "extractGrains",
-        "sources" : [
-          "LOAD_DATASET6"
-        ],
-        "parameters" : {
-          "grainExtractions" : [ ]
-        }
-      },
-      "AGGREGATE3" : {
-        "action" : "aggregate",
-        "sources" : [
-          "EXTRACT1"
-        ],
-        "parameters" : {
-          "aggregations" : [
-            {
-              "action" : "COUNT",
-              "name" : "COUNT_Rows",
-              "label" : "Rows"
-            },
-            {
-              "action" : "AVG",
-              "source" : "EFFECTIVE_PAGE_TIME",
-              "name" : "AVG_EFFECTIVE_PAGE_TIME",
-              "label" : "Average EFFECTIVE_PAGE_TIME"
-            }
-          ],
-          "groupings" : [
-            "PAGE_ENTITY_TYPE"
-          ],
-          "pivots" : [ ],
-          "nodeType" : "STANDARD"
-        }
-      },
-      "EXTRACT2" : {
-        "action" : "extractGrains",
-        "sources" : [
-          "FORMULA4"
-        ],
-        "parameters" : {
-          "grainExtractions" : [ ]
-        }
-      },
-      "AGGREGATE5" : {
-        "action" : "aggregate",
-        "sources" : [
-          "EXTRACT2"
-        ],
-        "parameters" : {
-          "aggregations" : [
-            {
-              "action" : "COUNT",
-              "name" : "COUNT_Rows",
-              "label" : "Rows"
-            },
-            {
-              "action" : "AVG",
-              "source" : "RUN_TIME",
-              "name" : "AVG_RUN_TIME",
-              "label" : "Average RUN_TIME"
-            }
-          ],
-          "groupings" : [
-            "PAGE_NAME_formula"
-          ],
-          "pivots" : [ ],
-          "nodeType" : "STANDARD"
-        }
-      },
-      "JOIN6" : {
-        "action" : "join",
-        "sources" : [
-          "FORMULA17",
-          "AGGREGATE5"
-        ],
-        "schema" : {
-          "fields" : [ ],
-          "slice" : {
-            "mode" : "DROP",
-            "ignoreMissingFields" : true,
-            "fields" : [
-              "Aggregate.PAGE_NAME_formula"
-            ]
-          }
-        },
-        "parameters" : {
-          "joinType" : "MULTI_VALUE_LOOKUP",
-          "leftKeys" : [
-            "Name_formula"
-          ],
-          "rightQualifier" : "Aggregate",
-          "rightKeys" : [
-            "PAGE_NAME_formula"
-          ]
-        }
-      },
-      "FORMULA5" : {
-        "action" : "formula",
-        "sources" : [
-          "LOAD_DATASET3"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "Name_formula",
-              "label" : "PageName",
-              "formulaExpression" : "case\r\n    when \"NamespacePrefix\" is null \r\n    then Name\r\n    else\r\n    concat(\"NamespacePrefix\",'__',\"Name\")\r\nend\r\n",
-              "precision" : 255,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "FORMULA17" : {
-        "action" : "formula",
-        "sources" : [
-          "FORMULA5"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "NUMBER",
-              "name" : "IsCustom",
-              "label" : "IsCustom",
-              "formulaExpression" : "1",
-              "precision" : 1,
-              "scale" : 0,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "FORMULA6" : {
-        "action" : "formula",
-        "sources" : [
-          "LOAD_DATASET0"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "Name_formula",
-              "label" : "ClassTriggerPage",
-              "formulaExpression" : "case\r\n    when \"NamespacePrefix\" is null \r\n    then Name\r\n    else\r\n    concat(\"NamespacePrefix\",'__',\"Name\")\r\nend\r\n",
-              "precision" : 255,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "FORMULA18" : {
-        "action" : "formula",
-        "sources" : [
-          "FORMULA6"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "NUMBER",
-              "name" : "IsCustom",
-              "label" : "IsCustom",
-              "formulaExpression" : "1",
-              "precision" : 1,
-              "scale" : 0,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "EXTRACT3" : {
-        "action" : "extractGrains",
-        "sources" : [
-          "FORMULA0"
-        ],
-        "parameters" : {
-          "grainExtractions" : [ ]
-        }
-      },
-      "AGGREGATE7" : {
-        "action" : "aggregate",
-        "sources" : [
-          "EXTRACT3"
-        ],
-        "parameters" : {
-          "aggregations" : [
-            {
-              "action" : "COUNT",
-              "name" : "COUNT_Rows",
-              "label" : "Rows"
-            },
-            {
-              "action" : "AVG",
-              "source" : "RUN_TIME",
-              "name" : "AVG_RUN_TIME",
-              "label" : "Average RUN_TIME"
-            }
-          ],
-          "groupings" : [
-            "ENTRY_POINT_formula"
-          ],
-          "pivots" : [ ],
-          "nodeType" : "STANDARD"
-        }
-      },
-      "JOIN8" : {
-        "action" : "join",
-        "sources" : [
-          "FORMULA7",
-          "AGGREGATE3"
-        ],
-        "schema" : {
-          "fields" : [ ],
-          "slice" : {
-            "mode" : "DROP",
-            "ignoreMissingFields" : true,
-            "fields" : [
-              "Aggregate.PAGE_ENTITY_TYPE"
-            ]
-          }
-        },
-        "parameters" : {
-          "joinType" : "MULTI_VALUE_LOOKUP",
-          "leftKeys" : [
-            "SobjectType"
-          ],
-          "rightQualifier" : "Aggregate",
-          "rightKeys" : [
-            "PAGE_ENTITY_TYPE"
-          ]
-        }
-      },
-      "EXTRACT4" : {
-        "action" : "extractGrains",
-        "sources" : [
-          "LOAD_DATASET7"
-        ],
-        "parameters" : {
-          "grainExtractions" : [ ]
-        }
-      },
-      "AGGREGATE9" : {
-        "action" : "aggregate",
-        "sources" : [
-          "EXTRACT4"
-        ],
-        "parameters" : {
-          "aggregations" : [
-            {
-              "action" : "COUNT",
-              "name" : "COUNT_Rows",
-              "label" : "Rows"
-            }
-          ],
-          "groupings" : [
-            "SobjectType"
-          ],
-          "pivots" : [ ],
-          "nodeType" : "STANDARD"
-        }
-      },
-      "DROP_FIELDS0" : {
-        "action" : "schema",
-        "sources" : [
-          "AGGREGATE9"
-        ],
-        "parameters" : {
-          "fields" : [ ],
-          "slice" : {
-            "mode" : "DROP",
-            "ignoreMissingFields" : true,
-            "fields" : [
-              "COUNT_Rows"
-            ]
-          }
-        }
-      },
-      "FORMULA7" : {
-        "action" : "formula",
-        "sources" : [
-          "DROP_FIELDS0"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "NUMBER",
-              "name" : "IsCustom",
-              "label" : "IsCustom",
-              "formulaExpression" : "case when instr(\"SobjectType\", '__c') > 0 then 1 else 0 end",
-              "precision" : 1,
-              "scale" : 0,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "APPEND0" : {
-        "action" : "appendV2",
-        "sources" : [
-          "FORMULA13",
-          "FORMULA12"
-        ],
-        "parameters" : {
-          "fieldMappings" : [
-            {
-              "top" : "NamespacePrefix",
-              "bottom" : "NamespacePrefix"
-            },
-            {
-              "top" : "Name",
-              "bottom" : "Name"
-            },
-            {
-              "top" : "Name_formula",
-              "bottom" : "Name_formula"
-            },
-            {
-              "top" : "IsCustom",
-              "bottom" : "IsCustom"
-            },
-            {
-              "top" : "Aggregate.COUNT_Rows",
-              "bottom" : "Aggregate.COUNT_Rows"
-            },
-            {
-              "top" : "Aggregate.AVG_RUN_TIME",
-              "bottom" : "Aggregate.AVG_RUN_TIME"
-            },
-            {
-              "top" : "Name_formula1",
-              "bottom" : "NamespacePrefix_formula"
-            }
-          ]
-        }
-      },
-      "FORMULA12" : {
-        "action" : "formula",
-        "sources" : [
-          "JOIN0"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "NamespacePrefix_formula",
-              "label" : "Type",
-              "formulaExpression" : "'Apex'",
-              "precision" : 15,
-              "defaultValue" : ""
-            }
-          ]
-        }
-      },
-      "FORMULA13" : {
-        "action" : "formula",
-        "sources" : [
-          "JOIN6"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "Name_formula1",
-              "label" : "Type",
-              "formulaExpression" : "'Visualforce'",
-              "precision" : 15,
-              "defaultValue" : "Visualforce"
-            }
-          ]
-        }
-      },
-      "FORMULA14" : {
-        "action" : "formula",
-        "sources" : [
-          "JOIN4"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "Label_formula",
-              "label" : "Type",
-              "formulaExpression" : "'App'",
-              "precision" : 15,
-              "defaultValue" : "App"
-            }
-          ]
-        }
-      },
-      "FORMULA15" : {
-        "action" : "formula",
-        "sources" : [
-          "JOIN8"
-        ],
-        "parameters" : {
-          "expressionType" : "SQL",
-          "fields" : [
-            {
-              "type" : "TEXT",
-              "name" : "SobjectType_formula1",
-              "label" : "Type",
-              "formulaExpression" : "'Object'",
-              "precision" : 15,
-              "defaultValue" : "Object"
-            }
-          ]
-        }
-      },
-      "APPEND1" : {
-        "action" : "appendV2",
-        "sources" : [
-          "FORMULA14",
-          "APPEND0"
-        ],
-        "parameters" : {
-          "fieldMappings" : [
-            {
-              "top" : "Label",
-              "bottom" : "Name_formula"
-            },
-            {
-              "top" : "Name",
-              "bottom" : "NamespacePrefix"
-            },
-            {
-              "top" : "Aggregate.COUNT_Rows",
-              "bottom" : "Aggregate.COUNT_Rows"
-            },
-            {
-              "top" : "Aggregate.AVG_EFFECTIVE_PAGE_TIME",
-              "bottom" : "Aggregate.AVG_RUN_TIME"
-            },
-            {
-              "top" : "Label_formula",
-              "bottom" : "Name_formula1"
-            },
-            {
-              "bottom" : "IsCustom"
-            }
-          ]
-        }
-      },
-      "APPEND2" : {
-        "action" : "appendV2",
-        "sources" : [
-          "FORMULA15",
-          "APPEND1"
-        ],
-        "parameters" : {
-          "fieldMappings" : [
-            {
-              "top" : "SobjectType",
-              "bottom" : "Label"
-            },
-            {
-              "top" : "IsCustom",
-              "bottom" : "IsCustom"
-            },
-            {
-              "top" : "Aggregate.COUNT_Rows",
-              "bottom" : "Aggregate.COUNT_Rows"
-            },
-            {
-              "top" : "Aggregate.AVG_EFFECTIVE_PAGE_TIME",
-              "bottom" : "Aggregate.AVG_EFFECTIVE_PAGE_TIME"
-            },
-            {
-              "top" : "SobjectType_formula1",
-              "bottom" : "Label_formula"
-            }
-          ]
-        }
-      },
-      "OUTPUT0" : {
-        "action" : "save",
-        "sources" : [
-          "EDIT_ATTRIBUTES3"
-        ],
-        "parameters" : {
-          "fields" : [ ],
-          "dataset" : {
-            "type" : "analyticsDataset",
-            "label" : "TechDebtCounter",
-            "name" : "${App.Datasets.TechDebtCounter_tp.FullyQualifiedName}",
-            "folderName" : "${App.Folder.FullyQualifiedName}"
-          }
-        }
-      },
-      "EDIT_ATTRIBUTES0" : {
-        "action" : "schema",
-        "sources" : [
-          "APPEND2"
-        ],
-        "parameters" : {
-          "fields" : [
-            {
-              "name" : "SobjectType",
-              "newProperties" : {
-                "label" : "Entity Name",
-                "name" : "EntityName"
-              }
-            }
-          ]
-        }
-      },
-      "EDIT_ATTRIBUTES1" : {
-        "action" : "schema",
-        "sources" : [
-          "EDIT_ATTRIBUTES0"
-        ],
-        "parameters" : {
-          "fields" : [
-            {
-              "name" : "Aggregate.COUNT_Rows",
-              "newProperties" : {
-                "label" : "Count",
-                "name" : "Rows"
-              }
-            }
-          ]
-        }
-      },
-      "EDIT_ATTRIBUTES2" : {
-        "action" : "schema",
-        "sources" : [
-          "EDIT_ATTRIBUTES1"
-        ],
-        "parameters" : {
-          "fields" : [
-            {
-              "name" : "Aggregate.AVG_EFFECTIVE_PAGE_TIME",
-              "newProperties" : {
-                "label" : "Average Run Time",
-                "name" : "AvgRunTIme",
-                "typeProperties" : {
-                  "type" : "NUMBER",
-                  "scale" : 0,
-                  "precision" : 9
+    "name": "TechDebtCounter",
+    "label": "TechDebtCounter",
+    "scheduleExpression": null,
+    "publishingTarget": "DATASET",
+    "format": "R3",
+    "scheduleType": null,
+    "recipeDefinition": {
+        "version": "54.0",
+        "nodes": {
+            "LOAD_DATASET0": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["NamespacePrefix", "Name"],
+                    "dataset": {
+                        "type": "connectedDataset",
+                        "label": "ApexClass",
+                        "connectionName": "SFDC_LOCAL",
+                        "sourceObjectName": "ApexClass"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
                 }
-              }
+            },
+            "LOAD_DATASET1": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["ENTRY_POINT", "TIMESTAMP_DERIVED", "USER_ID_DERIVED", "RUN_TIME"],
+                    "dataset": {
+                        "type": "analyticsDataset",
+                        "label": "ApexExecution",
+                        "name": "${Apps.sfdc_internal__AdminAnalytics.Datasets.ApexExecution.Alias}"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
+                }
+            },
+            "FORMULA0": {
+                "action": "formula",
+                "sources": ["LOAD_DATASET1"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "ENTRY_POINT_formula",
+                            "label": "ClassTriggerPage",
+                            "formulaExpression": "case when contains(\"ENTRY_POINT\",'batch') then \"ENTRY_POINT\" when contains(\"ENTRY_POINT\",' on ') then substr(\"ENTRY_POINT\",1,instr(\"ENTRY_POINT\",' ')) when contains(\"ENTRY_POINT\", 'VF- /apex/') then substr(\"ENTRY_POINT\",11,char_length(\"ENTRY_POINT\")-16) when contains(\"ENTRY_POINT\", 'VFRemote-') then substr(\"ENTRY_POINT\",11,instr(substr(\"ENTRY_POINT\",11),' ')) when instr(\"ENTRY_POINT\",'.')>0 then substr(\"ENTRY_POINT\",1,instr(\"ENTRY_POINT\",'.')-1) else \"ENTRY_POINT\" end",
+                            "precision": 255,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "JOIN0": {
+                "action": "join",
+                "sources": ["FORMULA18", "AGGREGATE7"],
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "mode": "DROP",
+                        "ignoreMissingFields": true,
+                        "fields": ["Aggregate.ENTRY_POINT_formula"]
+                    }
+                },
+                "parameters": {
+                    "joinType": "MULTI_VALUE_LOOKUP",
+                    "leftKeys": ["Name_formula"],
+                    "rightQualifier": "Aggregate",
+                    "rightKeys": ["ENTRY_POINT_formula"]
+                }
+            },
+            "LOAD_DATASET3": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["NamespacePrefix", "Name"],
+                    "dataset": {
+                        "type": "connectedDataset",
+                        "label": "ApexPage",
+                        "connectionName": "SFDC_LOCAL",
+                        "sourceObjectName": "ApexPage"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
+                }
+            },
+            "LOAD_DATASET4": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["USER_ID_DERIVED", "TIMESTAMP_DERIVED", "PAGE_NAME", "RUN_TIME"],
+                    "dataset": {
+                        "type": "analyticsDataset",
+                        "label": "VisualforceRequest",
+                        "name": "${Apps.sfdc_internal__AdminAnalytics.Datasets.VisualforceRequest.Alias}"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
+                }
+            },
+            "FORMULA4": {
+                "action": "formula",
+                "sources": ["LOAD_DATASET4"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "PAGE_NAME_formula",
+                            "label": "PageName",
+                            "formulaExpression": "substr(\"PAGE_NAME\",7)",
+                            "precision": 100,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "LOAD_DATASET5": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["Name", "NamespacePrefix", "Type"],
+                    "dataset": {
+                        "type": "connectedDataset",
+                        "label": "AppMenuItem",
+                        "connectionName": "SFDC_LOCAL",
+                        "sourceObjectName": "AppMenuItem"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
+                }
+            },
+            "LOAD_DATASET6": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["PAGE_APP_NAME", "PAGE_ENTITY_TYPE", "USER_ID_DERIVED", "TIMESTAMP_DERIVED", "EFFECTIVE_PAGE_TIME"],
+                    "dataset": {
+                        "type": "analyticsDataset",
+                        "label": "LightningPageView",
+                        "name": "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningPageView.Alias}"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
+                }
+            },
+            "EXTRACT0": {
+                "action": "extractGrains",
+                "sources": ["LOAD_DATASET6"],
+                "parameters": {
+                    "grainExtractions": []
+                }
+            },
+            "AGGREGATE1": {
+                "action": "aggregate",
+                "sources": ["EXTRACT0"],
+                "parameters": {
+                    "aggregations": [{
+                            "action": "COUNT",
+                            "name": "COUNT_Rows",
+                            "label": "Rows"
+                        }, {
+                            "action": "AVG",
+                            "source": "EFFECTIVE_PAGE_TIME",
+                            "name": "AVG_EFFECTIVE_PAGE_TIME",
+                            "label": "Average EFFECTIVE_PAGE_TIME"
+                        }
+                    ],
+                    "groupings": ["PAGE_APP_NAME"],
+                    "pivots": [],
+                    "nodeType": "STANDARD"
+                }
+            },
+            "JOIN4": {
+                "action": "join",
+                "sources": ["LOAD_DATASET5", "AGGREGATE1"],
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "mode": "DROP",
+                        "ignoreMissingFields": true,
+                        "fields": ["Aggregate.PAGE_APP_NAME"]
+                    }
+                },
+                "parameters": {
+                    "joinType": "MULTI_VALUE_LOOKUP",
+                    "leftKeys": ["Name"],
+                    "rightQualifier": "Aggregate",
+                    "rightKeys": ["PAGE_APP_NAME"]
+                }
+            },
+            "LOAD_DATASET7": {
+                "action": "load",
+                "sources": [],
+                "parameters": {
+                    "fields": ["SobjectType", "CreatedDate"],
+                    "dataset": {
+                        "type": "connectedDataset",
+                        "label": "ObjectPermissions",
+                        "connectionName": "SFDC_LOCAL",
+                        "sourceObjectName": "ObjectPermissions"
+                    },
+                    "sampleDetails": {
+                        "type": "TopN",
+                        "sortBy": []
+                    }
+                }
+            },
+            "EXTRACT1": {
+                "action": "extractGrains",
+                "sources": ["LOAD_DATASET6"],
+                "parameters": {
+                    "grainExtractions": []
+                }
+            },
+            "AGGREGATE3": {
+                "action": "aggregate",
+                "sources": ["EXTRACT1"],
+                "parameters": {
+                    "aggregations": [{
+                            "action": "COUNT",
+                            "name": "COUNT_Rows",
+                            "label": "Rows"
+                        }, {
+                            "action": "AVG",
+                            "source": "EFFECTIVE_PAGE_TIME",
+                            "name": "AVG_EFFECTIVE_PAGE_TIME",
+                            "label": "Average EFFECTIVE_PAGE_TIME"
+                        }
+                    ],
+                    "groupings": ["PAGE_ENTITY_TYPE"],
+                    "pivots": [],
+                    "nodeType": "STANDARD"
+                }
+            },
+            "EXTRACT2": {
+                "action": "extractGrains",
+                "sources": ["FORMULA4"],
+                "parameters": {
+                    "grainExtractions": []
+                }
+            },
+            "AGGREGATE5": {
+                "action": "aggregate",
+                "sources": ["EXTRACT2"],
+                "parameters": {
+                    "aggregations": [{
+                            "action": "COUNT",
+                            "name": "COUNT_Rows",
+                            "label": "Rows"
+                        }, {
+                            "action": "AVG",
+                            "source": "RUN_TIME",
+                            "name": "AVG_RUN_TIME",
+                            "label": "Average RUN_TIME"
+                        }
+                    ],
+                    "groupings": ["PAGE_NAME_formula"],
+                    "pivots": [],
+                    "nodeType": "STANDARD"
+                }
+            },
+            "JOIN6": {
+                "action": "join",
+                "sources": ["FORMULA17", "AGGREGATE5"],
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "mode": "DROP",
+                        "ignoreMissingFields": true,
+                        "fields": ["Aggregate.PAGE_NAME_formula"]
+                    }
+                },
+                "parameters": {
+                    "joinType": "MULTI_VALUE_LOOKUP",
+                    "leftKeys": ["Name_formula"],
+                    "rightQualifier": "Aggregate",
+                    "rightKeys": ["PAGE_NAME_formula"]
+                }
+            },
+            "FORMULA5": {
+                "action": "formula",
+                "sources": ["LOAD_DATASET3"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "Name_formula",
+                            "label": "PageName",
+                            "formulaExpression": "case\r\n    when \"NamespacePrefix\" is null \r\n    then Name\r\n    else\r\n    concat(\"NamespacePrefix\",'__',\"Name\")\r\nend\r\n",
+                            "precision": 255,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "FORMULA17": {
+                "action": "formula",
+                "sources": ["FORMULA5"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "NUMBER",
+                            "name": "IsCustom",
+                            "label": "IsCustom",
+                            "formulaExpression": "1",
+                            "precision": 1,
+                            "scale": 0,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "FORMULA6": {
+                "action": "formula",
+                "sources": ["LOAD_DATASET0"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "Name_formula",
+                            "label": "ClassTriggerPage",
+                            "formulaExpression": "case\r\n    when \"NamespacePrefix\" is null \r\n    then Name\r\n    else\r\n    concat(\"NamespacePrefix\",'__',\"Name\")\r\nend\r\n",
+                            "precision": 255,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "FORMULA18": {
+                "action": "formula",
+                "sources": ["FORMULA6"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "NUMBER",
+                            "name": "IsCustom",
+                            "label": "IsCustom",
+                            "formulaExpression": "1",
+                            "precision": 1,
+                            "scale": 0,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "EXTRACT3": {
+                "action": "extractGrains",
+                "sources": ["FORMULA0"],
+                "parameters": {
+                    "grainExtractions": []
+                }
+            },
+            "AGGREGATE7": {
+                "action": "aggregate",
+                "sources": ["EXTRACT3"],
+                "parameters": {
+                    "aggregations": [{
+                            "action": "COUNT",
+                            "name": "COUNT_Rows",
+                            "label": "Rows"
+                        }, {
+                            "action": "AVG",
+                            "source": "RUN_TIME",
+                            "name": "AVG_RUN_TIME",
+                            "label": "Average RUN_TIME"
+                        }
+                    ],
+                    "groupings": ["ENTRY_POINT_formula"],
+                    "pivots": [],
+                    "nodeType": "STANDARD"
+                }
+            },
+            "JOIN8": {
+                "action": "join",
+                "sources": ["FORMULA7", "AGGREGATE3"],
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "mode": "DROP",
+                        "ignoreMissingFields": true,
+                        "fields": ["Aggregate.PAGE_ENTITY_TYPE"]
+                    }
+                },
+                "parameters": {
+                    "joinType": "MULTI_VALUE_LOOKUP",
+                    "leftKeys": ["SobjectType"],
+                    "rightQualifier": "Aggregate",
+                    "rightKeys": ["PAGE_ENTITY_TYPE"]
+                }
+            },
+            "EXTRACT4": {
+                "action": "extractGrains",
+                "sources": ["LOAD_DATASET7"],
+                "parameters": {
+                    "grainExtractions": []
+                }
+            },
+            "AGGREGATE9": {
+                "action": "aggregate",
+                "sources": ["EXTRACT4"],
+                "parameters": {
+                    "aggregations": [{
+                            "action": "COUNT",
+                            "name": "COUNT_Rows",
+                            "label": "Rows"
+                        }
+                    ],
+                    "groupings": ["SobjectType"],
+                    "pivots": [],
+                    "nodeType": "STANDARD"
+                }
+            },
+            "DROP_FIELDS0": {
+                "action": "schema",
+                "sources": ["AGGREGATE9"],
+                "parameters": {
+                    "fields": [],
+                    "slice": {
+                        "mode": "DROP",
+                        "ignoreMissingFields": true,
+                        "fields": ["COUNT_Rows"]
+                    }
+                }
+            },
+            "FORMULA7": {
+                "action": "formula",
+                "sources": ["DROP_FIELDS0"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "NUMBER",
+                            "name": "IsCustom",
+                            "label": "IsCustom",
+                            "formulaExpression": "case when instr(\"SobjectType\", '__c') > 0 then 1 else 0 end",
+                            "precision": 1,
+                            "scale": 0,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "APPEND0": {
+                "action": "appendV2",
+                "sources": ["FORMULA13", "FORMULA12"],
+                "parameters": {
+                    "fieldMappings": [{
+                            "top": "NamespacePrefix",
+                            "bottom": "NamespacePrefix"
+                        }, {
+                            "top": "Name",
+                            "bottom": "Name"
+                        }, {
+                            "top": "Name_formula",
+                            "bottom": "Name_formula"
+                        }, {
+                            "top": "IsCustom",
+                            "bottom": "IsCustom"
+                        }, {
+                            "top": "Aggregate.COUNT_Rows",
+                            "bottom": "Aggregate.COUNT_Rows"
+                        }, {
+                            "top": "Aggregate.AVG_RUN_TIME",
+                            "bottom": "Aggregate.AVG_RUN_TIME"
+                        }, {
+                            "top": "Name_formula1",
+                            "bottom": "NamespacePrefix_formula"
+                        }
+                    ]
+                }
+            },
+            "FORMULA12": {
+                "action": "formula",
+                "sources": ["JOIN0"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "NamespacePrefix_formula",
+                            "label": "Type",
+                            "formulaExpression": "'Apex'",
+                            "precision": 15,
+                            "defaultValue": ""
+                        }
+                    ]
+                }
+            },
+            "FORMULA13": {
+                "action": "formula",
+                "sources": ["JOIN6"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "Name_formula1",
+                            "label": "Type",
+                            "formulaExpression": "'Visualforce'",
+                            "precision": 15,
+                            "defaultValue": "Visualforce"
+                        }
+                    ]
+                }
+            },
+            "FORMULA14": {
+                "action": "formula",
+                "sources": ["JOIN4"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "Label_formula",
+                            "label": "Type",
+                            "formulaExpression": "'App'",
+                            "precision": 15,
+                            "defaultValue": "App"
+                        }
+                    ]
+                }
+            },
+            "FORMULA15": {
+                "action": "formula",
+                "sources": ["JOIN8"],
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [{
+                            "type": "TEXT",
+                            "name": "SobjectType_formula1",
+                            "label": "Type",
+                            "formulaExpression": "'Object'",
+                            "precision": 15,
+                            "defaultValue": "Object"
+                        }
+                    ]
+                }
+            },
+            "APPEND1": {
+                "action": "appendV2",
+                "sources": ["FORMULA14", "APPEND0"],
+                "parameters": {
+                    "fieldMappings": [{
+                            "top": "Name",
+                            "bottom": "Name"
+                        }, {
+                            "top": "NamespacePrefix",
+                            "bottom": "NamespacePrefix"
+                        }, {
+                            "top": "Aggregate.COUNT_Rows",
+                            "bottom": "Aggregate.COUNT_Rows"
+                        }, {
+                            "top": "Aggregate.AVG_EFFECTIVE_PAGE_TIME",
+                            "bottom": "Aggregate.AVG_RUN_TIME"
+                        }, {
+                            "top": "Label_formula",
+                            "bottom": "Name_formula1"
+                        }, {
+                            "top": "Label",
+                            "bottom": "Name_formula"
+                        }, {
+                            "bottom": "IsCustom"
+                        }
+                    ]
+                }
+            },
+            "APPEND2": {
+                "action": "appendV2",
+                "sources": ["FORMULA15", "APPEND1"],
+                "parameters": {
+                    "fieldMappings": [{
+                            "top": "SobjectType",
+                            "bottom": "Name"
+                        }, {
+                            "top": "IsCustom",
+                            "bottom": "IsCustom"
+                        }, {
+                            "top": "Aggregate.COUNT_Rows",
+                            "bottom": "Aggregate.COUNT_Rows"
+                        }, {
+                            "top": "Aggregate.AVG_EFFECTIVE_PAGE_TIME",
+                            "bottom": "Aggregate.AVG_EFFECTIVE_PAGE_TIME"
+                        }, {
+                            "top": "SobjectType_formula1",
+                            "bottom": "Label_formula"
+                        }
+                    ]
+                }
+            },
+            "OUTPUT0": {
+                "action": "save",
+                "sources": ["EDIT_ATTRIBUTES3"],
+                "parameters": {
+                    "fields": [],
+                    "dataset": {
+                        "type": "analyticsDataset",
+                        "label": "TechDebtCounter",
+                        "name": "${App.Datasets.TechDebtCounter_tp.FullyQualifiedName}",
+                        "folderName": "${App.Folder.FullyQualifiedName}"
+                    }
+                }
+            },
+            "EDIT_ATTRIBUTES0": {
+                "action": "schema",
+                "sources": ["APPEND2"],
+                "parameters": {
+                    "fields": [{
+                            "name": "SobjectType",
+                            "newProperties": {
+                                "label": "Entity Name",
+                                "name": "EntityName"
+                            }
+                        }
+                    ]
+                }
+            },
+            "EDIT_ATTRIBUTES1": {
+                "action": "schema",
+                "sources": ["EDIT_ATTRIBUTES0"],
+                "parameters": {
+                    "fields": [{
+                            "name": "Aggregate.COUNT_Rows",
+                            "newProperties": {
+                                "label": "Count",
+                                "name": "Rows"
+                            }
+                        }
+                    ]
+                }
+            },
+            "EDIT_ATTRIBUTES2": {
+                "action": "schema",
+                "sources": ["EDIT_ATTRIBUTES1"],
+                "parameters": {
+                    "fields": [{
+                            "name": "Aggregate.AVG_EFFECTIVE_PAGE_TIME",
+                            "newProperties": {
+                                "label": "Average Run Time",
+                                "name": "AvgRunTIme",
+                                "typeProperties": {
+                                    "type": "NUMBER",
+                                    "scale": 0,
+                                    "precision": 9
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "EDIT_ATTRIBUTES3": {
+                "action": "schema",
+                "sources": ["EDIT_ATTRIBUTES2"],
+                "parameters": {
+                    "fields": [{
+                            "name": "SobjectType_formula1",
+                            "newProperties": {
+                                "label": "Metadata Type",
+                                "name": "MetadataType"
+                            }
+                        }
+                    ]
+                }
             }
-          ]
+        },
+        "ui": {
+            "nodes": {
+                "LOAD_DATASET0": {
+                    "label": "ApexClass",
+                    "type": "LOAD_DATASET",
+                    "top": 532,
+                    "left": 112.5,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "LOAD_DATASET1": {
+                    "label": "ApexExecution",
+                    "type": "LOAD_DATASET",
+                    "top": 670.2,
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "TRANSFORM0": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 670.2,
+                    "left": 252,
+                    "graph": {
+                        "FORMULA0": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": []
+                },
+                "JOIN0": {
+                    "label": "Join",
+                    "type": "JOIN",
+                    "top": 532,
+                    "left": 392
+                },
+                "LOAD_DATASET3": {
+                    "label": "ApexPage",
+                    "type": "LOAD_DATASET",
+                    "top": 812,
+                    "left": 112.1,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "LOAD_DATASET4": {
+                    "label": "VisualforceRequest",
+                    "type": "LOAD_DATASET",
+                    "top": 950.2,
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "TRANSFORM1": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 950.2,
+                    "left": 252,
+                    "graph": {
+                        "FORMULA4": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": []
+                },
+                "LOAD_DATASET5": {
+                    "label": "AppMenuItems",
+                    "type": "LOAD_DATASET",
+                    "top": 1092.1,
+                    "left": 112.19999999999999,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "LOAD_DATASET6": {
+                    "label": "LightningPageView",
+                    "type": "LOAD_DATASET",
+                    "top": 1371,
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "AGGREGATE0": {
+                    "label": "Aggregate",
+                    "type": "AGGREGATE",
+                    "top": 1232.2,
+                    "left": 112.19999999999999,
+                    "graph": {
+                        "EXTRACT0": null,
+                        "AGGREGATE1": null
+                    },
+                    "connectors": [{
+                            "source": "EXTRACT0",
+                            "target": "AGGREGATE1"
+                        }
+                    ]
+                },
+                "JOIN4": {
+                    "label": "Join",
+                    "type": "JOIN",
+                    "top": 1232.3,
+                    "left": 252
+                },
+                "LOAD_DATASET7": {
+                    "label": "ObjectPermissions",
+                    "type": "LOAD_DATASET",
+                    "top": 1512,
+                    "left": 112.1,
+                    "parameters": {
+                        "sampleSize": 2000
+                    }
+                },
+                "AGGREGATE2": {
+                    "label": "Aggregate",
+                    "type": "AGGREGATE",
+                    "top": 1372,
+                    "left": 252.10000000000002,
+                    "graph": {
+                        "EXTRACT1": null,
+                        "AGGREGATE3": null
+                    },
+                    "connectors": [{
+                            "source": "EXTRACT1",
+                            "target": "AGGREGATE3"
+                        }
+                    ]
+                },
+                "AGGREGATE4": {
+                    "label": "Aggregate",
+                    "type": "AGGREGATE",
+                    "top": 952.3,
+                    "left": 392,
+                    "graph": {
+                        "EXTRACT2": null,
+                        "AGGREGATE5": null
+                    },
+                    "connectors": [{
+                            "source": "EXTRACT2",
+                            "target": "AGGREGATE5"
+                        }
+                    ]
+                },
+                "JOIN6": {
+                    "label": "Join",
+                    "type": "JOIN",
+                    "top": 812,
+                    "left": 392
+                },
+                "TRANSFORM2": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 812,
+                    "left": 252.10000000000002,
+                    "graph": {
+                        "FORMULA5": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        },
+                        "FORMULA17": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": [{
+                            "source": "FORMULA5",
+                            "target": "FORMULA17"
+                        }
+                    ]
+                },
+                "TRANSFORM3": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 532,
+                    "left": 252,
+                    "graph": {
+                        "FORMULA6": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        },
+                        "FORMULA18": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": [{
+                            "source": "FORMULA6",
+                            "target": "FORMULA18"
+                        }
+                    ]
+                },
+                "AGGREGATE6": {
+                    "label": "Aggregate",
+                    "type": "AGGREGATE",
+                    "top": 672,
+                    "left": 392,
+                    "graph": {
+                        "EXTRACT3": null,
+                        "AGGREGATE7": null
+                    },
+                    "connectors": [{
+                            "source": "EXTRACT3",
+                            "target": "AGGREGATE7"
+                        }
+                    ]
+                },
+                "JOIN8": {
+                    "label": "Join",
+                    "type": "JOIN",
+                    "top": 1372,
+                    "left": 392
+                },
+                "AGGREGATE8": {
+                    "label": "Aggregate",
+                    "type": "AGGREGATE",
+                    "top": 1512,
+                    "left": 252,
+                    "graph": {
+                        "EXTRACT4": null,
+                        "AGGREGATE9": null
+                    },
+                    "connectors": [{
+                            "source": "EXTRACT4",
+                            "target": "AGGREGATE9"
+                        }
+                    ]
+                },
+                "TRANSFORM4": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 1511.9,
+                    "left": 392,
+                    "graph": {
+                        "DROP_FIELDS0": null,
+                        "FORMULA7": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": [{
+                            "source": "DROP_FIELDS0",
+                            "target": "FORMULA7"
+                        }
+                    ]
+                },
+                "APPEND0": {
+                    "label": "Append",
+                    "type": "APPEND",
+                    "top": 812,
+                    "left": 672
+                },
+                "TRANSFORM5": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 532,
+                    "left": 532,
+                    "graph": {
+                        "FORMULA12": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": []
+                },
+                "TRANSFORM6": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 812,
+                    "left": 532,
+                    "graph": {
+                        "FORMULA13": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": []
+                },
+                "TRANSFORM7": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 1232,
+                    "left": 392,
+                    "graph": {
+                        "FORMULA14": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": []
+                },
+                "TRANSFORM8": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 1372,
+                    "left": 532,
+                    "graph": {
+                        "FORMULA15": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "connectors": []
+                },
+                "APPEND1": {
+                    "label": "Append",
+                    "type": "APPEND",
+                    "top": 811.9,
+                    "left": 812
+                },
+                "APPEND2": {
+                    "label": "Append",
+                    "type": "APPEND",
+                    "top": 812,
+                    "left": 952
+                },
+                "OUTPUT0": {
+                    "label": "Output",
+                    "type": "OUTPUT",
+                    "top": 812,
+                    "left": 1232
+                },
+                "TRANSFORM9": {
+                    "label": "Transform",
+                    "type": "TRANSFORM",
+                    "top": 812,
+                    "left": 1092,
+                    "graph": {
+                        "EDIT_ATTRIBUTES0": null,
+                        "EDIT_ATTRIBUTES1": null,
+                        "EDIT_ATTRIBUTES2": null,
+                        "EDIT_ATTRIBUTES3": null
+                    },
+                    "connectors": [{
+                            "source": "EDIT_ATTRIBUTES0",
+                            "target": "EDIT_ATTRIBUTES1"
+                        }, {
+                            "source": "EDIT_ATTRIBUTES1",
+                            "target": "EDIT_ATTRIBUTES2"
+                        }, {
+                            "source": "EDIT_ATTRIBUTES2",
+                            "target": "EDIT_ATTRIBUTES3"
+                        }
+                    ]
+                }
+            },
+            "connectors": [{
+                    "source": "LOAD_DATASET1",
+                    "target": "TRANSFORM0"
+                }, {
+                    "source": "TRANSFORM3",
+                    "target": "JOIN0"
+                }, {
+                    "source": "AGGREGATE6",
+                    "target": "JOIN0"
+                }, {
+                    "source": "LOAD_DATASET4",
+                    "target": "TRANSFORM1"
+                }, {
+                    "source": "LOAD_DATASET6",
+                    "target": "AGGREGATE0"
+                }, {
+                    "source": "LOAD_DATASET5",
+                    "target": "JOIN4"
+                }, {
+                    "source": "AGGREGATE0",
+                    "target": "JOIN4"
+                }, {
+                    "source": "LOAD_DATASET6",
+                    "target": "AGGREGATE2"
+                }, {
+                    "source": "TRANSFORM1",
+                    "target": "AGGREGATE4"
+                }, {
+                    "source": "TRANSFORM2",
+                    "target": "JOIN6"
+                }, {
+                    "source": "AGGREGATE4",
+                    "target": "JOIN6"
+                }, {
+                    "source": "LOAD_DATASET3",
+                    "target": "TRANSFORM2"
+                }, {
+                    "source": "LOAD_DATASET0",
+                    "target": "TRANSFORM3"
+                }, {
+                    "source": "TRANSFORM0",
+                    "target": "AGGREGATE6"
+                }, {
+                    "source": "TRANSFORM4",
+                    "target": "JOIN8"
+                }, {
+                    "source": "AGGREGATE2",
+                    "target": "JOIN8"
+                }, {
+                    "source": "LOAD_DATASET7",
+                    "target": "AGGREGATE8"
+                }, {
+                    "source": "AGGREGATE8",
+                    "target": "TRANSFORM4"
+                }, {
+                    "source": "TRANSFORM6",
+                    "target": "APPEND0"
+                }, {
+                    "source": "TRANSFORM5",
+                    "target": "APPEND0"
+                }, {
+                    "source": "JOIN0",
+                    "target": "TRANSFORM5"
+                }, {
+                    "source": "JOIN6",
+                    "target": "TRANSFORM6"
+                }, {
+                    "source": "JOIN4",
+                    "target": "TRANSFORM7"
+                }, {
+                    "source": "JOIN8",
+                    "target": "TRANSFORM8"
+                }, {
+                    "source": "TRANSFORM7",
+                    "target": "APPEND1"
+                }, {
+                    "source": "APPEND0",
+                    "target": "APPEND1"
+                }, {
+                    "source": "TRANSFORM8",
+                    "target": "APPEND2"
+                }, {
+                    "source": "APPEND1",
+                    "target": "APPEND2"
+                }, {
+                    "source": "TRANSFORM9",
+                    "target": "OUTPUT0"
+                }, {
+                    "source": "APPEND2",
+                    "target": "TRANSFORM9"
+                }
+            ],
+            "hiddenColumns": []
         }
-      },
-      "EDIT_ATTRIBUTES3" : {
-        "action" : "schema",
-        "sources" : [
-          "EDIT_ATTRIBUTES2"
-        ],
-        "parameters" : {
-          "fields" : [
-            {
-              "name" : "SobjectType_formula1",
-              "newProperties" : {
-                "label" : "Metadata Type",
-                "name" : "MetadataType"
-              }
-            }
-          ]
-        }
-      }
     },
-    "ui" : {
-      "nodes" : {
-        "LOAD_DATASET0" : {
-          "label" : "ApexClass",
-          "type" : "LOAD_DATASET",
-          "top" : 532,
-          "left" : 112.5,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "LOAD_DATASET1" : {
-          "label" : "ApexExecution",
-          "type" : "LOAD_DATASET",
-          "top" : 670.2,
-          "left" : 112,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "TRANSFORM0" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 670.2,
-          "left" : 252,
-          "graph" : {
-            "FORMULA0" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [ ]
-        },
-        "JOIN0" : {
-          "label" : "Join",
-          "type" : "JOIN",
-          "top" : 532,
-          "left" : 392
-        },
-        "LOAD_DATASET3" : {
-          "label" : "ApexPage",
-          "type" : "LOAD_DATASET",
-          "top" : 812,
-          "left" : 112.1,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "LOAD_DATASET4" : {
-          "label" : "VisualforceRequest",
-          "type" : "LOAD_DATASET",
-          "top" : 950.2,
-          "left" : 112,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "TRANSFORM1" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 950.2,
-          "left" : 252,
-          "graph" : {
-            "FORMULA4" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [ ]
-        },
-        "LOAD_DATASET5" : {
-          "label" : "AppMenuItems",
-          "type" : "LOAD_DATASET",
-          "top" : 1092.1,
-          "left" : 112.19999999999999,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "LOAD_DATASET6" : {
-          "label" : "LightningPageView",
-          "type" : "LOAD_DATASET",
-          "top" : 1371,
-          "left" : 112,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "AGGREGATE0" : {
-          "label" : "Aggregate",
-          "type" : "AGGREGATE",
-          "top" : 1232.2,
-          "left" : 112.19999999999999,
-          "graph" : {
-            "EXTRACT0" : null,
-            "AGGREGATE1" : null
-          },
-          "connectors" : [
-            {
-              "source" : "EXTRACT0",
-              "target" : "AGGREGATE1"
-            }
-          ]
-        },
-        "JOIN4" : {
-          "label" : "Join",
-          "type" : "JOIN",
-          "top" : 1232.3,
-          "left" : 252
-        },
-        "LOAD_DATASET7" : {
-          "label" : "ObjectPermissions",
-          "type" : "LOAD_DATASET",
-          "top" : 1512,
-          "left" : 112.1,
-          "parameters" : {
-            "sampleSize" : 2000
-          }
-        },
-        "AGGREGATE2" : {
-          "label" : "Aggregate",
-          "type" : "AGGREGATE",
-          "top" : 1372,
-          "left" : 252.10000000000002,
-          "graph" : {
-            "EXTRACT1" : null,
-            "AGGREGATE3" : null
-          },
-          "connectors" : [
-            {
-              "source" : "EXTRACT1",
-              "target" : "AGGREGATE3"
-            }
-          ]
-        },
-        "AGGREGATE4" : {
-          "label" : "Aggregate",
-          "type" : "AGGREGATE",
-          "top" : 952.3,
-          "left" : 392,
-          "graph" : {
-            "EXTRACT2" : null,
-            "AGGREGATE5" : null
-          },
-          "connectors" : [
-            {
-              "source" : "EXTRACT2",
-              "target" : "AGGREGATE5"
-            }
-          ]
-        },
-        "JOIN6" : {
-          "label" : "Join",
-          "type" : "JOIN",
-          "top" : 812,
-          "left" : 392
-        },
-        "TRANSFORM2" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 812,
-          "left" : 252.10000000000002,
-          "graph" : {
-            "FORMULA5" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            },
-            "FORMULA17" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [
-            {
-              "source" : "FORMULA5",
-              "target" : "FORMULA17"
-            }
-          ]
-        },
-        "TRANSFORM3" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 532,
-          "left" : 252,
-          "graph" : {
-            "FORMULA6" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            },
-            "FORMULA18" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [
-            {
-              "source" : "FORMULA6",
-              "target" : "FORMULA18"
-            }
-          ]
-        },
-        "AGGREGATE6" : {
-          "label" : "Aggregate",
-          "type" : "AGGREGATE",
-          "top" : 672,
-          "left" : 392,
-          "graph" : {
-            "EXTRACT3" : null,
-            "AGGREGATE7" : null
-          },
-          "connectors" : [
-            {
-              "source" : "EXTRACT3",
-              "target" : "AGGREGATE7"
-            }
-          ]
-        },
-        "JOIN8" : {
-          "label" : "Join",
-          "type" : "JOIN",
-          "top" : 1372,
-          "left" : 392
-        },
-        "AGGREGATE8" : {
-          "label" : "Aggregate",
-          "type" : "AGGREGATE",
-          "top" : 1512,
-          "left" : 252,
-          "graph" : {
-            "EXTRACT4" : null,
-            "AGGREGATE9" : null
-          },
-          "connectors" : [
-            {
-              "source" : "EXTRACT4",
-              "target" : "AGGREGATE9"
-            }
-          ]
-        },
-        "TRANSFORM4" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 1511.9,
-          "left" : 392,
-          "graph" : {
-            "DROP_FIELDS0" : null,
-            "FORMULA7" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [
-            {
-              "source" : "DROP_FIELDS0",
-              "target" : "FORMULA7"
-            }
-          ]
-        },
-        "APPEND0" : {
-          "label" : "Append",
-          "type" : "APPEND",
-          "top" : 812,
-          "left" : 672
-        },
-        "TRANSFORM5" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 532,
-          "left" : 532,
-          "graph" : {
-            "FORMULA12" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [ ]
-        },
-        "TRANSFORM6" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 812,
-          "left" : 532,
-          "graph" : {
-            "FORMULA13" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [ ]
-        },
-        "TRANSFORM7" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 1232,
-          "left" : 392,
-          "graph" : {
-            "FORMULA14" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [ ]
-        },
-        "TRANSFORM8" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 1372,
-          "left" : 532,
-          "graph" : {
-            "FORMULA15" : {
-              "parameters" : {
-                "type" : "BASE_FORMULA_UI"
-              }
-            }
-          },
-          "connectors" : [ ]
-        },
-        "APPEND1" : {
-          "label" : "Append",
-          "type" : "APPEND",
-          "top" : 811.9,
-          "left" : 812
-        },
-        "APPEND2" : {
-          "label" : "Append",
-          "type" : "APPEND",
-          "top" : 812,
-          "left" : 952
-        },
-        "OUTPUT0" : {
-          "label" : "Output",
-          "type" : "OUTPUT",
-          "top" : 812,
-          "left" : 1232
-        },
-        "TRANSFORM9" : {
-          "label" : "Transform",
-          "type" : "TRANSFORM",
-          "top" : 812,
-          "left" : 1092,
-          "graph" : {
-            "EDIT_ATTRIBUTES0" : null,
-            "EDIT_ATTRIBUTES1" : null,
-            "EDIT_ATTRIBUTES2" : null,
-            "EDIT_ATTRIBUTES3" : null
-          },
-          "connectors" : [
-            {
-              "source" : "EDIT_ATTRIBUTES0",
-              "target" : "EDIT_ATTRIBUTES1"
-            },
-            {
-              "source" : "EDIT_ATTRIBUTES1",
-              "target" : "EDIT_ATTRIBUTES2"
-            },
-            {
-              "source" : "EDIT_ATTRIBUTES2",
-              "target" : "EDIT_ATTRIBUTES3"
-            }
-          ]
-        }
-      },
-      "connectors" : [
-        {
-          "source" : "LOAD_DATASET1",
-          "target" : "TRANSFORM0"
-        },
-        {
-          "source" : "TRANSFORM3",
-          "target" : "JOIN0"
-        },
-        {
-          "source" : "AGGREGATE6",
-          "target" : "JOIN0"
-        },
-        {
-          "source" : "LOAD_DATASET4",
-          "target" : "TRANSFORM1"
-        },
-        {
-          "source" : "LOAD_DATASET6",
-          "target" : "AGGREGATE0"
-        },
-        {
-          "source" : "LOAD_DATASET5",
-          "target" : "JOIN4"
-        },
-        {
-          "source" : "AGGREGATE0",
-          "target" : "JOIN4"
-        },
-        {
-          "source" : "LOAD_DATASET6",
-          "target" : "AGGREGATE2"
-        },
-        {
-          "source" : "TRANSFORM1",
-          "target" : "AGGREGATE4"
-        },
-        {
-          "source" : "TRANSFORM2",
-          "target" : "JOIN6"
-        },
-        {
-          "source" : "AGGREGATE4",
-          "target" : "JOIN6"
-        },
-        {
-          "source" : "LOAD_DATASET3",
-          "target" : "TRANSFORM2"
-        },
-        {
-          "source" : "LOAD_DATASET0",
-          "target" : "TRANSFORM3"
-        },
-        {
-          "source" : "TRANSFORM0",
-          "target" : "AGGREGATE6"
-        },
-        {
-          "source" : "TRANSFORM4",
-          "target" : "JOIN8"
-        },
-        {
-          "source" : "AGGREGATE2",
-          "target" : "JOIN8"
-        },
-        {
-          "source" : "LOAD_DATASET7",
-          "target" : "AGGREGATE8"
-        },
-        {
-          "source" : "AGGREGATE8",
-          "target" : "TRANSFORM4"
-        },
-        {
-          "source" : "TRANSFORM6",
-          "target" : "APPEND0"
-        },
-        {
-          "source" : "TRANSFORM5",
-          "target" : "APPEND0"
-        },
-        {
-          "source" : "JOIN0",
-          "target" : "TRANSFORM5"
-        },
-        {
-          "source" : "JOIN6",
-          "target" : "TRANSFORM6"
-        },
-        {
-          "source" : "JOIN4",
-          "target" : "TRANSFORM7"
-        },
-        {
-          "source" : "JOIN8",
-          "target" : "TRANSFORM8"
-        },
-        {
-          "source" : "TRANSFORM7",
-          "target" : "APPEND1"
-        },
-        {
-          "source" : "APPEND0",
-          "target" : "APPEND1"
-        },
-        {
-          "source" : "TRANSFORM8",
-          "target" : "APPEND2"
-        },
-        {
-          "source" : "APPEND1",
-          "target" : "APPEND2"
-        },
-        {
-          "source" : "TRANSFORM9",
-          "target" : "OUTPUT0"
-        },
-        {
-          "source" : "APPEND2",
-          "target" : "TRANSFORM9"
-        }
-      ],
-      "hiddenColumns" : [ ]
-    }
-  },
-  "status" : "Success"
+    "status": "Success"
 }

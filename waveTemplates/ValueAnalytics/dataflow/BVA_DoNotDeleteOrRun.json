@@ -5,7 +5,7 @@
   "workflowDefinition": {
     "LoadInteractions": {
       "action": "edgemart",
-      "parameters": {"alias": "${Variables.LIDataset.datasetAlias}"}
+      "parameters": {"alias": "${Apps.sfdc_internal__AdminAnalytics.Datasets.LightningInteraction.Alias}"}
     },
     "RegisterPlaceholderDataset": {
       "action": "sfdcRegister",

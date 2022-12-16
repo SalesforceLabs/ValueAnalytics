@@ -1,16 +1,5 @@
 {
   "pages" : [
-  {
-	  "title":"Log Files for User and Adoption analysis",
-	  "variables": [
-		{
-			"name":"LPVDataset"
-		},
-		{
-			"name":"LIDataset"
-		}
-	  ]
-  },
     {
 	  "title":"Business Value Analytics",
 	  "variables": [
@@ -25,20 +14,6 @@
 		},
 		{
 			"name":"Lead"
-		}
-	  ]
-  },
-    {
-	  "title":"Log Files for Technical Debt, Apex Performance and Error Analysis",
-	  "variables": [
-		{
-			"name":"ApexDataset"
-		},
-		{
-			"name":"ExceptionsDataset"
-		},
-		{
-			"name":"VFDataset"
 		}
 	  ]
   }

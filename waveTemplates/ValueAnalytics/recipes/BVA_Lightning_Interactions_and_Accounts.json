@@ -77,25 +77,18 @@
         "parameters" : {
           "fields" : [
             "Id",
-            "Name",
-            "Phone",
-            "Fax",
-            "Website",
-            "Industry",
-            "AnnualRevenue",
-            "NumberOfEmployees",
-            "Description",
-            "Rating",
             "OwnerId",
             "CreatedDate",
             "LastModifiedDate",
-            "LastActivityDate",
-            "LastViewedDate",
             "LastReferencedDate",
-            "AccountSource",
-            "Type",
+            "LastViewedDate",
+            "LastActivityDate",
+            "Phone",
+            "Website",
+            "Industry",
+            "Rating",
             "BillingCountry",
-            "Sic"
+            "AnnualRevenue"
           ],
           "dataset" : {
             "type" : "connectedDataset",
