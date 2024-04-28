@@ -1,7 +1,7 @@
 {
   "name" : "User_Activity_Journeys_Union_tp",
-  "label" : "User Activity & Journeys (Union)",
-  "description" : "For exec-level summary of interactions in the system down to individual page views and components being used.\nUses a combined dataset of LightingPageView, LightningInteraction and ApexExection logs.",
+  "label" : "Adoption Console (Advanced)",
+  "description" : "A detailed overview of UI-level and synchronous Apex interactions in the org, from Apps to Objects to page Components to Apex Controllers. This dashboard contains no written narrative.  Review this dashboard when you are more comfortable with LightningPageView,  LightningInteraction and ApexExecution data.",
   "folder" : {
     "id" : "${App.Folder.Id}"
   },
@@ -170,31 +170,6 @@
       {
         "conditionalFormatting" : {
           "color" : {
-            "referenceField" : "E",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "0"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "UniqueClicksTrending_1.E",
-        "format" : {
-          "delimiters" : { },
-          "customFormat" : "[\"#,###.##%\",100]"
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
             "referenceField" : "B",
             "type" : "multiple",
             "parameters" : {
@@ -220,31 +195,6 @@
       {
         "conditionalFormatting" : {
           "color" : {
-            "referenceField" : "G",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "0"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "RecordStats_2.G",
-        "format" : {
-          "delimiters" : { },
-          "customFormat" : "[\"#,###.##%\",100]"
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
             "referenceField" : "E",
             "type" : "multiple",
             "parameters" : {
@@ -261,7 +211,32 @@
             }
           }
         },
-        "field" : "RecordStats_2.E",
+        "field" : "UniqueClicksTrending_1.E",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###.##%\",100]"
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "H",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#00B531",
+                  "bin" : "0"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "RecordStats_2.H",
         "format" : {
           "delimiters" : { },
           "customFormat" : "[\"#,###.##%\",100]"
@@ -295,7 +270,7 @@
       {
         "conditionalFormatting" : {
           "color" : {
-            "referenceField" : "H",
+            "referenceField" : "E",
             "type" : "multiple",
             "parameters" : {
               "bins" : [
@@ -311,10 +286,57 @@
             }
           }
         },
-        "field" : "RecordStats_2.H",
+        "field" : "RecordStats_2.E",
         "format" : {
           "delimiters" : { },
           "customFormat" : "[\"#,###.##%\",100]"
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "G",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#00B531",
+                  "bin" : "0"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "RecordStats_2.G",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###.##%\",100]"
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "chartColor" : {
+            "referenceField" : "sum_RecordException",
+            "type" : "gradient",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#C5DBF7"
+                },
+                {
+                  "formatValue" : "#B50E03"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "LightningPageViewHea_1.sum_RecordException",
+        "format" : {
+          "delimiters" : { }
         }
       }
     ],
@@ -323,10 +345,38 @@
     "showDetailsDefaultFields" : [ ],
     "dates" : [ ],
     "derivedMeasures" : [ ],
-    "dimensions" : [ ]
+    "dimensions" : [
+      {
+        "recordDisplayFields" : [ ],
+        "conditionalFormatting" : {
+          "chartColor" : {
+            "referenceField" : "sum_RecordException",
+            "type" : "gradient",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#C5DBF7"
+                },
+                {
+                  "formatValue" : "#B50E03"
+                }
+              ]
+            }
+          }
+        },
+        "salesforceActions" : [ ],
+        "field" : "LightningPageViewHea_1.ALL",
+        "members" : [ ],
+        "customActions" : [ ]
+      }
+    ]
   },
   "state" : {
-    "dataSourceLinks" : [ ],
+    "dataSourceLinksInfo" : {
+      "enableAutomaticLinking" : false,
+      "excludeRelationships" : [ ],
+      "links" : [ ]
+    },
     "filters" : [
       {
         "dataset" : {
@@ -463,11 +513,11 @@
                 "colspan" : 3,
                 "column" : 0,
                 "name" : "number_1",
-                "row" : 16,
+                "row" : 21,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -477,7 +527,7 @@
                 "colspan" : 5,
                 "column" : 7,
                 "name" : "chart_1",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 7,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -493,11 +543,11 @@
                 "colspan" : 3,
                 "column" : 12,
                 "name" : "number_3",
-                "row" : 16,
+                "row" : 21,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -507,7 +557,7 @@
                 "colspan" : 5,
                 "column" : 19,
                 "name" : "chart_2",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 7,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -523,11 +573,11 @@
                 "colspan" : 3,
                 "column" : 24,
                 "name" : "number_5",
-                "row" : 16,
+                "row" : 21,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -537,7 +587,7 @@
                 "colspan" : 5,
                 "column" : 31,
                 "name" : "chart_3",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 7,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -553,11 +603,11 @@
                 "colspan" : 3,
                 "column" : 36,
                 "name" : "number_6",
-                "row" : 16,
+                "row" : 21,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -567,7 +617,7 @@
                 "colspan" : 5,
                 "column" : 44,
                 "name" : "chart_4",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 7,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -587,7 +637,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgb(240, 244, 247)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -598,26 +648,24 @@
                 "column" : 0,
                 "name" : "container_5",
                 "row" : 3,
-                "rowspan" : 9,
+                "rowspan" : 11,
                 "widgetStyle" : {
                   "backgroundColor" : "#FFFFFF",
-                  "borderColor" : "rgb(0, 112, 210)",
-                  "borderEdges" : [
-                    "bottom"
-                  ],
+                  "borderColor" : "#54698D",
+                  "borderEdges" : [ ],
                   "borderRadius" : 0,
-                  "borderWidth" : 4
+                  "borderWidth" : 1
                 }
               },
               {
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_8",
-                "row" : 12,
+                "row" : 17,
                 "rowspan" : 8,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#335779",
+                  "borderColor" : "#FFFFFF",
                   "borderEdges" : [
                     "bottom"
                   ],
@@ -629,11 +677,11 @@
                 "colspan" : 4,
                 "column" : 3,
                 "name" : "number_4",
-                "row" : 15,
+                "row" : 20,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -643,11 +691,11 @@
                 "colspan" : 4,
                 "column" : 3,
                 "name" : "number_8",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -657,11 +705,11 @@
                 "colspan" : 4,
                 "column" : 3,
                 "name" : "number_9",
-                "row" : 17,
+                "row" : 22,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -671,11 +719,11 @@
                 "colspan" : 4,
                 "column" : 15,
                 "name" : "number_10",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -685,11 +733,11 @@
                 "colspan" : 4,
                 "column" : 15,
                 "name" : "number_11",
-                "row" : 15,
+                "row" : 20,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -699,11 +747,11 @@
                 "colspan" : 4,
                 "column" : 15,
                 "name" : "number_12",
-                "row" : 17,
+                "row" : 22,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -713,11 +761,11 @@
                 "colspan" : 4,
                 "column" : 27,
                 "name" : "number_13",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -727,11 +775,11 @@
                 "colspan" : 4,
                 "column" : 27,
                 "name" : "number_14",
-                "row" : 15,
+                "row" : 20,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -741,11 +789,11 @@
                 "colspan" : 4,
                 "column" : 27,
                 "name" : "number_15",
-                "row" : 17,
+                "row" : 22,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -755,11 +803,11 @@
                 "colspan" : 5,
                 "column" : 39,
                 "name" : "number_16",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -769,11 +817,11 @@
                 "colspan" : 5,
                 "column" : 39,
                 "name" : "number_17",
-                "row" : 15,
+                "row" : 20,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -783,11 +831,11 @@
                 "colspan" : 5,
                 "column" : 39,
                 "name" : "number_18",
-                "row" : 17,
+                "row" : 22,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -797,11 +845,11 @@
                 "colspan" : 5,
                 "column" : 2,
                 "name" : "number_2",
-                "row" : 24,
+                "row" : 29,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -811,11 +859,11 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_3",
-                "row" : 20,
+                "row" : 25,
                 "rowspan" : 8,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
-                  "borderColor" : "#E6ECF2",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -825,11 +873,11 @@
                 "colspan" : 5,
                 "column" : 20,
                 "name" : "number_7",
-                "row" : 24,
+                "row" : 29,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -839,7 +887,7 @@
                 "colspan" : 8,
                 "column" : 38,
                 "name" : "link_8",
-                "row" : 68,
+                "row" : 62,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -852,61 +900,31 @@
                 }
               },
               {
-                "colspan" : 25,
-                "column" : 23,
-                "name" : "chart_16",
-                "row" : 132,
-                "rowspan" : 34,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [
-                    "left"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 22,
-                "column" : 1,
+                "colspan" : 37,
+                "column" : 11,
                 "name" : "chart_17",
-                "row" : 132,
-                "rowspan" : 34,
+                "row" : 131,
+                "rowspan" : 38,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 22,
-                "column" : 1,
-                "name" : "chart_18",
-                "row" : 167,
-                "rowspan" : 34,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 25,
-                "column" : 23,
-                "name" : "chart_19",
-                "row" : 167,
-                "rowspan" : 34,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#7D98B3",
                   "borderEdges" : [
-                    "left"
+                    "bottom"
                   ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 37,
+                "column" : 11,
+                "name" : "chart_18",
+                "row" : 169,
+                "rowspan" : 34,
+                "widgetStyle" : {
+                  "backgroundColor" : "rgba(255, 255, 255, 0)",
+                  "borderColor" : "#16325c",
+                  "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
@@ -915,11 +933,11 @@
                 "colspan" : 5,
                 "column" : 8,
                 "name" : "number_20",
-                "row" : 23,
+                "row" : 28,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -929,11 +947,11 @@
                 "colspan" : 5,
                 "column" : 8,
                 "name" : "number_21",
-                "row" : 25,
+                "row" : 30,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -943,11 +961,11 @@
                 "colspan" : 5,
                 "column" : 27,
                 "name" : "number_22",
-                "row" : 21,
+                "row" : 26,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -957,11 +975,11 @@
                 "colspan" : 5,
                 "column" : 8,
                 "name" : "number_23",
-                "row" : 21,
+                "row" : 26,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -971,11 +989,11 @@
                 "colspan" : 5,
                 "column" : 27,
                 "name" : "number_24",
-                "row" : 23,
+                "row" : 28,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -985,11 +1003,11 @@
                 "colspan" : 5,
                 "column" : 27,
                 "name" : "number_25",
-                "row" : 25,
+                "row" : 30,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -999,11 +1017,11 @@
                 "colspan" : 47,
                 "column" : 1,
                 "name" : "filterpanel_2",
-                "row" : 7,
-                "rowspan" : 4,
+                "row" : 9,
+                "rowspan" : 5,
                 "widgetStyle" : {
                   "backgroundColor" : "#FFFFFF",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1013,12 +1031,14 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_1",
-                "row" : 334,
+                "row" : 207,
                 "rowspan" : 11,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "rgba(230, 236, 242, 0)",
-                  "borderEdges" : [ ],
+                  "borderColor" : "#54698D",
+                  "borderEdges" : [
+                    "top"
+                  ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
@@ -1027,11 +1047,11 @@
                 "colspan" : 3,
                 "column" : 0,
                 "name" : "text_3",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1041,11 +1061,11 @@
                 "colspan" : 3,
                 "column" : 12,
                 "name" : "text_4",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1055,11 +1075,11 @@
                 "colspan" : 3,
                 "column" : 24,
                 "name" : "text_5",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1069,25 +1089,25 @@
                 "colspan" : 3,
                 "column" : 36,
                 "name" : "text_6",
-                "row" : 13,
+                "row" : 18,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
               },
               {
-                "colspan" : 4,
-                "column" : 1,
+                "colspan" : 6,
+                "column" : 0,
                 "name" : "text_7",
-                "row" : 21,
+                "row" : 26,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1097,11 +1117,11 @@
                 "colspan" : 8,
                 "column" : 18,
                 "name" : "text_8",
-                "row" : 21,
+                "row" : 26,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1111,7 +1131,7 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_9",
-                "row" : 28,
+                "row" : 33,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -1128,11 +1148,11 @@
                 "colspan" : 20,
                 "column" : 14,
                 "name" : "text_10",
-                "row" : 28,
+                "row" : 33,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1142,7 +1162,7 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_10",
-                "row" : 64,
+                "row" : 59,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -1159,11 +1179,11 @@
                 "colspan" : 20,
                 "column" : 14,
                 "name" : "text_14",
-                "row" : 64,
+                "row" : 59,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1173,7 +1193,7 @@
                 "colspan" : 15,
                 "column" : 23,
                 "name" : "text_15",
-                "row" : 68,
+                "row" : 62,
                 "rowspan" : 2,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -1184,46 +1204,14 @@
                 }
               },
               {
-                "colspan" : 11,
-                "column" : 37,
-                "name" : "text_16",
-                "row" : 73,
-                "rowspan" : 34,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#7D98B3",
-                  "borderEdges" : [
-                    "left"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 9,
-                "column" : 1,
-                "name" : "text_17",
-                "row" : 110,
-                "rowspan" : 16,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#7D98B3",
-                  "borderEdges" : [
-                    "right"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 36,
+                "colspan" : 47,
                 "column" : 1,
                 "name" : "chart_11",
-                "row" : 72,
+                "row" : 66,
                 "rowspan" : 36,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1233,22 +1221,22 @@
                 "colspan" : 9,
                 "column" : 38,
                 "name" : "text_19",
-                "row" : 3,
+                "row" : 4,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
               },
               {
-                "colspan" : 12,
+                "colspan" : 21,
                 "column" : 1,
                 "name" : "text_20",
                 "row" : 3,
-                "rowspan" : 4,
+                "rowspan" : 3,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
                 }
@@ -1257,11 +1245,11 @@
                 "colspan" : 4,
                 "column" : 40,
                 "name" : "number_19",
-                "row" : 24,
+                "row" : 29,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1271,11 +1259,11 @@
                 "colspan" : 13,
                 "column" : 35,
                 "name" : "text_9",
-                "row" : 21,
+                "row" : 26,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1285,7 +1273,7 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_12",
-                "row" : 128,
+                "row" : 127,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -1302,39 +1290,25 @@
                 "colspan" : 20,
                 "column" : 14,
                 "name" : "text_18",
-                "row" : 128,
+                "row" : 127,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
               },
               {
-                "colspan" : 37,
-                "column" : 11,
+                "colspan" : 47,
+                "column" : 1,
                 "name" : "chart_7",
-                "row" : 109,
-                "rowspan" : 17,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 16,
-                "column" : 33,
-                "name" : "chart_9",
-                "row" : 31,
+                "row" : 102,
                 "rowspan" : 23,
                 "widgetStyle" : {
-                  "backgroundColor" : "rgba(9, 26, 62, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "backgroundColor" : "rgba(255, 255, 255, 0)",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1343,31 +1317,13 @@
               {
                 "colspan" : 17,
                 "column" : 32,
-                "name" : "text_11",
-                "row" : 54,
-                "rowspan" : 9,
+                "name" : "chart_9",
+                "row" : 36,
+                "rowspan" : 23,
                 "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#7D98B3",
-                  "borderEdges" : [
-                    "top"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 15,
-                "column" : 0,
-                "name" : "text_13",
-                "row" : 54,
-                "rowspan" : 9,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#7D98B3",
-                  "borderEdges" : [
-                    "top"
-                  ],
+                  "backgroundColor" : "rgba(9, 26, 62, 0)",
+                  "borderColor" : "#16325c",
+                  "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
@@ -1376,8 +1332,8 @@
                 "colspan" : 15,
                 "column" : 0,
                 "name" : "chart_14",
-                "row" : 31,
-                "rowspan" : 22,
+                "row" : 36,
+                "rowspan" : 23,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(9, 26, 62, 0)",
                   "borderColor" : "#7D98B3",
@@ -1387,30 +1343,14 @@
                 }
               },
               {
-                "colspan" : 15,
-                "column" : 16,
-                "name" : "text_12",
-                "row" : 54,
-                "rowspan" : 10,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#7D98B3",
-                  "borderEdges" : [
-                    "top"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
                 "colspan" : 16,
                 "column" : 16,
                 "name" : "chart_10",
-                "row" : 31,
-                "rowspan" : 22,
+                "row" : 36,
+                "rowspan" : 23,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -1420,7 +1360,7 @@
                 "colspan" : 21,
                 "column" : 1,
                 "name" : "text_21",
-                "row" : 68,
+                "row" : 62,
                 "rowspan" : 4,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -1431,24 +1371,78 @@
                 }
               },
               {
-                "colspan" : 47,
+                "colspan" : 9,
                 "column" : 1,
-                "name" : "chart_26",
-                "row" : 268,
-                "rowspan" : 61,
+                "name" : "listselector_2",
+                "row" : 134,
+                "rowspan" : 4,
                 "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [ ],
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#C6D3E1",
+                  "borderEdges" : [
+                    "bottom"
+                  ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
               },
               {
+                "colspan" : 9,
+                "column" : 1,
+                "name" : "listselector_3",
+                "row" : 146,
+                "rowspan" : 4,
+                "widgetStyle" : {
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
+                  "borderEdges" : [
+                    "bottom"
+                  ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 9,
+                "column" : 1,
+                "name" : "dateselector_2",
+                "row" : 140,
+                "rowspan" : 4,
+                "widgetStyle" : {
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
+                  "borderEdges" : [
+                    "bottom"
+                  ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 9,
+                "column" : 1,
+                "name" : "text_1",
+                "row" : 152,
+                "rowspan" : 17,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
+                }
+              },
+              {
+                "colspan" : 26,
+                "column" : 1,
+                "name" : "text_2",
+                "row" : 6,
+                "rowspan" : 2,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
+                }
+              },
+              {
                 "colspan" : 49,
                 "column" : 0,
-                "name" : "container_13",
-                "row" : 202,
+                "name" : "container_7",
+                "row" : 14,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -1464,29 +1458,13 @@
               {
                 "colspan" : 20,
                 "column" : 14,
-                "name" : "text_24",
-                "row" : 202,
+                "name" : "text_11",
+                "row" : 14,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 47,
-                "column" : 1,
-                "name" : "chart_28",
-                "row" : 206,
-                "rowspan" : 61,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [
-                    "bottom"
-                  ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
@@ -1505,7 +1483,7 @@
         "style" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "backgroundColor" : "rgb(24, 42, 82)",
+          "backgroundColor" : "#FFFFFF",
           "cellSpacingX" : 0,
           "cellSpacingY" : 0,
           "fit" : "fitwidth",
@@ -1529,8 +1507,8 @@
           "query" : {
             "measures" : [
               [
-                "count",
-                "*"
+                "sum",
+                "StallTime"
               ]
             ],
             "booleanFilterLogic" : "1 AND (2 OR 3)",
@@ -1562,14 +1540,6 @@
                 ],
                 "in"
               ]
-            ],
-            "order" : [
-              [
-                "count",
-                {
-                  "ascending" : false
-                }
-              ]
             ]
           },
           "version" : -1.0
@@ -1584,7 +1554,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -1652,7 +1621,7 @@
             },
             "columnMap" : {
               "color" : [
-                "count"
+                "sum_StallTime"
               ],
               "x" : [
                 "SequenceNumberS"
@@ -1769,7 +1738,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -2064,7 +2032,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -2167,7 +2134,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : 30,
@@ -2332,15 +2301,6 @@
                 "TIMESTAMP_DERIVED_Day"
               ]
             ],
-            "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ]
-            ],
             "order" : [
               [
                 [
@@ -2357,7 +2317,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -2385,6 +2345,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -2396,6 +2357,40 @@
           },
           "type" : "table"
         }
+      },
+      "InteractionDateTime_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.BVA_UnionLogsAdoption_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "InteractionDateTime"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "include",
+          "steps" : [
+            "SESSION_KEY_1",
+            "User_Name_1"
+          ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : { }
       },
       "RecordStats_2" : {
         "broadcastFacet" : true,
@@ -2671,23 +2666,9 @@
             ],
             "filters" : [
               [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
                 "PAGE_ENTITY_TYPE",
                 [ ],
                 "isnotnull"
-              ],
-              [
-                "UI_EVENT_TYPE",
-                [
-                  "user"
-                ],
-                "in"
               ]
             ],
             "order" : [
@@ -2720,7 +2701,8 @@
             "cell" : {
               "backgroundColor" : "#ffffff",
               "fontColor" : "#091A3E",
-              "fontSize" : 12
+              "fontSize" : 12,
+              "textWrap" : true
             },
             "columnProperties" : { },
             "columns" : [ ],
@@ -2728,10 +2710,12 @@
             "header" : {
               "backgroundColor" : "#f4f6f9",
               "fontColor" : "#16325c",
-              "fontSize" : 12
+              "fontSize" : 12,
+              "textWrap" : true
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -2901,6 +2885,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -3075,7 +3060,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -3100,6 +3085,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -3171,7 +3157,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3479,7 +3464,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -3504,6 +3489,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -3662,7 +3648,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -3671,7 +3657,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3761,7 +3746,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -3842,7 +3829,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4010,7 +3996,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -4019,7 +4005,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4106,7 +4091,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -4142,7 +4129,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4224,7 +4210,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -4263,7 +4251,7 @@
             ],
             "limit" : 20,
             "groups" : [
-              "PageName"
+              "PAGE_APP_NAME"
             ],
             "filters" : [
               [
@@ -4354,7 +4342,7 @@
             "columnMap" : {
               "trellis" : [ ],
               "dimension" : [
-                "PageName"
+                "PAGE_APP_NAME"
               ],
               "plots" : [
                 "count"
@@ -4370,7 +4358,7 @@
         }
       },
       "LightningPageViewHea_1" : {
-        "broadcastFacet" : true,
+        "broadcastFacet" : false,
         "datasets" : [
           {
             "name" : "${App.Datasets.BVA_UnionLogsAdoption_tp.Name}"
@@ -4382,37 +4370,33 @@
           "query" : {
             "measures" : [
               [
-                "count",
-                "*"
+                "sum",
+                "RecordException"
               ]
             ],
             "limit" : 1000,
             "groups" : [
               "SequenceNumberS",
-              "PageName"
-            ],
-            "order" : [
-              [
-                "count",
-                {
-                  "ascending" : false
-                }
-              ]
+              "PageName",
+              "ComponentName"
             ]
           },
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
+          "mode" : "include",
+          "steps" : [
+            "SESSION_KEY_1",
+            "User_Name_1",
+            "InteractionDateTime_1"
+          ]
         },
-        "selectMode" : "single",
+        "selectMode" : "none",
         "type" : "aggregateflex",
-        "useGlobal" : true,
+        "useGlobal" : false,
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4438,8 +4422,8 @@
               "showHeader" : true,
               "show" : true,
               "customSize" : "auto",
-              "position" : "bottom-center",
-              "inside" : true
+              "position" : "right-top",
+              "inside" : false
             },
             "axisMode" : "multi",
             "highColor" : "#009DDF",
@@ -4462,7 +4446,7 @@
             "title" : {
               "subtitleFontSize" : 11,
               "fontSize" : 14,
-              "label" : "When and Where do users navigate about the app?",
+              "label" : "Filter by User, Date or Session on the left to view a user's journey through the app. Where is the user seeing Apex errors?",
               "align" : "center",
               "subtitleLabel" : ""
             },
@@ -4480,13 +4464,14 @@
             },
             "columnMap" : {
               "color" : [
-                "count"
+                "sum_RecordException"
               ],
               "x" : [
                 "SequenceNumberS"
               ],
               "y" : [
-                "PageName"
+                "PageName",
+                "ComponentName"
               ]
             },
             "showActionMenu" : true,
@@ -4551,14 +4536,14 @@
           "query" : {
             "measures" : [
               [
-                "count",
-                "*"
+                "median",
+                "TotalSessionTime"
               ]
             ],
             "limit" : 1000,
             "groups" : [
               "SequenceNumberS",
-              "PageName"
+              "ComponentName"
             ],
             "filters" : [
               [
@@ -4568,29 +4553,24 @@
                 ],
                 "in"
               ]
-            ],
-            "order" : [
-              [
-                "count",
-                {
-                  "ascending" : false
-                }
-              ]
             ]
           },
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
+          "mode" : "include",
+          "steps" : [
+            "InteractionDateTime_1",
+            "User_Name_1",
+            "SESSION_KEY_1"
+          ]
         },
         "selectMode" : "single",
         "type" : "aggregateflex",
-        "useGlobal" : true,
+        "useGlobal" : false,
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4658,13 +4638,13 @@
             },
             "columnMap" : {
               "color" : [
-                "count"
+                "median_TotalSessionTime"
               ],
               "x" : [
                 "SequenceNumberS"
               ],
               "y" : [
-                "PageName"
+                "ComponentName"
               ]
             },
             "showActionMenu" : true,
@@ -4744,7 +4724,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -4754,7 +4734,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "fit",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4846,7 +4825,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : false,
               "customSize" : "auto",
@@ -4896,7 +4877,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -4906,7 +4887,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "fit",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4998,7 +4978,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : false,
               "customSize" : "auto",
@@ -5047,7 +5029,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -5057,7 +5039,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "fit",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -5149,7 +5130,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : false,
               "customSize" : "auto",
@@ -5193,21 +5176,12 @@
                 "InteractionDateTime_Month",
                 "InteractionDateTime_Day"
               ]
-            ],
-            "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ]
             ]
           },
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -5216,7 +5190,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "fit",
-            "showValues" : false,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -5322,7 +5295,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "none",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : false,
               "customSize" : "auto",
@@ -5402,7 +5377,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -5587,7 +5561,6 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "centerText" : "",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -5826,34 +5799,9 @@
                 "*"
               ]
             ],
-            "booleanFilterLogic" : "(1 OR 2) AND 3",
             "limit" : 20,
             "groups" : [
               "ComponentName"
-            ],
-            "filters" : [
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
-                "EVENT_TYPE",
-                [
-                  "ApexExecution"
-                ],
-                "in"
-              ],
-              [
-                "PageName",
-                [
-                  "",
-                  "unknown"
-                ],
-                "not in"
-              ]
             ],
             "order" : [
               [
@@ -5877,7 +5825,6 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "centerText" : "",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -5942,7 +5889,7 @@
               "type" : "x",
               "chartsPerLine" : 4
             },
-            "inner" : 60,
+            "inner" : 50,
             "columnMap" : {
               "trellis" : [ ],
               "dimension" : [
@@ -5974,6 +5921,7 @@
             },
             "valueType" : "percent",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -6015,7 +5963,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -6025,7 +5973,6 @@
           "options" : { },
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -6112,7 +6059,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -6160,7 +6109,7 @@
                 "C"
               ]
             ],
-            "booleanFilterLogic" : "(1 OR 2) AND 3",
+            "booleanFilterLogic" : "1",
             "columns" : [
               {
                 "query" : {
@@ -6238,20 +6187,6 @@
             ],
             "filters" : [
               [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
-                "EVENT_TYPE",
-                [
-                  "ApexExecution"
-                ],
-                "in"
-              ],
-              [
                 "PageName",
                 [
                   "",
@@ -6273,7 +6208,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "stack" : false,
             "showPoints" : true,
             "legend" : {
@@ -6301,7 +6235,6 @@
             },
             "visualizationType" : "time-combo",
             "missingValue" : "connect",
-            "showValuesOnLine" : false,
             "timeAxis" : {
               "showTitle" : true,
               "showAxis" : true,
@@ -6366,11 +6299,48 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
+            "valueTypeOnLine" : "none",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "applyConditionalFormatting" : true
           },
           "type" : "chart"
         }
+      },
+      "User_Name_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.BVA_UnionLogsAdoption_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "User.Name"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "include",
+          "steps" : [
+            "InteractionDateTime_1",
+            "SESSION_KEY_1"
+          ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : { }
       },
       "EventDictionary_1" : {
         "broadcastFacet" : true,
@@ -6430,6 +6400,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -6440,6 +6411,163 @@
             "verticalPadding" : 8
           },
           "type" : "table"
+        }
+      },
+      "SESSION_KEY_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.BVA_UnionLogsAdoption_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "label" : "SESSION_KEY_1",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "SESSION_KEY"
+            ],
+            "order" : [
+              [
+                "SESSION_KEY",
+                {
+                  "ascending" : false
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "include",
+          "steps" : [
+            "User_Name_1",
+            "InteractionDateTime_1"
+          ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "sync",
+            "tooltip" : {
+              "content" : {
+                "legend" : {
+                  "showBinLabel" : true,
+                  "measures" : [ ],
+                  "showNullValues" : true,
+                  "customizeLegend" : false,
+                  "showPercentage" : true,
+                  "showDimensions" : true,
+                  "showMeasures" : true,
+                  "dimensions" : [ ]
+                }
+              }
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "SESSION_KEY"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "valueType" : "compactNumber",
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "compactDecimalDigits" : -1,
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
         }
       },
       "ClicksByComponent_1" : {
@@ -6485,7 +6613,7 @@
                 "F"
               ]
             ],
-            "booleanFilterLogic" : "(1 OR 2) AND 3",
+            "booleanFilterLogic" : "1",
             "columns" : [
               {
                 "query" : {
@@ -6592,20 +6720,6 @@
             ],
             "filters" : [
               [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ],
-              [
-                "EVENT_TYPE",
-                [
-                  "ApexExecution"
-                ],
-                "in"
-              ],
-              [
                 "PageName",
                 [
                   "",
@@ -6627,7 +6741,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -6730,7 +6843,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : 30,
@@ -6766,28 +6881,12 @@
                 "count",
                 "*"
               ]
-            ],
-            "filters" : [
-              [
-                "UI_EVENT_TYPE",
-                [
-                  "user"
-                ],
-                "in"
-              ],
-              [
-                "UI_EVENT_SOURCE",
-                [
-                  "click"
-                ],
-                "in"
-              ]
             ]
           },
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -6796,7 +6895,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -6886,7 +6984,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -7067,7 +7167,7 @@
           "version" : -1.0
         },
         "receiveFacetSource" : {
-          "mode" : "all",
+          "mode" : "none",
           "steps" : [ ]
         },
         "selectMode" : "single",
@@ -7092,6 +7192,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -7107,7 +7208,7 @@
     },
     "widgetStyle" : {
       "backgroundColor" : "#FFFFFF",
-      "borderColor" : "#E6ECF2",
+      "borderColor" : "#16325c",
       "borderEdges" : [ ],
       "borderRadius" : 0,
       "borderWidth" : 1
@@ -7117,14 +7218,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueSessionsTrendi_1",
           "textAlignment" : "left",
           "title" : "30DayΔ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7136,14 +7238,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueSessionsTrendi_1",
           "textAlignment" : "left",
           "title" : "Daily Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7155,14 +7258,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "D",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueSessionsTrendi_1",
           "textAlignment" : "left",
           "title" : "Rolling Avg",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7176,10 +7280,10 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "20px"
                 },
-                "insert" : "User Journeys During A Session"
+                "insert" : "User Journeys"
               },
               {
                 "attributes" : {
@@ -7189,29 +7293,7 @@
               }
             ]
           },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
-      "text_17" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "Select one or more components from the bar-chart above to see how interactions with that component have changed over time."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7242,17 +7324,10 @@
               }
             }
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
-      },
-      "container_13" : {
-        "parameters" : {
-          "alignmentX" : "left",
-          "alignmentY" : "top",
-          "fit" : "original"
-        },
-        "type" : "container"
       },
       "text_14" : {
         "parameters" : {
@@ -7260,10 +7335,10 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "20px"
                 },
-                "insert" : "Popular Page Components & Functions"
+                "insert" : "Feature Adoption"
               },
               {
                 "attributes" : {
@@ -7273,29 +7348,7 @@
               }
             ]
           },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
-      "text_13" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "This is the distribution of page views by app. In this case, \"app\" is the Salesforce app that a user selects from the app-selector icon (9 dots) on the top-left of the Salesforce UI.  This view is important to understand if users are defaulting to standard apps that may not have the rich, customised view that you've built for them."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7304,14 +7357,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "RecordStats_1",
           "textAlignment" : "left",
           "title" : "",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 16,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7319,80 +7373,19 @@
         },
         "type" : "number"
       },
-      "text_16" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "The vast majority of users will perform the same interactions on every page. On Cases, they will view the case feed, click on specific notes to read the details, or add new notes to the case. Components like FeedPosts and FeedTabTitle makes sense."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              },
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "Any component that is high on the list suggests that it is useful to users, and so it should be positioned more prominently on the page."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              },
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "However, if users are interacting with components too frequently or unnecessarily, it suggests additional training or coaching is needed."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              },
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "Click on the chart headers (Clicks, Related Cases, Clicks Per Case) to change the sorting."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
       "number_18" : {
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueClicksTrending_1",
           "textAlignment" : "left",
           "title" : "30DayΔ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7419,6 +7412,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7427,14 +7421,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueClicksTrending_1",
           "textAlignment" : "left",
           "title" : "Daily Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7448,10 +7443,10 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "20px"
                 },
-                "insert" : "User Interaction Analysis"
+                "insert" : "App, Page and Feature Breakdown"
               },
               {
                 "attributes" : {
@@ -7461,6 +7456,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7469,14 +7465,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "D",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueClicksTrending_1",
           "textAlignment" : "left",
           "title" : "Rolling Avg",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7488,14 +7485,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniquePageViewsTrend_1",
           "textAlignment" : "left",
           "title" : "30DayΔ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7503,41 +7501,39 @@
         },
         "type" : "number"
       },
-      "text_12" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "size" : "12px",
-                  "color" : "#e6ecf2"
-                },
-                "insert" : "The Page is derived from the event logs, and can be anything from an Account, Contact, custom object, or even the Home, Setup and Community pages. Knowing what object are viewed in the context of an App is important: are Sales Console users spending a lot of time in Cases? Are Service Consoles users spending a lot of time looking at Billing Records?"
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
       "number_14" : {
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniquePageViewsTrend_1",
           "textAlignment" : "left",
           "title" : "Daily Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
+          "titleSize" : 10,
+          "tooltip" : {
+            "customizeTooltip" : false
+          }
+        },
+        "type" : "number"
+      },
+      "number_13" : {
+        "parameters" : {
+          "compact" : true,
+          "exploreLink" : true,
+          "interactions" : [ ],
+          "measureField" : "D",
+          "numberColor" : "#16325c",
+          "numberSize" : 10,
+          "showActionMenu" : false,
+          "step" : "UniquePageViewsTrend_1",
+          "textAlignment" : "left",
+          "title" : "Rolling Avg",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -7551,47 +7547,30 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
-                  "size" : "12px"
+                  "color" : "#7d98b3",
+                  "size" : "20px"
                 },
-                "insert" : "All Salesforce Lightning pages are made up of 'components'. Examples of components are: Save Button, Quick Action, Detail Tab, a Related List, the drop-down arrow on top of a Related List. Some component names can be quite technical and hard to understand. In this case, considering updating the Lightning Data Dictionary to give a clearer understanding."
+                "insert" : "Logins and Interactions"
               },
               {
                 "attributes" : {
-                  "align" : "left"
+                  "align" : "center"
                 },
                 "insert" : "\n"
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
-      },
-      "number_13" : {
-        "parameters" : {
-          "compact" : true,
-          "exploreLink" : true,
-          "measureField" : "D",
-          "numberColor" : "#FFFFFF",
-          "numberSize" : 10,
-          "showActionMenu" : false,
-          "step" : "UniquePageViewsTrend_1",
-          "textAlignment" : "left",
-          "title" : "Rolling Avg",
-          "titleColor" : "#FFFFFF",
-          "titleSize" : 10,
-          "tooltip" : {
-            "customizeTooltip" : false
-          }
-        },
-        "type" : "number"
       },
       "container_1" : {
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7599,7 +7578,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "center",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7607,7 +7587,6 @@
         "parameters" : {
           "autoFitMode" : "keepLabels",
           "centerText" : "",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -7673,7 +7652,7 @@
             "type" : "x",
             "chartsPerLine" : 4
           },
-          "inner" : 60,
+          "inner" : 50,
           "columnMap" : {
             "trellis" : [ ],
             "dimension" : [
@@ -7704,8 +7683,9 @@
             }
           },
           "valueType" : "percent",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "step" : "InteractionsDistribu_1",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -7728,7 +7708,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7736,7 +7717,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7744,7 +7726,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7754,7 +7737,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
+                  "color" : "#16325c",
                   "size" : "16px"
                 },
                 "insert" : "Users"
@@ -7767,6 +7750,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7775,7 +7759,41 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
+        },
+        "type" : "container"
+      },
+      "text_2" : {
+        "parameters" : {
+          "content" : {
+            "richTextContent" : [
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d"
+                },
+                "insert" : "Visualise adoption metrics that include Apex methods and errors in the user's flow of work."
+              },
+              {
+                "attributes" : {
+                  "align" : "left"
+                },
+                "insert" : "\n"
+              }
+            ]
+          },
+          "interactions" : [ ],
+          "showActionMenu" : true
+        },
+        "type" : "text"
+      },
+      "container_7" : {
+        "parameters" : {
+          "alignmentX" : "left",
+          "alignmentY" : "top",
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7785,7 +7803,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
+                  "color" : "#16325c",
                   "size" : "16px"
                 },
                 "insert" : "Pages"
@@ -7798,6 +7816,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7806,7 +7825,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -7816,7 +7836,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
+                  "color" : "#16325c",
                   "size" : "16px"
                 },
                 "insert" : "Sessions"
@@ -7829,6 +7849,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -7836,7 +7857,6 @@
       "chart_7" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "stack" : false,
           "showPoints" : true,
           "legend" : {
@@ -7864,7 +7884,6 @@
           },
           "visualizationType" : "time-combo",
           "missingValue" : "connect",
-          "showValuesOnLine" : false,
           "timeAxis" : {
             "showTitle" : true,
             "showAxis" : true,
@@ -7930,8 +7949,11 @@
               "showDomain" : false
             }
           },
-          "theme" : "bluegrassDark",
+          "valueType" : "compactNumber",
+          "valueTypeOnLine" : "none",
+          "theme" : "colorblindEnhanced",
           "step" : "ClicksPerCaseTimelin_1",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : true
         },
         "type" : "chart"
@@ -7940,14 +7962,14 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
       "chart_2" : {
         "parameters" : {
           "autoFitMode" : "fit",
-          "showValues" : false,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -8054,8 +8076,10 @@
               "showDomain" : false
             }
           },
-          "theme" : "dark",
+          "valueType" : "none",
+          "theme" : "colorblindEnhanced",
           "step" : "InteractionDateTime_Day_2",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -8081,10 +8105,10 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
+                  "color" : "#16325c",
                   "size" : "16px"
                 },
-                "insert" : "Records"
+                "insert" : "Records Viewed"
               },
               {
                 "attributes" : {
@@ -8094,6 +8118,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : false,
           "tooltip" : "The number of records interacted with."
         },
@@ -8102,7 +8127,6 @@
       "chart_1" : {
         "parameters" : {
           "autoFitMode" : "fit",
-          "showValues" : false,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -8209,8 +8233,10 @@
               "showDomain" : false
             }
           },
-          "theme" : "dark",
+          "valueType" : "none",
+          "theme" : "colorblindEnhanced",
           "step" : "InteractionDateTime_Day_1",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -8236,7 +8262,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
+                  "color" : "#16325c",
                   "size" : "16px"
                 },
                 "insert" : "Clicks"
@@ -8249,6 +8275,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -8256,7 +8283,6 @@
       "chart_4" : {
         "parameters" : {
           "autoFitMode" : "fit",
-          "showValues" : false,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -8363,8 +8389,10 @@
               "showDomain" : false
             }
           },
-          "theme" : "dark",
+          "valueType" : "none",
+          "theme" : "colorblindEnhanced",
           "step" : "InteractionDateTime_Day_2_2",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -8390,7 +8418,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Average Session Length (min)"
               },
@@ -8402,6 +8430,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -8409,7 +8438,6 @@
       "chart_3" : {
         "parameters" : {
           "autoFitMode" : "fit",
-          "showValues" : false,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -8516,8 +8544,10 @@
               "showDomain" : false
             }
           },
-          "theme" : "dark",
+          "valueType" : "none",
+          "theme" : "colorblindEnhanced",
           "step" : "InteractionDateTime_Day_2_1",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -8543,7 +8573,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#e6ecf2",
+                  "color" : "#16325c",
                   "size" : "16px"
                 },
                 "insert" : "Interactions Per Record"
@@ -8556,6 +8586,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -8564,14 +8595,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "I",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "RecordStats_2",
           "textAlignment" : "left",
           "title" : "Rolling Avg",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8583,14 +8615,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "F",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "RecordStats_2",
           "textAlignment" : "left",
           "title" : "Rolling Avg",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8602,14 +8635,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "J",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "RecordStats_2",
           "textAlignment" : "left",
           "title" : "30 Day Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8621,14 +8655,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "H",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "RecordStats_2",
           "textAlignment" : "left",
           "title" : "Daily Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8636,11 +8671,82 @@
         },
         "type" : "number"
       },
+      "text_1" : {
+        "parameters" : {
+          "content" : {
+            "richTextContent" : [
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d",
+                  "bold" : true
+                },
+                "insert" : "Note"
+              },
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d"
+                },
+                "insert" : ": the above filters only respond to Global filters at the top of the dashboard, and to each other. All other filters and selections made in the dashboard "
+              },
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d",
+                  "italic" : true
+                },
+                "insert" : "will be ignored"
+              },
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d"
+                },
+                "insert" : "."
+              },
+              {
+                "attributes" : { },
+                "insert" : "\n\n"
+              },
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d"
+                },
+                "insert" : "The heat map on the right "
+              },
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d",
+                  "italic" : true
+                },
+                "insert" : "only"
+              },
+              {
+                "attributes" : {
+                  "size" : "12px",
+                  "color" : "#54698d"
+                },
+                "insert" : " responds to the three filters above."
+              },
+              {
+                "attributes" : { },
+                "insert" : "\n"
+              }
+            ]
+          },
+          "interactions" : [ ],
+          "showActionMenu" : true
+        },
+        "type" : "text"
+      },
       "filterpanel_2" : {
         "parameters" : {
           "filterItemOptions" : {
             "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#E6ECF2",
+            "borderColor" : "#16325c",
             "borderRadius" : 4,
             "borderWidth" : 1,
             "propertyColor" : "#54698D",
@@ -8650,7 +8756,7 @@
           "itemsPerRow" : 7,
           "showAllFilters" : true,
           "title" : {
-            "separatorColor" : "#E6ECF2",
+            "separatorColor" : "#16325c",
             "text" : {
               "align" : "left",
               "color" : "#091A3E",
@@ -8665,7 +8771,7 @@
         "parameters" : {
           "filterItemOptions" : {
             "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#E6ECF2",
+            "borderColor" : "#16325c",
             "borderRadius" : 4,
             "borderWidth" : 1,
             "propertyColor" : "#54698D",
@@ -8675,7 +8781,7 @@
           "itemsPerRow" : 6,
           "showAllFilters" : true,
           "title" : {
-            "separatorColor" : "#E6ECF2",
+            "separatorColor" : "#16325c",
             "text" : {
               "align" : "left",
               "color" : "#091A3E",
@@ -8690,14 +8796,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "G",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "RecordStats_2",
           "textAlignment" : "left",
           "title" : "30 Day Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8709,14 +8816,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "RecordStats_2",
           "textAlignment" : "left",
           "title" : "Daily Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8728,8 +8836,9 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "unique_PAGE_URL",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "ActiveTimeDataDictionary.SUM_HandleTime_1",
@@ -8747,14 +8856,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueUsersTrending_1",
           "textAlignment" : "left",
           "title" : "Daily Δ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8766,8 +8876,9 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "unique_SESSION_KEY",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "StallTime_1",
@@ -8785,14 +8896,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "UniqueDerivedRecordId",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "RecordStats_1",
           "textAlignment" : "left",
           "title" : "",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 16,
           "tooltip" : {
             "customizeTooltip" : false
@@ -8804,8 +8916,9 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "unique_USER_ID",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "PageChangeFlag_1",
@@ -8819,10 +8932,9 @@
         },
         "type" : "number"
       },
-      "chart_19" : {
+      "chart_18" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -8848,7 +8960,7 @@
             "showHeader" : true,
             "show" : true,
             "customSize" : "auto",
-            "position" : "bottom-center",
+            "position" : "right-top",
             "inside" : false
           },
           "axisMode" : "multi",
@@ -8873,7 +8985,7 @@
           "title" : {
             "subtitleFontSize" : 11,
             "fontSize" : 14,
-            "label" : "What is the last component a user interacts with before leaving their session?",
+            "label" : "What was the last click and step this user performed for that session? And what was the total session time?",
             "align" : "center",
             "subtitleLabel" : ""
           },
@@ -8891,143 +9003,13 @@
           },
           "columnMap" : {
             "color" : [
-              "count"
+              "median_TotalSessionTime"
             ],
             "x" : [
               "SequenceNumberS"
             ],
             "y" : [
               "ComponentName"
-            ]
-          },
-          "showActionMenu" : true,
-          "measureAxis2" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "measureAxis1" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "x" : {
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : ""
-          },
-          "y" : {
-            "showTitle" : false,
-            "showAxis" : true,
-            "title" : "Component Name"
-          },
-          "theme" : "sunriseDark",
-          "step" : "UserInteractionHeatm_2",
-          "dimensionAxis" : {
-            "showTitle" : true,
-            "customSize" : "auto",
-            "showAxis" : true,
-            "title" : "",
-            "icons" : {
-              "useIcons" : false,
-              "iconProps" : {
-                "fit" : "cover",
-                "column" : "",
-                "type" : "round"
-              }
-            }
-          },
-          "applyConditionalFormatting" : true
-        },
-        "type" : "chart"
-      },
-      "chart_18" : {
-        "parameters" : {
-          "autoFitMode" : "keepLabels",
-          "showValues" : true,
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
-          },
-          "legend" : {
-            "descOrder" : true,
-            "showHeader" : true,
-            "show" : true,
-            "customSize" : "auto",
-            "position" : "bottom-center",
-            "inside" : true
-          },
-          "axisMode" : "multi",
-          "highColor" : "#009DDF",
-          "tooltip" : {
-            "content" : {
-              "legend" : {
-                "showBinLabel" : true,
-                "measures" : [ ],
-                "showNullValues" : true,
-                "customizeLegend" : false,
-                "showPercentage" : true,
-                "showDimensions" : true,
-                "showMeasures" : true,
-                "dimensions" : [ ]
-              }
-            }
-          },
-          "lowColor" : "#E2F4FC",
-          "visualizationType" : "heatmap",
-          "exploreLink" : true,
-          "title" : {
-            "subtitleFontSize" : 11,
-            "fontSize" : 14,
-            "label" : "Where and When do users typically end their session?",
-            "align" : "center",
-            "subtitleLabel" : ""
-          },
-          "binValues" : false,
-          "trellis" : {
-            "flipLabels" : false,
-            "showGridLines" : true,
-            "size" : [
-              100,
-              100
-            ],
-            "enable" : false,
-            "type" : "x",
-            "chartsPerLine" : 4
-          },
-          "columnMap" : {
-            "color" : [
-              "count"
-            ],
-            "x" : [
-              "SequenceNumberS"
-            ],
-            "y" : [
-              "PageName"
             ]
           },
           "showActionMenu" : true,
@@ -9059,7 +9041,7 @@
             "showAxis" : true,
             "title" : "Object or Page Name"
           },
-          "theme" : "sunriseDark",
+          "theme" : "colorblindEnhanced",
           "step" : "LightningPageViewHea_2",
           "dimensionAxis" : {
             "showTitle" : true,
@@ -9083,14 +9065,14 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
       "chart_17" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -9116,8 +9098,8 @@
             "showHeader" : true,
             "show" : true,
             "customSize" : "auto",
-            "position" : "bottom-center",
-            "inside" : true
+            "position" : "right-top",
+            "inside" : false
           },
           "axisMode" : "multi",
           "highColor" : "#009DDF",
@@ -9141,7 +9123,7 @@
           "title" : {
             "subtitleFontSize" : 11,
             "fontSize" : 14,
-            "label" : "When and Where do users navigate about the app?",
+            "label" : "Filter by User, Date or Session on the left to view a user's journey through the app. Where is the user seeing Apex errors?",
             "align" : "center",
             "subtitleLabel" : ""
           },
@@ -9159,13 +9141,14 @@
           },
           "columnMap" : {
             "color" : [
-              "count"
+              "sum_RecordException"
             ],
             "x" : [
               "SequenceNumberS"
             ],
             "y" : [
-              "PageName"
+              "PageName",
+              "ComponentName"
             ]
           },
           "showActionMenu" : true,
@@ -9197,138 +9180,8 @@
             "showAxis" : true,
             "title" : "Object or Page Name"
           },
-          "theme" : "sunriseDark",
+          "theme" : "colorblindEnhanced",
           "step" : "LightningPageViewHea_1",
-          "dimensionAxis" : {
-            "showTitle" : true,
-            "customSize" : "auto",
-            "showAxis" : true,
-            "title" : "",
-            "icons" : {
-              "useIcons" : false,
-              "iconProps" : {
-                "fit" : "cover",
-                "column" : "",
-                "type" : "round"
-              }
-            }
-          },
-          "applyConditionalFormatting" : true
-        },
-        "type" : "chart"
-      },
-      "chart_16" : {
-        "parameters" : {
-          "autoFitMode" : "keepLabels",
-          "showValues" : true,
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
-          },
-          "legend" : {
-            "descOrder" : true,
-            "showHeader" : true,
-            "show" : true,
-            "customSize" : "auto",
-            "position" : "bottom-center",
-            "inside" : false
-          },
-          "axisMode" : "multi",
-          "highColor" : "#009DDF",
-          "tooltip" : {
-            "content" : {
-              "legend" : {
-                "showBinLabel" : true,
-                "measures" : [ ],
-                "showNullValues" : true,
-                "customizeLegend" : false,
-                "showPercentage" : true,
-                "showDimensions" : true,
-                "showMeasures" : true,
-                "dimensions" : [ ]
-              }
-            }
-          },
-          "lowColor" : "#E2F4FC",
-          "visualizationType" : "heatmap",
-          "exploreLink" : true,
-          "title" : {
-            "subtitleFontSize" : 11,
-            "fontSize" : 14,
-            "label" : "What is the sequence of clicks on page components?",
-            "align" : "center",
-            "subtitleLabel" : "How long does it take to complete the next action?"
-          },
-          "binValues" : false,
-          "trellis" : {
-            "flipLabels" : false,
-            "showGridLines" : true,
-            "size" : [
-              100,
-              100
-            ],
-            "enable" : false,
-            "type" : "x",
-            "chartsPerLine" : 4
-          },
-          "columnMap" : {
-            "color" : [
-              "count"
-            ],
-            "x" : [
-              "SequenceNumberS"
-            ],
-            "y" : [
-              "ComponentName"
-            ]
-          },
-          "showActionMenu" : true,
-          "measureAxis2" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "measureAxis1" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "x" : {
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : ""
-          },
-          "y" : {
-            "showTitle" : false,
-            "showAxis" : true,
-            "title" : "Component Name"
-          },
-          "theme" : "sunriseDark",
-          "step" : "UserInteractionHeatm_1",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -9351,7 +9204,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -9403,11 +9257,11 @@
             "parameters" : { },
             "chartsPerLine" : 4
           },
-          "inner" : 60,
+          "inner" : 50,
           "columnMap" : {
             "trellis" : [ ],
             "dimension" : [
-              "PageName"
+              "PAGE_APP_NAME"
             ],
             "plots" : [
               "count"
@@ -9416,8 +9270,9 @@
           "showActionMenu" : true,
           "centerValueType" : "none",
           "valueType" : "percent",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "step" : "Cases_Origin_4_1",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : false
         },
         "type" : "chart"
@@ -9425,7 +9280,6 @@
       "chart_11" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -9529,8 +9383,10 @@
               "showDomain" : false
             }
           },
-          "theme" : "bluegrassDark",
+          "valueType" : "compactNumber",
+          "theme" : "colorblindEnhanced",
           "step" : "ClicksByComponent_1",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : 30,
@@ -9597,7 +9453,7 @@
             "parameters" : { },
             "chartsPerLine" : 4
           },
-          "inner" : 60,
+          "inner" : 50,
           "columnMap" : {
             "trellis" : [ ],
             "dimension" : [
@@ -9610,8 +9466,9 @@
           "showActionMenu" : true,
           "centerValueType" : "none",
           "valueType" : "percent",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "step" : "ViewsByPage",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : false
         },
         "type" : "chart"
@@ -9620,14 +9477,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueUsersTrending_1",
           "textAlignment" : "left",
           "title" : "30DayΔ",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -9639,14 +9497,15 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "D",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 10,
           "showActionMenu" : false,
           "step" : "UniqueUsersTrending_1",
           "textAlignment" : "left",
           "title" : "Rolling Avg",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 10,
           "tooltip" : {
             "customizeTooltip" : false
@@ -9658,14 +9517,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "ClicksPerRecord",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "RecordStats_1",
           "textAlignment" : "left",
           "title" : "",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 16,
           "tooltip" : {
             "customizeTooltip" : false
@@ -9677,14 +9537,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "count",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325c",
           "numberSize" : 24,
           "showActionMenu" : true,
           "step" : "ActiveTimeDataDictionary.SUM_ActiveTime_2",
           "textAlignment" : "center",
           "title" : "",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325c",
           "titleSize" : 16,
           "tooltip" : {
             "customizeTooltip" : false
@@ -9692,307 +9553,58 @@
         },
         "type" : "number"
       },
-      "chart_28" : {
+      "dateselector_2" : {
         "parameters" : {
-          "autoFitMode" : "keepLabels",
-          "showValues" : true,
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
+          "absoluteModeEnabled" : true,
+          "calendarTypeSwitchingAllowed" : false,
+          "defaultFiscalMode" : false,
+          "displayMode" : "filter",
+          "filterStyle" : {
+            "titleColor" : "#747474",
+            "valueColor" : "#16325C"
           },
-          "legend" : {
-            "descOrder" : false,
-            "showHeader" : false,
-            "show" : true,
-            "customSize" : 20,
-            "position" : "right-top",
-            "inside" : false
-          },
-          "axisMode" : "multi",
-          "tooltip" : {
-            "content" : {
-              "legend" : {
-                "showBinLabel" : true,
-                "measures" : [
-                  "count",
-                  "unique_PAGE_ENTITY_ID",
-                  "unique_USER_ID_DERIVED",
-                  "avg_EFFECTIVE_PAGE_TIME"
-                ],
-                "showNullValues" : true,
-                "customizeLegend" : true,
-                "showPercentage" : false,
-                "showDimensions" : false,
-                "showMeasures" : false,
-                "dimensions" : [
-                  "PAGE_ENTITY_TYPE"
-                ]
-              },
-              "description" : "Each bubble represents on object. So for this object, there were [unique_USER_ID_DERIVED] users who viewed [unique_PAGE_ENTITY_ID]  [PAGE_ENTITY_TYPE] records [count] times. The average page load time for them was  [avg_EFFECTIVE_PAGE_TIME] milliseconds."
-            }
-          },
-          "visualizationType" : "scatter",
-          "exploreLink" : true,
-          "title" : {
-            "fontSize" : 20,
-            "subtitleFontSize" : 11,
-            "label" : "How Many Users View What Objects?",
-            "align" : "center",
-            "subtitleLabel" : "And how many individual records are viewed."
-          },
-          "binValues" : false,
-          "trellis" : {
-            "flipLabels" : false,
-            "showGridLines" : true,
-            "size" : [
-              100,
-              100
-            ],
-            "enable" : false,
-            "type" : "x",
-            "chartsPerLine" : 4
-          },
-          "radiusRatio" : 5,
-          "columnMap" : {
-            "r" : [
-              "unique_USER_ID_DERIVED"
-            ],
-            "x" : [
-              "count"
-            ],
-            "y" : [
-              "unique_PAGE_ENTITY_ID"
-            ],
-            "trellis" : [ ],
-            "plots" : [
-              "PAGE_ENTITY_TYPE"
-            ]
-          },
+          "instant" : false,
+          "presetsEnabled" : false,
+          "relativeModeEnabled" : false,
           "showActionMenu" : true,
-          "measureAxis2" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "measureAxis1" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "x" : {
-            "sqrtScale" : false,
-            "showZero" : true,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "Number of Page Views, per object",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "y" : {
-            "sqrtScale" : false,
-            "showZero" : true,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "Number of records viewed, per object",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "theme" : "dark",
-          "step" : "ObjectEstate_1",
-          "dimensionAxis" : {
-            "showTitle" : true,
-            "customSize" : "auto",
-            "showAxis" : true,
-            "title" : "",
-            "icons" : {
-              "useIcons" : false,
-              "iconProps" : {
-                "fit" : "cover",
-                "column" : "",
-                "type" : "round"
-              }
-            }
-          },
-          "applyConditionalFormatting" : true
+          "step" : "InteractionDateTime_1",
+          "title" : "Date"
         },
-        "type" : "chart"
+        "type" : "dateselector"
       },
-      "chart_26" : {
+      "listselector_3" : {
         "parameters" : {
-          "autoFitMode" : "keepLabels",
-          "showValues" : true,
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
+          "compact" : false,
+          "displayMode" : "filter",
+          "exploreLink" : false,
+          "filterStyle" : {
+            "titleColor" : "#747474",
+            "valueColor" : "#16325C"
           },
-          "legend" : {
-            "descOrder" : false,
-            "showHeader" : false,
-            "show" : true,
-            "customSize" : 20,
-            "position" : "right-top",
-            "inside" : false
-          },
-          "axisMode" : "multi",
-          "tooltip" : {
-            "content" : {
-              "legend" : {
-                "showBinLabel" : true,
-                "measures" : [
-                  "count",
-                  "unique_PAGE_ENTITY_ID",
-                  "unique_USER_ID_DERIVED",
-                  "avg_EFFECTIVE_PAGE_TIME"
-                ],
-                "showNullValues" : true,
-                "customizeLegend" : true,
-                "showPercentage" : false,
-                "showDimensions" : false,
-                "showMeasures" : false,
-                "dimensions" : [
-                  "PAGE_ENTITY_TYPE"
-                ]
-              },
-              "description" : "Each bubble represents a component. So for this component, there were [unique_USER_ID_DERIVED] users who clicked [ComponentName] on [unique_PAGE_ENTITY_ID]  records [count] times."
-            }
-          },
-          "visualizationType" : "scatter",
-          "exploreLink" : true,
-          "title" : {
-            "fontSize" : 20,
-            "subtitleFontSize" : 11,
-            "label" : "How Many Users Interact With What Components?",
-            "align" : "center",
-            "subtitleLabel" : "And on how many objects."
-          },
-          "binValues" : false,
-          "trellis" : {
-            "flipLabels" : false,
-            "showGridLines" : true,
-            "size" : [
-              100,
-              100
-            ],
-            "enable" : false,
-            "type" : "x",
-            "chartsPerLine" : 4
-          },
-          "radiusRatio" : 5,
-          "columnMap" : {
-            "r" : [
-              "unique_USER_ID_DERIVED"
-            ],
-            "x" : [
-              "count"
-            ],
-            "y" : [
-              "unique_PAGE_ENTITY_ID"
-            ],
-            "trellis" : [ ],
-            "plots" : [
-              "ComponentName"
-            ]
-          },
+          "instant" : true,
+          "measureField" : "count",
           "showActionMenu" : true,
-          "measureAxis2" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "measureAxis1" : {
-            "sqrtScale" : false,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "x" : {
-            "sqrtScale" : false,
-            "showZero" : true,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "Number of clicks, per component.",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "y" : {
-            "sqrtScale" : false,
-            "showZero" : true,
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "Number of records on which this component was clicked.",
-            "customDomain" : {
-              "showDomain" : false
-            }
-          },
-          "theme" : "dark",
-          "step" : "ComponentEstate_1",
-          "dimensionAxis" : {
-            "showTitle" : true,
-            "customSize" : "auto",
-            "showAxis" : true,
-            "title" : "",
-            "icons" : {
-              "useIcons" : false,
-              "iconProps" : {
-                "fit" : "cover",
-                "column" : "",
-                "type" : "round"
-              }
-            }
-          },
-          "applyConditionalFormatting" : true
+          "step" : "SESSION_KEY_1",
+          "title" : "Session Key"
         },
-        "type" : "chart"
+        "type" : "listselector"
+      },
+      "listselector_2" : {
+        "parameters" : {
+          "compact" : false,
+          "displayMode" : "filter",
+          "exploreLink" : false,
+          "filterStyle" : {
+            "titleColor" : "#747474",
+            "valueColor" : "#16325C"
+          },
+          "instant" : true,
+          "measureField" : "count",
+          "showActionMenu" : true,
+          "step" : "User_Name_1",
+          "title" : "User's Name"
+        },
+        "type" : "listselector"
       },
       "link_3" : {
         "parameters" : {
@@ -10021,29 +9633,6 @@
           "textColor" : "#0070D2"
         },
         "type" : "link"
-      },
-      "text_24" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "20px"
-                },
-                "insert" : "Your Object Real Estate"
-              },
-              {
-                "attributes" : {
-                  "align" : "center"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
-          "showActionMenu" : true
-        },
-        "type" : "text"
       },
       "link_1" : {
         "parameters" : {
@@ -10080,7 +9669,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Select a bar below to see the action description:"
               },
@@ -10093,7 +9682,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "[Description]"
               },
@@ -10112,6 +9701,7 @@
               }
             }
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -10125,7 +9715,7 @@
                   "color" : "#091a3e",
                   "size" : "24px"
                 },
-                "insert" : "User Activity & Journeys"
+                "insert" : "Adoption Console (Advanced)"
               },
               {
                 "attributes" : {
@@ -10135,6 +9725,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -10164,7 +9755,7 @@
           "includeState" : false,
           "text" : "Visual Data Dictionary",
           "textAlignment" : "center",
-          "textColor" : "#C6D3E1"
+          "textColor" : "#54698D"
         },
         "type" : "link"
       }

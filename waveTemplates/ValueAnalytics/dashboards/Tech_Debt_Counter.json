@@ -11,10 +11,34 @@
     "measures" : [
       {
         "conditionalFormatting" : { },
+        "field" : "TotalApps_1.C",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###\",1]"
+        }
+      },
+      {
+        "conditionalFormatting" : { },
+        "field" : "VFPagePCCalc_1.B",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###\",1]"
+        }
+      },
+      {
+        "conditionalFormatting" : { },
+        "field" : "VFPagePCCalc_1.A",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###\",1]"
+        }
+      },
+      {
+        "conditionalFormatting" : { },
         "field" : "VFPagePCCalc_1.C",
         "format" : {
           "delimiters" : { },
-          "customFormat" : "[\"#,###.##%\",100]"
+          "customFormat" : "[\"#,###\",1]"
         }
       }
     ],
@@ -26,7 +50,11 @@
     "dimensions" : [ ]
   },
   "state" : {
-    "dataSourceLinks" : [ ],
+    "dataSourceLinksInfo" : {
+      "enableAutomaticLinking" : false,
+      "excludeRelationships" : [ ],
+      "links" : [ ]
+    },
     "filters" : [
       {
         "dataset" : {
@@ -82,6 +110,17 @@
         ],
         "locked" : false,
         "operator" : ">=<="
+      },
+      {
+        "dataset" : {
+          "name" : "${App.Datasets.TechDebtCounter_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "SnapshotDate"
+        ],
+        "locked" : false,
+        "operator" : ">=<="
       }
     ],
     "gridLayouts" : [
@@ -103,7 +142,7 @@
                 "rowspan" : 4,
                 "widgetStyle" : {
                   "backgroundColor" : "#FFFFFF",
-                  "borderColor" : "rgb(0, 112, 210)",
+                  "borderColor" : "#54698D",
                   "borderEdges" : [
                     "bottom"
                   ],
@@ -135,7 +174,7 @@
                 "rowspan" : 5,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -149,7 +188,7 @@
                 "rowspan" : 42,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [
                     "all"
                   ],
@@ -165,7 +204,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -179,7 +218,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -193,7 +232,7 @@
                 "rowspan" : 23,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -207,7 +246,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -221,7 +260,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [
                     "all"
                   ],
@@ -237,7 +276,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -251,7 +290,7 @@
                 "rowspan" : 5,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -265,7 +304,7 @@
                 "rowspan" : 42,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [
                     "all"
                   ],
@@ -281,7 +320,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -295,7 +334,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -309,7 +348,7 @@
                 "rowspan" : 23,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -323,7 +362,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -337,7 +376,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -351,7 +390,7 @@
                 "rowspan" : 5,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -365,7 +404,7 @@
                 "rowspan" : 42,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [
                     "all"
                   ],
@@ -381,7 +420,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -395,7 +434,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -409,7 +448,7 @@
                 "rowspan" : 23,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -423,7 +462,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -437,7 +476,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -451,7 +490,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -465,7 +504,7 @@
                 "rowspan" : 5,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -479,7 +518,7 @@
                 "rowspan" : 49,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [
                     "all"
                   ],
@@ -495,7 +534,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -509,7 +548,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -523,7 +562,7 @@
                 "rowspan" : 23,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -537,7 +576,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -551,7 +590,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -565,7 +604,7 @@
                 "rowspan" : 5,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
@@ -588,39 +627,51 @@
               {
                 "colspan" : 6,
                 "column" : 2,
-                "name" : "chart_7",
-                "row" : 19,
-                "rowspan" : 3,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "rgba(230, 236, 242, 0)",
-                  "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 6,
-                "column" : 2,
                 "name" : "chart_2",
                 "row" : 63,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
               },
               {
+                "colspan" : 47,
+                "column" : 1,
+                "name" : "table_2",
+                "row" : 105,
+                "rowspan" : 37,
+                "widgetStyle" : {
+                  "borderColor" : "#54698d",
+                  "borderEdges" : [ ]
+                }
+              },
+              {
                 "colspan" : 31,
                 "column" : 17,
-                "name" : "table_2",
+                "name" : "table_1",
                 "row" : 54,
-                "rowspan" : 48,
+                "rowspan" : 49,
                 "widgetStyle" : {
+                  "borderColor" : "#54698d",
                   "borderEdges" : [ ]
+                }
+              },
+              {
+                "colspan" : 6,
+                "column" : 2,
+                "name" : "chart_7",
+                "row" : 19,
+                "rowspan" : 3,
+                "widgetStyle" : {
+                  "backgroundColor" : "rgba(255, 255, 255, 0)",
+                  "borderColor" : "#54698d",
+                  "borderEdges" : [ ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
                 }
               }
             ]
@@ -631,7 +682,7 @@
         "style" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "backgroundColor" : "rgb(24, 42, 82)",
+          "backgroundColor" : "#FFFFFF",
           "cellSpacingX" : 0,
           "cellSpacingY" : 0,
           "fit" : "original",
@@ -653,12 +704,141 @@
         "label" : "ExecutionSummaryTable",
         "query" : {
           "query" : {
+            "measures" : [
+              [
+                "count",
+                "*",
+                "A"
+              ],
+              [
+                "avg",
+                "AvgRunTIme",
+                "B"
+              ],
+              [
+                "unique",
+                "SnapshotDate",
+                "C"
+              ]
+            ],
+            "columns" : [
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "count",
+                      "*"
+                    ]
+                  ],
+                  "groups" : [
+                    "MetadataType",
+                    "EntityName"
+                  ]
+                },
+                "header" : "Executions"
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "avg",
+                      "AvgRunTIme"
+                    ]
+                  ],
+                  "groups" : [
+                    "MetadataType",
+                    "EntityName"
+                  ]
+                },
+                "header" : "Avg RunTime (ms)"
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "unique",
+                      "SnapshotDate"
+                    ]
+                  ],
+                  "groups" : [
+                    "MetadataType",
+                    "EntityName"
+                  ]
+                },
+                "header" : "No. Days Observed"
+              }
+            ],
+            "groups" : [
+              "MetadataType",
+              "EntityName"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "options" : { },
+          "parameters" : {
+            "borderColor" : "#54698d",
+            "borderWidth" : 1,
+            "cell" : {
+              "backgroundColor" : "#16325c",
+              "fontColor" : "#ffffff",
+              "fontSize" : 12,
+              "textWrap" : true
+            },
+            "columnProperties" : { },
+            "columns" : [
+              "A",
+              "C",
+              "B",
+              "MetadataType",
+              "EntityName"
+            ],
+            "customBulkActions" : [ ],
+            "header" : {
+              "backgroundColor" : "#000000",
+              "fontColor" : "#ffffff",
+              "fontSize" : 12,
+              "textWrap" : true
+            },
+            "innerMajorBorderColor" : "#54698d",
+            "innerMinorBorderColor" : "#54698d",
+            "interactions" : [ ],
+            "mode" : "fittocontainer",
+            "numberOfLines" : 1,
+            "showActionMenu" : true,
+            "showRowIndexColumn" : false,
+            "totals" : true,
+            "verticalPadding" : 8
+          },
+          "type" : "table"
+        }
+      },
+      "ExecutionDetailTabl_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets.TechDebtCounter_tp.Name}"
+          }
+        ],
+        "isGlobal" : false,
+        "label" : "Execution Detail Table",
+        "query" : {
+          "query" : {
             "values" : [
               "MetadataType",
               "EntityName",
               "IsCustom",
               "AvgRunTIme",
-              "Rows"
+              "Rows",
+              "SnapshotDate"
             ],
             "order" : [
               [
@@ -700,6 +880,7 @@
             },
             "innerMajorBorderColor" : "#54698d",
             "innerMinorBorderColor" : "#54698d",
+            "interactions" : [ ],
             "mode" : "fittocontainer",
             "numberOfLines" : 1,
             "showActionMenu" : true,
@@ -736,6 +917,11 @@
                 "count",
                 "*",
                 "C"
+              ],
+              [
+                "count",
+                "*",
+                "D"
               ]
             ],
             "columns" : [
@@ -766,11 +952,11 @@
                           0
                         ]
                       ],
-                      "=="
+                      ">"
                     ]
                   ]
                 },
-                "header" : "UnusedPages"
+                "header" : "UsedPages"
               },
               {
                 "query" : {
@@ -780,9 +966,20 @@
                       "*"
                     ]
                   ],
-                  "formula" : "(A-B)/A"
+                  "formula" : "coalesce(B/A,0)"
                 },
-                "header" : "PercentageUsedVF"
+                "header" : "UnusedVF"
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "count",
+                      "*"
+                    ]
+                  ]
+                },
+                "header" : "UnusedVFCount"
               }
             ],
             "filters" : [
@@ -806,7 +1003,14 @@
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
+            "autoFitMode" : "keepLabels",
             "max" : 100,
+            "legend" : {
+              "showHeader" : true,
+              "show" : false,
+              "position" : "right-top",
+              "inside" : false
+            },
             "tooltip" : {
               "content" : {
                 "legend" : {
@@ -858,8 +1062,9 @@
             },
             "showActionMenu" : true,
             "min" : 0,
-            "valueType" : "compactNumber",
+            "valueType" : "percent",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "applyConditionalFormatting" : true
           },
           "type" : "chart"
@@ -869,7 +1074,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -937,7 +1142,7 @@
                     ]
                   ]
                 },
-                "header" : "CustomViews"
+                "header" : "Custom Object Views"
               },
               {
                 "query" : {
@@ -956,7 +1161,7 @@
                   ],
                   "formula" : "(A-coalesce(B,0))"
                 },
-                "header" : "StandardViews"
+                "header" : "Standard Object Views"
               }
             ],
             "groups" : [
@@ -978,7 +1183,6 @@
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
-            "showValues" : true,
             "showPoints" : false,
             "legend" : {
               "descOrder" : false,
@@ -1118,7 +1322,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1194,7 +1398,27 @@
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
-            "showValues" : true,
+            "autoFitMode" : "keepLabels",
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
             "showPoints" : false,
             "legend" : {
               "descOrder" : false,
@@ -1221,6 +1445,15 @@
             },
             "visualizationType" : "time",
             "missingValue" : "connect",
+            "dashLine" : {
+              "measures" : "",
+              "showDashLine" : false
+            },
+            "timeAxis" : {
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "Date"
+            },
             "title" : {
               "fontSize" : 14,
               "subtitleFontSize" : 11,
@@ -1240,46 +1473,6 @@
               "type" : "x",
               "chartsPerLine" : 4
             },
-            "showZero" : true,
-            "valueType" : "none",
-            "theme" : "wave",
-            "applyConditionalFormatting" : true,
-            "drawArea" : {
-              "measure" : "",
-              "showDrawArea" : false,
-              "bounding1" : "",
-              "bounding2" : ""
-            },
-            "autoFitMode" : "keepLabels",
-            "bins" : {
-              "breakpoints" : {
-                "high" : 100,
-                "low" : 0
-              },
-              "bands" : {
-                "high" : {
-                  "color" : "#008000",
-                  "label" : ""
-                },
-                "low" : {
-                  "color" : "#B22222",
-                  "label" : ""
-                },
-                "medium" : {
-                  "color" : "#ffa500",
-                  "label" : ""
-                }
-              }
-            },
-            "dashLine" : {
-              "measures" : "",
-              "showDashLine" : false
-            },
-            "timeAxis" : {
-              "showTitle" : true,
-              "showAxis" : true,
-              "title" : "Date"
-            },
             "columnProperties" : { },
             "fillArea" : false,
             "columnMap" : {
@@ -1294,6 +1487,7 @@
               ]
             },
             "showActionMenu" : true,
+            "showZero" : true,
             "measureAxis2" : {
               "sqrtScale" : false,
               "showTitle" : true,
@@ -1303,6 +1497,7 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "none",
             "measureAxis1" : {
               "sqrtScale" : false,
               "showTitle" : true,
@@ -1311,6 +1506,14 @@
               "customDomain" : {
                 "showDomain" : false
               }
+            },
+            "theme" : "wave",
+            "applyConditionalFormatting" : true,
+            "drawArea" : {
+              "measure" : "",
+              "showDrawArea" : false,
+              "bounding1" : "",
+              "bounding2" : ""
             }
           },
           "type" : "chart"
@@ -1342,6 +1545,11 @@
                 "count",
                 "*",
                 "C"
+              ],
+              [
+                "count",
+                "*",
+                "D"
               ]
             ],
             "columns" : [
@@ -1372,7 +1580,7 @@
                           0
                         ]
                       ],
-                      "=="
+                      ">"
                     ]
                   ]
                 },
@@ -1386,9 +1594,21 @@
                       "*"
                     ]
                   ],
-                  "formula" : "(A-B)/A"
+                  "formula" : "B/A"
                 },
                 "header" : "UsedObjects"
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "count",
+                      "*"
+                    ]
+                  ],
+                  "formula" : "A-B"
+                },
+                "header" : "UnusedObjectCount"
               }
             ],
             "filters" : [
@@ -1423,6 +1643,12 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "max" : 1,
+            "legend" : {
+              "showHeader" : true,
+              "show" : false,
+              "position" : "right-top",
+              "inside" : false
+            },
             "tooltip" : {
               "content" : {
                 "legend" : {
@@ -1465,17 +1691,18 @@
               "highColor1" : "#7BDE4E",
               "highColor2" : "#169913"
             },
+            "high" : 66,
             "columnMap" : {
               "trellis" : [ ],
               "plots" : [
                 "C"
               ]
             },
-            "high" : 66,
             "showActionMenu" : true,
             "min" : 0,
             "valueType" : "percent",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "applyConditionalFormatting" : true
           },
           "type" : "chart"
@@ -1507,6 +1734,11 @@
                 "count",
                 "*",
                 "C"
+              ],
+              [
+                "count",
+                "*",
+                "D"
               ]
             ],
             "columns" : [
@@ -1537,7 +1769,7 @@
                           0
                         ]
                       ],
-                      "=="
+                      ">"
                     ]
                   ]
                 },
@@ -1551,9 +1783,21 @@
                       "*"
                     ]
                   ],
-                  "formula" : "(A-B)/A"
+                  "formula" : "B/A"
                 },
-                "header" : "UsedApps"
+                "header" : "UnusedApps"
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "count",
+                      "*"
+                    ]
+                  ],
+                  "formula" : "A-B"
+                },
+                "header" : "UnusedAppsCount"
               }
             ],
             "filters" : [
@@ -1578,7 +1822,7 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "max" : 1,
+            "max" : 100,
             "tooltip" : {
               "content" : {
                 "legend" : {
@@ -1621,17 +1865,18 @@
               "highColor1" : "#7BDE4E",
               "highColor2" : "#169913"
             },
+            "high" : 66,
             "columnMap" : {
               "trellis" : [ ],
               "plots" : [
                 "C"
               ]
             },
-            "high" : 66,
             "showActionMenu" : true,
             "min" : 0,
             "valueType" : "percent",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "applyConditionalFormatting" : true
           },
           "type" : "chart"
@@ -1774,7 +2019,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1975,6 +2220,11 @@
                 "count",
                 "*",
                 "C"
+              ],
+              [
+                "count",
+                "*",
+                "D"
               ]
             ],
             "columns" : [
@@ -2005,11 +2255,11 @@
                           0
                         ]
                       ],
-                      "=="
+                      ">"
                     ]
                   ]
                 },
-                "header" : "UnusedClasses"
+                "header" : "TotalClassesUsed"
               },
               {
                 "query" : {
@@ -2019,9 +2269,21 @@
                       "*"
                     ]
                   ],
-                  "formula" : "(A-B)/A"
+                  "formula" : "B/A"
                 },
                 "header" : "UsedClasses"
+              },
+              {
+                "query" : {
+                  "measures" : [
+                    [
+                      "count",
+                      "*"
+                    ]
+                  ],
+                  "formula" : "A-B"
+                },
+                "header" : "UnusedClassesCount"
               }
             ],
             "filters" : [
@@ -2046,7 +2308,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -2120,7 +2381,6 @@
               "highColor1" : "#7BDE4E",
               "highColor2" : "#169913"
             },
-            "columnProperties" : { },
             "high" : 66,
             "columnMap" : {
               "trellis" : [ ],
@@ -2139,6 +2399,7 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "percent",
             "measureAxis1" : {
               "sqrtScale" : false,
               "showTitle" : true,
@@ -2148,8 +2409,8 @@
                 "showDomain" : false
               }
             },
-            "valueType" : "percent",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -2172,7 +2433,7 @@
     },
     "widgetStyle" : {
       "backgroundColor" : "#FFFFFF",
-      "borderColor" : "#E6ECF2",
+      "borderColor" : "#54698d",
       "borderEdges" : [ ],
       "borderRadius" : 0,
       "borderWidth" : 1
@@ -2182,8 +2443,9 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
-          "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "interactions" : [ ],
+          "measureField" : "D",
+          "numberColor" : "#54698d",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "CustomObjectsUsed_1",
@@ -2216,6 +2478,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2227,9 +2490,9 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
-                "insert" : "Unused Custom Objects"
+                "insert" : "Unviewed Custom Objects"
               },
               {
                 "attributes" : {
@@ -2239,6 +2502,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2247,7 +2511,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -2270,6 +2535,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2278,7 +2544,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -2301,6 +2568,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2324,6 +2592,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2335,7 +2604,7 @@
               {
                 "attributes" : {
                   "size" : "14px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Object page views over time, daily"
               },
@@ -2347,6 +2616,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2358,9 +2628,9 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
-                "insert" : "% of Custom Objects Used"
+                "insert" : "% of Custom Objects Viewed"
               },
               {
                 "attributes" : {
@@ -2370,6 +2640,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2393,6 +2664,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2401,8 +2673,9 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
-          "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "interactions" : [ ],
+          "measureField" : "D",
+          "numberColor" : "#54698d",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "VFPagePCCalc_1",
@@ -2423,7 +2696,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Objects"
               },
@@ -2435,6 +2708,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2443,8 +2717,10 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
-          "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "interactions" : [ ],
+          "measureField" : "D",
+          "noResultsLabel" : "No Results Found",
+          "numberColor" : "#54698d",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "TotalApexUsed_1",
@@ -2462,7 +2738,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -2470,13 +2747,13 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
       "chart_9" : {
         "parameters" : {
-          "showValues" : true,
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -2525,7 +2802,7 @@
           },
           "showZero" : true,
           "valueType" : "none",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -2617,7 +2894,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -2625,7 +2903,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -2648,6 +2927,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2677,6 +2957,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2691,7 +2972,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -2714,6 +2996,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -2722,20 +3005,15 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
       "chart_7" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "max" : 1,
-          "legend" : {
-            "showHeader" : true,
-            "show" : false,
-            "position" : "right-top",
-            "inside" : false
-          },
+          "max" : 100,
           "tooltip" : {
             "content" : {
               "legend" : {
@@ -2789,14 +3067,16 @@
           "showActionMenu" : true,
           "min" : 0,
           "valueType" : "percent",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "step" : "TotalApps_1",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : true
         },
         "type" : "chart"
       },
       "chart_2" : {
         "parameters" : {
+          "autoFitMode" : "keepLabels",
           "max" : 100,
           "legend" : {
             "showHeader" : true,
@@ -2856,9 +3136,10 @@
           },
           "showActionMenu" : true,
           "min" : 0,
-          "valueType" : "compactNumber",
-          "theme" : "wave",
+          "valueType" : "percent",
+          "theme" : "colorblindEnhanced",
           "step" : "VFPagePCCalc_1",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : true
         },
         "type" : "chart"
@@ -2969,6 +3250,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3132,8 +3414,9 @@
           "showActionMenu" : true,
           "min" : 0,
           "valueType" : "percent",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "step" : "CustomObjectsUsed_1",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : true
         },
         "type" : "chart"
@@ -3157,6 +3440,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3165,14 +3449,14 @@
         "parameters" : {
           "filterItemOptions" : {
             "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#E6ECF2",
+            "borderColor" : "#54698d",
             "borderRadius" : 4,
             "borderWidth" : 1,
-            "propertyColor" : "#54698D",
+            "propertyColor" : "#54698d",
             "valueColor" : "#16325C"
           },
           "filters" : [ ],
-          "itemsPerRow" : 5,
+          "itemsPerRow" : 6,
           "showAllFilters" : true,
           "title" : {
             "separatorColor" : "rgba(230, 236, 242, 0)",
@@ -3189,12 +3473,14 @@
       },
       "number_5" : {
         "parameters" : {
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "number"
       },
       "number_4" : {
         "parameters" : {
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "number"
@@ -3206,7 +3492,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Unused Visualforce Pages"
               },
@@ -3218,6 +3504,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3230,7 +3517,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3238,13 +3526,13 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
       "chart_15" : {
         "parameters" : {
-          "showValues" : true,
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -3293,7 +3581,7 @@
           },
           "showZero" : true,
           "valueType" : "none",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -3381,7 +3669,6 @@
       },
       "chart_14" : {
         "parameters" : {
-          "showValues" : true,
           "legend" : {
             "descOrder" : false,
             "showHeader" : true,
@@ -3438,7 +3725,7 @@
           "high" : 66,
           "min" : 0,
           "valueType" : "percent",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -3476,7 +3763,6 @@
             }
           },
           "max" : 1,
-          "columnProperties" : { },
           "columnMap" : {
             "trellis" : [ ],
             "plots" : [
@@ -3502,13 +3788,13 @@
               "showDomain" : false
             }
           },
-          "step" : "TotalApexUsed_1"
+          "step" : "TotalApexUsed_1",
+          "compactDecimalDigits" : -1
         },
         "type" : "chart"
       },
       "chart_12" : {
         "parameters" : {
-          "showValues" : true,
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -3557,7 +3843,7 @@
           },
           "showZero" : true,
           "valueType" : "none",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "applyConditionalFormatting" : true,
           "drawArea" : {
             "measure" : "",
@@ -3633,7 +3919,6 @@
       },
       "chart_11" : {
         "parameters" : {
-          "showValues" : true,
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -3682,7 +3967,7 @@
           },
           "showZero" : true,
           "valueType" : "none",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -3777,7 +4062,7 @@
               {
                 "attributes" : {
                   "size" : "14px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Visualforce consumption over time"
               },
@@ -3789,6 +4074,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3800,7 +4086,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Unused Classes"
               },
@@ -3812,6 +4098,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3823,7 +4110,7 @@
               {
                 "attributes" : {
                   "size" : "14px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Apex class usage over time, daily"
               },
@@ -3835,6 +4122,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3846,7 +4134,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "% of Visualforce Used"
               },
@@ -3858,6 +4146,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3869,7 +4158,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Visualforce"
               },
@@ -3881,6 +4170,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3889,8 +4179,9 @@
         "parameters" : {
           "compact" : false,
           "exploreLink" : true,
-          "measureField" : "B",
-          "numberColor" : "#FFFFFF",
+          "interactions" : [ ],
+          "measureField" : "D",
+          "numberColor" : "#54698d",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "TotalApps_1",
@@ -3911,7 +4202,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "% of Apex Used"
               },
@@ -3923,6 +4214,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3934,7 +4226,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Apex"
               },
@@ -3946,6 +4238,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3957,7 +4250,7 @@
               {
                 "attributes" : {
                   "size" : "14px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "App usage over time, daily; includes standard apps"
               },
@@ -3969,6 +4262,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3980,7 +4274,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "% of Apps Used"
               },
@@ -3992,6 +4286,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4003,7 +4298,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Apps"
               },
@@ -4015,6 +4310,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4038,6 +4334,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4061,6 +4358,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4072,7 +4370,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#e6ecf2"
+                  "color" : "#54698d"
                 },
                 "insert" : "Unused Apps"
               },
@@ -4084,6 +4382,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4107,39 +4406,85 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
-      "table_2" : {
+      "table_1" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
+            "fontSize" : 12,
+            "textWrap" : true
+          },
+          "columnProperties" : { },
+          "columns" : [
+            "A",
+            "C",
+            "B",
+            "MetadataType",
+            "EntityName"
+          ],
+          "customBulkActions" : [ ],
+          "evenRowColor" : "#f4f6f9",
+          "exploreLink" : true,
+          "header" : {
             "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
+            "fontSize" : 12,
+            "textWrap" : true
+          },
+          "innerMajorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
+          "mode" : "fittocontainer",
+          "numberOfLines" : 1,
+          "oddRowColor" : "#ffffff",
+          "pivoted" : false,
+          "showActionMenu" : true,
+          "showRowIndexColumn" : false,
+          "step" : "ExecutionSummaryTabl_1",
+          "totals" : true,
+          "verticalPadding" : 4
+        },
+        "type" : "table"
+      },
+      "table_2" : {
+        "parameters" : {
+          "borderColor" : "#a8b7c7",
+          "borderWidth" : 1,
+          "cell" : {
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
             "textWrap" : true
           },
           "columnProperties" : { },
           "columns" : [ ],
           "customBulkActions" : [ ],
+          "evenRowColor" : "#f4f6f9",
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
             "textWrap" : true
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
           "mode" : "fittocontainer",
           "numberOfLines" : 1,
+          "oddRowColor" : "#ffffff",
           "showActionMenu" : true,
-          "showRowIndexColumn" : true,
-          "step" : "ExecutionSummaryTabl_1",
+          "showRowIndexColumn" : false,
+          "step" : "ExecutionDetailTabl_1",
           "totals" : true,
-          "verticalPadding" : 8
+          "verticalPadding" : 4
         },
         "type" : "table"
       }

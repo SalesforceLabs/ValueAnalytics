@@ -1,6 +1,6 @@
 {
   "name" : "Apex_Performance_and_Analysis_tp",
-  "label" : "Apex Performance and Analysis",
+  "label" : "Apex Performance",
   "description" : "Deep dive into specific classes and methods that are not performing optimally.",
   "folder" : {
     "id" : "${App.Folder.Id}"
@@ -31,7 +31,7 @@
             "referenceField" : "A",
             "type" : "static",
             "parameters" : {
-              "formatValue" : "#00B3B4"
+              "formatValue" : "rgb(23, 121, 212)"
             }
           }
         },
@@ -51,259 +51,6 @@
           }
         },
         "field" : "TIMESTAMP_DERIVED_Ye_2.B",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "Avg Time (ms)",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "SlowLeaders.Avg Time (ms)",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "Avg Time (ms)",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "YestWorstPerfType_1.Avg Time (ms)",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "E",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "0.1"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "0.4"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetailsTa_1.E",
-        "format" : {
-          "delimiters" : { },
-          "customFormat" : "[\"#,###.##%\",100]"
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "C",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetailsTa_1.C",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "RUN_TIME",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetail_1.RUN_TIME",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "CPU_TIME",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetail_1.CPU_TIME",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "EXEC_TIME",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetail_1.EXEC_TIME",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "DB_TOTAL_TIME",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetail_1.DB_TOTAL_TIME",
-        "format" : {
-          "delimiters" : { }
-        }
-      },
-      {
-        "conditionalFormatting" : {
-          "color" : {
-            "referenceField" : "CALLOUT_TIME",
-            "type" : "multiple",
-            "parameters" : {
-              "bins" : [
-                {
-                  "formatValue" : "#00B531",
-                  "bin" : "*"
-                },
-                {
-                  "formatValue" : "#E8963B",
-                  "bin" : "2500"
-                },
-                {
-                  "formatValue" : "#E84340",
-                  "bin" : "5000"
-                }
-              ]
-            }
-          }
-        },
-        "field" : "ApexDetail_1.CALLOUT_TIME",
         "format" : {
           "delimiters" : { }
         }
@@ -557,6 +304,258 @@
           "delimiters" : { },
           "customFormat" : "[\"#,###.##%\",100]"
         }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "C",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#00B531",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "2500"
+                },
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetailsTa_1.C",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "E",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#00B531",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "0.1"
+                },
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "0.4"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetailsTa_1.E",
+        "format" : {
+          "delimiters" : { },
+          "customFormat" : "[\"#,###.##%\",100]"
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "CALLOUT_TIME",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "2500"
+                },
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetail_1.CALLOUT_TIME",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "DB_TOTAL_TIME",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "2500"
+                },
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetail_1.DB_TOTAL_TIME",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "EXEC_TIME",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "2500"
+                },
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetail_1.EXEC_TIME",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "CPU_TIME",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "2500"
+                },
+                {
+                  "formatValue" : "#E84340",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetail_1.CPU_TIME",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "RUN_TIME",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "2500"
+                },
+                {
+                  "formatValue" : "#B50E03",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "ApexDetail_1.RUN_TIME",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "Avg Time (ms)",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "bin" : "3000"
+                },
+                {
+                  "formatValue" : "#B50E03",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "QuiddityAllTime_1.Avg Time (ms)",
+        "format" : {
+          "delimiters" : { }
+        }
+      },
+      {
+        "conditionalFormatting" : {
+          "color" : {
+            "referenceField" : "Avg Time (ms)",
+            "type" : "multiple",
+            "parameters" : {
+              "bins" : [
+                {
+                  "formatValue" : "#4269E9",
+                  "bin" : "*"
+                },
+                {
+                  "formatValue" : "#E8963B",
+                  "bin" : "3000"
+                },
+                {
+                  "formatValue" : "#B50E03",
+                  "bin" : "5000"
+                }
+              ]
+            }
+          }
+        },
+        "field" : "QuiddityYesterday_1.Avg Time (ms)",
+        "format" : {
+          "delimiters" : { }
+        }
       }
     ],
     "derivedDimensions" : [ ],
@@ -572,7 +571,7 @@
             "referenceField" : "A",
             "type" : "static",
             "parameters" : {
-              "formatValue" : "#00B3B4"
+              "formatValue" : "rgb(23, 121, 212)"
             }
           }
         },
@@ -609,11 +608,15 @@
     ]
   },
   "state" : {
-    "dataSourceLinks" : [ ],
+    "dataSourceLinksInfo" : {
+      "enableAutomaticLinking" : false,
+      "excludeRelationships" : [ ],
+      "links" : [ ]
+    },
     "filters" : [
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
@@ -625,48 +628,83 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
-          "USER_ID"
+          "ClassTriggerPage"
         ],
         "locked" : false,
         "operator" : "in"
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
-          "ENTRY_POINT"
+          "Method"
         ],
-        "label" : "ENTRY_POINT (Class and Method)",
         "locked" : false,
         "operator" : "in"
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
-          "QUIDDITY"
+          "QuiddityLabel"
         ],
-        "label" : "QUIDDITY (Type of Apex)",
+        "label" : "Quiddity (Type)",
         "locked" : false,
         "operator" : "in"
       },
       {
         "dataset" : {
-          "name" : "${Variables.ApexDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
-          "IS_LONG_RUNNING_REQUEST"
+          "User.Profile.Name"
         ],
-        "label" : "Long Running Requests",
+        "label" : "Profile",
+        "locked" : false,
+        "operator" : "in"
+      },
+      {
+        "dataset" : {
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "User.Roles.Name"
+        ],
+        "label" : "Role",
+        "locked" : false,
+        "operator" : "in"
+      },
+      {
+        "dataset" : {
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "USER_ID_DERIVED"
+        ],
+        "label" : "User Id",
+        "locked" : false,
+        "operator" : "in"
+      },
+      {
+        "dataset" : {
+          "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "User.Name"
+        ],
+        "label" : "User's Name",
         "locked" : false,
         "operator" : "in"
       }
@@ -736,7 +774,7 @@
                 "rowspan" : 41,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "right"
                   ],
@@ -781,7 +819,7 @@
                 "row" : 191,
                 "rowspan" : 19,
                 "widgetStyle" : {
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ]
@@ -818,7 +856,7 @@
                 }
               },
               {
-                "colspan" : 12,
+                "colspan" : 13,
                 "column" : 35,
                 "name" : "text_24",
                 "row" : 17,
@@ -840,7 +878,7 @@
                 }
               },
               {
-                "colspan" : 47,
+                "colspan" : 48,
                 "column" : 1,
                 "name" : "text_41",
                 "row" : 212,
@@ -897,7 +935,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ],
@@ -913,7 +951,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ],
@@ -929,7 +967,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ],
@@ -945,7 +983,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "bottom"
                   ],
@@ -954,8 +992,8 @@
                 }
               },
               {
-                "colspan" : 12,
-                "column" : 33,
+                "colspan" : 18,
+                "column" : 30,
                 "name" : "text_42",
                 "row" : 132,
                 "rowspan" : 3,
@@ -971,7 +1009,7 @@
                 "rowspan" : 16,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "bottom"
                   ],
@@ -1020,7 +1058,7 @@
                 "column" : 3,
                 "name" : "text_8",
                 "row" : 78,
-                "rowspan" : 35,
+                "rowspan" : 41,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
                   "borderColor" : "#E6ECF2",
@@ -1037,7 +1075,7 @@
                 "rowspan" : 46,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "left"
                   ],
@@ -1156,7 +1194,7 @@
                 "rowspan" : 41,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "right"
                   ],
@@ -1201,7 +1239,7 @@
                 "row" : 191,
                 "rowspan" : 19,
                 "widgetStyle" : {
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ]
@@ -1307,7 +1345,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ],
@@ -1323,7 +1361,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ],
@@ -1339,7 +1377,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "top"
                   ],
@@ -1355,7 +1393,7 @@
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "bottom"
                   ],
@@ -1381,7 +1419,7 @@
                 "rowspan" : 16,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "bottom"
                   ],
@@ -1431,7 +1469,7 @@
                 "rowspan" : 46,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
+                  "borderColor" : "#16325c",
                   "borderEdges" : [
                     "left"
                   ],
@@ -1529,7 +1567,7 @@
         "style" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "backgroundColor" : "rgb(24, 42, 82)",
+          "backgroundColor" : "#FFFFFF",
           "cellSpacingX" : 0,
           "cellSpacingY" : 0,
           "fit" : "original",
@@ -1544,7 +1582,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1787,7 +1825,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2024,7 +2062,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2170,7 +2208,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2180,7 +2218,8 @@
             "values" : [
               "TIMESTAMP_DERIVED",
               "USER_ID_DERIVED",
-              "ENTRY_POINT",
+              "ClassTriggerPage",
+              "Method",
               "RUN_TIME",
               "CPU_TIME",
               "EXEC_TIME",
@@ -2189,7 +2228,8 @@
               "CALLOUT_TIME",
               "IS_LONG_RUNNING_REQUEST",
               "REQUEST_ID",
-              "QUIDDITY"
+              "QUIDDITY",
+              "Exceptions.ExceptionMessageDetail"
             ]
           },
           "version" : -1.0
@@ -2204,23 +2244,26 @@
         "visualizationParameters" : {
           "options" : { },
           "parameters" : {
-            "borderColor" : "#54698d",
+            "borderColor" : "#a8b7c7",
             "borderWidth" : 1,
             "cell" : {
-              "backgroundColor" : "#16325c",
-              "fontColor" : "#ffffff",
-              "fontSize" : 12
+              "backgroundColor" : "#ffffff",
+              "fontColor" : "#16325c",
+              "fontSize" : 12,
+              "textWrap" : false
             },
             "columnProperties" : { },
             "columns" : [ ],
             "customBulkActions" : [ ],
             "header" : {
-              "backgroundColor" : "#000000",
+              "backgroundColor" : "#16325c",
               "fontColor" : "#ffffff",
-              "fontSize" : 12
+              "fontSize" : 12,
+              "textWrap" : false
             },
             "innerMajorBorderColor" : "#54698d",
-            "innerMinorBorderColor" : "#54698d",
+            "innerMinorBorderColor" : "#a8b7c7",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -2233,11 +2276,59 @@
           "type" : "table"
         }
       },
+      "QuiddityYesterday_1" : {
+        "broadcastFacet" : true,
+        "groups" : [ ],
+        "label" : "QuiddityYesterday",
+        "numbers" : [ ],
+        "query" : "q = load \"${App.Datasets.BVAApexExecutionWithUsers_tp.FullyQualifiedName}\";\nq = filter q by date('TIMESTAMP_DERIVED_Year', 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Day') in [\"1 day ago\"..\"1 day ago\"];\nq = group q by ('QuiddityLabel', 'ENTRY_POINT');\nq = foreach q generate q.'QuiddityLabel' as 'QuiddityLabel', q.'ENTRY_POINT' as 'ENTRY_POINT', avg(q.'RUN_TIME') as 'A';\nq = group q by ('QuiddityLabel', 'ENTRY_POINT');\nq = foreach q generate 'QuiddityLabel', 'ENTRY_POINT', first(A) as 'Avg RunTime', rank() over([..] partition by 'QuiddityLabel' order by sum(A) desc) as 'Rank';\nq = order q by ('QuiddityLabel' asc, 'ENTRY_POINT' asc);\nq = filter q by 'Rank'==1;\nq = foreach q generate 'QuiddityLabel','ENTRY_POINT' as 'Class-Method',round('Avg RunTime',0) as 'Avg Time (ms)';\nq = order q by 'QuiddityLabel' asc;",
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "strings" : [ ],
+        "type" : "saql",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "borderColor" : "#a8b7c7",
+            "borderWidth" : 1,
+            "cell" : {
+              "backgroundColor" : "#ffffff",
+              "fontColor" : "#16325c",
+              "fontSize" : 12,
+              "textWrap" : true
+            },
+            "columnProperties" : { },
+            "columns" : [ ],
+            "customBulkActions" : [ ],
+            "header" : {
+              "backgroundColor" : "#16325c",
+              "fontColor" : "#ffffff",
+              "fontSize" : 12,
+              "textWrap" : true
+            },
+            "innerMajorBorderColor" : "#54698d",
+            "innerMinorBorderColor" : "#a8b7c7",
+            "interactions" : [ ],
+            "maxColumnWidth" : 300,
+            "minColumnWidth" : 40,
+            "mode" : "variable",
+            "numberOfLines" : 1,
+            "showActionMenu" : true,
+            "showRowIndexColumn" : false,
+            "totals" : true,
+            "verticalPadding" : 8
+          },
+          "type" : "table"
+        }
+      },
       "ApexDetailsTa_1" : {
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2281,7 +2372,8 @@
                     ]
                   ],
                   "groups" : [
-                    "ENTRY_POINT"
+                    "ClassTriggerPage",
+                    "Method"
                   ]
                 },
                 "header" : "Total Count"
@@ -2295,7 +2387,8 @@
                     ]
                   ],
                   "groups" : [
-                    "ENTRY_POINT"
+                    "ClassTriggerPage",
+                    "Method"
                   ],
                   "filters" : [
                     [
@@ -2329,7 +2422,8 @@
                     ]
                   ],
                   "groups" : [
-                    "ENTRY_POINT"
+                    "ClassTriggerPage",
+                    "Method"
                   ]
                 },
                 "header" : "Avg Time"
@@ -2343,7 +2437,8 @@
                     ]
                   ],
                   "groups" : [
-                    "ENTRY_POINT"
+                    "ClassTriggerPage",
+                    "Method"
                   ],
                   "filters" : [
                     [
@@ -2368,7 +2463,8 @@
                     ]
                   ],
                   "groups" : [
-                    "ENTRY_POINT"
+                    "ClassTriggerPage",
+                    "Method"
                   ],
                   "formula" : "B/A"
                 },
@@ -2376,7 +2472,8 @@
               }
             ],
             "groups" : [
-              "ENTRY_POINT"
+              "ClassTriggerPage",
+              "Method"
             ]
           },
           "version" : -1.0
@@ -2391,23 +2488,26 @@
         "visualizationParameters" : {
           "options" : { },
           "parameters" : {
-            "borderColor" : "#54698d",
+            "borderColor" : "#98c6f5",
             "borderWidth" : 1,
             "cell" : {
-              "backgroundColor" : "#16325c",
-              "fontColor" : "#ffffff",
-              "fontSize" : 12
+              "backgroundColor" : "#ffffff",
+              "fontColor" : "#16325c",
+              "fontSize" : 12,
+              "textWrap" : false
             },
             "columnProperties" : { },
             "columns" : [ ],
             "customBulkActions" : [ ],
             "header" : {
-              "backgroundColor" : "#000000",
+              "backgroundColor" : "#1589ee",
               "fontColor" : "#ffffff",
-              "fontSize" : 12
+              "fontSize" : 12,
+              "textWrap" : false
             },
-            "innerMajorBorderColor" : "#54698d",
-            "innerMinorBorderColor" : "#54698d",
+            "innerMajorBorderColor" : "#3290ed",
+            "innerMinorBorderColor" : "#98c6f5",
+            "interactions" : [ ],
             "mode" : "fittocontainer",
             "numberOfLines" : 1,
             "pivoted" : false,
@@ -2419,11 +2519,71 @@
           "type" : "table"
         }
       },
+      "input_1" : {
+        "label" : "",
+        "start" : [
+          1
+        ],
+        "type" : "input",
+        "valueType" : "number",
+        "values" : [
+          {
+            "max" : 30,
+            "min" : 1
+          }
+        ]
+      },
+      "QuiddityAllTime_1" : {
+        "broadcastFacet" : true,
+        "groups" : [ ],
+        "label" : "QuiddityAllTime",
+        "numbers" : [ ],
+        "query" : "q = load \"${App.Datasets.BVAApexExecutionWithUsers_tp.FullyQualifiedName}\";\nq = group q by ('QuiddityLabel', 'ENTRY_POINT');\nq = foreach q generate q.'QuiddityLabel' as 'QuiddityLabel', q.'ENTRY_POINT' as 'ENTRY_POINT', avg(q.'RUN_TIME') as 'A';\nq = group q by ('QuiddityLabel', 'ENTRY_POINT');\nq = foreach q generate 'QuiddityLabel', 'ENTRY_POINT', first(A) as 'Avg RunTime', rank() over([..] partition by 'QuiddityLabel' order by sum(A) desc) as 'Rank';\nq = order q by ('QuiddityLabel' asc, 'ENTRY_POINT' asc);\nq = filter q by 'Rank'==1;\nq = foreach q generate 'QuiddityLabel','ENTRY_POINT' as 'Class-Method',round('Avg RunTime',0) as 'Avg Time (ms)';\nq = order q by 'QuiddityLabel' asc;",
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "strings" : [ ],
+        "type" : "saql",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "borderColor" : "#a8b7c7",
+            "borderWidth" : 1,
+            "cell" : {
+              "backgroundColor" : "#ffffff",
+              "fontColor" : "#16325c",
+              "fontSize" : 12,
+              "textWrap" : true
+            },
+            "columnProperties" : { },
+            "columns" : [ ],
+            "customBulkActions" : [ ],
+            "header" : {
+              "backgroundColor" : "#16325c",
+              "fontColor" : "#ffffff",
+              "fontSize" : 12,
+              "textWrap" : true
+            },
+            "innerMajorBorderColor" : "#54698d",
+            "innerMinorBorderColor" : "#a8b7c7",
+            "interactions" : [ ],
+            "mode" : "fittocontainer",
+            "numberOfLines" : 1,
+            "showActionMenu" : true,
+            "showRowIndexColumn" : false,
+            "totals" : true,
+            "verticalPadding" : 4
+          },
+          "type" : "table"
+        }
+      },
       "MasterExecutionTable_3" : {
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.ApexDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVAApexExecutionWithUsers_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -3012,7 +3172,7 @@
             "borderWidth" : 1,
             "cell" : {
               "backgroundColor" : "#16325c",
-              "fontColor" : "#ffffff",
+              "fontColor" : "#16325c",
               "fontSize" : 12
             },
             "columnProperties" : {
@@ -3038,11 +3198,12 @@
             "customBulkActions" : [ ],
             "header" : {
               "backgroundColor" : "rgba(0, 0, 0, 0)",
-              "fontColor" : "#ffffff",
+              "fontColor" : "#16325c",
               "fontSize" : 12
             },
             "innerMajorBorderColor" : "#54698d",
             "innerMinorBorderColor" : "#54698d",
+            "interactions" : [ ],
             "mode" : "fittocontainer",
             "numberOfLines" : 1,
             "pivoted" : false,
@@ -3059,7 +3220,7 @@
         "groups" : [ ],
         "label" : "LatestDate",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.ApexDataset.datasetAlias}\";\nq = foreach q generate 'TIMESTAMP_DERIVED_sec_epoch' as 'TIMESTAMP_DERIVED_sec_epoch';\nq = order q by 'TIMESTAMP_DERIVED_sec_epoch' desc;\nq = limit q 1;",
+        "query" : "q = load \"${App.Datasets.BVAApexExecutionWithUsers_tp.FullyQualifiedName}\";\nq = foreach q generate 'TIMESTAMP_DERIVED_sec_epoch' as 'TIMESTAMP_DERIVED_sec_epoch';\nq = order q by 'TIMESTAMP_DERIVED_sec_epoch' desc;\nq = limit q 1;",
         "receiveFacetSource" : {
           "mode" : "all",
           "steps" : [ ]
@@ -3071,7 +3232,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3154,7 +3314,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -3172,96 +3334,6 @@
             "applyConditionalFormatting" : true
           },
           "type" : "chart"
-        }
-      },
-      "SlowLeaders" : {
-        "broadcastFacet" : true,
-        "groups" : [ ],
-        "label" : "SlowLeaders",
-        "numbers" : [ ],
-        "query" : "q = load \"${Variables.ApexDataset.datasetAlias}\";\nresult = group q by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate q.'QUIDDITY' as 'QUIDDITY', q.'ENTRY_POINT' as 'ENTRY_POINT', round(avg(q.'RUN_TIME'),0) as 'A';\nresult = group result by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', first(A) as 'A', rank() over([..] partition by 'QUIDDITY' order by sum(A) desc) as 'Rank';\nresult = order result by ('QUIDDITY' asc, 'ENTRY_POINT' asc);\nresult = filter result by 'Rank'==1;\nresult = foreach result generate 'QUIDDITY','ENTRY_POINT','A' as 'Avg Time (ms)';\nresult = order result by 'QUIDDITY' asc;\nresult = limit result 2000;",
-        "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
-        },
-        "selectMode" : "single",
-        "start" : [ ],
-        "strings" : [ ],
-        "type" : "saql",
-        "useGlobal" : true,
-        "visualizationParameters" : {
-          "parameters" : {
-            "borderColor" : "#54698d",
-            "borderWidth" : 1,
-            "cell" : {
-              "backgroundColor" : "#16325c",
-              "fontColor" : "#ffffff",
-              "fontSize" : 12
-            },
-            "columnProperties" : { },
-            "columns" : [ ],
-            "customBulkActions" : [ ],
-            "header" : {
-              "backgroundColor" : "#000000",
-              "fontColor" : "#ffffff",
-              "fontSize" : 12
-            },
-            "innerMajorBorderColor" : "#54698d",
-            "innerMinorBorderColor" : "#54698d",
-            "mode" : "fittocontainer",
-            "numberOfLines" : 1,
-            "pivoted" : false,
-            "showActionMenu" : true,
-            "showRowIndexColumn" : false,
-            "totals" : true,
-            "verticalPadding" : 8
-          },
-          "type" : "table"
-        }
-      },
-      "YestWorstPerfType_1" : {
-        "broadcastFacet" : true,
-        "groups" : [ ],
-        "label" : "YestWorstPerfType",
-        "numbers" : [ ],
-        "query" : "q = load \"${Variables.ApexDataset.datasetAlias}\";\nq = filter q by 'TIMESTAMP_DERIVED_sec_epoch'=={{column(LatestDate_1.result, [\"TIMESTAMP_DERIVED_sec_epoch\"]).asObject()}};\nresult = group q by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate q.'QUIDDITY' as 'QUIDDITY', q.'ENTRY_POINT' as 'ENTRY_POINT', round(avg(q.'RUN_TIME'),0) as 'A';\nresult = group result by ('QUIDDITY', 'ENTRY_POINT');\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', first(A) as 'A', rank() over([..] partition by 'QUIDDITY' order by sum(A) desc) as 'Rank';\nresult = filter result by 'Rank' == 1;\nresult = foreach result generate 'QUIDDITY', 'ENTRY_POINT', 'A' as 'Avg Time (ms)';\nresult = order result by 'QUIDDITY' asc;\nresult = limit result 2000;",
-        "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
-        },
-        "selectMode" : "single",
-        "start" : [ ],
-        "strings" : [ ],
-        "type" : "saql",
-        "useGlobal" : true,
-        "visualizationParameters" : {
-          "parameters" : {
-            "borderColor" : "#54698d",
-            "borderWidth" : 1,
-            "cell" : {
-              "backgroundColor" : "#16325c",
-              "fontColor" : "#ffffff",
-              "fontSize" : 12
-            },
-            "columnProperties" : { },
-            "columns" : [ ],
-            "customBulkActions" : [ ],
-            "header" : {
-              "backgroundColor" : "#000000",
-              "fontColor" : "#ffffff",
-              "fontSize" : 12
-            },
-            "innerMajorBorderColor" : "#54698d",
-            "innerMinorBorderColor" : "#54698d",
-            "mode" : "fittocontainer",
-            "numberOfLines" : 1,
-            "pivoted" : false,
-            "showActionMenu" : true,
-            "showRowIndexColumn" : false,
-            "totals" : true,
-            "verticalPadding" : 8
-          },
-          "type" : "table"
         }
       }
     },
@@ -3292,6 +3364,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3300,7 +3373,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3308,7 +3382,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3316,7 +3391,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3339,6 +3415,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3347,7 +3424,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3370,6 +3448,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3393,6 +3472,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3418,7 +3498,7 @@
               {
                 "attributes" : {
                   "size" : "14px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Summary Data Table"
               },
@@ -3430,6 +3510,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3453,6 +3534,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3464,7 +3546,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "These tables show which is the slowest class and method for each type of Apex, for all time (Left) and for the most recent day (Right). It is recommended to look at average run time across the different types of Apex because they have different use-cases, expectations, and performance thresholds."
               },
@@ -3475,7 +3557,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "For example, most executions would occur under 'Synchronous', which means a user performs an action and has to wait for that execution to finish before their page reloads or they navigate onwards. For this reason, a performance threshold of 5 seconds is important. For Batch Apex, there isn't neccessarily a time limit since it runs in the background. However, long-running Batch Apex may indicate sub-optimal code and could delay other batch jobs that are scheduled behind it in the queue."
               },
@@ -3487,6 +3569,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3495,17 +3578,18 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
       "table_13" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
             "textWrap" : false
           },
@@ -3532,13 +3616,14 @@
           "customBulkActions" : [ ],
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
             "textWrap" : false
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
           "mode" : "fittocontainer",
           "numberOfLines" : 1,
           "pivoted" : false,
@@ -3554,7 +3639,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3562,7 +3648,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3570,7 +3657,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3593,6 +3681,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3622,6 +3711,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -3695,7 +3785,7 @@
             "chartsPerLine" : 4
           },
           "columnProperties" : { },
-          "fillArea" : true,
+          "fillArea" : false,
           "showActionMenu" : true,
           "showZero" : true,
           "measureAxis2" : {
@@ -3718,7 +3808,7 @@
           },
           "valueType" : "none",
           "step" : "TIMESTAMP_DERIVED_Ye_2",
-          "theme" : "waterDark",
+          "theme" : "colorblindEnhanced",
           "applyConditionalFormatting" : true,
           "drawArea" : {
             "measure" : "A",
@@ -3733,7 +3823,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -3744,7 +3835,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "QUIDDITY Legend:"
               },
@@ -3755,7 +3846,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "A\t-\tBatch Apex"
               },
@@ -3766,7 +3857,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "B\t-\tBulk API"
               },
@@ -3777,7 +3868,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "BA\t-\tBatch Apex Start"
               },
@@ -3788,7 +3879,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "C\t-\tScheduled Apex"
               },
@@ -3799,7 +3890,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "CI\t-\tCommerce Integration"
               },
@@ -3810,7 +3901,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "DL\t-\t Discoverable Login page"
               },
@@ -3821,7 +3912,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "E\t-\tInbound Email Service"
               },
@@ -3832,7 +3923,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "F\t-\tFuture"
               },
@@ -3843,7 +3934,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "FC\t-\tFunction Callback"
               },
@@ -3854,7 +3945,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "H\t-\tApex REST"
               },
@@ -3865,7 +3956,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "I\t-\tInvocable Action"
               },
@@ -3876,7 +3967,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "K\t-\tQuick Action"
               },
@@ -3887,7 +3978,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "L\t-\tLightning"
               },
@@ -3898,7 +3989,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "M\t-\tRemote Action"
               },
@@ -3909,7 +4000,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "P\t-\tBulk Apex Parallel"
               },
@@ -3920,7 +4011,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Q\t-\tQueueable"
               },
@@ -3931,7 +4022,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "R\t-\tSynchronous"
               },
@@ -3942,7 +4033,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "S\t-\tQueryLocator Batch Apex"
               },
@@ -3953,7 +4044,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "TA\t-\tTests Async"
               },
@@ -3964,7 +4055,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "TD\t-\tTests Deployment"
               },
@@ -3975,7 +4066,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "TS\t-\tTests Synchronous"
               },
@@ -3986,7 +4077,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "V\t-\tVisualforce"
               },
@@ -3997,7 +4088,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "W\t-\tSOAP Webservices"
               },
@@ -4008,7 +4099,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "X\t-\tExecute Anonymous"
               },
@@ -4020,6 +4111,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4043,6 +4135,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4054,7 +4147,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Not sure what the data in this dashboard means? Make sure to read the:"
               },
@@ -4066,6 +4159,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4185,6 +4279,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4287,7 +4382,6 @@
       },
       "chart_3" : {
         "parameters" : {
-          "showValues" : true,
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -4336,7 +4430,7 @@
           },
           "showZero" : true,
           "valueType" : "none",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -4419,7 +4513,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "The chart on the right helps understand what parts of the Apex execution are contributing towards overall time (RunTime)."
               },
@@ -4430,7 +4524,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Since RunTime is the sum of CPU, Execution, DB (Database) and Callout time, plotting the average times separately means that any significant spike in RunTime should be seen in one of the corresponding times. For example, a spike in RunTime could be accompanied by a spike in DB Time, which means there were issues with SOQL queries no longer being optimised, either through a change in indexes, a change in the query itself, or a change in the data volume for the table(s) being queried.."
               },
@@ -4441,7 +4535,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "If there are anomalies in the chart - sudden spikes - click on that peak datapoint to focus the dashboard on that particular time, and investigate the Class and Method details below (Entry Point) to see what were the slowest-performing methods at that point in time."
               },
@@ -4454,7 +4548,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Note: When viewing the chart by minute, it is best to select a particular day (Date) using the filters at the top of the dashboard."
               },
@@ -4466,6 +4560,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true,
           "tooltip" : ""
         },
@@ -4478,7 +4573,7 @@
               {
                 "attributes" : {
                   "size" : "18px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Apex Performance Analysis"
               },
@@ -4490,6 +4585,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4501,17 +4597,17 @@
             "borderColor" : "#E6ECF2",
             "borderRadius" : 4,
             "borderWidth" : 1,
-            "propertyColor" : "#E6ECF2",
-            "valueColor" : "#C6D3E1"
+            "propertyColor" : "#16325C",
+            "valueColor" : "#54698D"
           },
           "filters" : [ ],
-          "itemsPerRow" : 5,
+          "itemsPerRow" : 8,
           "showAllFilters" : true,
           "title" : {
-            "separatorColor" : "rgba(230, 236, 242, 0)",
+            "separatorColor" : "#16325C",
             "text" : {
               "align" : "center",
-              "color" : "rgba(255, 255, 255, 0)",
+              "color" : "#16325C",
               "fontSize" : 12,
               "label" : "Add filters here"
             },
@@ -4527,7 +4623,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "The Details Table is where you begin to decide what specific part of the codebase to investigate. If you have made several selections on the dashboard, you should have identified some code or a particular day during which performance was poor. Based on those selections, the details table displays all the fun and exciting details of each execution."
               },
@@ -4538,7 +4634,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "It is important that you review the Apex Execution Event Log manual (https://sfdc.co/ApexExecutions) to understand the log details. But here's a brief explainer: RUN_TIME is the total execution time. RUN_TIME is the sum of CPU_TIME, DB_TOTAL_TIME, EXEC_TIME and CALLOUT_TIME."
               },
@@ -4549,7 +4645,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "If RUN_TIME is higher than normal, see what metric is contributing most: if it is CPU_TIME or EXEC_TIME, that means there is some very complex logic (if statements, for loops, dynamic Apex) and will require a developer to investigate; if it is DB_TOTAL_TIME and there are a low NUMBER_SOQL_QUERIES, that means the few SOQL queries need to be optimised (https://sfdc.co/SOQLTuning), or, if the NUMBER_SOQL_QUERIES is high, it may mean there are repeated queries that could be served by Apex Caching; if CALLOUT_TIME is high, investigate the Apex Callout log type to investigate which URL endpoint was being contacted and adding to round-trip network time."
               },
@@ -4560,7 +4656,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "In summary: the class or method identified will help you identify which owner in the codebase to contact; the specific performance metric will inform you and them what skillset is needed to investigate the code further."
               },
@@ -4571,7 +4667,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Note, actual investigation of the code, line-by-line, will require reproducing the issue and investigating the Debug Logs."
               },
@@ -4583,6 +4679,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4593,10 +4690,10 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#16325c",
                   "size" : "12px"
                 },
-                "insert" : "Worst Performers Most Recent Day, By Type (QUIDDITY)"
+                "insert" : "Worst Performers Yesterday, By Type (QUIDDITY)"
               },
               {
                 "attributes" : {
@@ -4606,6 +4703,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4616,7 +4714,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#16325c",
                   "size" : "12px"
                 },
                 "insert" : "[General Note: this dashboard is interactive: click on a chart point or table row to narrow-down the investigation to specific point to investigate further.]"
@@ -4629,18 +4727,21 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "number_5" : {
         "parameters" : {
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "number"
       },
       "number_4" : {
         "parameters" : {
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "number"
@@ -4652,7 +4753,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "This is a chart of average Run Time (total execution time) for all classes and methods. We use a general Warning level of 3 seconds, and a Critical level of 5 seconds. Any days that see an average Run Time cross these thresholds warrants an investigation. Select any of the Class or Method rows in the summary table below or the Worst Performers tables above to see a trend of how that specific Class or Method performed over time. If any of the thresholds are reached, use the Execution Details table at the bottom of the dashboard to investigate further."
               },
@@ -4665,7 +4766,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Note: When viewing the chart by minute, it is best to select a particular day (Date) using the filters at the top of the dashboard."
               },
@@ -4677,6 +4778,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4788,7 +4890,7 @@
           },
           "valueType" : "none",
           "step" : "TIMESTAMP_DERIVED_Ye_3",
-          "theme" : "watermelonDark",
+          "theme" : "colorblindEnhanced",
           "applyConditionalFormatting" : true,
           "drawArea" : {
             "measure" : "",
@@ -4805,7 +4907,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#16325c",
                   "size" : "12px"
                 },
                 "insert" : "This table shows the change in average run-time between the last two days, and the last day to the last 30 days.  Numbers less than 100% are good (green); over 100% is bad (red)."
@@ -4816,7 +4918,7 @@
               },
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#16325c",
                   "size" : "12px"
                 },
                 "insert" : "An increase in Daily Δ (> 100%) means yesterday was bad compared to the day before (it was over 100% of the previous day's run-time). An increase over 100% of the 30 Day Δ means yesteday was worse than the average of the last 30 days. The average execution time is also split-up into it's component times to determine where the issue is: Run Time is the overall time. Execution Time is logic (for loops, if statements, etc). CPU Time is the time to process in our app server. Database Time is time accessing the database (SOQL queries, etc). Callout Time is time spent waiting for HTTP requests made within Apex."
@@ -4827,7 +4929,7 @@
               },
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#16325c",
                   "size" : "12px"
                 },
                 "insert" : "Understanding where performance time is poorest determines what skill set is needed to investigate: reducing Execution times requires general coding skills; Database time requires a skillset in SOQL query optimisation or Apex Caching; Callout time may require involving owners of the network or endpoint that Apex is making requests to."
@@ -4840,6 +4942,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4850,19 +4953,20 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#16325c",
                   "size" : "12px"
                 },
                 "insert" : "Worst Performers Of All Time, By Type (QUIDDITY)"
               },
               {
                 "attributes" : {
-                  "align" : "left"
+                  "align" : "center"
                 },
                 "insert" : "\n"
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4874,7 +4978,7 @@
               {
                 "attributes" : {
                   "size" : "14px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Details Table"
               },
@@ -4886,6 +4990,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4897,7 +5002,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "The Summary Data Table is a way to begin analysing a class or method that is either a frequently used piece of code, is known to be criticial to the business, or consisently performs poorly."
               },
@@ -4908,7 +5013,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Total Count: the number of executions."
               },
@@ -4919,7 +5024,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Total Count >5s: 'slow' executions."
               },
@@ -4930,7 +5035,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Avg Time: the average run-time for all executions."
               },
@@ -4941,7 +5046,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Avg Time >5s: of the executions that were 'slow', what their average run-time was."
               },
@@ -4952,7 +5057,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "%: The % of executions that are 'slow'."
               },
@@ -4963,7 +5068,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "The columns are sortable: sort by Total Count to analyse the most common code; by Avg Time to find the slowest; by % to find the most commonly slow."
               },
@@ -4974,7 +5079,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Click on a particular number (not the class or method name) to view all of the execution details in the Details Table below."
               },
@@ -4986,17 +5091,18 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "table_33" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
             "textWrap" : false
           },
@@ -5005,13 +5111,14 @@
           "customBulkActions" : [ ],
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
             "textWrap" : false
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
           "maxColumnWidth" : 300,
           "minColumnWidth" : 40,
           "mode" : "variable",
@@ -5056,7 +5163,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "This chart shows the total number of apex executions over time (blue), and what percentage of those executions were 'slow' (red). Slow is traditionally defined as any Apex code that takes longer than 5 seconds to complete."
               },
@@ -5067,7 +5174,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "Both chart lines should have the same shape: if the total number of Apex executions is consistent over time, then proportionally the number of 'slow' executions should be consistent over time, also. If the total number of executions increases significantly, it's expected that un-optimised code will under-perform and contribute to the 'slow' executions."
               },
@@ -5078,7 +5185,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "If slow executions increases dramatically while the total number of executions stays consistent, it is likely that a new issue has arisen: new or changed code, large data volumes; there are many factors that can contribute to poor performance."
               },
@@ -5091,7 +5198,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#16325c"
                 },
                 "insert" : "https://sfdc.co/ApexBestPractices"
               },
@@ -5104,7 +5211,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#e6ecf2"
+                  "color" : "#16325c"
                 },
                 "insert" : "Note: When viewing the chart by minute, it is best to select a particular day (Date) using the filters at the top of the dashboard."
               },
@@ -5116,6 +5223,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true,
           "tooltip" : ""
         },
@@ -5168,6 +5276,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -5191,6 +5300,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -5214,17 +5324,18 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "table_2" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
             "textWrap" : false
           },
@@ -5233,13 +5344,14 @@
           "customBulkActions" : [ ],
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
             "textWrap" : false
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
           "mode" : "fittocontainer",
           "numberOfLines" : 1,
           "pivoted" : false,
@@ -5267,40 +5379,41 @@
           },
           "showActionMenu" : true,
           "step" : "static_1",
-          "textColor" : "#C6D3E1"
+          "textColor" : "#16325C"
         },
         "type" : "pillbox"
       },
       "table_6" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
-            "textWrap" : false
+            "textWrap" : true
           },
           "columnProperties" : { },
           "columns" : [ ],
           "customBulkActions" : [ ],
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
-            "textWrap" : false
+            "textWrap" : true
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
           "mode" : "fittocontainer",
           "numberOfLines" : 1,
           "pivoted" : false,
           "showActionMenu" : true,
           "showRowIndexColumn" : false,
-          "step" : "SlowLeaders",
+          "step" : "QuiddityAllTime_1",
           "totals" : true,
-          "verticalPadding" : 8
+          "verticalPadding" : 4
         },
         "type" : "table"
       },
@@ -5320,7 +5433,7 @@
           },
           "showActionMenu" : true,
           "step" : "static_1",
-          "textColor" : "#C6D3E1"
+          "textColor" : "#16325C"
         },
         "type" : "pillbox"
       },
@@ -5337,32 +5450,35 @@
       },
       "table_8" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
-            "textWrap" : false
+            "textWrap" : true
           },
           "columnProperties" : { },
           "columns" : [ ],
           "customBulkActions" : [ ],
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
-            "textWrap" : false
+            "textWrap" : true
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
-          "mode" : "fittocontainer",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
+          "maxColumnWidth" : 300,
+          "minColumnWidth" : 40,
+          "mode" : "variable",
           "numberOfLines" : 1,
           "pivoted" : false,
           "showActionMenu" : true,
           "showRowIndexColumn" : false,
-          "step" : "YestWorstPerfType_1",
+          "step" : "QuiddityYesterday_1",
           "totals" : true,
           "verticalPadding" : 8
         },
@@ -5384,7 +5500,7 @@
           },
           "showActionMenu" : true,
           "step" : "static_1",
-          "textColor" : "#C6D3E1"
+          "textColor" : "#16325C"
         },
         "type" : "pillbox"
       },
@@ -5399,7 +5515,7 @@
           "includeState" : false,
           "text" : "[  Apex Execution Log Docs  ]",
           "textAlignment" : "left",
-          "textColor" : "#E6ECF2"
+          "textColor" : "#16325C"
         },
         "type" : "link"
       }

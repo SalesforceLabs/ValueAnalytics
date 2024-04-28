@@ -15,253 +15,421 @@
 	  {
 		  "name": "hasLead",
 		  "value": "${Variables.Lead == 'Yes'}"
+	  },
+	  {
+		  "name": "hasRisk",
+		  "value": "${Variables.RevenueRisk == 'Yes'}"
 	  }
 	  ],
 	"macros" : [ ],
 	"rules" : [
 		{
-			"name" : "ExceptionDashRule1",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Apex_Exceptions_Analysis_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias",
-			"path" : "$.state.steps[*].datasets[*].name",
-			"value" : "${Variables.ExceptionsDataset.datasetAlias}"
-			} ]
-		},
-                {
-			"name" : "ExceptionDashRule2",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Apex_Exceptions_Analysis_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in filters",
-			"path" : "$.state.filters[*].dataset[?(@.name=='${Variables.ExceptionsDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.ExceptionsDataset.datasetAlias}"
-			} ]
-		},
-                {
-			"name" : "ExceptionDashRule3",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Apex_Exceptions_Analysis_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias in saql",
-			"path" : "$.state.steps[*].query",
-			"value" : "${string:replace(Rules.CurrentNode, '${Variables.ExceptionsDataset.datasetAlias}', '${Variables.ExceptionsDataset.datasetAlias}')}"
-			} ]
-		},
-		{
-			"name" : "ApexDashRule",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Apex_Performance_and_Analysis_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias",
-			"path" : "$.state.steps[*].datasets[*].name",
-			"value" : "${Variables.ApexDataset.datasetAlias}"
-			} ]
-		},
-                {
-			"name" : "ApexDashRule2",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Apex_Performance_and_Analysis_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in filters",
-			"path" : "$.state.filters[*].dataset[?(@.name=='${Variables.ApexDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.ApexDataset.datasetAlias}"
-			} ]
-		},
-                {
-			"name" : "ApexDashRule3",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Apex_Performance_and_Analysis_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias in saql",
-			"path" : "$.state.steps[*].query",
-			"value" : "${string:replace(Rules.CurrentNode, '${Variables.ApexDataset.datasetAlias}', '${Variables.ApexDataset.datasetAlias}')}"
-			} ]
-		},
-		{
-			"name" : "LightningDashRule1",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias",
-			"path" : "$.state.steps[*].datasets[*][?(@.name=='${Variables.LPVDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.LPVDataset.datasetAlias}"
-			} ]
-		},
-		{
-			"name" : "LightningDashRule2",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias",
-			"path" : "$.state.steps[*].datasets[*][?(@.name=='${Variables.LIDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.LIDataset.datasetAlias}"
-			} ]
-		},
-		{
-			"name" : "LightningDashRule3",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in filters",
-			"path" : "$.state.filters[*].dataset[?(@.name=='${Variables.LPVDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.LPVDataset.datasetAlias}"
-			} ]
-		},
-		{
-			"name" : "LightningDashRule4",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in filters",
-			"path" : "$.state.dataSourceLinks[*].fields[*][?(@.dataSourceName=='${Variables.LPVDataset.datasetAlias}')]",
-			"key":"dataSourceName",
-			"value" : "${Variables.LPVDataset.datasetAlias}"
-			} ]
-		},
-		{
-			"name" : "LightningDashRule5",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in filters",
-			"path" : "$.state.dataSourceLinks[*].fields[*][?(@.dataSourceName=='${Variables.LIDataset.datasetAlias}')]",
-			"key":"dataSourceName",
-			"value" : "${Variables.LIDataset.datasetAlias}"
-			} ]
-		},
-		{
-			"name" : "LightningDashRule6",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias in saql",
-			"path" : "$.state.steps[*].query",
-			"value" : "${string:replace(Rules.CurrentNode, '${Variables.LPVDataset.datasetAlias}', '${Variables.LPVDataset.datasetAlias}')}"
-			} ]
-		},
-                {
-			"name" : "LightningDashRule7",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias in filters",
-			"path" : "$.state.widgets[*].parameters.filters[*].dataset.name",
-			"value" : "${Variables.LPVDataset.datasetAlias}"
-			} ]
-		},
-                {
-			"name" : "LightningDashRule8",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias in steps with blended datasets",
-			"path" : "$.state.steps[*].query.sources[*].name",
-			"value" : "${string:replace(Rules.CurrentNode, '${Variables.LPVDataset.datasetAlias}', '${Variables.LPVDataset.datasetAlias}')}"
-			} ]
-		},
-                {
-			"name" : "LightningDashRule9",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Lightning_Page_Performance_tp"
-			} ],
-			"actions" : [ {
-			"action" : "set",
-			"description" : "Ensure the dataset name is always the dataset alias in steps with blended datasets",
-			"path" : "$.state.steps[*].query.sources[*].name",
-			"value" : "${string:replace(Rules.CurrentNode, '${Variables.LIDataset.datasetAlias}', '${Variables.LIDataset.datasetAlias}')}"
-			} ]
-		},
-		{
-			"name" : "TechDebtDashboard1",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Tech_Debt_Counter_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in steps",
-			"path" : "$.state.steps[*].datasets[?(@.name=='${Variables.LPVDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.LPVDataset.datasetAlias}"
-			} ]
-		},
-                {
 			"name" : "TechDebtDashboard2",
 			"appliesTo" : [ {
 			"type" : "dashboard",
 			"name" : "Tech_Debt_Counter_tp"
 			} ],
 			"actions" : [ {
-			"action" : "put",
+			"action" : "replace",
 			"description" : "Ensure the dataset name is always the dataset alias in steps",
-			"path" : "$.state.steps[*].datasets[?(@.name=='${Variables.VFDataset.datasetAlias}')]",
-			"key":"name",
+			"key":"VisualforceRequestWithUsers",
 			"value" : "${Variables.VFDataset.datasetAlias}"
 			} ]
 		},
-                {
-			"name" : "TechDebtDashboard3",
-			"appliesTo" : [ {
-			"type" : "dashboard",
-			"name" : "Tech_Debt_Counter_tp"
-			} ],
-			"actions" : [ {
-			"action" : "put",
-			"description" : "Ensure the dataset name is always the dataset alias in steps",
-			"path" : "$.state.steps[*].datasets[?(@.name=='${Variables.ApexDataset.datasetAlias}')]",
-			"key":"name",
-			"value" : "${Variables.ApexDataset.datasetAlias}"
-			} ]
-		}
+		{
+			"name": "Add Sales Value Labels",
+			"condition": "${Constants.hasSales}",
+			"appliesTo": [
+			  {
+				"type": "dashboard",
+				"name": "Sales_Value_Analytics_tp"
+			  }
+			],
+			"actions": [
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[0]",
+				"key": "label",
+				"value": "Avg Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[1]",
+				"key": "label",
+				"value": "Avg Time"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[2]",
+				"key": "label",
+				"value": "Avg UI Features"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[8]",
+				"key": "label",
+				"value": "Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[9]",
+				"key": "label",
+				"value": "Closed"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[10]",
+				"key": "label",
+				"value": "Amount"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[11]",
+				"key": "label",
+				"value": "Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[12]",
+				"key": "label",
+				"value": "Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[13]",
+				"key": "label",
+				"value": "UI Features"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[14]",
+				"key": "label",
+				"value": "Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[15]",
+				"key": "label",
+				"value": "Closed"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[16]",
+				"key": "label",
+				"value": "Amount"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[17]",
+				"key": "label",
+				"value": "Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[18]",
+				"key": "label",
+				"value": "Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[19]",
+				"key": "label",
+				"value": "UI Features"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[20]",
+				"key": "label",
+				"value": "Total Amount"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[21]",
+				"key": "label",
+				"value": "Total Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[22]",
+				"key": "label",
+				"value": "Total Time (s)"
+			  }
+			]
+		  },{
+			"name": "Add Service Value Labels",
+			"condition": "${Constants.hasService}",
+			"appliesTo": [
+			  {
+				"type": "dashboard",
+				"name": "Service_Value_Analytics_tp"
+			  }
+			],
+			"actions": [
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[0]",
+				"key": "label",
+				"value": "Cases"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[1]",
+				"key": "label",
+				"value": "Avg Stall Time"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[2]",
+				"key": "label",
+				"value": "Avg Action Time"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[3]",
+				"key": "label",
+				"value": "Total Stall Time"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[4]",
+				"key": "label",
+				"value": "Total Action Time"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[5]",
+				"key": "label",
+				"value": "Avg Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[6]",
+				"key": "label",
+				"value": "Total Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[7]",
+				"key": "label",
+				"value": "Avg Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[8]",
+				"key": "label",
+				"value": "Total Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[9]",
+				"key": "label",
+				"value": "Avg Agent Count"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[10]",
+				"key": "label",
+				"value": "Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[11]",
+				"key": "label",
+				"value": "Closed"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[12]",
+				"key": "label",
+				"value": "Age"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[13]",
+				"key": "label",
+				"value": "Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[14]",
+				"key": "label",
+				"value": "Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[15]",
+				"key": "label",
+				"value": "UI Features"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[16]",
+				"key": "label",
+				"value": "Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[17]",
+				"key": "label",
+				"value": "Closed"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[18]",
+				"key": "label",
+				"value": "Age"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[19]",
+				"key": "label",
+				"value": "Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[20]",
+				"key": "label",
+				"value": "Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[21]",
+				"key": "label",
+				"value": "UI Features"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[22]",
+				"key": "label",
+				"value": "Total Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[23]",
+				"key": "label",
+				"value": "Total Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[24]",
+				"key": "label",
+				"value": "Total Age"
+			  }
+			]
+		  },
+		  {
+			"name": "Add Lead Value Labels",
+			"condition": "${Constants.hasLead}",
+			"appliesTo": [
+			  {
+				"type": "dashboard",
+				"name": "Lead_Value_Analytics_tp"
+			  }
+			],
+			"actions": [
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[3]",
+				"key": "label",
+				"value": "Total Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[4]",
+				"key": "label",
+				"value": "New Opportunities"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[5]",
+				"key": "label",
+				"value": "Total Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[6]",
+				"key": "label",
+				"value": "UI Features"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[7]",
+				"key": "label",
+				"value": "Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[8]",
+				"key": "label",
+				"value": "Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[9]",
+				"key": "label",
+				"value": "Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[10]",
+				"key": "label",
+				"value": "Data Quality"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[11]",
+				"key": "label",
+				"value": "Opportunies"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[12]",
+				"key": "label",
+				"value": "Converted"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[13]",
+				"key": "label",
+				"value": "Converted"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[14]",
+				"key": "label",
+				"value": "Opportunies"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[15]",
+				"key": "label",
+				"value": "Data Quality"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[16]",
+				"key": "label",
+				"value": "Clicks"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[17]",
+				"key": "label",
+				"value": "Time (s)"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[18]",
+				"key": "label",
+				"value": "Sessions"
+			  },
+			  {
+				"action": "put",
+				"path": "$.xmd.measures[19]",
+				"key": "label",
+				"value": "UI Features"
+			  }
+			]
+		  }
 	]
   }

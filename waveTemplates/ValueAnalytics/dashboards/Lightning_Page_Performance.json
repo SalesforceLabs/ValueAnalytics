@@ -64,84 +64,15 @@
     ]
   },
   "state" : {
-    "dataSourceLinks" : [
-      {
-        "fields" : [
-          {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "CLIENT_GEO"
-          },
-          {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "CLIENT_GEO"
-          }
-        ],
-        "label" : "GEO",
-        "name" : "Link_3358"
-      },
-      {
-        "fields" : [
-          {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "PAGE_ENTITY_TYPE"
-          },
-          {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "PAGE_ENTITY_TYPE"
-          }
-        ],
-        "label" : "Entity",
-        "name" : "Link_3306"
-      },
-      {
-        "fields" : [
-          {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "PAGE_APP_NAME"
-          },
-          {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "PAGE_APP_NAME"
-          }
-        ],
-        "label" : "App name",
-        "name" : "Link_3401"
-      },
-      {
-        "fields" : [
-          {
-            "dataSourceName" : "${Variables.LIDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "TIMESTAMP_DERIVED"
-          },
-          {
-            "dataSourceName" : "${Variables.LPVDataset.datasetAlias}",
-            "dataSourceNamespace" : "${Org.Namespace}",
-            "dataSourceType" : "dataset",
-            "fieldName" : "TIMESTAMP_DERIVED"
-          }
-        ],
-        "label" : "Date",
-        "name" : "Link_15529"
-      }
-    ],
+    "dataSourceLinksInfo" : {
+      "enableAutomaticLinking" : false,
+      "excludeRelationships" : [ ],
+      "links" : [ ]
+    },
     "filters" : [
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
@@ -154,7 +85,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
@@ -167,7 +98,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
@@ -179,7 +110,7 @@
       },
       {
         "dataset" : {
-          "name" : "${Variables.LPVDataset.datasetAlias}"
+          "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
         },
         "dependent" : true,
         "fields" : [
@@ -188,6 +119,18 @@
         "label" : "Date",
         "locked" : false,
         "operator" : ">=<="
+      },
+      {
+        "dataset" : {
+          "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
+        },
+        "dependent" : true,
+        "fields" : [
+          "EVENT_TYPE"
+        ],
+        "locked" : true,
+        "operator" : "in",
+        "value" : "[\"LightningPageView\"]"
       }
     ],
     "gridLayouts" : [
@@ -222,7 +165,7 @@
                 "row" : 76,
                 "rowspan" : 28,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -236,7 +179,7 @@
                 "row" : 76,
                 "rowspan" : 28,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -250,7 +193,7 @@
                 "row" : 110,
                 "rowspan" : 31,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -264,7 +207,7 @@
                 "row" : 110,
                 "rowspan" : 31,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -278,7 +221,7 @@
                 "row" : 141,
                 "rowspan" : 24,
                 "widgetStyle" : {
-                  "backgroundColor" : "#335779",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -308,7 +251,7 @@
                 "row" : 141,
                 "rowspan" : 24,
                 "widgetStyle" : {
-                  "backgroundColor" : "#335779",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -322,7 +265,7 @@
                 "row" : 30,
                 "rowspan" : 21,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -350,7 +293,7 @@
                 "row" : 30,
                 "rowspan" : 21,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -366,9 +309,7 @@
                 "widgetStyle" : {
                   "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#4269E9",
-                  "borderEdges" : [
-                    "bottom"
-                  ],
+                  "borderEdges" : [ ],
                   "borderRadius" : 0,
                   "borderWidth" : 4
                 }
@@ -380,7 +321,7 @@
                 "row" : 104,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#E6ECF2",
                   "borderEdges" : [ ],
                   "borderRadius" : 0,
@@ -394,8 +335,8 @@
                 "row" : 54,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
-                  "borderColor" : "#E6ECF2",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
                   "borderEdges" : [
                     "top",
                     "bottom"
@@ -405,7 +346,7 @@
                 }
               },
               {
-                "colspan" : 47,
+                "colspan" : 34,
                 "column" : 1,
                 "name" : "text_6",
                 "row" : 1,
@@ -421,7 +362,7 @@
                 "row" : 107,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
+                  "backgroundColor" : "#FFFFFF",
                   "borderColor" : "#FFFFFF",
                   "borderEdges" : [
                     "left"
@@ -437,8 +378,8 @@
                 "row" : 104,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
-                  "borderColor" : "#E6ECF2",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
                   "borderEdges" : [
                     "top",
                     "bottom"
@@ -448,8 +389,8 @@
                 }
               },
               {
-                "colspan" : 8,
-                "column" : 41,
+                "colspan" : 7,
+                "column" : 42,
                 "name" : "text_8",
                 "row" : 6,
                 "rowspan" : 3,
@@ -464,8 +405,8 @@
                 "row" : 165,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
-                  "borderColor" : "#FFFFFF",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
                   "borderEdges" : [
                     "bottom",
                     "top"
@@ -478,7 +419,7 @@
                 "colspan" : 24,
                 "column" : 25,
                 "name" : "chart_6",
-                "row" : 262,
+                "row" : 217,
                 "rowspan" : 33,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -540,7 +481,7 @@
                 "colspan" : 25,
                 "column" : 0,
                 "name" : "table_1",
-                "row" : 262,
+                "row" : 217,
                 "rowspan" : 33,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -573,10 +514,10 @@
                 "column" : 32,
                 "name" : "filterpanel_2",
                 "row" : 72,
-                "rowspan" : 3,
+                "rowspan" : 4,
                 "widgetStyle" : {
-                  "backgroundColor" : "rgb(181, 98, 0)",
-                  "borderColor" : "#B56200",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#16325C",
                   "borderEdges" : [
                     "all"
                   ],
@@ -588,7 +529,7 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "table_3",
-                "row" : 296,
+                "row" : 251,
                 "rowspan" : 30,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -657,60 +598,14 @@
                 }
               },
               {
-                "colspan" : 9,
-                "column" : 39,
-                "name" : "text_11",
-                "row" : 216,
-                "rowspan" : 38,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
-                  "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 20,
-                "column" : 1,
-                "name" : "text_12",
-                "row" : 259,
-                "rowspan" : 3,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [
-                    "bottom"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 20,
-                "column" : 25,
-                "name" : "text_13",
-                "row" : 259,
-                "rowspan" : 3,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [
-                    "bottom"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "text_17",
                 "row" : 27,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
-                  "borderColor" : "#E6ECF2",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
                   "borderEdges" : [
                     "top",
                     "bottom"
@@ -731,40 +626,10 @@
                 }
               },
               {
-                "colspan" : 38,
-                "column" : 0,
-                "name" : "container_3",
-                "row" : 215,
-                "rowspan" : 3,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
-                  "borderEdges" : [
-                    "top"
-                  ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
-                "colspan" : 37,
-                "column" : 1,
-                "name" : "text_19",
-                "row" : 252,
-                "rowspan" : 3,
-                "widgetStyle" : {
-                  "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [ ],
-                  "borderRadius" : 0,
-                  "borderWidth" : 1
-                }
-              },
-              {
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_4",
-                "row" : 255,
+                "row" : 214,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
@@ -781,26 +646,31 @@
                 "colspan" : 49,
                 "column" : 0,
                 "name" : "container_5",
-                "row" : 334,
-                "rowspan" : 3,
+                "row" : 284,
+                "rowspan" : 13,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#FFFFFF",
-                  "borderEdges" : [ ],
+                  "borderColor" : "#54698D",
+                  "borderEdges" : [
+                    "top"
+                  ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
               },
               {
-                "colspan" : 24,
+                "colspan" : 49,
                 "column" : 0,
                 "name" : "text_20",
-                "row" : 255,
+                "row" : 214,
                 "rowspan" : 3,
                 "widgetStyle" : {
                   "backgroundColor" : "rgba(255, 255, 255, 0)",
-                  "borderColor" : "#E6ECF2",
-                  "borderEdges" : [ ],
+                  "borderColor" : "#54698D",
+                  "borderEdges" : [
+                    "top",
+                    "bottom"
+                  ],
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
@@ -826,8 +696,8 @@
                 "row" : 11,
                 "rowspan" : 3,
                 "widgetStyle" : {
-                  "backgroundColor" : "#091A3E",
-                  "borderColor" : "#E6ECF2",
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#7D98B3",
                   "borderEdges" : [
                     "top",
                     "bottom"
@@ -975,6 +845,22 @@
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
+              },
+              {
+                "colspan" : 5,
+                "column" : 36,
+                "name" : "filterpanel_8",
+                "row" : 6,
+                "rowspan" : 4,
+                "widgetStyle" : {
+                  "backgroundColor" : "#FFFFFF",
+                  "borderColor" : "#747474",
+                  "borderEdges" : [
+                    "all"
+                  ],
+                  "borderRadius" : 4,
+                  "borderWidth" : 1
+                }
               }
             ]
           }
@@ -984,7 +870,7 @@
         "style" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "backgroundColor" : "#091A3E",
+          "backgroundColor" : "#FFFFFF",
           "cellSpacingX" : 0,
           "cellSpacingY" : 0,
           "fit" : "original",
@@ -999,7 +885,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1064,7 +950,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -1208,7 +1093,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1255,7 +1140,6 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "centerText" : "",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -1353,6 +1237,7 @@
               }
             },
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -1376,7 +1261,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1405,11 +1290,11 @@
           "steps" : [ ]
         },
         "selectMode" : "single",
+        "start" : [ ],
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -1534,7 +1419,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1647,6 +1532,7 @@
             },
             "innerMajorBorderColor" : "#54698d",
             "innerMinorBorderColor" : "#54698d",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -1664,7 +1550,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1711,7 +1597,6 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "centerText" : "",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -1809,6 +1694,7 @@
               }
             },
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -1832,7 +1718,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -1861,12 +1747,12 @@
           "steps" : [ ]
         },
         "selectMode" : "multi",
+        "start" : [ ],
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -1963,7 +1849,9 @@
               }
             },
             "normalize" : true,
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : false,
               "customSize" : "auto",
@@ -1987,7 +1875,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2022,7 +1910,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -2155,7 +2042,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2184,12 +2071,12 @@
           "steps" : [ ]
         },
         "selectMode" : "multi",
+        "start" : [ ],
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -2286,7 +2173,9 @@
               }
             },
             "normalize" : true,
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : false,
               "customSize" : "auto",
@@ -2310,7 +2199,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2340,7 +2229,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -2432,7 +2320,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -2456,7 +2346,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2648,7 +2538,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -2935,12 +2825,12 @@
           "steps" : [ ]
         },
         "selectMode" : "single",
+        "start" : [ ],
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3034,7 +2924,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -3058,7 +2950,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -3086,12 +2978,12 @@
           "steps" : [ ]
         },
         "selectMode" : "single",
+        "start" : [ ],
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3228,7 +3120,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -3258,7 +3150,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3350,7 +3241,9 @@
                 "showDomain" : false
               }
             },
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -3374,7 +3267,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -3685,6 +3578,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -3697,157 +3591,11 @@
           "type" : "table"
         }
       },
-      "listSelector_2" : {
-        "broadcastFacet" : true,
-        "datasets" : [
-          {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
-          }
-        ],
-        "isGlobal" : false,
-        "label" : "listSelector",
-        "query" : {
-          "query" : {
-            "measures" : [
-              [
-                "count",
-                "*"
-              ]
-            ],
-            "groups" : [
-              "PAGE_APP_NAME"
-            ]
-          },
-          "version" : -1.0
-        },
-        "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
-        },
-        "selectMode" : "single",
-        "start" : [ ],
-        "type" : "aggregateflex",
-        "useGlobal" : true,
-        "visualizationParameters" : {
-          "parameters" : {
-            "autoFitMode" : "keepLabels",
-            "showValues" : true,
-            "bins" : {
-              "breakpoints" : {
-                "high" : 100,
-                "low" : 0
-              },
-              "bands" : {
-                "high" : {
-                  "color" : "#008000",
-                  "label" : ""
-                },
-                "low" : {
-                  "color" : "#B22222",
-                  "label" : ""
-                },
-                "medium" : {
-                  "color" : "#ffa500",
-                  "label" : ""
-                }
-              }
-            },
-            "legend" : {
-              "descOrder" : false,
-              "showHeader" : true,
-              "show" : true,
-              "customSize" : "auto",
-              "position" : "right-top",
-              "inside" : false
-            },
-            "axisMode" : "multi",
-            "tooltip" : {
-              "content" : {
-                "legend" : {
-                  "showBinLabel" : true,
-                  "measures" : [ ],
-                  "showNullValues" : true,
-                  "customizeLegend" : false,
-                  "showPercentage" : true,
-                  "showDimensions" : true,
-                  "showMeasures" : true,
-                  "dimensions" : [ ]
-                }
-              }
-            },
-            "visualizationType" : "hbar",
-            "title" : {
-              "fontSize" : 14,
-              "subtitleFontSize" : 11,
-              "label" : "",
-              "align" : "center",
-              "subtitleLabel" : ""
-            },
-            "binValues" : false,
-            "trellis" : {
-              "flipLabels" : false,
-              "showGridLines" : true,
-              "size" : [
-                100,
-                100
-              ],
-              "enable" : false,
-              "type" : "x",
-              "chartsPerLine" : 4
-            },
-            "columnMap" : {
-              "trellis" : [ ],
-              "dimensionAxis" : [
-                "PAGE_APP_NAME"
-              ],
-              "plots" : [
-                "count"
-              ]
-            },
-            "showActionMenu" : true,
-            "measureAxis2" : {
-              "sqrtScale" : false,
-              "showTitle" : true,
-              "showAxis" : true,
-              "title" : "",
-              "customDomain" : {
-                "showDomain" : false
-              }
-            },
-            "measureAxis1" : {
-              "sqrtScale" : false,
-              "showTitle" : true,
-              "showAxis" : true,
-              "title" : "",
-              "customDomain" : {
-                "showDomain" : false
-              }
-            },
-            "theme" : "wave",
-            "dimensionAxis" : {
-              "showTitle" : true,
-              "customSize" : "auto",
-              "showAxis" : true,
-              "title" : "",
-              "icons" : {
-                "useIcons" : false,
-                "iconProps" : {
-                  "fit" : "cover",
-                  "column" : "",
-                  "type" : "round"
-                }
-              }
-            },
-            "applyConditionalFormatting" : true
-          },
-          "type" : "chart"
-        }
-      },
       "EPT_by_Obj_1" : {
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -3858,6 +3606,10 @@
               [
                 "avg",
                 "EFFECTIVE_PAGE_TIME"
+              ],
+              [
+                "count",
+                "*"
               ]
             ],
             "limit" : 20,
@@ -3866,9 +3618,10 @@
             ],
             "order" : [
               [
-                "avg_EFFECTIVE_PAGE_TIME",
+                "count",
                 {
-                  "ascending" : false
+                  "ascending" : false,
+                  "inner" : false
                 }
               ]
             ]
@@ -3889,7 +3642,6 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "centerText" : "",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -3938,7 +3690,7 @@
             "title" : {
               "fontSize" : 14,
               "subtitleFontSize" : 11,
-              "label" : "Avg EPT  by GEO",
+              "label" : "Average EPT  by GEO",
               "align" : "left",
               "subtitleLabel" : ""
             },
@@ -3986,6 +3738,7 @@
             },
             "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -4009,7 +3762,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -4065,7 +3818,6 @@
           "parameters" : {
             "autoFitMode" : "keepLabels",
             "centerText" : "",
-            "showValues" : true,
             "bins" : {
               "breakpoints" : {
                 "high" : 100,
@@ -4163,6 +3915,7 @@
               }
             },
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -4187,7 +3940,7 @@
         "groups" : [ ],
         "label" : "Dataset updated",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.LPVDataset.datasetAlias}\";\nq = foreach q generate 'TIMESTAMP_DERIVED' as 'TIMESTAMP_DERIVED', 'TIMESTAMP_DERIVED_Day' as 'TIMESTAMP_DERIVED_Day', 'TIMESTAMP_DERIVED_Month' as 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Year' as 'TIMESTAMP_DERIVED_Year';\nq = order q by 'TIMESTAMP_DERIVED' desc;\nq = foreach q generate  'TIMESTAMP_DERIVED_Year' + \"-\" +'TIMESTAMP_DERIVED_Month' + \"-\" + 'TIMESTAMP_DERIVED_Day' as 'Time';\nq = limit q 1;",
+        "query" : "q = load \"${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.FullyQualifiedName}\";\nq = foreach q generate 'TIMESTAMP_DERIVED' as 'TIMESTAMP_DERIVED', 'TIMESTAMP_DERIVED_Day' as 'TIMESTAMP_DERIVED_Day', 'TIMESTAMP_DERIVED_Month' as 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Year' as 'TIMESTAMP_DERIVED_Year';\nq = order q by 'TIMESTAMP_DERIVED' desc;\nq = foreach q generate  'TIMESTAMP_DERIVED_Year' + \"-\" +'TIMESTAMP_DERIVED_Month' + \"-\" + 'TIMESTAMP_DERIVED_Day' as 'Time';\nq = limit q 1;",
         "receiveFacetSource" : {
           "mode" : "all",
           "steps" : [ ]
@@ -4217,6 +3970,7 @@
             },
             "innerMajorBorderColor" : "#a8b7c7",
             "innerMinorBorderColor" : "#e0e5ee",
+            "interactions" : [ ],
             "maxColumnWidth" : 300,
             "minColumnWidth" : 40,
             "mode" : "variable",
@@ -4233,7 +3987,7 @@
         "broadcastFacet" : true,
         "datasets" : [
           {
-            "name" : "${Variables.LPVDataset.datasetAlias}"
+            "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
           }
         ],
         "isGlobal" : false,
@@ -4284,6 +4038,7 @@
             },
             "innerMajorBorderColor" : "#54698d",
             "innerMinorBorderColor" : "#54698d",
+            "interactions" : [ ],
             "mode" : "fittocontainer",
             "numberOfLines" : 1,
             "showActionMenu" : true,
@@ -4299,7 +4054,7 @@
         "groups" : [ ],
         "label" : "Daily EPT distribution",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.LPVDataset.datasetAlias}\";\nq = group q by ('TIMESTAMP_DERIVED_Year', 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Day');\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  q_A.'TIMESTAMP_DERIVED_Year' + \"-\" + q_A.'TIMESTAMP_DERIVED_Month' + \"-\" + q_A.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  q_B.'TIMESTAMP_DERIVED_Year' + \"-\" + q_B.'TIMESTAMP_DERIVED_Month' + \"-\" + q_B.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate  q_C.'TIMESTAMP_DERIVED_Year' + \"-\" + q_C.'TIMESTAMP_DERIVED_Month' + \"-\" + q_C.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate  q_D.'TIMESTAMP_DERIVED_Year' + \"-\" + q_D.'TIMESTAMP_DERIVED_Month' + \"-\" + q_D.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 8-10s\" as 'Metric',count() as 'count';\nbuck5 = foreach q_E generate  q_E.'TIMESTAMP_DERIVED_Year' + \"-\" + q_E.'TIMESTAMP_DERIVED_Month' + \"-\" + q_E.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('Time', 'Metric');\nfinal = foreach final generate 'Time' as 'Time', 'Metric' as 'Metric', sum('count') as 'Total';\nfinal = order final by ('Metric');",
+        "query" : "q = load \"${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.FullyQualifiedName}\";\nq = group q by ('TIMESTAMP_DERIVED_Year', 'TIMESTAMP_DERIVED_Month', 'TIMESTAMP_DERIVED_Day');\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  q_A.'TIMESTAMP_DERIVED_Year' + \"-\" + q_A.'TIMESTAMP_DERIVED_Month' + \"-\" + q_A.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  q_B.'TIMESTAMP_DERIVED_Year' + \"-\" + q_B.'TIMESTAMP_DERIVED_Month' + \"-\" + q_B.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate  q_C.'TIMESTAMP_DERIVED_Year' + \"-\" + q_C.'TIMESTAMP_DERIVED_Month' + \"-\" + q_C.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate  q_D.'TIMESTAMP_DERIVED_Year' + \"-\" + q_D.'TIMESTAMP_DERIVED_Month' + \"-\" + q_D.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT 8-10s\" as 'Metric',count() as 'count';\nbuck5 = foreach q_E generate  q_E.'TIMESTAMP_DERIVED_Year' + \"-\" + q_E.'TIMESTAMP_DERIVED_Month' + \"-\" + q_E.'TIMESTAMP_DERIVED_Day' as 'Time', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('Time', 'Metric');\nfinal = foreach final generate 'Time' as 'Time', 'Metric' as 'Metric', sum('count') as 'Total';\nfinal = order final by ('Metric');",
         "receiveFacetSource" : {
           "mode" : "exclude",
           "steps" : [
@@ -4314,7 +4069,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "legend" : {
               "descOrder" : false,
               "showHeader" : true,
@@ -4390,7 +4144,9 @@
               }
             },
             "normalize" : true,
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "applyConditionalFormatting" : true,
             "dimensionAxis" : {
               "showTitle" : true,
@@ -4415,7 +4171,7 @@
         "groups" : [ ],
         "label" : "EPT distribution by PageEntity",
         "numbers" : [ ],
-        "query" : "q = load \"${Variables.LPVDataset.datasetAlias}\";\nq = filter q by 'PAGE_ENTITY_TYPE' != \"\";\nq = group q by 'PAGE_ENTITY_TYPE';\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 8-10s\" as 'Metric', count() as 'count';\nbuck5 = foreach q_E generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('PAGE_ENTITY_TYPE', 'Metric');\nfinal = foreach final generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', 'Metric' as 'Metric', sum('count') as 'Total';",
+        "query" : "q = load \"${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.FullyQualifiedName}\";\nq = filter q by 'PAGE_ENTITY_TYPE' != \"\";\nq = group q by 'PAGE_ENTITY_TYPE';\nq_A = filter q by 'EFFECTIVE_PAGE_TIME' >= 0 && 'EFFECTIVE_PAGE_TIME' <= 3000;\nq_B = filter q by 'EFFECTIVE_PAGE_TIME' >= 3001 && 'EFFECTIVE_PAGE_TIME' <= 5000;\nq_C = filter q by 'EFFECTIVE_PAGE_TIME' >= 5001 && 'EFFECTIVE_PAGE_TIME' <= 8000;\nq_D = filter q by 'EFFECTIVE_PAGE_TIME' >= 8001 && 'EFFECTIVE_PAGE_TIME' <= 10000;\nq_E = filter q by 'EFFECTIVE_PAGE_TIME' >= 10001;\nbuck1 = foreach q_A generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 0-3s\" as 'Metric',count() as 'count';\nbuck2 = foreach q_B generate  'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 3-5s\" as 'Metric',count() as 'count';\nbuck3 = foreach q_C generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 5-8s\" as 'Metric',count() as 'count';\nbuck4 = foreach q_D generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT 8-10s\" as 'Metric', count() as 'count';\nbuck5 = foreach q_E generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', \"EPT > 10s\" as 'Metric',count() as 'count';\nfinal=union buck1,buck2,buck3,buck4,buck5;\nfinal = group final by ('PAGE_ENTITY_TYPE', 'Metric');\nfinal = foreach final generate 'PAGE_ENTITY_TYPE' as 'PAGE_ENTITY_TYPE', 'Metric' as 'Metric', sum('count') as 'Total';",
         "receiveFacetSource" : {
           "mode" : "exclude",
           "steps" : [
@@ -4430,7 +4186,6 @@
         "visualizationParameters" : {
           "parameters" : {
             "autoFitMode" : "keepLabels",
-            "showValues" : true,
             "legend" : {
               "descOrder" : false,
               "showHeader" : true,
@@ -4506,7 +4261,9 @@
               }
             },
             "normalize" : true,
+            "valueType" : "compactNumber",
             "theme" : "wave",
+            "compactDecimalDigits" : -1,
             "dimensionAxis" : {
               "showTitle" : true,
               "customSize" : "auto",
@@ -4554,6 +4311,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4564,7 +4322,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "16px"
                 },
                 "insert" : "Top 20 Most Used"
@@ -4577,53 +4335,7 @@
               }
             ]
           },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
-      "text_19" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "10px"
-                },
-                "insert" : "Note: there is a minor issue with selections on the dashboard that prevent the above distribution charts from rendering if a date is selected on a timeline chart."
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
-      "text_13" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "16px",
-                  "bold" : true
-                },
-                "insert" : "GEO Clients "
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4634,7 +4346,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#7d98b3",
                   "size" : "12px"
                 },
                 "insert" : "A scatter chart is a great way to asses several performance dimensions at once. Each bubble represent an object (or 'Page Entity Type').  The bottom axis is the average EPT, and the left axis is the number of page views. The size of the bubble relates to the number of users who viewed that object."
@@ -4647,7 +4359,7 @@
               },
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#7d98b3",
                   "size" : "12px"
                 },
                 "insert" : "Any large bubbles on the top-right of the plot are the first priority and should be investigated to see what optimisations can be made."
@@ -4661,7 +4373,7 @@
               {
                 "attributes" : {
                   "size" : "12px",
-                  "color" : "#ffffff"
+                  "color" : "#7d98b3"
                 },
                 "insert" : "When you identify an object with high EPT, click on the bubble and investigate the chart below..."
               },
@@ -4673,68 +4385,7 @@
               }
             ]
           },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
-      "text_12" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "16px",
-                  "bold" : true
-                },
-                "insert" : "Most used Pages"
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
-          "showActionMenu" : true
-        },
-        "type" : "text"
-      },
-      "text_11" : {
-        "parameters" : {
-          "content" : {
-            "richTextContent" : [
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "12px"
-                },
-                "insert" : "Similar to the scatter chart above, each bubble relates to object "
-              },
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "12px",
-                  "italic" : true
-                },
-                "insert" : "viewed within a specific app"
-              },
-              {
-                "attributes" : {
-                  "color" : "#ffffff",
-                  "size" : "12px"
-                },
-                "insert" : ". Because different objects may have different page layouts in different apps, this chart shows the count of the number of components on the page (bubble size). By clicking on an object in the first chart, this second may help explain if a particular app or layout is contributing towards high average EPT. "
-              },
-              {
-                "attributes" : {
-                  "align" : "left"
-                },
-                "insert" : "\n"
-              }
-            ]
-          },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4743,15 +4394,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
-        },
-        "type" : "container"
-      },
-      "container_3" : {
-        "parameters" : {
-          "alignmentX" : "left",
-          "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -4759,7 +4403,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -4767,7 +4412,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -4775,7 +4421,8 @@
         "parameters" : {
           "alignmentX" : "left",
           "alignmentY" : "top",
-          "fit" : "original"
+          "fit" : "original",
+          "interactions" : [ ]
         },
         "type" : "container"
       },
@@ -4859,7 +4506,7 @@
             "showAxis" : true,
             "title" : ""
           },
-          "theme" : "sunriseDark",
+          "theme" : "colorblindEnhanced",
           "step" : "CLIENT_GEO_PAGE_ENTI_1",
           "applyConditionalFormatting" : true
         },
@@ -4868,7 +4515,6 @@
       "chart_5" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "legend" : {
             "descOrder" : false,
             "showHeader" : true,
@@ -4945,8 +4591,10 @@
             }
           },
           "normalize" : true,
-          "theme" : "sunriseDark",
+          "valueType" : "compactNumber",
+          "theme" : "colorblindEnhanced",
           "step" : "lens_2",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -4971,7 +4619,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "16px"
                 },
                 "insert" : "EPT by Browsers & OS "
@@ -4984,6 +4632,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -4994,7 +4643,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "16px"
                 },
                 "insert" : "Daily EPT"
@@ -5007,13 +4656,33 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "chart_7" : {
         "parameters" : {
-          "showValues" : true,
+          "bins" : {
+            "breakpoints" : {
+              "high" : 100,
+              "low" : 0
+            },
+            "bands" : {
+              "high" : {
+                "color" : "#008000",
+                "label" : ""
+              },
+              "low" : {
+                "color" : "#B22222",
+                "label" : ""
+              },
+              "medium" : {
+                "color" : "#ffa500",
+                "label" : ""
+              }
+            }
+          },
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -5040,7 +4709,16 @@
           },
           "visualizationType" : "time",
           "missingValue" : "connect",
+          "dashLine" : {
+            "measures" : "",
+            "showDashLine" : false
+          },
           "exploreLink" : true,
+          "timeAxis" : {
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "Date"
+          },
           "title" : {
             "fontSize" : 14,
             "subtitleFontSize" : 11,
@@ -5060,45 +4738,6 @@
             "type" : "x",
             "chartsPerLine" : 4
           },
-          "showZero" : true,
-          "valueType" : "none",
-          "theme" : "dark",
-          "applyConditionalFormatting" : true,
-          "drawArea" : {
-            "measure" : "",
-            "showDrawArea" : false,
-            "bounding1" : "",
-            "bounding2" : ""
-          },
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
-          },
-          "dashLine" : {
-            "measures" : "",
-            "showDashLine" : false
-          },
-          "timeAxis" : {
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "Date"
-          },
           "fillArea" : true,
           "columnMap" : {
             "split" : [
@@ -5113,6 +4752,7 @@
             ]
           },
           "showActionMenu" : true,
+          "showZero" : true,
           "measureAxis2" : {
             "sqrtScale" : false,
             "showTitle" : true,
@@ -5122,6 +4762,7 @@
               "showDomain" : false
             }
           },
+          "valueType" : "none",
           "measureAxis1" : {
             "sqrtScale" : false,
             "showTitle" : true,
@@ -5131,7 +4772,15 @@
               "showDomain" : false
             }
           },
-          "step" : "EPT_by_Browser__1"
+          "theme" : "colorblindEnhanced",
+          "step" : "EPT_by_Browser__1",
+          "applyConditionalFormatting" : true,
+          "drawArea" : {
+            "measure" : "",
+            "showDrawArea" : false,
+            "bounding1" : "",
+            "bounding2" : ""
+          }
         },
         "type" : "chart"
       },
@@ -5141,7 +4790,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#54698d",
                   "size" : "16px"
                 },
                 "insert" : "The Headlines"
@@ -5154,6 +4803,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -5161,7 +4811,6 @@
       "chart_2" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -5259,8 +4908,10 @@
             }
           },
           "normalize" : true,
-          "theme" : "sunriseDark",
+          "valueType" : "compactNumber",
+          "theme" : "colorblindEnhanced",
           "step" : "EPT_by_Browser__5",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -5282,7 +4933,6 @@
       "chart_1" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "legend" : {
             "descOrder" : false,
             "showHeader" : true,
@@ -5359,8 +5009,10 @@
             }
           },
           "normalize" : true,
-          "theme" : "sunriseDark",
+          "valueType" : "compactNumber",
+          "theme" : "colorblindEnhanced",
           "step" : "lens_1",
+          "compactDecimalDigits" : -1,
           "applyConditionalFormatting" : true,
           "dimensionAxis" : {
             "showTitle" : true,
@@ -5397,13 +5049,33 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "chart_4" : {
         "parameters" : {
-          "showValues" : true,
+          "bins" : {
+            "breakpoints" : {
+              "high" : 100,
+              "low" : 0
+            },
+            "bands" : {
+              "high" : {
+                "color" : "#008000",
+                "label" : ""
+              },
+              "low" : {
+                "color" : "#B22222",
+                "label" : ""
+              },
+              "medium" : {
+                "color" : "#ffa500",
+                "label" : ""
+              }
+            }
+          },
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -5430,7 +5102,16 @@
           },
           "visualizationType" : "time",
           "missingValue" : "connect",
+          "dashLine" : {
+            "measures" : "",
+            "showDashLine" : false
+          },
           "exploreLink" : true,
+          "timeAxis" : {
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "Date"
+          },
           "title" : {
             "fontSize" : 14,
             "subtitleFontSize" : 11,
@@ -5450,45 +5131,6 @@
             "type" : "x",
             "chartsPerLine" : 4
           },
-          "showZero" : true,
-          "valueType" : "none",
-          "theme" : "dark",
-          "applyConditionalFormatting" : true,
-          "drawArea" : {
-            "measure" : "",
-            "showDrawArea" : false,
-            "bounding1" : "",
-            "bounding2" : ""
-          },
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
-          },
-          "dashLine" : {
-            "measures" : "",
-            "showDashLine" : false
-          },
-          "timeAxis" : {
-            "showTitle" : true,
-            "showAxis" : true,
-            "title" : "Date"
-          },
           "fillArea" : true,
           "columnMap" : {
             "split" : [
@@ -5503,6 +5145,7 @@
             ]
           },
           "showActionMenu" : true,
+          "showZero" : true,
           "measureAxis2" : {
             "sqrtScale" : false,
             "showTitle" : true,
@@ -5512,6 +5155,7 @@
               "showDomain" : false
             }
           },
+          "valueType" : "none",
           "measureAxis1" : {
             "sqrtScale" : false,
             "showTitle" : true,
@@ -5521,7 +5165,15 @@
               "showDomain" : false
             }
           },
-          "step" : "EPT_by_Browser__4"
+          "theme" : "colorblindEnhanced",
+          "step" : "EPT_by_Browser__4",
+          "applyConditionalFormatting" : true,
+          "drawArea" : {
+            "measure" : "",
+            "showDrawArea" : false,
+            "bounding1" : "",
+            "bounding2" : ""
+          }
         },
         "type" : "chart"
       },
@@ -5531,7 +5183,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#7d98b3",
                   "size" : "10px"
                 },
                 "insert" : "The above charts show the distribution of page performance, sorted by most-popular, not by EPT. Good performance analysis should focus on fixing what is most relevant to the business, and what can benefit the most number of users. While a larger segment of the chart by indicate worse performance, if it is further down the list (clockwise), it should be less of a priority. Blank \"Page App\" generally refers to Client apps, such as the standard Salesforce Mobile app."
@@ -5544,13 +5196,13 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "chart_3" : {
         "parameters" : {
-          "showValues" : true,
           "showPoints" : false,
           "legend" : {
             "descOrder" : false,
@@ -5599,7 +5251,7 @@
           },
           "showZero" : true,
           "valueType" : "none",
-          "theme" : "waterDark",
+          "theme" : "colorblindEnhanced",
           "applyConditionalFormatting" : true,
           "drawArea" : {
             "measure" : "",
@@ -5711,6 +5363,7 @@
               }
             }
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -5722,7 +5375,7 @@
               {
                 "attributes" : {
                   "size" : "16px",
-                  "color" : "#ffffff"
+                  "color" : "#54698d"
                 },
                 "insert" : "Best & Worst EPT by Page"
               },
@@ -5734,6 +5387,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -5747,7 +5401,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
               },
               "field" : "PAGE_ENTITY_TYPE"
             }
@@ -5765,7 +5419,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
               },
               "field" : "PAGE_ENTITY_TYPE"
             }
@@ -5778,14 +5432,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "G",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Impacted Users",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "content" : {
@@ -5802,14 +5457,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "E",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Slow Pages",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "content" : {
@@ -5826,14 +5482,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "K",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Wait Time (Hours)",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "customizeTooltip" : false
@@ -5845,14 +5502,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "D",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Users",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "customizeTooltip" : false
@@ -5864,14 +5522,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "A",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "right",
           "title" : "Page Views",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "customizeTooltip" : false
@@ -5882,7 +5541,6 @@
       "chart_18" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -5978,8 +5636,10 @@
               "showDomain" : false
             }
           },
-          "theme" : "dark",
+          "valueType" : "compactNumber",
+          "theme" : "colorblindEnhanced",
           "step" : "EPTHeadlinesObj_1",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -6001,7 +5661,6 @@
       "chart_17" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -6129,7 +5788,7 @@
               "showDomain" : false
             }
           },
-          "theme" : "sunriseDark",
+          "theme" : "colorblindEnhanced",
           "step" : "PAGE_ENTITY_TYPE_3",
           "dimensionAxis" : {
             "showTitle" : true,
@@ -6151,7 +5810,6 @@
       },
       "chart_16" : {
         "parameters" : {
-          "showValues" : true,
           "legend" : {
             "descOrder" : false,
             "showHeader" : true,
@@ -6198,7 +5856,7 @@
           },
           "centerValueType" : "none",
           "valueType" : "compactNumber",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -6267,7 +5925,8 @@
               "showDomain" : false
             }
           },
-          "step" : "EPT_by_Obj_2"
+          "step" : "EPT_by_Obj_2",
+          "compactDecimalDigits" : -1
         },
         "type" : "chart"
       },
@@ -6275,7 +5934,6 @@
         "parameters" : {
           "autoFitMode" : "keepLabels",
           "centerText" : "",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -6372,8 +6030,9 @@
             }
           },
           "valueType" : "compactNumber",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "step" : "EPT_by_Obj_1",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -6394,7 +6053,6 @@
       },
       "chart_12" : {
         "parameters" : {
-          "showValues" : true,
           "legend" : {
             "descOrder" : false,
             "showHeader" : true,
@@ -6441,7 +6099,7 @@
           },
           "centerValueType" : "none",
           "valueType" : "compactNumber",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -6510,13 +6168,13 @@
               "showDomain" : false
             }
           },
-          "step" : "EPT_by_App_2"
+          "step" : "EPT_by_App_2",
+          "compactDecimalDigits" : -1
         },
         "type" : "chart"
       },
       "chart_11" : {
         "parameters" : {
-          "showValues" : true,
           "legend" : {
             "descOrder" : false,
             "showHeader" : true,
@@ -6563,7 +6221,7 @@
           },
           "centerValueType" : "none",
           "valueType" : "compactNumber",
-          "theme" : "dark",
+          "theme" : "colorblindEnhanced",
           "dimensionAxis" : {
             "showTitle" : true,
             "customSize" : "auto",
@@ -6632,14 +6290,14 @@
               "showDomain" : false
             }
           },
-          "step" : "EPT_by_App_1"
+          "step" : "EPT_by_App_1",
+          "compactDecimalDigits" : -1
         },
         "type" : "chart"
       },
       "chart_10" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
           "bins" : {
             "breakpoints" : {
               "high" : 100,
@@ -6737,8 +6395,10 @@
             }
           },
           "normalize" : true,
-          "theme" : "sunriseDark",
+          "valueType" : "compactNumber",
+          "theme" : "colorblindEnhanced",
           "step" : "EPT_by_Browser__3",
+          "compactDecimalDigits" : -1,
           "dimensionAxis" : {
             "showTitle" : false,
             "customSize" : "auto",
@@ -6761,14 +6421,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "J",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Avg EPT",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "content" : {
@@ -6785,14 +6446,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "I",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Impacted Objects",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "content" : {
@@ -6809,14 +6471,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "H",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Objects Viewed",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "content" : {
@@ -6833,14 +6496,15 @@
         "parameters" : {
           "compact" : true,
           "exploreLink" : true,
+          "interactions" : [ ],
           "measureField" : "L",
-          "numberColor" : "#FFFFFF",
+          "numberColor" : "#16325C",
           "numberSize" : 32,
           "showActionMenu" : true,
           "step" : "EPTHeadlines_1",
           "textAlignment" : "left",
           "title" : "Lost Time (Hours)",
-          "titleColor" : "#FFFFFF",
+          "titleColor" : "#16325C",
           "titleSize" : 12,
           "tooltip" : {
             "content" : {
@@ -6853,6 +6517,24 @@
         },
         "type" : "number"
       },
+      "filterpanel_8" : {
+        "parameters" : {
+          "filterItemOptions" : {
+            "propertyColor" : "#54698D",
+            "valueColor" : "#16325C"
+          },
+          "filters" : [
+            {
+              "dataset" : {
+                "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
+              },
+              "field" : "EVENT_TYPE"
+            }
+          ],
+          "showAllFilters" : false
+        },
+        "type" : "filterpanel"
+      },
       "filterpanel_7" : {
         "parameters" : {
           "filterItemOptions" : {
@@ -6862,7 +6544,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
               },
               "field" : "TIMESTAMP_DERIVED"
             }
@@ -6880,7 +6562,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
               },
               "field" : "CLIENT_GEO"
             }
@@ -6898,7 +6580,7 @@
           "filters" : [
             {
               "dataset" : {
-                "name" : "${Variables.LPVDataset.datasetAlias}"
+                "name" : "${App.Datasets.BVA_LightningPageViewsAndInteractionsAdoption_tp.Name}"
               },
               "field" : "EFFECTIVE_PAGE_TIME"
             }
@@ -6930,8 +6612,8 @@
           "displayMode" : "filter",
           "exploreLink" : false,
           "filterStyle" : {
-            "titleColor" : "#E6ECF2",
-            "valueColor" : "#FFFFFF"
+            "titleColor" : "#16325C",
+            "valueColor" : "#54698D"
           },
           "instant" : true,
           "measureField" : "count",
@@ -6960,6 +6642,7 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
@@ -6970,7 +6653,7 @@
             "richTextContent" : [
               {
                 "attributes" : {
-                  "color" : "#ffffff",
+                  "color" : "#7d98b3",
                   "size" : "16px"
                 },
                 "insert" : "Additional Summaries & Details"
@@ -6983,17 +6666,18 @@
               }
             ]
           },
+          "interactions" : [ ],
           "showActionMenu" : true
         },
         "type" : "text"
       },
       "table_1" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#a8b7c7",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#ffffff",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
             "textWrap" : true
           },
@@ -7002,13 +6686,14 @@
           "customBulkActions" : [ ],
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
+            "backgroundColor" : "#16325c",
             "fontColor" : "#ffffff",
             "fontSize" : 12,
             "textWrap" : true
           },
           "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMinorBorderColor" : "#a8b7c7",
+          "interactions" : [ ],
           "mode" : "fittocontainer",
           "numberOfLines" : 1,
           "pivoted" : false,
@@ -7022,30 +6707,33 @@
       },
       "table_3" : {
         "parameters" : {
-          "borderColor" : "#54698d",
+          "borderColor" : "#e1e5ee",
           "borderWidth" : 1,
           "cell" : {
-            "backgroundColor" : "#16325c",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#f2f6fa",
+            "fontColor" : "#16325c",
             "fontSize" : 12,
             "textWrap" : true
           },
           "columnProperties" : { },
           "columns" : [ ],
           "customBulkActions" : [ ],
+          "evenRowColor" : "#f2f6fa",
           "exploreLink" : true,
           "header" : {
-            "backgroundColor" : "#000000",
-            "fontColor" : "#ffffff",
+            "backgroundColor" : "#e4ecf2",
+            "fontColor" : "#5c7a99",
             "fontSize" : 12,
             "textWrap" : true
           },
-          "innerMajorBorderColor" : "#54698d",
-          "innerMinorBorderColor" : "#54698d",
+          "innerMajorBorderColor" : "#a9b7c7",
+          "innerMinorBorderColor" : "#e1e5ee",
+          "interactions" : [ ],
           "mode" : "fittocontainer",
           "numberOfLines" : 1,
+          "oddRowColor" : "#ffffff",
           "showActionMenu" : true,
-          "showRowIndexColumn" : true,
+          "showRowIndexColumn" : false,
           "step" : "lens_5",
           "totals" : true,
           "verticalPadding" : 8

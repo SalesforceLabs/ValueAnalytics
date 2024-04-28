@@ -1,225 +1,347 @@
 {
-  "templateType": "app",
-  "label": "Value Analytics",
-  "name": "ValueAnalytics",
-  "description": "Visualise adoption metrics on individual features, functions, user click-paths, that are correlated with operational metrics  and strategic outcomes.",
-  "assetVersion": 54.0,
-  "variableDefinition": "variables.json",
-  "uiDefinition": "ui.json",
-  "tags": ["Value", "Technical Debt", "Sales", "Service"],
-  "rules": [{
-          "type": "templateToApp",
-          "file": "template-to-app-rules.json"
-      }, {
-          "type": "appToTemplate",
-          "file": "app-to-template-rules.json"
-      }
+  "templateType" : "app",
+  "label" : "Value Analytics",
+  "name" : "ValueAnalytics",
+  "namespace" : "tomhais",
+  "description" : "Visualise adoption of apps, objects, pages, and begin correlating adoption with business outcomes.",
+  "assetVersion" : 60.0,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
+    },
+    {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
   ],
-  "releaseInfo": {
-      "templateVersion": "1.10",
-      "notesFile": "releaseNotes.html"
+  "releaseInfo" : {
+    "templateVersion" : "1.15",
+    "notesFile" : "releaseNotes.html"
   },
-  "folderDefinition": "folder.json",
-  "externalFiles": [{
-          "label": "Lightning Interaction Data Dictionary",
-          "name": "LightningInteraction_Data_Dictionary",
-          "condition": "${Variables.Overrides.createAllExternalFiles}",
-          "file": "external_files/LightningInteraction_Data_Dictionary.csv",
-          "type": "CSV",
-          "schema": "external_files/LightningInteraction_Data_Dictionary.json",
-          "userXmd": "external_files/LightningInteraction_Data_Dictionary_XMD.json"
-      }
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [
+    {
+      "label": "Lightning Interaction Data Dictionary",
+      "name": "LightningInteraction_Data_Dictionary",
+      "condition": "${Variables.Overrides.createAllExternalFiles}",
+      "file": "external_files/LightningInteraction_Data_Dictionary.csv",
+      "type": "CSV",
+      "schema": "external_files/LightningInteraction_Data_Dictionary.json",
+      "userXmd": "external_files/LightningInteraction_Data_Dictionary_XMD.json"
+  },
+    {
+      "label" : "CustomDataDictionary",
+      "name" : "CustomDataDictionary",
+      "condition" : "${Variables.Overrides.createAllExternalFiles}",
+      "file" : "external_files/CustomDataDictionary.csv",
+      "type" : "CSV",
+      "schema" : "external_files/CustomDataDictionary.json",
+      "userXmd" : "external_files/CustomDataDictionary_XMD.json"
+    },
+    {
+      "label" : "LightningLogger",
+      "name" : "LightningLogger",
+      "condition" : "${Variables.Overrides.createAllExternalFiles}",
+      "file" : "external_files/LightningLogger.csv",
+      "type" : "CSV",
+      "schema" : "external_files/LightningLogger.json",
+      "userXmd" : "external_files/LightningLogger_XMD.json"
+    }
   ],
-  "lenses": [],
-  "dashboards": [{
-          "label": "Apex Exceptions and Analysis",
-          "name": "Apex_Exceptions_Analysis_tp",
-          "condition": "${Variables.Overrides.createAllDashboards}",
-          "file": "dashboards/Apex_Exceptions_Analysis.json"
-      }, {
-          "label": "Apex Performance and Analysis",
-          "name": "Apex_Performance_and_Analysis_tp",
-          "condition": "${Variables.Overrides.createAllDashboards}",
-          "file": "dashboards/Apex_Performance_and_Analysis.json"
-      }, {
-          "label": "Customer Value Analytics",
-          "name": "Customer_Value_Analytics_tp",
-          "condition": "${Constants.hasCustomer}",
-          "file": "dashboards/Customer_Value_Analytics.json"
-      }, {
-          "label": "Lead Value Analytics",
-          "name": "Lead_Value_Analytics_tp",
-          "condition": "${Constants.hasLead}",
-          "file": "dashboards/Lead_Value_Analytics.json"
-      }, {
-          "label": "Lightning Page Performance",
-          "name": "Lightning_Page_Performance_tp",
-          "condition": "${Variables.Overrides.createAllDashboards}",
-          "file": "dashboards/Lightning_Page_Performance.json"
-      }, {
-          "label": "Sales Value Analytics",
-          "name": "Sales_Value_Analytics_tp",
-          "condition": "${Constants.hasSales}",
-          "file": "dashboards/Sales_Value_Analytics.json"
-      }, {
-          "label": "Service Value Analytics",
-          "name": "Service_Value_Analytics_tp",
-          "condition": "${Constants.hasService}",
-          "file": "dashboards/Service_Value_Analytics.json"
-      }, {
-          "label": "Tech Debt Counter",
-          "name": "Tech_Debt_Counter_tp",
-          "condition": "${Variables.Overrides.createAllDashboards}",
-          "file": "dashboards/Tech_Debt_Counter.json"
-      }, {
-          "label": "User Activity & Journeys",
-          "name": "User_Activity_Journeys_tp",
-          "condition": "${Variables.Overrides.createAllDashboards}",
-          "file": "dashboards/User_Activity_Journeys.json"
-      }, {
-          "label": "User Activity & Journeys (Union)",
-          "name": "User_Activity_Journeys_Union_tp",
-          "condition": "${Variables.Overrides.createAllDashboards}",
-          "file": "dashboards/User_Activity_Journeys_Union.json"
-      }
+  "lenses" : [ ],
+  "dashboards" : [
+    {
+      "label" : "Adoption Console",
+      "name" : "Adoption_Console_Intermediate_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Adoption_Console_Intermediate.json"
+    },
+    {
+      "label" : "Adoption Console (Advanced)",
+      "name" : "User_Activity_Journeys_Union_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/User_Activity_Journeys_Union.json"
+    },
+    {
+      "label" : "Adoption Console (Beginner)",
+      "name" : "User_Activity_Journeys_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/User_Activity_Journeys.json"
+    },
+    {
+      "label" : "Apex Error Revenue Risk",
+      "name" : "Apex_Error_Revenue_Impact_tp",
+      "condition" : "${Constants.hasRisk}",
+      "file" : "dashboards/Apex_Error_Revenue_Impact.json"
+    },
+    {
+      "label" : "Apex Exceptions",
+      "name" : "Apex_Exceptions_Analysis_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Apex_Exceptions_Analysis.json"
+    },
+    {
+      "label" : "Apex Performance",
+      "name" : "Apex_Performance_and_Analysis_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Apex_Performance_and_Analysis.json"
+    },
+    {
+      "label" : "Customer Value Analytics",
+      "name" : "Customer_Value_Analytics_tp",
+      "condition" : "${Constants.hasCustomer}",
+      "file" : "dashboards/Customer_Value_Analytics.json"
+    },
+    {
+      "label" : "Lead Value Analytics",
+      "name" : "Lead_Value_Analytics_tp",
+      "condition" : "${Constants.hasLead}",
+      "file" : "dashboards/Lead_Value_Analytics.json"
+    },
+    {
+      "label" : "Lightning Page Performance",
+      "name" : "Lightning_Page_Performance_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Lightning_Page_Performance.json"
+    },
+    {
+      "label" : "Sales Value Analytics",
+      "name" : "Sales_Value_Analytics_tp",
+      "condition" : "${Constants.hasSales}",
+      "file" : "dashboards/Sales_Value_Analytics.json"
+    },
+    {
+      "label" : "Service Value Analytics",
+      "name" : "Service_Value_Analytics_tp",
+      "condition" : "${Constants.hasService}",
+      "file" : "dashboards/Service_Value_Analytics.json"
+    },
+    {
+      "label" : "Tech Debt Counter",
+      "name" : "Tech_Debt_Counter_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Tech_Debt_Counter.json"
+    }
   ],
-  "components": [],
-  "eltDataflows": [{
-          "label": "BVA DoNotDeleteOrRun",
-          "name": "BVA_DoNotDeleteOrRun",
-          "condition": "${Variables.Overrides.createDataflow}",
-          "file": "dataflow/BVA_DoNotDeleteOrRun.json"
-      }
+  "components" : [ ],
+  "dataTransforms" : [ ],
+  "eltDataflows" : [],
+  "recipes" : [
+    {
+      "label" : "BVA Users Profiles Roles",
+      "name" : "BVA_UsersProfilesRoles",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/BVA_UsersProfilesRoles.json"
+    },
+    {
+      "label" : "BVA Lightning Page Views and Interactions",
+      "name" : "BVA_Lightning_Page_Views_and_Interactions",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/BVA_Lightning_Page_Views_and_Interactions.json"
+    },
+    {
+      "label" : "BVA Apex and Errors",
+      "name" : "BVA_Apex_and_Errors",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/BVA_Apex_and_Errors.json"
+    },
+    {
+      "label" : "BVA Union Logs Adoption",
+      "name" : "BVA_Union_Logs_Adoption",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/BVA_Union_Logs_Adoption.json"
+    },
+    {
+      "label" : "BVA Apex Exception Revenue Impact",
+      "name" : "ApexExceptionRevenueImpact",
+      "condition" : "${Constants.hasRisk}",
+      "file" : "recipes/ApexExceptionRevenueImpact.json"
+    },
+    {
+      "label" : "TechDebtCounter",
+      "name" : "TechDebtCounter",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/TechDebtCounter.json"
+    },
+    {
+      "label" : "BVA Lightning Interactions and Accounts",
+      "name" : "BVA_Lightning_Interactions_and_Accounts",
+      "condition" : "${Constants.hasCustomer}",
+      "file" : "recipes/BVA_Lightning_Interactions_and_Accounts.json"
+    },
+    {
+      "label" : "BVA Lightning Interactions and Opportunities",
+      "name" : "BVA_Lightning_Interactions_and_Opportunities",
+      "condition" : "${Constants.hasSales}",
+      "file" : "recipes/BVA_Lightning_Interactions_and_Opportunities.json"
+    },
+    {
+      "label" : "BVA Lightning Interactions and Leads",
+      "name" : "BVA_Lightning_Interactions_and_Leads",
+      "condition" : "${Constants.hasLead}",
+      "file" : "recipes/BVA_Lightning_Interactions_and_Leads.json"
+    },
+    {
+      "label" : "BVA Lightning Interactions and Cases",
+      "name" : "BVA_Lightning_Interactions_and_Cases",
+      "condition" : "${Constants.hasService}",
+      "file" : "recipes/BVA_Lightning_Interactions_and_Cases.json"
+    }
   ],
-  "recipes": [{
-          "label": "BVA Users Profiles Roles",
-          "name": "BVA_UsersProfilesRoles",
-          "condition": "${Variables.Overrides.createAllRecipes}",
-          "file": "recipes/BVA_UsersProfilesRoles.json"
-      }, {
-          "label": "BVA Lightning Interactions and Cases",
-          "name": "BVA_Lightning_Interactions_and_Cases",
-          "condition": "${Constants.hasService}",
-          "file": "recipes/BVA_Lightning_Interactions_and_Cases.json"
-      }, {
-          "label": "BVA Lightning Interactions and Opportunities",
-          "name": "BVA_Lightning_Interactions_and_Opportunities",
-          "condition": "${Constants.hasSales}",
-          "file": "recipes/BVA_Lightning_Interactions_and_Opportunities.json"
-      }, {
-          "label": "BVA Lightning Interactions and Leads",
-          "name": "BVA_Lightning_Interactions_and_Leads",
-          "condition": "${Constants.hasLead}",
-          "file": "recipes/BVA_Lightning_Interactions_and_Leads.json"
-      }, {
-          "label": "BVA Lightning Interactions and Accounts",
-          "name": "BVA_Lightning_Interactions_and_Accounts",
-          "condition": "${Constants.hasCustomer}",
-          "file": "recipes/BVA_Lightning_Interactions_and_Accounts.json"
-      }, {
-          "label": "BVA Union Logs Adoption",
-          "name": "BVA_Union_Logs_Adoption",
-          "condition": "${Variables.Overrides.createAllRecipes}",
-          "file": "recipes/BVA_Union_Logs_Adoption.json"
-      }, {
-          "label": "BVA Lightning Page Views and Interactions",
-          "name": "BVA_Lightning_Page_Views_and_Interactions",
-          "condition": "${Variables.Overrides.createAllRecipes}",
-          "file": "recipes/BVA_Lightning_Page_Views_and_Interactions.json"
-      }, {
-          "label": "TechDebtCounter",
-          "name": "TechDebtCounter",
-          "condition": "${Variables.Overrides.createAllRecipes}",
-          "file": "recipes/TechDebtCounter.json"
-      }
+  "datasetFiles" : [
+    {
+      "label" : "BVA Accounts And Interactions Adoption",
+      "name" : "BVA_AccountsAndInteractionsAdoption_tp",
+      "condition" : "${Constants.hasCustomer}",
+      "userXmd" : "dataset_files/BVA_AccountsAndInteractionsAdoption_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Cases And Interactions Adoption",
+      "name" : "BVA_CasesAndInteractionsAdoption_tp",
+      "condition" : "${Constants.hasService}",
+      "userXmd" : "dataset_files/BVA_CasesAndInteractionsAdoption_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Leads And Interactions Adoption",
+      "name" : "BVA_LeadsAndInteractionsAdoption_tp",
+      "condition" : "${Constants.hasLead}",
+      "userXmd" : "dataset_files/BVA_LeadsAndInteractionsAdoption_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Lightning Page Views and Interactions Adoption",
+      "name" : "BVA_LightningPageViewsAndInteractionsAdoption_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/BVA_LightningPageViewsAndInteractionsAdoption_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Opportunities And Interactions Adoption",
+      "name" : "BVA_OpportunitiesAndInteractionsAdoption_tp",
+      "condition" : "${Constants.hasSales}",
+      "userXmd" : "dataset_files/BVA_OpportunitiesAndInteractionsAdoption_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Union Logs Adoption",
+      "name" : "BVA_UnionLogsAdoption_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/BVA_UnionLogsAdoption_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Users Profiles Roles",
+      "name" : "BVA_UsersProfilesRoles_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/BVA_UsersProfilesRoles_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Accounts Impacted By Errors",
+      "name" : "BVAAccountsImpactedByErrors_tp",
+      "condition" : "${Constants.hasRisk}",
+      "userXmd" : "dataset_files/BVAAccountsImpactedByErrors_XMD.json"
+    },
+    {
+      "label" : "BVA Apex Execution With Users",
+      "name" : "BVAApexExecutionWithUsers_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/BVAApexExecutionWithUsers_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Apex Unexpected Exception With Users",
+      "name" : "BVAApexUnexpectedExceptionWithUsers_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/BVAApexUnexpectedExceptionWithUsers_tp_XMD.json"
+    },
+    {
+      "label" : "BVA Cases And Interactions User Clusters",
+      "name" : "BVACasesAndInteractionsUserClusters_tp",
+      "condition" : "${Constants.hasService}",
+      "userXmd" : "dataset_files/BVACasesAndInteractionsUserClusters_XMD.json"
+    },
+    {
+      "label" : "BVA Leads And Interactions User Clusters",
+      "name" : "BVALeadsAndInteractionsUserClusters_tp",
+      "condition" : "${Constants.hasLead}",
+      "userXmd" : "dataset_files/BVALeadsAndInteractionsUserClusters_XMD.json"
+    },
+    {
+      "label" : "BVA Opportunies Impacted By Errors",
+      "name" : "BVAOpportuniesImpactedByErrors_tp",
+      "condition" : "${Constants.hasRisk}",
+      "userXmd" : "dataset_files/BVAOpportuniesImpactedByErrors_XMD.json"
+    },
+    {
+      "label" : "BVA Opportunity And Interactions User Clusters",
+      "name" : "BVAOpportunityAndInteractionsUserClusters_tp",
+      "condition" : "${Constants.hasSales}",
+      "userXmd" : "dataset_files/BVAOpportunityAndInteractionsUserClusters_XMD.json"
+    },
+    {
+      "label" : "CustomDataDictionary",
+      "name" : "CustomDataDictionary",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/CustomDataDictionary_XMD.json"
+    },
+    {
+      "label" : "Lightning Interaction Data Dictionary",
+      "name" : "LightningInteraction_Data_Dictionary",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/LightningInteraction_Data_Dictionary_XMD.json"
+    },
+    {
+      "label" : "TechDebtCounter",
+      "name" : "TechDebtCounter_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/TechDebtCounter_tp_XMD.json"
+    }
   ],
-  "datasetFiles": [{
-          "label": "BVA Accounts And Interactions Adoption",
-          "name": "BVA_AccountsAndInteractionsAdoption_tp",
-          "condition": "${Constants.hasCustomer}",
-          "userXmd": "dataset_files/BVA_AccountsAndInteractionsAdoption_XMD.json"
-      }, {
-          "label": "BVA Cases And Interactions Adoption",
-          "name": "BVA_CasesAndInteractionsAdoption_tp",
-          "condition": "${Constants.hasService}",
-          "userXmd": "dataset_files/BVA_CasesAndInteractionsAdoption_tp_XMD.json"
-      }, {
-          "label": "BVA Leads And Interactions Adoption",
-          "name": "BVA_LeadsAndInteractionsAdoption_tp",
-          "condition": "${Constants.hasLead}",
-          "userXmd": "dataset_files/BVA_LeadsAndInteractionsAdoption_XMD.json"
-      }, {
-          "label": "BVA Lightning Page Views and Interactions Adoption",
-          "name": "BVA_LightningPageViewsAndInteractionsAdoption_tp",
-          "condition": "${Variables.Overrides.createAllDatasetFiles}",
-          "userXmd": "dataset_files/BVA_LightningPageViewsAndInteractionsAdoption_XMD.json"
-      }, {
-          "label": "BVA Opportunities And Interactions Adoption",
-          "name": "BVA_OpportunitiesAndInteractionsAdoption_tp",
-          "condition": "${Constants.hasSales}",
-          "userXmd": "dataset_files/BVA_OpportunitiesAndInteractionsAdoption_tp_XMD.json"
-      }, {
-          "label": "BVA_PlaceholderDataset",
-          "name": "BVA_PlaceholderDataset_tp",
-          "condition": "${Variables.Overrides.createAllDatasetFiles}",
-          "userXmd": "dataset_files/BVA_PlaceholderDataset_XMD.json"
-      }, {
-          "label": "BVA Union Logs Adoption",
-          "name": "BVA_UnionLogsAdoption_tp",
-          "condition": "${Variables.Overrides.createAllDatasetFiles}",
-          "userXmd": "dataset_files/BVA_UnionLogsAdoption_XMD.json"
-      }, {
-          "label": "BVA Users Profiles Roles",
-          "name": "BVA_UsersProfilesRoles_tp",
-          "condition": "${Variables.Overrides.createAllDatasetFiles}",
-          "userXmd": "dataset_files/BVA_UsersProfilesRoles_XMD.json"
-      }, {
-          "label": "TechDebtCounter",
-          "name": "TechDebtCounter_tp",
-          "condition": "${Variables.Overrides.createAllDatasetFiles}",
-          "userXmd": "dataset_files/TechDebtCounter_XMD.json"
-      }
-  ],
-  "storedQueries": [],
-  "extendedTypes": {},
-  "templateDependencies": [],
-  "icons": {
-      "appBadge": {
-          "name": "16.png"
-      },
-      "templateBadge": {
-          "name": "admin.png"
-      },
-      "templatePreviews": [{
-              "name": "templatePreview",
-              "label": "What features or functions are valuable?",
-              "description": "Take a deep-dive into almost every user activity in your Salesforce org, and see how user behaviour correlates with sample business outcomes."
-              
-          }
+  "dataModelObjects" : [ ],
+  "storedQueries" : [ ],
+  "imageFiles" : [ ],
+  "customAttributes" : [
+    {
+      "label" : "Features",
+      "values" : [
+        "Prebuilt Dashboards",
+        "Recipes"
       ]
-  },
- "customAttributes": [
-   {
-     "label": "Features",
-     "values": [
-       "Prebuilt Dashboards",
-       "Recipes"
-     ]
-   },
-   {
-     "label": "Salesforce Objects",
-     "values": [
-       "Account",
-       "Opportunity",
-       "Case",
-       "Lead"
-     ]
-   },
-   {
-     "label": "Publisher",
-     "values": [
-       "Salesforce Labs"
-     ]
-   }
- ]
+    },
+    {
+      "label" : "Salesforce Objects",
+      "values" : [
+        "Account",
+        "Opportunity",
+        "Case",
+        "Lead"
+      ]
+    },
+    {
+      "label" : "Publisher",
+      "values" : [
+        "Salesforce Labs"
+      ]
+    }
+  ],
+  "extendedTypes" : { },
+  "templateDependencies" : [],
+  "tags" : [
+    "Value",
+    "Adoption",
+    "Technical Debt"
+  ],
+  "icons" : {
+    "appBadge" : {
+      "name" : "16.png"
+    },
+    "templateBadge" : {
+      "name" : "admin.png"
+    },
+    "templatePreviews" : [
+      {
+        "name" : "templatePreview",
+        "label" : "Begin correlating feature adoption and technical debt with business metrics.",
+        "description" : "Explore the many behaviours in your Salesforce org, and see how these behaviours correlate with sample business outcomes."
+      }
+    ]
+  }
 }

@@ -1,5 +1,20 @@
 {
   "constants": [],
   "macros": [],
-  "rules": []
+  "rules": [
+		{
+			"name" : "TechDebtDashboard2",
+			"appliesTo" : [ {
+			"type" : "recipe",
+			"name" : "TechDebtCounter"
+			} ],
+			"actions" : [ {
+			"action" : "set",
+			"path":"$.recipeDefinition.nodes.LOAD_DATASET4.parameters.dataset.name",
+			"description" : "Ensure the dataset name is always the dataset alias in steps",
+			"key":"name",
+			"value" : "${Variables.VFDataset.datasetAlias}"
+			} ]
+		}
+  ]
 }
