@@ -1,24 +1,24 @@
 PARENT_UI_ELEMENT,TARGET_UI_ELEMENT,COMPONENT_NAME,UI_EVENT_SOURCE,ConcatComponentEvent,Event,Event Label,Description,Rank
-related-list-quicklinkcontainer,component,,RLQL-load-additional,related-list-quicklinkcontainercomponentRLQL-load-additional,,,,0
-related-list-quicklinkcontainer,component,,RLQL-load-initial,related-list-quicklinkcontainercomponentRLQL-load-initial,,,,0
+related-list-quicklinkcontainer,component,,RLQL-load-additional,related-list-quicklinkcontainer - component -  - RLQL-load-additional,,,,0
+related-list-quicklinkcontainer,component,,RLQL-load-initial,related-list-quicklinkcontainer - component -  - RLQL-load-initial,,,,0
 feedElementBody,compactFeedItem,,click,feedElementBody - compactFeedItem -  - click,Click,Feed Post Collapse / Expand,A user clicks on an item in the feed of a record,0
 tab-bar,tab-bar-content__tab,feedTab,click,tab-bar - tab-bar-content__tab - feedTab - click,Click,Feed Tab Header,Clicking the ‘Feed’ tab on a record and the ‘All Updates’ feed loads by default,0
-publisher,rich-text-parse,,synthetic-click,publisher - rich-text-parse -  - synthetic-click,Click,Begin Feed Input,A user begins to type text as a new post or a comment on an existing post,0
+publisher,rich-text-parse,,synthetic-click,publisher - rich-text-parse -  - synthetic-click,Click,Compose New Chatter Reply,A user begins typing a reply to an existing Chatter post. Timing of event may be inaccurate.,0
 publisher,clicking publisher Button,,synthetic-click,publisher - clicking publisher Button -  - synthetic-click,Click,Input Feed Comment,A user clicks ‘Share’ under Feed -> Post i.e. creating a new comment,0
-actions-composer-tab,publisher-collapsed-quick-action__button,FeedItem.TextPost,click,actions-composer-tab - publisher-collapsed-quick-action__button - FeedItem.TextPost - click,Click,Feed Share Update,A user clicks ‘Share an update’ under Feed -> Post i.e. creating a new comment,0
-actions-composer-tab,publisher-collapsed-quick-action,FeedItem.TextPost,synthetic-click,actions-composer-tab - publisher-collapsed-quick-action - FeedItem.TextPost - synthetic-click,Click,Feed Share Update (Synth),A user clicks ‘Share an update’ under Feed -> Post i.e. creating a new comment,0
+actions-composer-tab,publisher-collapsed-quick-action__button,FeedItem.TextPost,click,actions-composer-tab - publisher-collapsed-quick-action__button - FeedItem.TextPost - click,Click,Compose New Chatter Post,A user begins to type a new message in the Chatter Publisher,0
+actions-composer-tab,publisher-collapsed-quick-action,FeedItem.TextPost,synthetic-click,actions-composer-tab - publisher-collapsed-quick-action - FeedItem.TextPost - synthetic-click,,Feed Share Update (Synth),,0
 search-input-desktop,search-suggestions-list,,synthetic-refresh,search-input-desktop - search-suggestions-list -  - synthetic-refresh,Click,Generic Search Box,,0
-publisher-quick-action,submitButton__button,,click,publisher-quick-action - submitButton__button -  - click,Click,Feed Post Submit Button,A user clicks ‘Share’ under Feed -> Post i.e. creating a new comment,0
-publisher,postCreated,TextPost,synthetic-click,publisher - postCreated - TextPost - synthetic-click,Click,Comment Added Notification,The post that was submitted by the user is created in the feed.,0
+publisher-quick-action,submitButton__button,,click,publisher-quick-action - submitButton__button -  - click,Click,Submit New Chatter Post,A user click Share after typing a new message in the Chatter Publisher,0
+publisher,postCreated,TextPost,synthetic-click,publisher - postCreated - TextPost - synthetic-click,Click,Comment Added Notification,The post that was submitted by the user is created in the feed. / Also shows after Row 11,0
 RecordEditAction,action__button,SaveEdit,click,RecordEditAction - action__button - SaveEdit - click,Click,Record Edit,Editing the record in sidepanel component,0
-feed-body-text,messageComponents,,click,feed-body-textmessageComponentsclick,,,,0
+feed-body-text,messageComponents,,click,feed-body-text - messageComponents -  - click,,,,0
 one-utilityBar,one-utilityBarItem--panelMinimized,,synthetic-click,one-utilityBar - one-utilityBarItem--panelMinimized -  - synthetic-click,Click,UtilityBarItemClose,The user minimizes or moves away from the utility bar item in the footer,0
 one-utilityBar,one-utilityBarItem--panelOpened,,synthetic-click,one-utilityBar - one-utilityBarItem--panelOpened -  - synthetic-click,Click,UtilityBarItemOpen,The user clicks on an item in the utility bar in the footer.,0
 search-input-desktop,search-input,,synthetic-click,search-input-desktop - search-input -  - synthetic-click,Click,GlobalSearchBar,User clicks on global search at the top of the screen.,0
 record-layout,inline-edit-trigger__button,Subject,click,record-layout - inline-edit-trigger__button - Subject - click,Click,SubjectRecordEditAction,Double-click to inline-edit the Subject field,0
 publisherAttachmentAction,menuTrigger__menu-trigger-link,,click,publisherAttachmentAction - menuTrigger__menu-trigger-link -  - click,Click,AttachFileIcon,The user clicks 'Attach File' paperclip icon in an e-mail or a feed post.,0
-emailToolbarContainer,insertEmailTemplate,,synthetic-insertEmailTemplate,emailToolbarContainerinsertEmailTemplatesynthetic-insertEmailTemplate,,,,0
-output-lookup-preview,link,,synthetic-hover,output-lookup-previewlinksynthetic-hover,,,,0
+emailToolbarContainer,insertEmailTemplate,,synthetic-insertEmailTemplate,emailToolbarContainer - insertEmailTemplate -  - synthetic-insertEmailTemplate,,,,0
+output-lookup-preview,link,,synthetic-hover,output-lookup-preview - link -  - synthetic-hover,Click,Record Link Hover Pop-up,A user hovered over a link to a record to see a preview pop-up,0
 search-input-desktop,search-mru-action-item,,synthetic-click,search-input-desktop - search-mru-action-item -  - synthetic-click,Click,GlobalSearchBarResult,User has clicked on a recent item in the Global Search results prompt.,0
 record-layout,inline-edit-trigger__button,Ecom_Category__c,click,record-layout - inline-edit-trigger__button - Ecom_Category__c - click,Click,CategoryField,User double-clicks on the record details to edit,0
 tab-bar,tab-bar-content__tab,detailTab,click,tab-bar - tab-bar-content__tab - detailTab - click,Click,DetailsTab,User navigates to the Details tab,0
@@ -27,12 +27,12 @@ statusMenu,menu-trigger,,click,statusMenu - menu-trigger -  - click,Click,Status
 record-layout,inline-edit,,click,record-layout - inline-edit -  - click,Click,Details Tab Edit,Double-click on field in Details panel to edit the record,0
 form-footer,save-button,,click,form-footer - save-button -  - click,Click,Save Button,"Save the record using the save button at the buttom of the new, edit  and clone page",0
 search-input-desktop,autocomplete-content,,click,search-input-desktop - autocomplete-content -  - click,Click,AutoCompleteSuggestion,User accepts search autocompletion suggestion,0
-search-input-desktop,search-mru-item,,synthetic-click,search-input-desktop - search-mru-item -  - synthetic-click,Click,TopItemInSearchResult,User clicks on a most-recently used record that is prompted in the search lookup,0
+search-input-desktop,search-mru-item,,synthetic-click,search-input-desktop - search-mru-item -  - synthetic-click,Click,Lookup-Field Search Result,User clicks on a most-recently used record that is prompted in the search lookup,0
 inline-edit-grid,entity-link,,click,inline-edit-grid - entity-link -  - click,Click,Record in List View,Clicking a record link in a list view,0
-one-shortcutLibraryCommandHandler,Edit,,synthetic-keyboard,one-shortcutLibraryCommandHandlerEditsynthetic-keyboard,,,,0
-sessiontimeoutwarn,session-timeout-notification,,synthetic-notification,sessiontimeoutwarnsession-timeout-notificationsynthetic-notification,,,,0
+one-shortcutLibraryCommandHandler,Edit,,synthetic-keyboard,one-shortcutLibraryCommandHandler - Edit -  - synthetic-keyboard,,,,0
+sessiontimeoutwarn,session-timeout-notification,,synthetic-notification,sessiontimeoutwarn - session-timeout-notification -  - synthetic-notification,,,,0
 search-input-lookup-desktop,search-input,,synthetic-click,search-input-lookup-desktop - search-input -  - synthetic-click,Click,Lookup-Field Search,Looking for a record in a relationship field (creating or editing a record),0
-tab,close,,unload,tabcloseunload,,,,0
+tab,close,,unload,tab - close -  - unload,,,,0
 publisherAttachmentAction,attachmentButton__button,,click,publisherAttachmentAction - attachmentButton__button -  - click,Click,Upload Attachment,Uploading an attachment either on a record feed post or in the Email composer.,0
 ChatterFeed,entityLinkClicked,,synthetic-click,ChatterFeed - entityLinkClicked -  - synthetic-click,Click,ChatterLink,Clicking a link in Chatter,0
 publisher,file-upload,,synthetic-click,publisher - file-upload -  - synthetic-click,Click,Confirm Upload Attachment,The user has clicked 'Add' to finalise attachment upload.,0
@@ -41,399 +41,397 @@ publisher,postEdited,,synthetic-click,publisher - postEdited -  - synthetic-clic
 action-modal,submitButton__button,,click,action-modal - submitButton__button -  - click,Click,PopUpActionSubmitButton,Generic submit button on a pop-up action,0
 publisherAttachmentAction,publisher-attachments-menu-item__menu-item,ui.publisher.support.quickAction.sendEmail.insert.template,click,publisherAttachmentAction - publisher-attachments-menu-item__menu-item - ui.publisher.support.quickAction.sendEmail.insert.template - click,Click,FeedEmailAttachment,Uploading an attachment,0
 record-layout,inline-edit-trigger__button,Order_Reference_Number__c,click,record-layout - inline-edit-trigger__button - Order_Reference_Number__c - click,Click,EditFieldInTheDetailsTab,Double-click on field in Details panel to edit the record,0
-related-list-quicklinkcontainer,component,,RLQL-show-more/less,related-list-quicklinkcontainercomponentRLQL-show-more/less,,,,0
-outputLookup,entity-link,,click,outputLookup - entity-link -  - click,Click,Link,Clicks on a link,0
+related-list-quicklinkcontainer,component,,RLQL-show-more/less,related-list-quicklinkcontainer - component -  - RLQL-show-more/less,,,,0
+outputLookup,entity-link,,click,outputLookup - entity-link -  - click,Click,Record Link,The user clicked on a link to open a record,0
 card-related-list,card-footer-viewAll,,click,card-related-list - card-footer-viewAll -  - click,Click,ViewAllButton,User clicks View All on a related list pop-up hover window,0
 modal,modal-close__button,,click,modal - modal-close__button -  - click,Click,ModalWondowCloseButton,CLosing a pop-up modal window,0
 tab-bar,tab-bar-content__tab,chatTab,click,tab-bar - tab-bar-content__tab - chatTab - click,Click,ChatTab,Click on the Chat tab,0
 force:detailPanel,force:detailPanel,,synthetic-primeMetadataStore,force:detailPanel - force:detailPanel -  - synthetic-primeMetadataStore,Click,Sub-Panel Detail,"The user has clicked into a sub-tab view of the details of a record, such as a Task in the Activity timeline.",0
-tab-bar-content,overflow__menu-trigger-link,,click,tab-bar-contentoverflow__menu-trigger-linkclick,,,,0
+tab-bar-content,overflow__menu-trigger-link,,click,tab-bar-content - overflow__menu-trigger-link -  - click,,,,0
 tab-bar,tab-bar-content__tab,EmailMessageEvent,click,tab-bar - tab-bar-content__tab - EmailMessageEvent - click,Click,EmailInFeed,View only Emails in the feed,0
-one-shortcutLibraryCommandHandler,ToggleUtilityItem,,synthetic-keyboard,one-shortcutLibraryCommandHandlerToggleUtilityItemsynthetic-keyboard,,,,0
-inline-edit-grid,fileTitle,,click,inline-edit-gridfileTitleclick,,,,0
+one-shortcutLibraryCommandHandler,ToggleUtilityItem,,synthetic-keyboard,one-shortcutLibraryCommandHandler - ToggleUtilityItem -  - synthetic-keyboard,,,,0
+inline-edit-grid,fileTitle,,click,inline-edit-grid - fileTitle -  - click,,,,0
 modal-content,confirmButton__button,,click,modal-content - confirmButton__button -  - click,Click,Confirm Button,User has confirmed an action (e.g. send an email with attachment),0
-runtime_communities_nba:nbaWidget,nbaWidget-componentUsage,,navigate,runtime_communities_nba:nbaWidgetnbaWidget-componentUsagenavigate,,,,0
-console-tab-button-toggle-menu,menu-trigger,,click,console-tab-button-toggle-menumenu-triggerclick,,,,0
-tab-bar,tab-bar-content__tab,TextPost,click,tab-bartab-bar-content__tabTextPostclick,,,,0
-tab-bar,tab-bar-content__tab,relatedListsTab,click,tab-bartab-bar-content__tabrelatedListsTabclick,,,,0
-forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-closeFilePreview,forceContentModalPreviewPlayerforceContentModalPreviewPlayersynthetic-content-closeFilePreview,,,,0
-tab-bar-content,overflow-item__menu-item,case.gt_paymentlink_generator,click,tab-bar-contentoverflow-item__menu-itemcase.gt_paymentlink_generatorclick,,,,0
-search-input-lookup-desktop,search-record-pill-item,,synthetic-pill-remove,search-input-lookup-desktopsearch-record-pill-itemsynthetic-pill-remove,,,,0
-search-input-lookup-desktop,search-mru-item,,synthetic-click,search-input-lookup-desktop - search-mru-item -  - synthetic-click,Click,Lookup-Field Search Result,The most recently used MRU records pop-up.,0
-search-input-lookup-desktop,search-record-pill-item,,synthetic-pill-add,search-input-lookup-desktopsearch-record-pill-itemsynthetic-pill-add,,,,0
-search-results-container,search-results-grid,,synthetic-refresh,search-results-containersearch-results-gridsynthetic-refresh,,,,0
+runtime_communities_nba:nbaWidget,nbaWidget-componentUsage,,navigate,runtime_communities_nba:nbaWidget - nbaWidget-componentUsage -  - navigate,,,,0
+console-tab-button-toggle-menu,menu-trigger,,click,console-tab-button-toggle-menu - menu-trigger -  - click,,,,0
+tab-bar,tab-bar-content__tab,TextPost,click,tab-bar - tab-bar-content__tab - TextPost - click,,,,0
+tab-bar,tab-bar-content__tab,relatedListsTab,click,tab-bar - tab-bar-content__tab - relatedListsTab - click,,,,0
+forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-closeFilePreview,forceContentModalPreviewPlayer - forceContentModalPreviewPlayer -  - synthetic-content-closeFilePreview,,,,0
+search-input-lookup-desktop,search-record-pill-item,,synthetic-pill-remove,search-input-lookup-desktop - search-record-pill-item -  - synthetic-pill-remove,,,,0
+search-input-lookup-desktop,search-mru-item,,synthetic-click,search-input-lookup-desktop - search-mru-item -  - synthetic-click,Click,Lookup-Field Search Result,User clicks on a most-recently used record that is prompted in the search lookup,0
+search-input-lookup-desktop,search-record-pill-item,,synthetic-pill-add,search-input-lookup-desktop - search-record-pill-item -  - synthetic-pill-add,,,,0
+search-results-container,search-results-grid,,synthetic-refresh,search-results-container - search-results-grid -  - synthetic-refresh,,,,0
 runtime_platform_actions-pageReferenceAction,lwc-action,,click,runtime_platform_actions-pageReferenceAction - lwc-action -  - click,Click,Quick Action Drop-Down,A user is selecting the drop-down to see more available Quick Actions,0
-record-layout,entity-link,,click,record-layoutentity-linkclick,,,,0
-search-results-container,search-result-item,,synthetic-click,search-results-containersearch-result-itemsynthetic-click,synthetic-click,,,0
+record-layout,entity-link,,click,record-layout - entity-link -  - click,,,,0
+search-results-container,search-result-item,,synthetic-click,search-results-container - search-result-item -  - synthetic-click,synthetic-click,,,0
 one-one,force-dockingPanel-close,,synthetic-click,one-one - force-dockingPanel-close -  - synthetic-click,Click,Message Prompt - Close,A user has closed a panel in the message prompt at the bottom of the page.,0
-RecordEditAction,action__button,CancelEdit,click,RecordEditActionaction__buttonCancelEditclick,,,,0
-one-consoleNav,one-appNavMenu-opened,,synthetic-click,one-consoleNavone-appNavMenu-openedsynthetic-click,synthetic-click,,,0
-loadPastActivities,activityTimeline,,synthetic-click,loadPastActivitiesactivityTimelinesynthetic-click,synthetic-click,,,0
-search-input-lookup-desktop,search-mru-action-item,,synthetic-click,search-input-lookup-desktopsearch-mru-action-itemsynthetic-click,synthetic-click,,,0
-one-consoleNav,one-appNavMenu-selection,,synthetic-click,one-consoleNavone-appNavMenu-selectionsynthetic-click,synthetic-click,,,0
-search-results-container,entity-link,,click,search-results-containerentity-linkclick,,,,0
-einsteinArticleSuggestion,einsteinArticleSuggestion,,synthetic-einsteinArticleSuggestion-actions,einsteinArticleSuggestioneinsteinArticleSuggestionsynthetic-einsteinArticleSuggestion-actions,,,,0
-tab-bar,tab-bar-content__tab,AllUpdates,click,tab-bartab-bar-content__tabAllUpdatesclick,,,,0
-emailui-pill-container,remove-emailui-pill-container,,synthetic-click,emailui-pill-containerremove-emailui-pill-containersynthetic-click,synthetic-click,,,0
-closeButton,previewer-action__button,,click,closeButtonpreviewer-action__buttonclick,,,,0
-record-layout,inline-edit-trigger__button,ContactId,click,record-layoutinline-edit-trigger__buttonContactIdclick,,,,0
-record-layout,inline-edit-trigger__button,OwnerId,click,record-layoutinline-edit-trigger__buttonOwnerIdclick,,,,0
+RecordEditAction,action__button,CancelEdit,click,RecordEditAction - action__button - CancelEdit - click,,,,0
+loadPastActivities,activityTimeline,,synthetic-click,loadPastActivities - activityTimeline -  - synthetic-click,synthetic-click,,,0
+search-input-lookup-desktop,search-mru-action-item,,synthetic-click,search-input-lookup-desktop - search-mru-action-item -  - synthetic-click,synthetic-click,,,0
+search-results-container,entity-link,,click,search-results-container - entity-link -  - click,,,,0
+einsteinArticleSuggestion,einsteinArticleSuggestion,,synthetic-einsteinArticleSuggestion-actions,einsteinArticleSuggestion - einsteinArticleSuggestion -  - synthetic-einsteinArticleSuggestion-actions,,,,0
+tab-bar,tab-bar-content__tab,AllUpdates,click,tab-bar - tab-bar-content__tab - AllUpdates - click,,,,0
+emailui-pill-container,remove-emailui-pill-container,,synthetic-click,emailui-pill-container - remove-emailui-pill-container -  - synthetic-click,synthetic-click,,,0
+closeButton,previewer-action__button,,click,closeButton - previewer-action__button -  - click,,,,0
+record-layout,inline-edit-trigger__button,ContactId,click,record-layout - inline-edit-trigger__button - ContactId - click,,,,0
+record-layout,inline-edit-trigger__button,OwnerId,click,record-layout - inline-edit-trigger__button - OwnerId - click,,,,0
 buttonBar,list-view-button-bar__button,refresh,click,buttonBar - list-view-button-bar__button - refresh - click,Click,List View Refresh,A user has clicked the Refresh button on a list view.,0
-feedContainer,refreshFeed__button,,click,feedContainerrefreshFeed__buttonclick,,,,0
-modal,close-modal__button,,click,modalclose-modal__buttonclick,,,,0
-attachmentItem,attachmentButton__button,,click,attachmentItemattachmentButton__buttonclick,,,,0
-tab-bar,tab-bar-content__tab,pastChatsTab,click,tab-bartab-bar-content__tabpastChatsTabclick,,,,0
+feedContainer,refreshFeed__button,,click,feedContainer - refreshFeed__button -  - click,,,,0
+modal,close-modal__button,,click,modal - close-modal__button -  - click,,,,0
+attachmentItem,attachmentButton__button,,click,attachmentItem - attachmentButton__button -  - click,,,,0
+tab-bar,tab-bar-content__tab,pastChatsTab,click,tab-bar - tab-bar-content__tab - pastChatsTab - click,,,,0
 one-one,force-dockingPanel-create,,synthetic-click,one-one - force-dockingPanel-create -  - synthetic-click,Click,Message Prompt - Prompt,A user has been prompted with something in a message prompt panel at the bottom of the page.,0
 one-one,force-dockingPanel-maximize,,synthetic-click,one-one - force-dockingPanel-maximize -  - synthetic-click,Click,Message Prompt - Maximise,A user has maximised a message prompt window.,0
-forceContentModalPreviewManager,forceContentModalPreviewManager,,synthetic-content-openPreview,forceContentModalPreviewManagerforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-enterFilePreviewPage,forceContentModalPreviewPlayerforceContentModalPreviewPlayersynthetic-content-enterFilePreviewPage,,,,0
-forceDownloadHandler,forceContentModalPreviewManager,,synthetic-content-openPreview,forceDownloadHandlerforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-search-input-lookup-desktop,search-lookup-suggestion-option,,click,search-input-lookup-desktopsearch-lookup-suggestion-optionclick,,,,0
-CollapseSection,recex_lwc,,click,CollapseSectionrecex_lwcclick,,,,0
-one-shortcutLibraryCommandHandler,CopyUrlForTab,,synthetic-keyboard,one-shortcutLibraryCommandHandlerCopyUrlForTabsynthetic-keyboard,,,,0
-search-input-lookup-desktop,search-input,,click,search-input-lookup-desktopsearch-inputclick,,,,0
-search-input-lookup-desktop,search-lookup-action-option,,click,search-input-lookup-desktopsearch-lookup-action-optionclick,,,,0
+forceContentModalPreviewManager,forceContentModalPreviewManager,,synthetic-content-openPreview,forceContentModalPreviewManager - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-enterFilePreviewPage,forceContentModalPreviewPlayer - forceContentModalPreviewPlayer -  - synthetic-content-enterFilePreviewPage,,,,0
+forceDownloadHandler,forceContentModalPreviewManager,,synthetic-content-openPreview,forceDownloadHandler - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+search-input-lookup-desktop,search-lookup-suggestion-option,,click,search-input-lookup-desktop - search-lookup-suggestion-option -  - click,Click,Lookup-Field Suggestion,User clicks on a suggested search result,0
+CollapseSection,recex_lwc,,click,CollapseSection - recex_lwc -  - click,,,,0
+one-shortcutLibraryCommandHandler,CopyUrlForTab,,synthetic-keyboard,one-shortcutLibraryCommandHandler - CopyUrlForTab -  - synthetic-keyboard,,,,0
+search-input-lookup-desktop,search-input,,click,search-input-lookup-desktop - search-input -  - click,Click,Lookup-Field Search,Looking for a record in a relationship field (creating or editing a record),0
+search-input-lookup-desktop,search-lookup-action-option,,click,search-input-lookup-desktop - search-lookup-action-option -  - click,Click,Lookup-Field Action,User performs some action during a lookup search,0
 panelFooter,panelFooterButton__button,,click,panelFooter - panelFooterButton__button -  - click,Click,Modal Close,"User has clicked 'Done', 'Add', 'Close' on some modal window (e.g. 'Add' when adding an attachment.)",0
-search-results-container,search-results-multi-scope,,synthetic-refresh,search-results-containersearch-results-multi-scopesynthetic-refresh,,,,0
+search-results-container,search-results-multi-scope,,synthetic-refresh,search-results-container - search-results-multi-scope -  - synthetic-refresh,,,,0
 listview-picker,dropdown-trigger,,click,listview-picker - dropdown-trigger -  - click,Click,List View Select,User has selected a list view from the object home tab.,0
-search-entity-selector-menu-list,search-menu-item,,click,search-entity-selector-menu-listsearch-menu-itemclick,,,,0
-search-entity-selector,search-input,,synthetic-click,search-entity-selectorsearch-inputsynthetic-click,synthetic-click,,,0
+search-entity-selector-menu-list,search-menu-item,,click,search-entity-selector-menu-list - search-menu-item -  - click,,,,0
+search-entity-selector,search-input,,synthetic-click,search-entity-selector - search-input -  - synthetic-click,synthetic-click,,,0
 actions-dropdown,action-dropdown-item__menu-item,0:Edit,click,actions-dropdown - action-dropdown-item__menu-item - 0:Edit - click,Click,Edit - In List,Edit a record from a List.,0
-search-results-container,search-results-grid-lvm,,synthetic-refresh,search-results-containersearch-results-grid-lvmsynthetic-refresh,,,,0
-global-notifications,force-headerbutton-link__button,,click,global-notificationsforce-headerbutton-link__buttonclick,,,,0
-compactFeedItemHeader,cuf-entityLink,,click,compactFeedItemHeadercuf-entityLinkclick,,,,0
-RELATED_LIST,files-upload,,synthetic-files-upload,RELATED_LISTfiles-uploadsynthetic-files-upload,,,,0
+search-results-container,search-results-grid-lvm,,synthetic-refresh,search-results-container - search-results-grid-lvm -  - synthetic-refresh,,,,0
+global-notifications,force-headerbutton-link__button,,click,global-notifications - force-headerbutton-link__button -  - click,,,,0
+compactFeedItemHeader,cuf-entityLink,,click,compactFeedItemHeader - cuf-entityLink -  - click,,,,0
+RELATED_LIST,files-upload,,synthetic-files-upload,RELATED_LIST - files-upload -  - synthetic-files-upload,,,,0
 fileUploaderPanelFooter,panelFooterButton__button,,click,fileUploaderPanelFooter - panelFooterButton__button -  - click,Click,File Upload,A user has uploaded a file via Files related list.,0
-one-shortcutLibraryCommandHandler,RefreshWorkspace,,synthetic-keyboard,one-shortcutLibraryCommandHandlerRefreshWorkspacesynthetic-keyboard,,,,0
-compactFeedItem,quickActionLinkAnchor,,click,compactFeedItemquickActionLinkAnchorclick,,,,0
+one-shortcutLibraryCommandHandler,RefreshWorkspace,,synthetic-keyboard,one-shortcutLibraryCommandHandler - RefreshWorkspace -  - synthetic-keyboard,,,,0
+compactFeedItem,quickActionLinkAnchor,,click,compactFeedItem - quickActionLinkAnchor -  - click,,,,0
 lookup-preview,link,,synthetic-hover,lookup-preview - link -  - synthetic-hover,Click,Record Preview Hover,The user has hoverd over a link to another record to see the compact record preview.,0
-search-results-container,search-zero-results,,synthetic-refresh,search-results-containersearch-zero-resultssynthetic-refresh,,,,0
-modal,panel-content__button,,click,modalpanel-content__buttonclick,,,,0
-compactFeedItem,compact-feed-item-view-transcript,,click,compactFeedItemcompact-feed-item-view-transcriptclick,,,,0
-modal,action__button,DeleteFeedItem,click,modalaction__buttonDeleteFeedItemclick,,,,0
-modal,action__button,SaveEdit,click,modalaction__buttonSaveEditclick,,,,0
-docking-panel,publisher-quick-action__button,EmailMessage._Reply,click,docking-panelpublisher-quick-action__buttonEmailMessage._Replyclick,,,,0
-kb-search-results-container,search-results-list,,synthetic-refresh,kb-search-results-containersearch-results-listsynthetic-refresh,,,,0
-compactFeedItem,feedItemActionAnchor,,click,compactFeedItemfeedItemActionAnchorclick,,,,0
-favorites-list-trigger,force-headerbutton-link__button,,click,favorites-list-triggerforce-headerbutton-link__buttonclick,,,,0
-email-message-panel-trigger,emailMessageDropdownButton,,click,email-message-panel-triggeremailMessageDropdownButtonclick,,,,0
+search-results-container,search-zero-results,,synthetic-refresh,search-results-container - search-zero-results -  - synthetic-refresh,,,,0
+modal,panel-content__button,,click,modal - panel-content__button -  - click,,,,0
+compactFeedItem,compact-feed-item-view-transcript,,click,compactFeedItem - compact-feed-item-view-transcript -  - click,,,,0
+modal,action__button,DeleteFeedItem,click,modal - action__button - DeleteFeedItem - click,,,,0
+modal,action__button,SaveEdit,click,modal - action__button - SaveEdit - click,,,,0
+docking-panel,publisher-quick-action__button,EmailMessage._Reply,click,docking-panel - publisher-quick-action__button - EmailMessage._Reply - click,,,,0
+kb-search-results-container,search-results-list,,synthetic-refresh,kb-search-results-container - search-results-list -  - synthetic-refresh,,,,0
+compactFeedItem,feedItemActionAnchor,,click,compactFeedItem - feedItemActionAnchor -  - click,,,,0
+favorites-list-trigger,force-headerbutton-link__button,,click,favorites-list-trigger - force-headerbutton-link__button -  - click,,,,0
+email-message-panel-trigger,emailMessageDropdownButton,,click,email-message-panel-trigger - emailMessageDropdownButton -  - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,1:EmailReply,click,actions-dropdown - action-dropdown-item__menu-item - 1:EmailReply - click,Click,Email Reply - In List,Email Reply from a List.,0
-attachmentPreview,forceContentModalPreviewManager,,synthetic-content-openPreview,attachmentPreviewforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-one-shortcutLibraryCommandHandler,CopyUrlForWorkspaceAndSubtabs,,synthetic-keyboard,one-shortcutLibraryCommandHandlerCopyUrlForWorkspaceAndSubtabssynthetic-keyboard,,,,0
-tab-bar,tab-bar-content__tab,customTab,click,tab-bartab-bar-content__tabcustomTabclick,,,,0
-flexipage-component,relatedRecordClick-View__link,,click,flexipage-componentrelatedRecordClick-View__linkclick,,,,0
-attachmentPreview,preview,,click,attachmentPreviewpreviewclick,,,,0
-global-app-launcher,force-headerbutton-link__button,,click,global-app-launcherforce-headerbutton-link__buttonclick,,,,0
-file,upload,,synthetic-file-upload,fileuploadsynthetic-file-upload,,,,0
+attachmentPreview,forceContentModalPreviewManager,,synthetic-content-openPreview,attachmentPreview - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+one-shortcutLibraryCommandHandler,CopyUrlForWorkspaceAndSubtabs,,synthetic-keyboard,one-shortcutLibraryCommandHandler - CopyUrlForWorkspaceAndSubtabs -  - synthetic-keyboard,,,,0
+tab-bar,tab-bar-content__tab,customTab,click,tab-bar - tab-bar-content__tab - customTab - click,,,,0
+flexipage-component,relatedRecordClick-View__link,,click,flexipage-component - relatedRecordClick-View__link -  - click,,,,0
+attachmentPreview,preview,,click,attachmentPreview - preview -  - click,,,,0
+global-app-launcher,force-headerbutton-link__button,,click,global-app-launcher - force-headerbutton-link__button -  - click,,,,0
+file,upload,,synthetic-file-upload,file - upload -  - synthetic-file-upload,,,,0
 actions-dropdown,action-dropdown-item__menu-item,2:EmailReplyAll,click,actions-dropdown - action-dropdown-item__menu-item - 2:EmailReplyAll - click,Click,Email Reply All - In List,Email Reply All from a List.,0
-favorites-picker-list,favorites-picker-menu-option,,click,favorites-picker-listfavorites-picker-menu-optionclick,,,,0
-docking-panel,publisher-quick-action__button,EmailMessage._ReplyAll,click,docking-panelpublisher-quick-action__buttonEmailMessage._ReplyAllclick,,,,0
-fileSourceListItem,fileSource,,click,fileSourceListItemfileSourceclick,,,,0
-search-entity-selector,search-entity-selector-menu-list,,synthetic-click,search-entity-selectorsearch-entity-selector-menu-listsynthetic-click,synthetic-click,,,0
-previewer-actions-bar,previewer-action__button,DownloadFile,click,previewer-actions-barpreviewer-action__buttonDownloadFileclick,,,,0
+favorites-picker-list,favorites-picker-menu-option,,click,favorites-picker-list - favorites-picker-menu-option -  - click,,,,0
+docking-panel,publisher-quick-action__button,EmailMessage._ReplyAll,click,docking-panel - publisher-quick-action__button - EmailMessage._ReplyAll - click,,,,0
+fileSourceListItem,fileSource,,click,fileSourceListItem - fileSource -  - click,,,,0
+search-entity-selector,search-entity-selector-menu-list,,synthetic-click,search-entity-selector - search-entity-selector-menu-list -  - synthetic-click,synthetic-click,,,0
+previewer-actions-bar,previewer-action__button,DownloadFile,click,previewer-actions-bar - previewer-action__button - DownloadFile - click,,,,0
 one-one,force-dockingPanel-minimize,,synthetic-click,one-one - force-dockingPanel-minimize -  - synthetic-click,Click,Message Prompt - Minimize,A user has minimised a message prompt window.,0
-fileBadge,forceContentModalPreviewManager,,synthetic-content-openPreview,fileBadgeforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-global-user-profile,force-headerbutton-link__button,,click,global-user-profileforce-headerbutton-link__buttonclick,,,,0
-uns-notificationListRow,uns-notificationListRow,,click,uns-notificationListRowuns-notificationListRowclick,,,,0
+fileBadge,forceContentModalPreviewManager,,synthetic-content-openPreview,fileBadge - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+global-user-profile,force-headerbutton-link__button,,click,global-user-profile - force-headerbutton-link__button -  - click,,,,0
+uns-notificationListRow,uns-notificationListRow,,click,uns-notificationListRow - uns-notificationListRow -  - click,,,,0
 action-ribbon-container,action-link,New,click,action-ribbon-container - action-link - New - click,Click,New Button,"The user has clicked on a New button, likely at the top of a related list.",0
 one-one,force-dockingPanel-open,,synthetic-click,one-one - force-dockingPanel-open -  - synthetic-click,Click,Message Prompt - Open,A user has open a panel in the message prompt at the bottom of the page.,0
-flexipage-component,relatedRecordClick-View__menu-item,,click,flexipage-componentrelatedRecordClick-View__menu-itemclick,,,,0
+flexipage-component,relatedRecordClick-View__menu-item,,click,flexipage-component - relatedRecordClick-View__menu-item -  - click,,,,0
 form-footer,cancel-button,,click,form-footer - cancel-button -  - click,Click,Cancel button,"Cancel button at the bottom of a new, edit and clone page.",0
 modal-content,closeButton__button,,click,modal-content - closeButton__button -  - click,Click,Close Button,User has clicked Close on a modal pop-up window,0
-panel-content,user-logout__link,,click,panel-contentuser-logout__linkclick,,,,0
-record-layout,inline-edit-trigger__button,Name,click,record-layoutinline-edit-trigger__buttonNameclick,,,,0
+panel-content,user-logout__link,,click,panel-content - user-logout__link -  - click,,,,0
+record-layout,inline-edit-trigger__button,Name,click,record-layout - inline-edit-trigger__button - Name - click,,,,0
 actions-dropdown,actions-dropdown-trigger__menu-trigger-link,,click,actions-dropdown - actions-dropdown-trigger__menu-trigger-link -  - click,Click,Action Dropwn - Related List,A user has clicked the drop-down menu at the top of a related list or Kanban tile.,0
-record-layout,inline-edit-trigger__button,Email,click,record-layoutinline-edit-trigger__buttonEmailclick,,,,0
-tab-bar,tab-bar-content__tab,currentWorkTab,click,tab-bartab-bar-content__tabcurrentWorkTabclick,,,,0
-one-one,one-controlClickLibrary,,synthetic-control-click,one-oneone-controlClickLibrarysynthetic-control-click,,,,0
-tab-bar,tab-bar-content__tab,ChangeStatusPost,click,tab-bartab-bar-content__tabChangeStatusPostclick,,,,0
-action-modal,custom-action-layout__button,,click,action-modalcustom-action-layout__buttonclick,,,,0
-tab-bar-content,overflow-item__menu-item,textpost,click,tab-bar-contentoverflow-item__menu-itemtextpostclick,,,,0
-feed-sorter,feed-sort-trigger__menu-trigger-link,,click,feed-sorterfeed-sort-trigger__menu-trigger-linkclick,,,,0
-global-favorite-toggle,force-headerbutton-link__button,,click,global-favorite-toggleforce-headerbutton-link__buttonclick,,,,0
-action-ribbon-container,actionButton,,click,action-ribbon-containeractionButtonclick,,,,0
-forceChatterMessageSegments,forceContentModalPreviewManager,,synthetic-content-openPreview,forceChatterMessageSegmentsforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-modal,action__button,Delete,click,modalaction__buttonDeleteclick,,,,0
-one-utilityBar,one-utilityBarItem--panelClosed,,synthetic-click,one-utilityBarone-utilityBarItem--panelClosedsynthetic-click,synthetic-click,,,0
-record-layout,inline-edit-trigger__button,Ecom_EMEA_Specific_Category__c,click,record-layoutinline-edit-trigger__buttonEcom_EMEA_Specific_Category__cclick,,,,0
-inlineEditGrid,component,,click,inlineEditGridcomponentclick,,,,0
-one-utilityBar,one-utilityBarItem-popOut,,synthetic-click,one-utilityBarone-utilityBarItem-popOutsynthetic-click,synthetic-click,,,0
-record-layout,inline-edit-trigger__button,Ecom_EMEA_Point_of_Sales__c,click,record-layoutinline-edit-trigger__buttonEcom_EMEA_Point_of_Sales__cclick,,,,0
-einsteinItemWrapper,PostTheChat__button,,click,einsteinItemWrapperPostTheChat__buttonclick,,,,0
-one-app-nav-container,global-nav-temporary-tab-closed,,synthetic-click,one-app-nav-containerglobal-nav-temporary-tab-closedsynthetic-click,synthetic-click,,,0
+record-layout,inline-edit-trigger__button,Email,click,record-layout - inline-edit-trigger__button - Email - click,,,,0
+tab-bar,tab-bar-content__tab,currentWorkTab,click,tab-bar - tab-bar-content__tab - currentWorkTab - click,,,,0
+one-one,one-controlClickLibrary,,synthetic-control-click,one-one - one-controlClickLibrary -  - synthetic-control-click,,,,0
+tab-bar,tab-bar-content__tab,ChangeStatusPost,click,tab-bar - tab-bar-content__tab - ChangeStatusPost - click,,,,0
+action-modal,custom-action-layout__button,,click,action-modal - custom-action-layout__button -  - click,,,,0
+tab-bar-content,overflow-item__menu-item,textpost,click,tab-bar-content - overflow-item__menu-item - textpost - click,,,,0
+feed-sorter,feed-sort-trigger__menu-trigger-link,,click,feed-sorter - feed-sort-trigger__menu-trigger-link -  - click,,,,0
+global-favorite-toggle,force-headerbutton-link__button,,click,global-favorite-toggle - force-headerbutton-link__button -  - click,,,,0
+action-ribbon-container,actionButton,,click,action-ribbon-container - actionButton -  - click,,,,0
+forceChatterMessageSegments,forceContentModalPreviewManager,,synthetic-content-openPreview,forceChatterMessageSegments - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+modal,action__button,Delete,click,modal - action__button - Delete - click,,,,0
+one-utilityBar,one-utilityBarItem--panelClosed,,synthetic-click,one-utilityBar - one-utilityBarItem--panelClosed -  - synthetic-click,synthetic-click,,,0
+record-layout,inline-edit-trigger__button,Ecom_EMEA_Specific_Category__c,click,record-layout - inline-edit-trigger__button - Ecom_EMEA_Specific_Category__c - click,,,,0
+inlineEditGrid,component,,click,inlineEditGrid - component -  - click,Click,Record Inline Edit,User has edited a record in a list view on the Home tab.,0
+one-utilityBar,one-utilityBarItem-popOut,,synthetic-click,one-utilityBar - one-utilityBarItem-popOut -  - synthetic-click,synthetic-click,,,0
+record-layout,inline-edit-trigger__button,Ecom_EMEA_Point_of_Sales__c,click,record-layout - inline-edit-trigger__button - Ecom_EMEA_Point_of_Sales__c - click,,,,0
+einsteinItemWrapper,PostTheChat__button,,click,einsteinItemWrapper - PostTheChat__button -  - click,,,,0
+one-app-nav-container,global-nav-temporary-tab-closed,,synthetic-click,one-app-nav-container - global-nav-temporary-tab-closed -  - synthetic-click,synthetic-click,,,0
 actions-dropdown,action-dropdown-item__menu-item,0:Delete,click,actions-dropdown - action-dropdown-item__menu-item - 0:Delete - click,Click,Delete - In List,Delete from a List.,0
-action-ribbon-container,action-link,EmailMessage._Reply,click,action-ribbon-containeraction-linkEmailMessage._Replyclick,,,,0
-panel-content,viewAll,,click,panel-contentviewAllclick,,,,0
-record-layout,emailLink,,click,record-layoutemailLinkclick,,,,0
-relatedRecord,cuf-entityLink,,click,relatedRecordcuf-entityLinkclick,,,,0
-record-layout,inline-edit-trigger__button,Ecom_Order_Ref_Unavailable__c,click,record-layoutinline-edit-trigger__buttonEcom_Order_Ref_Unavailable__cclick,,,,0
-search-input-desktop,search-advanced-pill-item,,synthetic-pill-remove,search-input-desktopsearch-advanced-pill-itemsynthetic-pill-remove,,,,0
-output-Lookup,entity-link,,click,output-Lookupentity-linkclick,,,,0
+action-ribbon-container,action-link,EmailMessage._Reply,click,action-ribbon-container - action-link - EmailMessage._Reply - click,,,,0
+panel-content,viewAll,,click,panel-content - viewAll -  - click,,,,0
+record-layout,emailLink,,click,record-layout - emailLink -  - click,,,,0
+relatedRecord,cuf-entityLink,,click,relatedRecord - cuf-entityLink -  - click,,,,0
+record-layout,inline-edit-trigger__button,Ecom_Order_Ref_Unavailable__c,click,record-layout - inline-edit-trigger__button - Ecom_Order_Ref_Unavailable__c - click,,,,0
+search-input-desktop,search-advanced-pill-item,,synthetic-pill-remove,search-input-desktop - search-advanced-pill-item -  - synthetic-pill-remove,,,,0
+output-Lookup,entity-link,,click,output-Lookup - entity-link -  - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,0:NewCase,click,actions-dropdown - action-dropdown-item__menu-item - 0:NewCase - click,Click,New Case - In List,New Case from a List.,0
-kb-search-input-desktop,search-input,,synthetic-click,kb-search-input-desktopsearch-inputsynthetic-click,synthetic-click,,,0
+kb-search-input-desktop,search-input,,synthetic-click,kb-search-input-desktop - search-input -  - synthetic-click,synthetic-click,,,0
 listview-switcher-dropdown-trigger,menu-trigger,,click,listview-switcher-dropdown-trigger - menu-trigger -  - click,Click,List View - Switcher,A user has opened the option to change the Display Type of the List View,0
-tab-bar-content,overflow-item__menu-item,case.gt_voucher,click,tab-bar-contentoverflow-item__menu-itemcase.gt_voucherclick,,,,0
-one-shortcutLibraryCommandHandler,CloseAllTabs,,synthetic-keyboard,one-shortcutLibraryCommandHandlerCloseAllTabssynthetic-keyboard,,,,0
-record-layout,inline-edit-trigger__button,Phone,click,record-layoutinline-edit-trigger__buttonPhoneclick,,,,0
-tab-bar,tab-bar-content__tab,requestListTab,click,tab-bartab-bar-content__tabrequestListTabclick,,,,0
-one-shortcutLibraryCommandHandler,GoToUtilityBar,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToUtilityBarsynthetic-keyboard,,,,0
-global-app-nav,tab-item,Case,click,global-app-navtab-itemCaseclick,,,,0
-tab-bar,tab-bar-content__tab,CaseCommentPost,click,tab-bartab-bar-content__tabCaseCommentPostclick,,,,0
-one-shortcutLibraryCommandHandler,Search,,synthetic-keyboard,one-shortcutLibraryCommandHandlerSearchsynthetic-keyboard,,,,0
-one-shortcutLibraryCommandHandler,CloseWorkspace,,synthetic-keyboard,one-shortcutLibraryCommandHandlerCloseWorkspacesynthetic-keyboard,,,,0
-search-lookup-advanced,search-panel-cancel__button,,click,search-lookup-advancedsearch-panel-cancel__buttonclick,,,,0
-record-layout,inline-edit-trigger__button,MobilePhone,click,record-layoutinline-edit-trigger__buttonMobilePhoneclick,,,,0
+tab-bar-content,overflow-item__menu-item,case.gt_voucher,click,tab-bar-content - overflow-item__menu-item - case.gt_voucher - click,,,,0
+one-shortcutLibraryCommandHandler,CloseAllTabs,,synthetic-keyboard,one-shortcutLibraryCommandHandler - CloseAllTabs -  - synthetic-keyboard,,,,0
+record-layout,inline-edit-trigger__button,Phone,click,record-layout - inline-edit-trigger__button - Phone - click,,,,0
+tab-bar,tab-bar-content__tab,requestListTab,click,tab-bar - tab-bar-content__tab - requestListTab - click,,,,0
+one-shortcutLibraryCommandHandler,GoToUtilityBar,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToUtilityBar -  - synthetic-keyboard,,,,0
+global-app-nav,tab-item,Case,click,global-app-nav - tab-item - Case - click,,,,0
+tab-bar,tab-bar-content__tab,CaseCommentPost,click,tab-bar - tab-bar-content__tab - CaseCommentPost - click,,,,0
+one-shortcutLibraryCommandHandler,Search,,synthetic-keyboard,one-shortcutLibraryCommandHandler - Search -  - synthetic-keyboard,,,,0
+one-shortcutLibraryCommandHandler,CloseWorkspace,,synthetic-keyboard,one-shortcutLibraryCommandHandler - CloseWorkspace -  - synthetic-keyboard,,,,0
+search-lookup-advanced,search-panel-cancel__button,,click,search-lookup-advanced - search-panel-cancel__button -  - click,,,,0
+record-layout,inline-edit-trigger__button,MobilePhone,click,record-layout - inline-edit-trigger__button - MobilePhone - click,,,,0
 modal-content,cancel-button__button,,click,modal-content - cancel-button__button -  - click,Click,Cancel Button,User has cancelled an action (e.g. send an email with attachment),0
-search-results-container,emailLink,,click,search-results-containeremailLinkclick,,,,0
-record-layout,inline-edit-trigger__button,Website_App_Name__c,click,record-layoutinline-edit-trigger__buttonWebsite_App_Name__cclick,,,,0
-one-utilityBar,one-utilityBarItem-popIn,,synthetic-click,one-utilityBarone-utilityBarItem-popInsynthetic-click,synthetic-click,,,0
+search-results-container,emailLink,,click,search-results-container - emailLink -  - click,,,,0
+record-layout,inline-edit-trigger__button,Website_App_Name__c,click,record-layout - inline-edit-trigger__button - Website_App_Name__c - click,,,,0
+one-utilityBar,one-utilityBarItem-popIn,,synthetic-click,one-utilityBar - one-utilityBarItem-popIn -  - synthetic-click,synthetic-click,,,0
 listview-settings-menu,menu-trigger,,click,listview-settings-menu - menu-trigger -  - click,Click,List View - Settings,A user has opened the controls of the List View,0
-record-layout,updatePhoto,,click,record-layoutupdatePhotoclick,,,,0
-record-layout,pageBlockItem__button,,click,record-layoutpageBlockItem__buttonclick,,,,0
-docking-panel,publisher-quick-action__button,EmailMessage._Forward,click,docking-panelpublisher-quick-action__buttonEmailMessage._Forwardclick,,,,0
-listview-column-menu,menu-trigger,,click,listview-column-menumenu-triggerclick,,,,0
-selectorPanelFooter,panelFooterButton__button,,click,selectorPanelFooterpanelFooterButton__buttonclick,,,,0
-modal,action__button,SaveAndNew,click,modalaction__buttonSaveAndNewclick,,,,0
-supportEnhancedOutputURL,forceContentModalPreviewManager,,synthetic-content-openPreview,supportEnhancedOutputURLforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-one-shortcutLibraryCommandHandler,GoToItemMenu,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToItemMenusynthetic-keyboard,,,,0
-record-layout,inlineEditUndo__button,Subject,click,record-layoutinlineEditUndo__buttonSubjectclick,,,,0
-feedContainer,expand_all__button,,click,feedContainerexpand_all__buttonclick,,,,0
+record-layout,updatePhoto,,click,record-layout - updatePhoto -  - click,,,,0
+record-layout,pageBlockItem__button,,click,record-layout - pageBlockItem__button -  - click,,,,0
+docking-panel,publisher-quick-action__button,EmailMessage._Forward,click,docking-panel - publisher-quick-action__button - EmailMessage._Forward - click,,,,0
+listview-column-menu,menu-trigger,,click,listview-column-menu - menu-trigger -  - click,,,,0
+selectorPanelFooter,panelFooterButton__button,,click,selectorPanelFooter - panelFooterButton__button -  - click,,,,0
+modal,action__button,SaveAndNew,click,modal - action__button - SaveAndNew - click,,,,0
+supportEnhancedOutputURL,forceContentModalPreviewManager,,synthetic-content-openPreview,supportEnhancedOutputURL - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+one-shortcutLibraryCommandHandler,GoToItemMenu,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToItemMenu -  - synthetic-keyboard,,,,0
+record-layout,inlineEditUndo__button,Subject,click,record-layout - inlineEditUndo__button - Subject - click,,,,0
+feedContainer,expand_all__button,,click,feedContainer - expand_all__button -  - click,,,,0
 runtime_platform_actions-auraLegacyAction,lwc-action,,click,runtime_platform_actions-auraLegacyAction - lwc-action -  - click,Click,Generic LWC,Some intereaction with a standard LWC component e.g. Lead Convert button,0
 actions-dropdown,action-dropdown-item__menu-item,1:Delete,click,actions-dropdown - action-dropdown-item__menu-item - 1:Delete - click,Click,Delete - In List,Delete from a List.,0
 action-ribbon-container,action-link,NewCase,click,action-ribbon-container - action-link - NewCase - click,Click,New Case Button (Related List),User has created a new Case from a related list header or similar.,0
-exceededMaxRepoll,einsteinArticleSuggestionPolling,,synthetic-einsteinArticleSuggestion-poll,exceededMaxRepolleinsteinArticleSuggestionPollingsynthetic-einsteinArticleSuggestion-poll,,,,0
-modal,action__button,CancelEdit,click,modalaction__buttonCancelEditclick,,,,0
-emoji-button,emoji-icon-button__button,,click,emoji-buttonemoji-icon-button__buttonclick,,,,0
-modal-file-preview,fullScreen__button,,click,modal-file-previewfullScreen__buttonclick,,,,0
-inline-edit-grid,emailLink,,click,inline-edit-gridemailLinkclick,,,,0
-kb-search-input-desktop,search-mru-item,,synthetic-click,kb-search-input-desktopsearch-mru-itemsynthetic-click,synthetic-click,,,0
-kb-search-input-desktop,search-mru-action-item,,synthetic-click,kb-search-input-desktopsearch-mru-action-itemsynthetic-click,synthetic-click,,,0
+exceededMaxRepoll,einsteinArticleSuggestionPolling,,synthetic-einsteinArticleSuggestion-poll,exceededMaxRepoll - einsteinArticleSuggestionPolling -  - synthetic-einsteinArticleSuggestion-poll,,,,0
+modal,action__button,CancelEdit,click,modal - action__button - CancelEdit - click,,,,0
+emoji-button,emoji-icon-button__button,,click,emoji-button - emoji-icon-button__button -  - click,,,,0
+modal-file-preview,fullScreen__button,,click,modal-file-preview - fullScreen__button -  - click,,,,0
+inline-edit-grid,emailLink,,click,inline-edit-grid - emailLink -  - click,,,,0
+kb-search-input-desktop,search-mru-item,,synthetic-click,kb-search-input-desktop - search-mru-item -  - synthetic-click,synthetic-click,,,0
+kb-search-input-desktop,search-mru-action-item,,synthetic-click,kb-search-input-desktop - search-mru-action-item -  - synthetic-click,synthetic-click,,,0
 actions-dropdown,action-dropdown-item__menu-item,3:EmailForward,click,actions-dropdown - action-dropdown-item__menu-item - 3:EmailForward - click,Click,Email Forward - In List,Email Forward from a List.,0
 modal,action__button,,click,modal - action__button -  - click,Click,Generic Pop-up Interaction,,0
 modal-content,cancelButton__button,,click,modal-content - cancelButton__button -  - click,Click,Cancel Button,User has cancelled an action (e.g. send an email with attachment),0
-action-ribbon-container,action-link,EmailMessage._ReplyAll,click,action-ribbon-containeraction-linkEmailMessage._ReplyAllclick,,,,0
-publisher,mention-insert,,synthetic-click,publishermention-insertsynthetic-click,synthetic-click,,,0
-kb-search-results-container,search-result-item,,synthetic-click,kb-search-results-containersearch-result-itemsynthetic-click,synthetic-click,,,0
-pageBlockItem,emailLookupButton__button,,click,pageBlockItememailLookupButton__buttonclick,,,,0
-forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-exitFilePreviewFullScreenMode,forceContentModalPreviewPlayerforceContentModalPreviewPlayersynthetic-content-exitFilePreviewFullScreenMode,,,,0
-forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-enterFilePreviewFullScreenMode,forceContentModalPreviewPlayerforceContentModalPreviewPlayersynthetic-content-enterFilePreviewFullScreenMode,,,,0
-tab-bar,tab-bar-content__tab,CallLogPost,click,tab-bartab-bar-content__tabCallLogPostclick,,,,0
-messageBodyInputRichTextEditor,insert-emoji,,synthetic-click,messageBodyInputRichTextEditorinsert-emojisynthetic-click,synthetic-click,,,0
-one-shortcutLibraryCommandHandler,LaunchQuickTextPanel,,synthetic-keyboard,one-shortcutLibraryCommandHandlerLaunchQuickTextPanelsynthetic-keyboard,,,,0
-one-helpAndTrainingKeyboardShortcuts,one-helpAndTrainingKeyboardShortcuts-opened,,synthetic-keyboard,one-helpAndTrainingKeyboardShortcutsone-helpAndTrainingKeyboardShortcuts-openedsynthetic-keyboard,,,,0
-one-shortcutLibraryCommandHandler,ShowShortcutMenu,,synthetic-keyboard,one-shortcutLibraryCommandHandlerShowShortcutMenusynthetic-keyboard,,,,0
-modal-content,modal-file-preview__button,,click,modal-contentmodal-file-preview__buttonclick,,,,0
-publisher,commentEdited,,synthetic-click,publishercommentEditedsynthetic-click,synthetic-click,,,0
-action-ribbon-container,action-link,EmailMessage._Forward,click,action-ribbon-containeraction-linkEmailMessage._Forwardclick,,,,0
-onboarding-manager-prompt-success,onboarding-manager,,synthetic-onboarding-manager,onboarding-manager-prompt-successonboarding-managersynthetic-onboarding-manager,,,,0
-ChatterFeed,comment,,synthetic-like-comment,ChatterFeedcommentsynthetic-like-comment,,,,0
-app-switch-scope,app-switch-target,,app-switch,app-switch-scopeapp-switch-targetapp-switch,,,,0
-modal,action__button,confirmationCancel,click,modalaction__buttonconfirmationCancelclick,,,,0
-onboarding-manager-prompt-opened,onboarding-manager,,synthetic-onboarding-manager,onboarding-manager-prompt-openedonboarding-managersynthetic-onboarding-manager,,,,0
-record-layout,inlineEditUndo__button,ContactId,click,record-layoutinlineEditUndo__buttonContactIdclick,,,,0
+action-ribbon-container,action-link,EmailMessage._ReplyAll,click,action-ribbon-container - action-link - EmailMessage._ReplyAll - click,,,,0
+publisher,mention-insert,,synthetic-click,publisher - mention-insert -  - synthetic-click,synthetic-click,,,0
+kb-search-results-container,search-result-item,,synthetic-click,kb-search-results-container - search-result-item -  - synthetic-click,synthetic-click,,,0
+pageBlockItem,emailLookupButton__button,,click,pageBlockItem - emailLookupButton__button -  - click,,,,0
+forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-exitFilePreviewFullScreenMode,forceContentModalPreviewPlayer - forceContentModalPreviewPlayer -  - synthetic-content-exitFilePreviewFullScreenMode,,,,0
+forceContentModalPreviewPlayer,forceContentModalPreviewPlayer,,synthetic-content-enterFilePreviewFullScreenMode,forceContentModalPreviewPlayer - forceContentModalPreviewPlayer -  - synthetic-content-enterFilePreviewFullScreenMode,,,,0
+tab-bar,tab-bar-content__tab,CallLogPost,click,tab-bar - tab-bar-content__tab - CallLogPost - click,,,,0
+messageBodyInputRichTextEditor,insert-emoji,,synthetic-click,messageBodyInputRichTextEditor - insert-emoji -  - synthetic-click,synthetic-click,,,0
+one-shortcutLibraryCommandHandler,LaunchQuickTextPanel,,synthetic-keyboard,one-shortcutLibraryCommandHandler - LaunchQuickTextPanel -  - synthetic-keyboard,,,,0
+one-helpAndTrainingKeyboardShortcuts,one-helpAndTrainingKeyboardShortcuts-opened,,synthetic-keyboard,one-helpAndTrainingKeyboardShortcuts - one-helpAndTrainingKeyboardShortcuts-opened -  - synthetic-keyboard,,,,0
+one-shortcutLibraryCommandHandler,ShowShortcutMenu,,synthetic-keyboard,one-shortcutLibraryCommandHandler - ShowShortcutMenu -  - synthetic-keyboard,,,,0
+modal-content,modal-file-preview__button,,click,modal-content - modal-file-preview__button -  - click,,,,0
+publisher,commentEdited,,synthetic-click,publisher - commentEdited -  - synthetic-click,synthetic-click,,,0
+action-ribbon-container,action-link,EmailMessage._Forward,click,action-ribbon-container - action-link - EmailMessage._Forward - click,,,,0
+onboarding-manager-prompt-success,onboarding-manager,,synthetic-onboarding-manager,onboarding-manager-prompt-success - onboarding-manager -  - synthetic-onboarding-manager,,,,0
+ChatterFeed,comment,,synthetic-like-comment,ChatterFeed - comment -  - synthetic-like-comment,,,,0
+app-switch-scope,app-switch-target,,app-switch,app-switch-scope - app-switch-target -  - app-switch,,,,0
+modal,action__button,confirmationCancel,click,modal - action__button - confirmationCancel - click,,,,0
+onboarding-manager-prompt-opened,onboarding-manager,,synthetic-onboarding-manager,onboarding-manager-prompt-opened - onboarding-manager -  - synthetic-onboarding-manager,,,,0
+record-layout,inlineEditUndo__button,ContactId,click,record-layout - inlineEditUndo__button - ContactId - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,0:AttachFileFromDevice,click,actions-dropdown - action-dropdown-item__menu-item - 0:AttachFileFromDevice - click,Click,Attach File - In List,Attach File from a List.,0
-feedContainer,collapse_all__button,,click,feedContainercollapse_all__buttonclick,,,,0
-one-header,global-setup__menu-trigger-link,,click,one-headerglobal-setup__menu-trigger-linkclick,,,,0
-list-view,entity-link,,click,list-viewentity-linkclick,,,,0
-suggestedArticlesRefreshed,einsteinArticleSuggestionPolling,,synthetic-einsteinArticleSuggestion-poll,suggestedArticlesRefreshedeinsteinArticleSuggestionPollingsynthetic-einsteinArticleSuggestion-poll,,,,0
-action,follow-entity-action__button,Follow,click,actionfollow-entity-action__buttonFollowclick,,,,0
-modal-content,one-appError-toggle__button,,click,modal-contentone-appError-toggle__buttonclick,,,,0
-panel-content,user-settings,,click,panel-contentuser-settingsclick,,,,0
-record-layout,inlineEditUndo__button,OwnerId,click,record-layoutinlineEditUndo__buttonOwnerIdclick,,,,0
-modal-file-preview,nextPage__button,,click,modal-file-previewnextPage__buttonclick,,,,0
-modal,action__button,DeleteComment,click,modalaction__buttonDeleteCommentclick,,,,0
+feedContainer,collapse_all__button,,click,feedContainer - collapse_all__button -  - click,,,,0
+one-header,global-setup__menu-trigger-link,,click,one-header - global-setup__menu-trigger-link -  - click,,,,0
+list-view,entity-link,,click,list-view - entity-link -  - click,,,,0
+suggestedArticlesRefreshed,einsteinArticleSuggestionPolling,,synthetic-einsteinArticleSuggestion-poll,suggestedArticlesRefreshed - einsteinArticleSuggestionPolling -  - synthetic-einsteinArticleSuggestion-poll,,,,0
+action,follow-entity-action__button,Follow,click,action - follow-entity-action__button - Follow - click,,,,0
+modal-content,one-appError-toggle__button,,click,modal-content - one-appError-toggle__button -  - click,,,,0
+panel-content,user-settings,,click,panel-content - user-settings -  - click,,,,0
+record-layout,inlineEditUndo__button,OwnerId,click,record-layout - inlineEditUndo__button - OwnerId - click,,,,0
+modal-file-preview,nextPage__button,,click,modal-file-preview - nextPage__button -  - click,,,,0
+modal,action__button,DeleteComment,click,modal - action__button - DeleteComment - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,1:DownloadFile,click,actions-dropdown - action-dropdown-item__menu-item - 1:DownloadFile - click,Click,Download File - In List,Download File from a List.,0
 buttonBar,list-view-button-bar__button,quickFilter,click,buttonBar - list-view-button-bar__button - quickFilter - click,Click,Search Filter Option,A user has clicked on the Filter icon for quickly filtering search results,0
-compactFeedItem,compact-feed-item-view-call,,click,compactFeedItemcompact-feed-item-view-callclick,,,,0
-tab-bar-content,overflow-item__menu-item,emailmessageevent,click,tab-bar-contentoverflow-item__menu-itememailmessageeventclick,,,,0
-modal,action__button,DeleteFile,click,modalaction__buttonDeleteFileclick,,,,0
-onboarding-manager-prompt-skipped,onboarding-manager,,synthetic-onboarding-manager,onboarding-manager-prompt-skippedonboarding-managersynthetic-onboarding-manager,,,,0
-one-shortcutLibraryCommandHandler,GoToList,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToListsynthetic-keyboard,,,,0
-activity-timelinefixed,activityTimelineTask,,synthetic-click,activity-timelinefixedactivityTimelineTasksynthetic-click,synthetic-click,,,0
-one-shortcutLibraryCommandHandler,GoToDockedComposer,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToDockedComposersynthetic-keyboard,,,,0
+compactFeedItem,compact-feed-item-view-call,,click,compactFeedItem - compact-feed-item-view-call -  - click,,,,0
+tab-bar-content,overflow-item__menu-item,emailmessageevent,click,tab-bar-content - overflow-item__menu-item - emailmessageevent - click,,,,0
+modal,action__button,DeleteFile,click,modal - action__button - DeleteFile - click,,,,0
+onboarding-manager-prompt-skipped,onboarding-manager,,synthetic-onboarding-manager,onboarding-manager-prompt-skipped - onboarding-manager -  - synthetic-onboarding-manager,,,,0
+one-shortcutLibraryCommandHandler,GoToList,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToList -  - synthetic-keyboard,,,,0
+activity-timelinefixed,activityTimelineTask,,synthetic-click,activity-timelinefixed - activityTimelineTask -  - synthetic-click,synthetic-click,,,0
+one-shortcutLibraryCommandHandler,GoToDockedComposer,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToDockedComposer -  - synthetic-keyboard,,,,0
 actions-dropdown,action-dropdown-item__menu-item,6:DeleteFile,click,actions-dropdown - action-dropdown-item__menu-item - 6:DeleteFile - click,Click,Delete File - In List,Delete File from a List.,0
 global-setup,setup-app-nav-menu-item-link,,click,global-setup - setup-app-nav-menu-item-link -  - click,Click,Setup Menu Item,A user interacts with a Setup Menu node.,0
-search-results-container,search-spell-correction-message,,synthetic-refresh,search-results-containersearch-spell-correction-messagesynthetic-refresh,,,,0
-panel-content,user-profileLink,,click,panel-contentuser-profileLinkclick,,,,0
-compactFeedItem,cuf-wrapperAnchor,,click,compactFeedItemcuf-wrapperAnchorclick,,,,0
-modal,modal-close__button,close-tabs-confirmation-modal,click,modalmodal-close__buttonclose-tabs-confirmation-modalclick,,,,0
-searchInputDesktop,forceContentModalPreviewManager,,synthetic-content-openPreview,searchInputDesktopforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-record-layout,sectionHeaderButton__button,,click,record-layoutsectionHeaderButton__buttonclick,,,,0
-dnd-edit-list-item,remove-button__button,,click,dnd-edit-list-itemremove-button__buttonclick,,,,0
-action-ribbon-container,action-link,MassChangeOwner,click,action-ribbon-containeraction-linkMassChangeOwnerclick,,,,0
+search-results-container,search-spell-correction-message,,synthetic-refresh,search-results-container - search-spell-correction-message -  - synthetic-refresh,,,,0
+panel-content,user-profileLink,,click,panel-content - user-profileLink -  - click,,,,0
+compactFeedItem,cuf-wrapperAnchor,,click,compactFeedItem - cuf-wrapperAnchor -  - click,,,,0
+modal,modal-close__button,close-tabs-confirmation-modal,click,modal - modal-close__button - close-tabs-confirmation-modal - click,,,,0
+searchInputDesktop,forceContentModalPreviewManager,,synthetic-content-openPreview,searchInputDesktop - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+record-layout,sectionHeaderButton__button,,click,record-layout - sectionHeaderButton__button -  - click,,,,0
+dnd-edit-list-item,remove-button__button,,click,dnd-edit-list-item - remove-button__button -  - click,,,,0
+action-ribbon-container,action-link,MassChangeOwner,click,action-ribbon-container - action-link - MassChangeOwner - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,1:ChangeOwnerOne,click,actions-dropdown - action-dropdown-item__menu-item - 1:ChangeOwnerOne - click,Click,Change Owner - In List,Change Owner from a List.,0
-search-input-desktop,search-advanced,,synthetic-click,search-input-desktopsearch-advancedsynthetic-click,synthetic-click,,,0
-modal,action__button,submit,click,modalaction__buttonsubmitclick,,,,0
-laf-pageHost,laf-pageHost,,synthetic-vf-title-override-sfa:analyticsHome,laf-pageHostlaf-pageHostsynthetic-vf-title-override-sfa:analyticsHome,,,,0
-modal-file-preview,previousPage__button,,click,modal-file-previewpreviousPage__buttonclick,,,,0
-preview,actions-dropdown-trigger__menu-trigger-link,,click,previewactions-dropdown-trigger__menu-trigger-linkclick,,,,0
-preview,link-file,,click,previewlink-fileclick,,,,0
-tab-bar,tab-bar-content__tab,messageTab,click,tab-bartab-bar-content__tabmessageTabclick,,,,0
-listview-header,list-view-header,drill-in,click,listview-headerlist-view-headerdrill-inclick,,,,0
-navigateToHierarchyButtonId,navigateToHierarchyButtonIcon__button,ContactHierarchy,click,navigateToHierarchyButtonIdnavigateToHierarchyButtonIcon__buttonContactHierarchyclick,,,,0
-one-header,global-action-button__menu-trigger-link,,click,one-headerglobal-action-button__menu-trigger-linkclick,,,,0
-global-help-and-training,force-headerbutton-link__button,,click,global-help-and-trainingforce-headerbutton-link__buttonclick,,,,0
-panel-content,user-nameLink,,click,panel-contentuser-nameLinkclick,,,,0
-tab-bar,tab-bar-content__tab,FeedItem.PollPost,click,tab-bartab-bar-content__tabFeedItem.PollPostclick,,,,0
-global-app-nav,tab-item,,click,global-app-navtab-itemclick,,,,0
-ChatterFeed-feeditem,showMoreContent,,synthetic-click,ChatterFeed-feeditemshowMoreContentsynthetic-click,synthetic-click,,,0
+search-input-desktop,search-advanced,,synthetic-click,search-input-desktop - search-advanced -  - synthetic-click,synthetic-click,,,0
+modal,action__button,submit,click,modal - action__button - submit - click,,,,0
+laf-pageHost,laf-pageHost,,synthetic-vf-title-override-sfa:analyticsHome,laf-pageHost - laf-pageHost -  - synthetic-vf-title-override-sfa:analyticsHome,,,,0
+modal-file-preview,previousPage__button,,click,modal-file-preview - previousPage__button -  - click,,,,0
+preview,actions-dropdown-trigger__menu-trigger-link,,click,preview - actions-dropdown-trigger__menu-trigger-link -  - click,,,,0
+preview,link-file,,click,preview - link-file -  - click,,,,0
+tab-bar,tab-bar-content__tab,messageTab,click,tab-bar - tab-bar-content__tab - messageTab - click,,,,0
+listview-header,list-view-header,drill-in,click,listview-header - list-view-header - drill-in - click,,,,0
+navigateToHierarchyButtonId,navigateToHierarchyButtonIcon__button,ContactHierarchy,click,navigateToHierarchyButtonId - navigateToHierarchyButtonIcon__button - ContactHierarchy - click,,,,0
+one-header,global-action-button__menu-trigger-link,,click,one-header - global-action-button__menu-trigger-link -  - click,,,,0
+global-help-and-training,force-headerbutton-link__button,,click,global-help-and-training - force-headerbutton-link__button -  - click,,,,0
+panel-content,user-nameLink,,click,panel-content - user-nameLink -  - click,,,,0
+tab-bar,tab-bar-content__tab,FeedItem.PollPost,click,tab-bar - tab-bar-content__tab - FeedItem.PollPost - click,,,,0
+global-app-nav,tab-item,,click,global-app-nav - tab-item -  - click,,,,0
+ChatterFeed-feeditem,showMoreContent,,synthetic-click,ChatterFeed-feeditem - showMoreContent -  - synthetic-click,synthetic-click,,,0
 actions-dropdown,action-dropdown-item__menu-item,0:New,click,actions-dropdown - action-dropdown-item__menu-item - 0:New - click,Click,New - In List,New from a List.,0
-record-layout,actionMenuTrigger__menu-trigger-link,,click,record-layoutactionMenuTrigger__menu-trigger-linkclick,,,,0
-tab-bar,tab-bar-content__tab,supervisorAgentsTab,click,tab-bartab-bar-content__tabsupervisorAgentsTabclick,,,,0
-tab-bar,tab-bar-content__tab,supervisorQueuesTab,click,tab-bartab-bar-content__tabsupervisorQueuesTabclick,,,,0
-global-app-nav,tab-item,Feed,click,global-app-navtab-itemFeedclick,,,,0
+record-layout,actionMenuTrigger__menu-trigger-link,,click,record-layout - actionMenuTrigger__menu-trigger-link -  - click,,,,0
+tab-bar,tab-bar-content__tab,supervisorAgentsTab,click,tab-bar - tab-bar-content__tab - supervisorAgentsTab - click,,,,0
+tab-bar,tab-bar-content__tab,supervisorQueuesTab,click,tab-bar - tab-bar-content__tab - supervisorQueuesTab - click,,,,0
+global-app-nav,tab-item,Feed,click,global-app-nav - tab-item - Feed - click,,,,0
 tab-bar,tab-bar-content__tab,collaborateTab,click,tab-bar - tab-bar-content__tab - collaborateTab - click,Click,Chatter Feed Tab,User has clicked the Chatter tab at the top of the record feed.,0
-einsteinItemWrapper,PostToEdit__button,,click,einsteinItemWrapperPostToEdit__buttonclick,,,,0
-laf-pageHost,laf-pageHost,,synthetic-vf-title-override-forceChatter:desktopChatter,laf-pageHostlaf-pageHostsynthetic-vf-title-override-forceChatter:desktopChatter,,,,0
-lst-quick-filter-panel,quick-filter-apply,,click,lst-quick-filter-panelquick-filter-applyclick,,,,0
-ltng-omni-widget-request,oltng-omniwidget-accept__button,,click,ltng-omni-widget-requestoltng-omniwidget-accept__buttonclick,,,,0
-one-shortcutLibraryCommandHandler,Save,,synthetic-keyboard,one-shortcutLibraryCommandHandlerSavesynthetic-keyboard,,,,0
-previewer-actions-bar,previewer-action__button,ShareFile,click,previewer-actions-barpreviewer-action__buttonShareFileclick,,,,0
-search-input-desktop,search-advanced-pill-item,,synthetic-pill-add,search-input-desktopsearch-advanced-pill-itemsynthetic-pill-add,,,,0
-tab-bar-content,overflow-item__menu-item,changestatuspost,click,tab-bar-contentoverflow-item__menu-itemchangestatuspostclick,,,,0
-kb-search-results-container,search-zero-results,,synthetic-refresh,kb-search-results-containersearch-zero-resultssynthetic-refresh,,,,0
+einsteinItemWrapper,PostToEdit__button,,click,einsteinItemWrapper - PostToEdit__button -  - click,,,,0
+laf-pageHost,laf-pageHost,,synthetic-vf-title-override-forceChatter:desktopChatter,laf-pageHost - laf-pageHost -  - synthetic-vf-title-override-forceChatter:desktopChatter,,,,0
+lst-quick-filter-panel,quick-filter-apply,,click,lst-quick-filter-panel - quick-filter-apply -  - click,,,,0
+ltng-omni-widget-request,oltng-omniwidget-accept__button,,click,ltng-omni-widget-request - oltng-omniwidget-accept__button -  - click,,,,0
+one-shortcutLibraryCommandHandler,Save,,synthetic-keyboard,one-shortcutLibraryCommandHandler - Save -  - synthetic-keyboard,,,,0
+previewer-actions-bar,previewer-action__button,ShareFile,click,previewer-actions-bar - previewer-action__button - ShareFile - click,,,,0
+search-input-desktop,search-advanced-pill-item,,synthetic-pill-add,search-input-desktop - search-advanced-pill-item -  - synthetic-pill-add,,,,0
+tab-bar-content,overflow-item__menu-item,changestatuspost,click,tab-bar-content - overflow-item__menu-item - changestatuspost - click,,,,0
+kb-search-results-container,search-zero-results,,synthetic-refresh,kb-search-results-container - search-zero-results -  - synthetic-refresh,,,,0
 path-assistant,changeClosedStateButton__button,,click,path-assistant - changeClosedStateButton__button -  - click,Click,Path - Closing,"The user has clicked on a stage in the path ribbon that will close the record (Lead, Case, Opportunity, etc).",0
-activityPanel,refreshTimeline,,click,activityPanelrefreshTimelineclick,,,,0
-dnd-edit-list-item,edit-button__button,,click,dnd-edit-list-itemedit-button__buttonclick,,,,0
-favorite-added,favorites-rename-from-toast-action,,synthetic-click,favorite-addedfavorites-rename-from-toast-actionsynthetic-click,synthetic-click,,,0
-flexipage-component,relatedRecordClick-Create-Cancel__button,,click,flexipage-componentrelatedRecordClick-Create-Cancel__buttonclick,,,,0
-modal,action__button,cancel,click,modalaction__buttoncancelclick,,,,0
-one-shortcutLibraryCommandHandler,GoToSubtab,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToSubtabsynthetic-keyboard,,,,0
-action-modal,action-button__button,,click,action-modalaction-button__buttonclick,,,,0
-hero-chart-header,refresh__button,,click,hero-chart-headerrefresh__buttonclick,,,,0
-modal-content,insert-button__button,,click,modal-contentinsert-button__buttonclick,,,,0
-lvPinButton,force-list-view-manager-pin-button,,click,lvPinButtonforce-list-view-manager-pin-buttonclick,,,,0
-record-layout,sortable-link,,click,record-layoutsortable-linkclick,,,,0
-search-results-grid,search-grid-column-header,,synthetic-sort,search-results-gridsearch-grid-column-headersynthetic-sort,,,,0
-modal-content,emailui-warning-modal-accept__button,,click,modal-contentemailui-warning-modal-accept__buttonclick,,,,0
-panel-content,favorites-edit-panel-trigger,,click,panel-contentfavorites-edit-panel-triggerclick,,,,0
-flexipage-component,relatedRecordClick-Create-Save__button,,click,flexipage-componentrelatedRecordClick-Create-Save__buttonclick,,,,0
-tab-bar-content,overflow-item__menu-item,casecommentpost,click,tab-bar-contentoverflow-item__menu-itemcasecommentpostclick,,,,0
-action-ribbon-container,action-link,Edit,click,action-ribbon-containeraction-linkEditclick,,,,0
+activityPanel,refreshTimeline,,click,activityPanel - refreshTimeline -  - click,,,,0
+dnd-edit-list-item,edit-button__button,,click,dnd-edit-list-item - edit-button__button -  - click,,,,0
+favorite-added,favorites-rename-from-toast-action,,synthetic-click,favorite-added - favorites-rename-from-toast-action -  - synthetic-click,synthetic-click,,,0
+flexipage-component,relatedRecordClick-Create-Cancel__button,,click,flexipage-component - relatedRecordClick-Create-Cancel__button -  - click,,,,0
+modal,action__button,cancel,click,modal - action__button - cancel - click,,,,0
+one-shortcutLibraryCommandHandler,GoToSubtab,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToSubtab -  - synthetic-keyboard,,,,0
+action-modal,action-button__button,,click,action-modal - action-button__button -  - click,,,,0
+hero-chart-header,refresh__button,,click,hero-chart-header - refresh__button -  - click,,,,0
+modal-content,insert-button__button,,click,modal-content - insert-button__button -  - click,,,,0
+lvPinButton,force-list-view-manager-pin-button,,click,lvPinButton - force-list-view-manager-pin-button -  - click,,,,0
+record-layout,sortable-link,,click,record-layout - sortable-link -  - click,,,,0
+search-results-grid,search-grid-column-header,,synthetic-sort,search-results-grid - search-grid-column-header -  - synthetic-sort,,,,0
+modal-content,emailui-warning-modal-accept__button,,click,modal-content - emailui-warning-modal-accept__button -  - click,,,,0
+panel-content,favorites-edit-panel-trigger,,click,panel-content - favorites-edit-panel-trigger -  - click,,,,0
+flexipage-component,relatedRecordClick-Create-Save__button,,click,flexipage-component - relatedRecordClick-Create-Save__button -  - click,,,,0
+tab-bar-content,overflow-item__menu-item,casecommentpost,click,tab-bar-content - overflow-item__menu-item - casecommentpost - click,,,,0
+action-ribbon-container,action-link,Edit,click,action-ribbon-container - action-link - Edit - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,0:DownloadFile,click,actions-dropdown - action-dropdown-item__menu-item - 0:DownloadFile - click,Click,Download File from In List,Download File from a List.,0
-density-settings,density-switcher,,synthetic-click,density-settingsdensity-switchersynthetic-click,synthetic-click,,,0
-list-view,emailLink,,click,list-viewemailLinkclick,,,,0
-nav-item-dropdown,nav-dropdown-menu-trigger__menu-trigger-link,,click,nav-item-dropdownnav-dropdown-menu-trigger__menu-trigger-linkclick,,,,0
-one-app,density-confirmation-dialog-ok-button__button,,click,one-appdensity-confirmation-dialog-ok-button__buttonclick,,,,0
-previewer-actions-bar,previewer-action__button,FileLinkShare,click,previewer-actions-barpreviewer-action__buttonFileLinkShareclick,,,,0
-record-layout,inlineEditUndo__button,Email,click,record-layoutinlineEditUndo__buttonEmailclick,,,,0
+density-settings,density-switcher,,synthetic-click,density-settings - density-switcher -  - synthetic-click,synthetic-click,,,0
+list-view,emailLink,,click,list-view - emailLink -  - click,,,,0
+nav-item-dropdown,nav-dropdown-menu-trigger__menu-trigger-link,,click,nav-item-dropdown - nav-dropdown-menu-trigger__menu-trigger-link -  - click,,,,0
+one-app,density-confirmation-dialog-ok-button__button,,click,one-app - density-confirmation-dialog-ok-button__button -  - click,,,,0
+previewer-actions-bar,previewer-action__button,FileLinkShare,click,previewer-actions-bar - previewer-action__button - FileLinkShare - click,,,,0
+record-layout,inlineEditUndo__button,Email,click,record-layout - inlineEditUndo__button - Email - click,,,,0
 tab-bar,tab-bar-content__tab,activityTab,click,tab-bar - tab-bar-content__tab - activityTab - click,Click,Activity Tab,The user has clicked on the Activity tab at the top of a record feed.,0
-tab-bar,tab-bar-content__tab,customTab2,click,tab-bartab-bar-content__tabcustomTab2click,,,,0
-action-ribbon-container,action-link,LinkToSetupUserDetailAction,click,action-ribbon-containeraction-linkLinkToSetupUserDetailActionclick,,,,0
-fileSearchPanel,searchText,,click,fileSearchPanelsearchTextclick,,,,0
-global-help-and-training,global-help-and-training-link,,synthetic-click,global-help-and-trainingglobal-help-and-training-linksynthetic-click,synthetic-click,,,0
-one-shortcutLibraryCommandHandler,GoToPublisher,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToPublishersynthetic-keyboard,,,,0
-pageBlockItem,CcAddress__link,,click,pageBlockItemCcAddress__linkclick,,,,0
-preview,action-dropdown-item__menu-item,DownloadFile,click,previewaction-dropdown-item__menu-itemDownloadFileclick,,,,0
-record-layout,actionsMenuItem__menu-item,0,click,record-layoutactionsMenuItem__menu-item0click,,,,0
-record-layout,inline-edit-trigger__button,Birthdate,click,record-layoutinline-edit-trigger__buttonBirthdateclick,,,,0
-search-results-grid-lvm,search-grid-column-header,,synthetic-sort,search-results-grid-lvmsearch-grid-column-headersynthetic-sort,,,,0
-action-ribbon-container,action-link,Delete,click,action-ribbon-containeraction-linkDeleteclick,,,,0
-fileSearchPanel,clearIcon,,click,fileSearchPanelclearIconclick,,,,0
-nav-menu-item,nav-dropdown-menu-item,recentRecord,click,nav-menu-itemnav-dropdown-menu-itemrecentRecordclick,,,,0
-panel-content,search-filter-panel-footer-cancel__button,,click,panel-contentsearch-filter-panel-footer-cancel__buttonclick,,,,0
-runtime_sales_emailtemplateuiMergeableEntityTemplate,Case,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplateCasesynthetic-click,synthetic-click,,,0
-tab-bar-content,overflow-item__menu-item,calllogpost,click,tab-bar-contentoverflow-item__menu-itemcalllogpostclick,,,,0
-change-record-type-actions,next-action-button__button,,click,change-record-type-actionsnext-action-button__buttonclick,,,,0
-favorites-edit-panel,favorites-edit-item,,reorder,favorites-edit-panelfavorites-edit-itemreorder,,,,0
-global-app-nav,tab-item,Home,click,global-app-navtab-itemHomeclick,,,,0
-panel-content,close-button-click__button,,click,panel-contentclose-button-click__buttonclick,,,,0
-record-layout,actionsMenuItem__menu-item,1,click,record-layoutactionsMenuItem__menu-item1click,,,,0
+tab-bar,tab-bar-content__tab,customTab2,click,tab-bar - tab-bar-content__tab - customTab2 - click,,,,0
+action-ribbon-container,action-link,LinkToSetupUserDetailAction,click,action-ribbon-container - action-link - LinkToSetupUserDetailAction - click,,,,0
+fileSearchPanel,searchText,,click,fileSearchPanel - searchText -  - click,,,,0
+global-help-and-training,global-help-and-training-link,,synthetic-click,global-help-and-training - global-help-and-training-link -  - synthetic-click,synthetic-click,,,0
+one-shortcutLibraryCommandHandler,GoToPublisher,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToPublisher -  - synthetic-keyboard,,,,0
+pageBlockItem,CcAddress__link,,click,pageBlockItem - CcAddress__link -  - click,,,,0
+preview,action-dropdown-item__menu-item,DownloadFile,click,preview - action-dropdown-item__menu-item - DownloadFile - click,,,,0
+record-layout,actionsMenuItem__menu-item,0,click,record-layout - actionsMenuItem__menu-item - 0 - click,,,,0
+record-layout,inline-edit-trigger__button,Birthdate,click,record-layout - inline-edit-trigger__button - Birthdate - click,,,,0
+search-results-grid-lvm,search-grid-column-header,,synthetic-sort,search-results-grid-lvm - search-grid-column-header -  - synthetic-sort,,,,0
+action-ribbon-container,action-link,Delete,click,action-ribbon-container - action-link - Delete - click,,,,0
+fileSearchPanel,clearIcon,,click,fileSearchPanel - clearIcon -  - click,,,,0
+nav-menu-item,nav-dropdown-menu-item,recentRecord,click,nav-menu-item - nav-dropdown-menu-item - recentRecord - click,,,,0
+panel-content,search-filter-panel-footer-cancel__button,,click,panel-content - search-filter-panel-footer-cancel__button -  - click,,,,0
+runtime_sales_emailtemplateuiMergeableEntityTemplate,Case,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplate - Case -  - synthetic-click,synthetic-click,,,0
+tab-bar-content,overflow-item__menu-item,calllogpost,click,tab-bar-content - overflow-item__menu-item - calllogpost - click,,,,0
+change-record-type-actions,next-action-button__button,,click,change-record-type-actions - next-action-button__button -  - click,,,,0
+favorites-edit-panel,favorites-edit-item,,reorder,favorites-edit-panel - favorites-edit-item -  - reorder,,,,0
+global-app-nav,tab-item,Home,click,global-app-nav - tab-item - Home - click,,,,0
+panel-content,close-button-click__button,,click,panel-content - close-button-click__button -  - click,,,,0
+record-layout,actionsMenuItem__menu-item,1,click,record-layout - actionsMenuItem__menu-item - 1 - click,,,,0
 activityPanel,expandAll,,click,activityPanel - expandAll -  - click,Click,Expand Activity Feed,The user has clicked the 'Show / Expand All' link at the top of the activity feed of a record.,0
-activityPanel,groupSection,,synthetic-click,activityPanelgroupSectionsynthetic-click,synthetic-click,,,0
-forceInlineExpandableContainer,forceInlineExpandableContainer,,inline-expandable-container-view-changed,forceInlineExpandableContainerforceInlineExpandableContainerinline-expandable-container-view-changed,,,,0
-lightning-labs,lightning-labs,,lightning-labs-allowed,lightning-labslightning-labslightning-labs-allowed,,,,0
-one-app,density-confirmation-dialog-cancel-button__button,,click,one-appdensity-confirmation-dialog-cancel-button__buttonclick,,,,0
-runtime_sales_emailtemplateuiMergeableEntityTemplate,Sender,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplateSendersynthetic-click,synthetic-click,,,0
-sfxdashboard,RefreshButton,,synthetic-RefreshButtonClick,sfxdashboardRefreshButtonsynthetic-RefreshButtonClick,,,,0
-tab-bar,tab-bar-content__tab,versionHistoryTab,click,tab-bartab-bar-content__tabversionHistoryTabclick,,,,0
-upcomingActivities,groupSection,,synthetic-click,upcomingActivitiesgroupSectionsynthetic-click,synthetic-click,,,0
-MenuTriggerOnPillListViewer,toggleSectionIconOnBlockSection,,click,MenuTriggerOnPillListViewertoggleSectionIconOnBlockSectionclick,,,,0
+activityPanel,groupSection,,synthetic-click,activityPanel - groupSection -  - synthetic-click,synthetic-click,,,0
+forceInlineExpandableContainer,forceInlineExpandableContainer,,inline-expandable-container-view-changed,forceInlineExpandableContainer - forceInlineExpandableContainer -  - inline-expandable-container-view-changed,,,,0
+lightning-labs,lightning-labs,,lightning-labs-allowed,lightning-labs - lightning-labs -  - lightning-labs-allowed,,,,0
+one-app,density-confirmation-dialog-cancel-button__button,,click,one-app - density-confirmation-dialog-cancel-button__button -  - click,,,,0
+runtime_sales_emailtemplateuiMergeableEntityTemplate,Sender,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplate - Sender -  - synthetic-click,synthetic-click,,,0
+sfxdashboard,RefreshButton,,synthetic-RefreshButtonClick,sfxdashboard - RefreshButton -  - synthetic-RefreshButtonClick,,,,0
+tab-bar,tab-bar-content__tab,versionHistoryTab,click,tab-bar - tab-bar-content__tab - versionHistoryTab - click,,,,0
+upcomingActivities,groupSection,,synthetic-click,upcomingActivities - groupSection -  - synthetic-click,synthetic-click,,,0
+MenuTriggerOnPillListViewer,toggleSectionIconOnBlockSection,,click,MenuTriggerOnPillListViewer - toggleSectionIconOnBlockSection -  - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,1:PrintableListView,click,actions-dropdown - action-dropdown-item__menu-item - 1:PrintableListView - click,Click,Printable In List,Printablew View of a List.,0
-app,switchToLightningDesktop,,click,appswitchToLightningDesktopclick,,,,0
-einsteinItemWrapper,kbResultStencilAttachDetachAction__button,,click,einsteinItemWrapperkbResultStencilAttachDetachAction__buttonclick,,,,0
-listViewPicker,dropdown-trigger,,click,listViewPickerdropdown-triggerclick,,,,0
-one-app-nav-container-edit-dlg,add-nav-items-button__button,,click,one-app-nav-container-edit-dlgadd-nav-items-button__buttonclick,,,,0
-pageBlockItem,BccAddress__link,,click,pageBlockItemBccAddress__linkclick,,,,0
-runtime_sales_emailtemplateuiMergeableEntityTemplate,Organization,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplateOrganizationsynthetic-click,synthetic-click,,,0
-runtime_sales_emailtemplateuiMergeableEntityTemplate,Recipient,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplateRecipientsynthetic-click,synthetic-click,,,0
-search-results-header,search-results-view-more,,click,search-results-headersearch-results-view-moreclick,,,,0
-searchSortMenuOnSuggestedArticleSidebar,articleSearchSortButton__menu-trigger-link,,click,searchSortMenuOnSuggestedArticleSidebararticleSearchSortButton__menu-trigger-linkclick,,,,0
-tab-bar-content,overflow-item__menu-item,pastchatstab,click,tab-bar-contentoverflow-item__menu-itempastchatstabclick,,,,0
-ChatterFeed-comment,feed-likers,,synthetic-click,ChatterFeed-commentfeed-likerssynthetic-click,synthetic-click,,,0
-ChatterFeed-feedAnchor,feed-anchor-submenu-switchFeed,,synthetic-click,ChatterFeed-feedAnchorfeed-anchor-submenu-switchFeedsynthetic-click,synthetic-click,,,0
-action-modal,change-record-type-actions__radio,,change,action-modalchange-record-type-actions__radiochange,,,,0
-action-modal,change-record-type-actions__radio,,click,action-modalchange-record-type-actions__radioclick,,,,0
-action-modal,createLink__button,,click,action-modalcreateLink__buttonclick,,,,0
-action-modal,panelFooterButton__button,,click,action-modalpanelFooterButton__buttonclick,,,,0
+app,switchToLightningDesktop,,click,app - switchToLightningDesktop -  - click,,,,0
+einsteinItemWrapper,kbResultStencilAttachDetachAction__button,,click,einsteinItemWrapper - kbResultStencilAttachDetachAction__button -  - click,,,,0
+listViewPicker,dropdown-trigger,,click,listViewPicker - dropdown-trigger -  - click,,,,0
+one-app-nav-container-edit-dlg,add-nav-items-button__button,,click,one-app-nav-container-edit-dlg - add-nav-items-button__button -  - click,,,,0
+pageBlockItem,BccAddress__link,,click,pageBlockItem - BccAddress__link -  - click,,,,0
+runtime_sales_emailtemplateuiMergeableEntityTemplate,Organization,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplate - Organization -  - synthetic-click,synthetic-click,,,0
+runtime_sales_emailtemplateuiMergeableEntityTemplate,Recipient,,synthetic-click,runtime_sales_emailtemplateuiMergeableEntityTemplate - Recipient -  - synthetic-click,synthetic-click,,,0
+search-results-header,search-results-view-more,,click,search-results-header - search-results-view-more -  - click,,,,0
+searchSortMenuOnSuggestedArticleSidebar,articleSearchSortButton__menu-trigger-link,,click,searchSortMenuOnSuggestedArticleSidebar - articleSearchSortButton__menu-trigger-link -  - click,,,,0
+tab-bar-content,overflow-item__menu-item,pastchatstab,click,tab-bar-content - overflow-item__menu-item - pastchatstab - click,,,,0
+ChatterFeed-comment,feed-likers,,synthetic-click,ChatterFeed-comment - feed-likers -  - synthetic-click,synthetic-click,,,0
+ChatterFeed-comment,submitButtonClicking,,synthetic-click,ChatterFeed-comment - submitButtonClicking -  - synthetic-click,Click,Submit New Chatter Reply,A user has clicked Comment on an existing Chatter Post,
+ChatterFeed-feedAnchor,feed-anchor-submenu-switchFeed,,synthetic-click,ChatterFeed-feedAnchor - feed-anchor-submenu-switchFeed -  - synthetic-click,synthetic-click,,,0
+action-modal,change-record-type-actions__radio,,change,action-modal - change-record-type-actions__radio -  - change,,,,0
+action-modal,change-record-type-actions__radio,,click,action-modal - change-record-type-actions__radio -  - click,,,,0
+action-modal,createLink__button,,click,action-modal - createLink__button -  - click,,,,0
+action-modal,panelFooterButton__button,,click,action-modal - panelFooterButton__button -  - click,,,,0
 actions-dropdown,action-dropdown-item__menu-item,3:GetFileDetail,click,actions-dropdown - action-dropdown-item__menu-item - 3:GetFileDetail - click,Click,Get File Detail - In List,Get File Detail from a List.,0
 actions-dropdown,action-dropdown-item__menu-item,7:DetachFile,click,actions-dropdown - action-dropdown-item__menu-item - 7:DetachFile - click,Click,Detach File - In List,Detach a File from a List.,0
-activityPanel,entityFilterMenu__button,,click,activityPanelentityFilterMenu__buttonclick,,,,0
-app,switchToAloha,,click,appswitchToAlohaclick,,,,0
-change-record-type-actions,cancel-action-button__button,,click,change-record-type-actionscancel-action-button__buttonclick,,,,0
-console-tab-item,console-tab-item-customization,,customize,console-tab-itemconsole-tab-item-customizationcustomize,,,,0
-detail-panel-mobile,component,,synthetic-detail-panel-fields,detail-panel-mobilecomponentsynthetic-detail-panel-fields,,,,0
-flexipage-component,previewPanel,,click,flexipage-componentpreviewPanelclick,,,,0
-forceContentPreviewPanel,forceContentModalPreviewManager,,synthetic-content-openPreview,forceContentPreviewPanelforceContentModalPreviewManagersynthetic-content-openPreview,,,,0
-global-app-nav,tab-item,Report,click,global-app-navtab-itemReportclick,,,,0
-menu-item,menu-item,additionalMenuOption_0,click,menu-itemmenu-itemadditionalMenuOption_0click,,,,0
-milestoneItemLink,entity-link,,click,milestoneItemLinkentity-linkclick,,,,0
-one-app-nav-add-items-dlg,one-app-nav-add-items-dlg-item-added,,synthetic-click,one-app-nav-add-items-dlgone-app-nav-add-items-dlg-item-addedsynthetic-click,synthetic-click,,,0
+activityPanel,entityFilterMenu__button,,click,activityPanel - entityFilterMenu__button -  - click,,,,0
+app,switchToAloha,,click,app - switchToAloha -  - click,,,,0
+change-record-type-actions,cancel-action-button__button,,click,change-record-type-actions - cancel-action-button__button -  - click,,,,0
+console-tab-item,console-tab-item-customization,,customize,console-tab-item - console-tab-item-customization -  - customize,,,,0
+detail-panel-mobile,component,,synthetic-detail-panel-fields,detail-panel-mobile - component -  - synthetic-detail-panel-fields,,,,0
+flexipage-component,previewPanel,,click,flexipage-component - previewPanel -  - click,,,,0
+forceContentPreviewPanel,forceContentModalPreviewManager,,synthetic-content-openPreview,forceContentPreviewPanel - forceContentModalPreviewManager -  - synthetic-content-openPreview,,,,0
+global-app-nav,tab-item,Report,click,global-app-nav - tab-item - Report - click,,,,0
+menu-item,menu-item,additionalMenuOption_0,click,menu-item - menu-item - additionalMenuOption_0 - click,,,,0
+milestoneItemLink,entity-link,,click,milestoneItemLink - entity-link -  - click,,,,0
+one-app-nav-add-items-dlg,one-app-nav-add-items-dlg-item-added,,synthetic-click,one-app-nav-add-items-dlg - one-app-nav-add-items-dlg-item-added -  - synthetic-click,synthetic-click,,,0
 one-header,global-action-item__menu-item,NewTask,click,one-header - global-action-item__menu-item - NewTask - click,Click,New Task - Global,The user has opened the New Task window from the Global Actions bar.,0
-one-shortcutLibraryCommandHandler,GoToWorkspaceTab,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToWorkspaceTabsynthetic-keyboard,,,,0
-panel-content,user-switch-to-aloha__link,,click,panel-contentuser-switch-to-aloha__linkclick,,,,0
-preview,action-dropdown-item__menu-item,GetFileDetail,click,previewaction-dropdown-item__menu-itemGetFileDetailclick,,,,0
-record-layout,kbResultStencilAttachDetachAction__button,,click,record-layoutkbResultStencilAttachDetachAction__buttonclick,,,,0
-record-layout,inline-edit-trigger__button,Description,click,record-layoutinline-edit-trigger__buttonDescriptionclick,,,,0
-record-layout,inline-edit-trigger__button,Status,click,record-layoutinline-edit-trigger__buttonStatusclick,,,,0
-search-scopes-container,search-scope-item,,synthetic-click,search-scopes-containersearch-scope-itemsynthetic-click,synthetic-click,,,0
-tab-bar,tab-bar-content__tab,relatedListTab,click,tab-bartab-bar-content__tabrelatedListTabclick,,,,0
-tab-bar-content,overflow-item__menu-item,case.case_split,click,tab-bar-contentoverflow-item__menu-itemcase.case_splitclick,,,,0
-tab-bar-content,overflow-item__menu-item,chattab,click,tab-bar-contentoverflow-item__menu-itemchattabclick,,,,0
-ChatterFeed-feeditem,drill-in,,synthetic-click,ChatterFeed-feeditemdrill-insynthetic-click,synthetic-click,,,0
-action-ribbon-container,action-link,EditUserAction,click,action-ribbon-containeraction-linkEditUserActionclick,,,,0
-action-ribbon-container,action-link,LightningReportCreateAction,click,action-ribbon-containeraction-linkLightningReportCreateActionclick,,,,0
+one-shortcutLibraryCommandHandler,GoToWorkspaceTab,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToWorkspaceTab -  - synthetic-keyboard,,,,0
+panel-content,user-switch-to-aloha__link,,click,panel-content - user-switch-to-aloha__link -  - click,,,,0
+preview,action-dropdown-item__menu-item,GetFileDetail,click,preview - action-dropdown-item__menu-item - GetFileDetail - click,,,,0
+record-layout,kbResultStencilAttachDetachAction__button,,click,record-layout - kbResultStencilAttachDetachAction__button -  - click,,,,0
+record-layout,inline-edit-trigger__button,Description,click,record-layout - inline-edit-trigger__button - Description - click,,,,0
+record-layout,inline-edit-trigger__button,Status,click,record-layout - inline-edit-trigger__button - Status - click,,,,0
+search-scopes-container,search-scope-item,,synthetic-click,search-scopes-container - search-scope-item -  - synthetic-click,synthetic-click,,,0
+tab-bar,tab-bar-content__tab,relatedListTab,click,tab-bar - tab-bar-content__tab - relatedListTab - click,,,,0
+tab-bar-content,overflow-item__menu-item,case.case_split,click,tab-bar-content - overflow-item__menu-item - case.case_split - click,,,,0
+tab-bar-content,overflow-item__menu-item,chattab,click,tab-bar-content - overflow-item__menu-item - chattab - click,,,,0
+ChatterFeed-feeditem,drill-in,,synthetic-click,ChatterFeed-feeditem - drill-in -  - synthetic-click,synthetic-click,,,0
+action-ribbon-container,action-link,EditUserAction,click,action-ribbon-container - action-link - EditUserAction - click,,,,0
+action-ribbon-container,action-link,LightningReportCreateAction,click,action-ribbon-container - action-link - LightningReportCreateAction - click,,,,0
 actions-composer-tab,publisher-collapsed-quick-action__button,NewTask,click,actions-composer-tab - publisher-collapsed-quick-action__button - NewTask - click,Click,New Task - Activity Tab,User opens the New Task from the action publisher.,0
 actions-composer-tab,publisher-collapsed-quick-action,NewTask,synthetic-click,actions-composer-tab - publisher-collapsed-quick-action - NewTask - synthetic-click,synthetic-click,New Task - Activity Tab,User opens the New Task from the action publisher.,0
 actions-dropdown,action-dropdown-item__menu-item,0:Task.EditDescription,click,actions-dropdown - action-dropdown-item__menu-item - 0:Task.EditDescription - click,Click,Edit Task Description - In List,Edit a Task's Description from a List.,0
 actions-dropdown,action-dropdown-item__menu-item,2:ChangeOwnerOne,click,actions-dropdown - action-dropdown-item__menu-item - 2:ChangeOwnerOne - click,Click,Change Owner - In List,Change Owner from a List.,0
 actions-dropdown,action-dropdown-item__menu-item,5:EditFileDetails,click,actions-dropdown - action-dropdown-item__menu-item - 5:EditFileDetails - click,Click,Edit File Details,Edit File Details from a List.,0
-activityPanel,ignoreFiltersButton__button,,click,activityPanelignoreFiltersButton__buttonclick,,,,0
-compactFeedItem,compact-feed-item-view-aricle,,click,compactFeedItemcompact-feed-item-view-aricleclick,,,,0
-detail-panel-progressive,component,,synthetic-LOM-detail-panel-view-more,detail-panel-progressivecomponentsynthetic-LOM-detail-panel-view-more,,,,0
-export-dialog-footer,export-report__button,,click,export-dialog-footerexport-report__buttonclick,,,,0
-featureDiscovery-SimpleRecordUser-content-scrolled,featureDiscovery-SimpleRecordUser-content,,synthetic-click,featureDiscovery-SimpleRecordUser-content-scrolledfeatureDiscovery-SimpleRecordUser-contentsynthetic-click,synthetic-click,,,0
-filePickerMobileHeader,panelFooterButton__button,,click,filePickerMobileHeaderpanelFooterButton__buttonclick,,,,0
-global-app-launcher,app-launcher-link,Case,click,global-app-launcherapp-launcher-linkCaseclick,,,,0
-global-app-nav,tab-item,Commercial_Link__c,click,global-app-navtab-itemCommercial_Link__cclick,,,,0
-global-app-nav,tab-item,SurveyTaker__c,click,global-app-navtab-itemSurveyTaker__cclick,,,,0
-global-help-and-training,global-help-and-training-menu-item,,synthetic-click,global-help-and-trainingglobal-help-and-training-menu-itemsynthetic-click,synthetic-click,,,0
-global-help-and-training,content-search,,synthetic-help-tray-send-search-request,global-help-and-trainingcontent-searchsynthetic-help-tray-send-search-request,,,,0
-global-help-and-training,content-search,,synthetic-help-tray-start-search-session,global-help-and-trainingcontent-searchsynthetic-help-tray-start-search-session,,,,0
-groupAnalytics,link,,synthetic-unifiedevent,groupAnalyticslinksynthetic-unifiedevent,,,,0
-groupAnalytics-feedHistory,chart,,synthetic-groupanalyticsfeedhistory,groupAnalytics-feedHistorychartsynthetic-groupanalyticsfeedhistory,,,,0
-groupAnalytics-newMembers,chart,,synthetic-groupanalyticsnewmembers,groupAnalytics-newMemberschartsynthetic-groupanalyticsnewmembers,,,,0
-groupAnalytics-totals,chart,,synthetic-groupanalyticstotals,groupAnalytics-totalschartsynthetic-groupanalyticstotals,,,,0
-mobile-overlay,custom-action-layout__button,,click,mobile-overlaycustom-action-layout__buttonclick,,,,0
-modal,action__button,DetachFile,click,modalaction__buttonDetachFileclick,,,,0
-modal,action__button,ReportDeleteAction,click,modalaction__buttonReportDeleteActionclick,,,,0
-modal-content,showSearchBox,,click,modal-contentshowSearchBoxclick,,,,0
-modal-content,whoCanAccess,,click,modal-contentwhoCanAccessclick,,,,0
-one-appNavMenu,global-nav-tab-added,,synthetic-click,one-appNavMenuglobal-nav-tab-addedsynthetic-click,synthetic-click,,,0
-one-shortcutLibraryCommandHandler,GoToPrompt,,synthetic-keyboard,one-shortcutLibraryCommandHandlerGoToPromptsynthetic-keyboard,,,,0
-panel-content,search-filter-panel-footer-apply__button,,click,panel-contentsearch-filter-panel-footer-apply__buttonclick,,,,0
-panel-content,user-add-account__link,,click,panel-contentuser-add-account__linkclick,,,,0
-record-layout,expand-view__link,,click,record-layoutexpand-view__linkclick,,,,0
-record-layout,map-link,,click,record-layoutmap-linkclick,,,,0
-record-layout,inlineEditUndo__button,Name,click,record-layoutinlineEditUndo__buttonNameclick,,,,0
-search-results-container,search-results-feed,,synthetic-refresh,search-results-containersearch-results-feedsynthetic-refresh,,,,0
-search-results-container,search-results-list,,synthetic-refresh,search-results-containersearch-results-listsynthetic-refresh,,,,0
-support-quickText-panel,selected,,synthetic-click,support-quickText-panelselectedsynthetic-click,synthetic-click,,,0
-tab-bar,tab-bar-content__tab,analyticsTab,click,tab-bartab-bar-content__tabanalyticsTabclick,,,,0
-tab-bar,tab-bar-content__tab,flexipage_tab2,click,tab-bartab-bar-content__tabflexipage_tab2click,,,,0
-tab-bar,tab-bar-content__tab,knowledgeTab,click,tab-bartab-bar-content__tabknowledgeTabclick,,,,0
-tab-bar-content,overflow-item__menu-item,detailtab,click,tab-bar-contentoverflow-item__menu-itemdetailtabclick,,,,0
-uploadPanelFooter,startUploadButton__button,,click,uploadPanelFooterstartUploadButton__buttonclick,,,,0
+activityPanel,ignoreFiltersButton__button,,click,activityPanel - ignoreFiltersButton__button -  - click,,,,0
+compactFeedItem,compact-feed-item-view-aricle,,click,compactFeedItem - compact-feed-item-view-aricle -  - click,,,,0
+detail-panel-progressive,component,,synthetic-LOM-detail-panel-view-more,detail-panel-progressive - component -  - synthetic-LOM-detail-panel-view-more,,,,0
+export-dialog-footer,export-report__button,,click,export-dialog-footer - export-report__button -  - click,,,,0
+featureDiscovery-SimpleRecordUser-content-scrolled,featureDiscovery-SimpleRecordUser-content,,synthetic-click,featureDiscovery-SimpleRecordUser-content-scrolled - featureDiscovery-SimpleRecordUser-content -  - synthetic-click,synthetic-click,,,0
+filePickerMobileHeader,panelFooterButton__button,,click,filePickerMobileHeader - panelFooterButton__button -  - click,,,,0
+global-app-launcher,app-launcher-link,Case,click,global-app-launcher - app-launcher-link - Case - click,,,,0
+global-app-nav,tab-item,Commercial_Link__c,click,global-app-nav - tab-item - Commercial_Link__c - click,,,,0
+global-app-nav,tab-item,SurveyTaker__c,click,global-app-nav - tab-item - SurveyTaker__c - click,,,,0
+global-help-and-training,global-help-and-training-menu-item,,synthetic-click,global-help-and-training - global-help-and-training-menu-item -  - synthetic-click,synthetic-click,,,0
+global-help-and-training,content-search,,synthetic-help-tray-send-search-request,global-help-and-training - content-search -  - synthetic-help-tray-send-search-request,,,,0
+global-help-and-training,content-search,,synthetic-help-tray-start-search-session,global-help-and-training - content-search -  - synthetic-help-tray-start-search-session,,,,0
+groupAnalytics,link,,synthetic-unifiedevent,groupAnalytics - link -  - synthetic-unifiedevent,,,,0
+groupAnalytics-feedHistory,chart,,synthetic-groupanalyticsfeedhistory,groupAnalytics-feedHistory - chart -  - synthetic-groupanalyticsfeedhistory,,,,0
+groupAnalytics-newMembers,chart,,synthetic-groupanalyticsnewmembers,groupAnalytics-newMembers - chart -  - synthetic-groupanalyticsnewmembers,,,,0
+groupAnalytics-totals,chart,,synthetic-groupanalyticstotals,groupAnalytics-totals - chart -  - synthetic-groupanalyticstotals,,,,0
+mobile-overlay,custom-action-layout__button,,click,mobile-overlay - custom-action-layout__button -  - click,,,,0
+modal,action__button,DetachFile,click,modal - action__button - DetachFile - click,,,,0
+modal,action__button,ReportDeleteAction,click,modal - action__button - ReportDeleteAction - click,,,,0
+modal-content,showSearchBox,,click,modal-content - showSearchBox -  - click,,,,0
+modal-content,whoCanAccess,,click,modal-content - whoCanAccess -  - click,,,,0
+one-appNavMenu,global-nav-tab-added,,synthetic-click,one-appNavMenu - global-nav-tab-added -  - synthetic-click,synthetic-click,,,0
+one-shortcutLibraryCommandHandler,GoToPrompt,,synthetic-keyboard,one-shortcutLibraryCommandHandler - GoToPrompt -  - synthetic-keyboard,,,,0
+panel-content,search-filter-panel-footer-apply__button,,click,panel-content - search-filter-panel-footer-apply__button -  - click,,,,0
+panel-content,user-add-account__link,,click,panel-content - user-add-account__link -  - click,,,,0
+record-layout,expand-view__link,,click,record-layout - expand-view__link -  - click,,,,0
+record-layout,map-link,,click,record-layout - map-link -  - click,,,,0
+record-layout,inlineEditUndo__button,Name,click,record-layout - inlineEditUndo__button - Name - click,,,,0
+search-results-container,search-results-feed,,synthetic-refresh,search-results-container - search-results-feed -  - synthetic-refresh,,,,0
+search-results-container,search-results-list,,synthetic-refresh,search-results-container - search-results-list -  - synthetic-refresh,,,,0
+support-quickText-panel,selected,,synthetic-click,support-quickText-panel - selected -  - synthetic-click,synthetic-click,,,0
+tab-bar,tab-bar-content__tab,analyticsTab,click,tab-bar - tab-bar-content__tab - analyticsTab - click,,,,0
+tab-bar,tab-bar-content__tab,flexipage_tab2,click,tab-bar - tab-bar-content__tab - flexipage_tab2 - click,,,,0
+tab-bar,tab-bar-content__tab,knowledgeTab,click,tab-bar - tab-bar-content__tab - knowledgeTab - click,,,,0
+tab-bar-content,overflow-item__menu-item,detailtab,click,tab-bar-content - overflow-item__menu-item - detailtab - click,,,,0
+uploadPanelFooter,startUploadButton__button,,click,uploadPanelFooter - startUploadButton__button -  - click,,,,0
 forceAura,relatedListSingleContainer,,click,forceAura - relatedListSingleContainer -  - click,Click,Related List Load,A related list has loaded during a record page load. Ignore; very noisy.,0
 actions-composer-tab,publisher-collapsed-quick-action__button,LogACall,click,actions-composer-tab - publisher-collapsed-quick-action__button - LogACall - click,Click,Log a Call - Activity Tab,User opens the Log a Call action input form after click on the Activity tab,0
 action-ribbon-container,action-link,NewContact,click,action-ribbon-container - action-link - NewContact - click,Click,New Contact Button (Related List),User has created a new Contact from a related list header or similar.,0
@@ -465,14 +463,21 @@ list-view-footer,save__button,,click,list-view-footer - save__button -  - click,
 handleGridAction,listViewManagerGrid,selectAll,click,handleGridAction - listViewManagerGrid - selectAll - click,Click,List View - Select All,A user has clicked on the header checkbox in a List View to select all records to apply an action.,0
 force_quickActionRecord,quickAction,,quickAction,force_quickActionRecord - quickAction -  - quickAction,Click,Quick Action - Complete,"A user has completed a Quick Action, in a list view or possibly a record detail.",0
 action-ribbon-container,"action-link",PrintableListView,click,"action-ribbon-container - action-link - PrintableListView - click",Click,Printable List View,A user is viewing the Printable List View,0
-listview-settings-menu,menu-trigger,,click,listview-settings-menu - menu-trigger -  - click,Click,List View - Settings,A user has opened the controls of the List View,0
 listview-switcher-dropdown-trigger,menu-trigger,,click,listview-switcher-dropdown-trigger - menu-trigger -  - click,Click,List View - Switcher,A user has opened the option to change the Display Type of the List View,0
 pipeline-card,pipeline-view,,synthetic-dragdrop,pipeline-card - pipeline-view -  - synthetic-dragdrop,Click,Kanban - Drag,A user is edited a recod via drag-and-drop in Kanban view,0
 menu-item,menu-item,additionalMenuOption_0,click,menu-item - menu-item - additionalMenuOption_0 - click,Click,List View - Options,The user is selecting options for a List View,0
-tab-bar,tab-bar-content__tab,customTab2,click,tab-bar - tab-bar-content__tab - customTab2 - click,Click,Invoices Account Tab,,
-tab-bar,tab-bar-content__tab,customTab3,click,tab-bar - tab-bar-content__tab - customTab3 - click,Click,Maps Account Tab,,
-tab-bar,tab-bar-content__tab,customTab4,click,tab-bar - tab-bar-content__tab - customTab4 - click,Click,Operational Delivery Account Tab,,
+tab-bar,tab-bar-content__tab,customTab2,click,tab-bar - tab-bar-content__tab - customTab2 - click,Click,,,
+tab-bar,tab-bar-content__tab,customTab3,click,tab-bar - tab-bar-content__tab - customTab3 - click,Click,,,
+tab-bar,tab-bar-content__tab,customTab4,click,tab-bar - tab-bar-content__tab - customTab4 - click,Click,,,
 tab-bar,tab-bar-content__tab,activityTab,click,tab-bar - tab-bar-content__tab - activityTab - click,Click,Activity Tab,,
 tab-bar,tab-bar-content__tab,retailOrderTab,click,tab-bar - tab-bar-content__tab - retailOrderTab - click,Click,Orders Tab,,
-tab-bar,tab-bar-content__tab,customTab,click,tab-bar - tab-bar-content__tab - customTab - click,Click,Delivery Account Tab,,
+tab-bar,tab-bar-content__tab,customTab,click,tab-bar - tab-bar-content__tab - customTab - click,Click,,,
 one-consoleLayoutContainer,one-changeSplitViewMode-fired,,synthetic-change-split-view-mode,one-consoleLayoutContainer - one-changeSplitViewMode-fired -  - synthetic-change-split-view-mode,Click,Console Sidebar,A user has clicked on the expand / collapse sidebar in a console view.,
+one-consoleNav,one-appNavMenu-opened,,synthetic-click,one-consoleNav - one-appNavMenu-opened -  - synthetic-click,Click,Console Nav Menu Open,A user opens the console object menu drop-down.,
+one-consoleNav,one-appNavMenu-selection,,synthetic-click,one-consoleNav - one-appNavMenu-selection -  - synthetic-click,Click,Console Nav Menu Select,A user selects an object in the console nav menu.,
+lightning-grouped-combobox,force-combobox,,synthetic-click,lightning-grouped-combobox - force-combobox -  - synthetic-click,Click,Field Input Prompt,"The user has interacted with a small prompt on a field input, such as 'recently used' or a date picker.",
+activity-timelinefixed,activityTimelineTask,,synthetic-click,activity-timelinefixed - activityTimelineTask -  - synthetic-click,Click,Task Detail - Timeline,The user has clicked on a Task to view details from the Activity timeline.,
+activity-timelinefixed,navigateToRecord,,click,activity-timelinefixed - navigateToRecord -  - click,Click,Navigate to record,A user has clicked on any link to navigate to a record.,
+loadPastActivities,activityTimeline,,synthetic-click,loadPastActivities - activityTimeline -  - synthetic-click,Click,Show Activity Timeline,The activity timeline was rendered on the page.,
+tab,close,,unload,tab - close -  - unload,Click,Close Tab,"User has closed a tab, window or view.",
+actionsBar,pipelineInspectionToListView,,click,actionsBar - pipelineInspectionToListView -  - click,Click,Pipeline Inspection Liat View Selection,The user swapped from a pipeline inspection view to a list view.,

@@ -1,23 +1,68 @@
-<h2 style="padding-left: 10px;">Value Analytics Version 1.0</h2>
-<p style="padding-left: 20px;">Version 1.0 8th March 2022</p>
+<h2 style="padding-left: 10px;">Value Analytics Version 1.15</h2>
+<p style="padding-left: 20px;">April 2024</p>
 <ul>
-	<li>Apps
+	<li>Version 1.15
 		<ul>
-			<li>Value Analytics: the main app folder for storing all Value Analytic's assets.</li>
+			<li>User Activities and Journeys is now Adoption Console</li>
+			<li>Three variations of the Adoption Console dashboard to help with beginner-to-expert use</li>
+			<li>Updated Adoption Console dashboards user interaction panels to make more sense</li>
+			<li>New Sales/Service/Lead dashboards and recipes with Cohort analysis</li>
+			<li>Updated TechDebtCounter dashboard</li>
+			<li>Removed unused widgets in most dashboards</li>
+			<li>Tweaks to Lighnting EPT dashboard</li>
+			<li>Added filter in TechDebtCounter recipe to remove deprecated / removed metadata</li>
+			<li>Introduced support for LightningLogger event logs</li>
+			<li>Repaired Union logs which were not Unioning properly in append nodes</li> 
+			<li>fixed the windowing functions that give Apex logs the page params (the formula was using the wrong quotes around field names)</li>
+			<li>Updated Apex Analysis dashboard to use Apex BVA dataset (no EM dependency)</li>
+			<li>Updated Exceptions analysis dahboard to use BVA Apex and Exceptions datasets (no EM dependency)</li>
+			<li>Updated Lightning Performance dashboard to use BVA Lightning Page Views Adoption (no EM dependency)</li>
+			<li>Redesigned the Journey Step heatmaps to show pags and components together, and use Stall Time and Total Session Time metrics</li>
+			<li>Updated Adoption Console (Advanced) dashboard to include apex executions / filter less on Clicks</li>
+			<li>Updated Adoption Console dashboard by removing all UI_EVENT_TYPE = user filters; this means Page Views are included as clicks (PageName is the COmponent name)</li>
+			<li>Added List views as Component details</li>
+			<li>Updated Apex and Exceptions recipe</li>
+			<li>Updated Styling on User Journeys and Apex Performance dashboards</li>
+			<li>Removed unused columns in datasets</li>
+			<li>Added compatability with new Event Monitoring append</li>
+			<li>Minor recipe bug fixes relating to mapping fields in the append between clicks and non clicks that would have caused some rows to be missing time details</li>
+			<li>Recipe compute expressions all should have descriptive labels</li>
+			<li>Fixed the order of data dictionary and concat so that it’s Dictionary → Component - Concatenation</li>
+			<li>Updated PageName formula so that one/one.app obscure URLs with no PAGE_ENTITY_TYPE return "no object" instead of "no app"</li>
+			<li>Applied work-arounds for Known Issue with templates (W-13907614)</li>
+			<li>Updated labels for roles and profiles on User dataset for better visibility and understanding</li>
+			<li>Removed the dependency on dataflows and temporary datasets; everything will run on app creation</li>
+			<li>Charts now use Colour-Safe Enhanced themes to improve accessibility</li>	
+		</li>
 		</ul>
 	</li>
-	<li>Dashboards</li>
-	<li>Recipes
+	<li>Version 1.14
 		<ul>
-			<li></li>
-			<li></li>
+			<li>Map from quip doc</li>
 		</ul>
 	</li>
-	<li>Datasets
+	<li>Version 1.13
 		<ul>
-			<li></li>
-			<li></li>
+			<li>Changes to the Tech Debt Counter recipe and dashboards in order to better understand execution counts against each metadata type on the dashboard.</li>
+			<li>New additions to the Lightning Interaction Data Dictionary; includes behaviours around search behaviours in lookup fields.</li>
+			<li>Fixed a bug in the User Activity and Journeys dashboard, in which the Top 20 Apps was actually grouped by Object; no grouped by App.</li>
 		</ul>
 	</li>
-	<li>Milk</li>
+	<li>Version 1.12
+		<ul>
+			<li>Opportunity Digest mistakenly included RecordTypeId; this has been removed, as it blocks the install for customers who do not use record types.</li>
+			<li>Improvements to the Lightning Interaction Data Dictionary.</li>
+		</ul>
+	</li>
+	<li>Version 1.11
+		<ul>
+			<li>Corrected field mapping in Tech Debt Counter recipe</li>
+			<li>Removed unnecessary filters on “clicks” in the User Journeys dashboard.</li>
+		</ul>
+	</li>
+	<li>Version 1.10
+		<ul>
+			<li>First managed release.</li>
+		</ul>
+	</li>	
 </ul>

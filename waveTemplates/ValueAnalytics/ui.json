@@ -1,7 +1,7 @@
 {
   "pages" : [
   {
-	  "title":"Log Files for User and Adoption analysis",
+	  "title":"Log Files for Adoption analysis",
 	  "variables": [
 		{
 			"name":"LPVDataset"
@@ -12,7 +12,7 @@
 	  ]
   },
     {
-	  "title":"Business Value Analytics",
+	  "title":"Business Outcomes and Adoption Correlation",
 	  "variables": [
 		{
 			"name":"Sales"
@@ -27,12 +27,15 @@
 			"name":"Lead"
 		}
 	  ]
-  },
-    {
+  	},
+	{
 	  "title":"Log Files for Technical Debt, Apex Performance and Error Analysis",
 	  "variables": [
 		{
 			"name":"ApexDataset"
+		},
+		{
+			"name":"ApexTriggersDataset"
 		},
 		{
 			"name":"ExceptionsDataset"
@@ -41,7 +44,15 @@
 			"name":"VFDataset"
 		}
 	  ]
-  }
+  	},
+	  {
+		"title":"Revenue Risk Analysis due to Apex Unexpected Exceptions",
+		"variables": [
+		  {
+			  "name":"RevenueRisk"
+		  }
+		]
+		}
   ],
   "displayMessages" : [ ]
 }
